@@ -18,6 +18,19 @@ const Tarot = () => {
   const messagesRef = useRef(null)
 
   useEffect(() => {
+    const shell = document.body.querySelector(`.${css.tarotApp}`)?.parentElement
+    document.documentElement.classList.add(css.tarotDocument)
+    document.body.classList.add(css.tarotDocument)
+    shell?.classList.add(css.tarotShell)
+
+    return () => {
+      document.documentElement.classList.remove(css.tarotDocument)
+      document.body.classList.remove(css.tarotDocument)
+      shell?.classList.remove(css.tarotShell)
+    }
+  }, [])
+
+  useEffect(() => {
     const container = messagesRef.current
     if (container) container.scrollTo({ top: container.scrollHeight, behavior: turns.length ? 'smooth' : 'auto' })
   }, [turns.length, currentCards.length, isLoading])

@@ -1086,6 +1086,9 @@
 }
 
 // Unified celestial application
+.tarotDocument, .tarotShell { background: #05020d !important; overscroll-behavior: none; }
+.tarotShell { min-height: 100dvh; }
+
 .tarotApp {
     --ink: #f5f0ff;
     --muted: #b9add4;
@@ -1299,12 +1302,21 @@
     .positionReadings { grid-template-columns: 1fr; }
     .threePositionReadings { grid-template-columns: 1fr; }
     .singleCardInterpretation { grid-template-columns: 1fr; }
-    .tarotApp .convInputBar { grid-template-columns: 1fr; gap: .45rem; width: calc(100% - 1rem); margin-bottom: max(.5rem, env(safe-area-inset-bottom)); padding: .55rem; }
+    .tarotApp .convInputBar {
+        grid-template-columns: 1fr;
+        gap: .45rem;
+        width: auto;
+        max-width: none;
+        margin-left: max(.5rem, env(safe-area-inset-left));
+        margin-right: max(.5rem, env(safe-area-inset-right));
+        margin-bottom: max(.5rem, env(safe-area-inset-bottom));
+        padding: .55rem;
+    }
     .spreadPicker { border-right: 0; padding: 0 .35rem; }
     .spreadPicker label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .spreadPicker select { min-height: 2.25rem; padding: .5rem 1.8rem .5rem .65rem; font-size: .78rem; }
     .tarotApp .convInput textarea { min-height: 2.65rem; padding: .62rem .7rem; }
-    .tarotApp .convInput button { min-height: 2.65rem; padding: .55rem .7rem; }
+    .tarotApp .convInput button { flex: 0 0 2.65rem; width: 2.65rem; min-height: 2.65rem; justify-content: center; padding: 0; }
     .tarotApp .convInput button span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }
 
