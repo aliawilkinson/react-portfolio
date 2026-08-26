@@ -19,6 +19,15 @@ const Tarot = () => {
 
   useEffect(() => {
     const shell = document.body.querySelector(`.${css.tarotApp}`)?.parentElement
+    let themeColor = document.head.querySelector('meta[name="theme-color"]')
+    const createdThemeColor = !themeColor
+    const previousThemeColor = themeColor?.content
+    if (!themeColor) {
+      themeColor = document.createElement('meta')
+      themeColor.name = 'theme-color'
+      document.head.appendChild(themeColor)
+    }
+    themeColor.content = '#05020d'
     document.documentElement.classList.add(css.tarotDocument)
     document.body.classList.add(css.tarotDocument)
     shell?.classList.add(css.tarotShell)
@@ -27,6 +36,8 @@ const Tarot = () => {
       document.documentElement.classList.remove(css.tarotDocument)
       document.body.classList.remove(css.tarotDocument)
       shell?.classList.remove(css.tarotShell)
+      if (createdThemeColor) themeColor.remove()
+      else themeColor.content = previousThemeColor
     }
   }, [])
 
