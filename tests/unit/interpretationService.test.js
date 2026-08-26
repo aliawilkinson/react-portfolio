@@ -183,5 +183,79 @@ describe('interpretationService', () => {
       const allReflections = result.reflections.join(' ')
       expect(allReflections).toContain(question)
     })
+
+    it('interprets a Celtic Cross by its traditional positions', () => {
+      const labels = ['Present', 'Challenge', 'Foundation', 'Past', 'Crown', 'Future', 'Self', 'Environment', 'Hopes/Fears', 'Outcome']
+      const cards = labels.map((_, index) => makeCard({ name: `Card ${index + 1}`, isReversed: index % 2 === 1 }))
+      const result = generateInterpretation(cards, 'What pattern am I moving through?', {
+        name: 'Celtic Cross',
+        cardCount: 10,
+        labels
+      })
+
+      expect(result.summary).toContain('Present — Card 1')
+      expect(result.summary).toContain('Outcome — Card 10')
+      expect(result.reflections).toHaveLength(11)
+      expect(result.reflections[1]).toContain('Challenge')
+      expect(result.reflections[8]).toContain('Hopes/Fears')
+      expect(result.connections).toContain('crossing influence')
+      expect(result.connections).toContain('The staff')
+      expect(result.connections).toContain('Card 10')
+      expect(result.connections).not.toMatch(/\byou will\b|\bwill happen\b/i)
+      expect(result.celticCross.positions).toHaveLength(10)
+      expect(result.celticCross.positions[1]).toMatchObject({ position: 'Challenge', name: 'Card 2', orientation: 'Reversed' })
+      expect(result.celticCross.synthesis).toHaveLength(5)
+    })
+
+    it('interprets a three-card spread as a past-present-future progression', () => {
+      const cards = [
+        makeCard({ name: 'The Hermit' }),
+        makeCard({ name: 'Strength', isReversed: true }),
+        makeCard({ name: 'The Star' })
+      ]
+      const result = generateInterpretation(cards, 'What am I learning?', {
+        name: 'Three Card Spread',
+        cardCount: 3,
+        labels: ['Past', 'Present', 'Future']
+      })
+
+      expect(result.threeCard.positions).toHaveLength(3)
+      expect(result.threeCard.positions[0]).toMatchObject({ position: 'Past', name: 'The Hermit' })
+      expect(result.threeCard.positions[1]).toMatchObject({ position: 'Present', orientation: 'Reversed' })
+      expect(result.threeCard.positions[2].reflection).toContain('direction')
+      expect(result.threeCard.synthesis).toContain('The Hermit')
+      expect(result.threeCard.synthesis).toContain('Strength')
+      expect(result.threeCard.synthesis).toContain('The Star')
+      expect(result.threeCard.synthesis).not.toMatch(/\byou will\b|\bwill happen\b/i)
+    })
+
+    it('interprets a single-card spread as focused reflective guidance', () => {
+      const result = generateInterpretation(
+        [makeCard({ name: 'The Moon', isReversed: true })],
+        'What needs my attention?',
+        { name: 'Single Card', cardCount: 1, labels: ['Core Message'] }
+      )
+
+      expect(result.singleCard).toMatchObject({
+        position: 'Core Message',
+        name: 'The Moon',
+        orientation: 'Reversed'
+      })
+      expect(result.singleCard.reflection).toContain('blocked')
+      expect(result.singleCard.integration).toContain('What needs my attention?')
+      expect(result.singleCard.integration).not.toMatch(/\byou will\b|\bwill happen\b/i)
+      expect(result.singleCard.yesNo).toMatchObject({ value: 'Unclear', tone: 'neutral' })
+    })
+
+    it('provides yes and no values for decisive single cards', () => {
+      const preset = { name: 'Single Card', cardCount: 1, labels: ['Core Message'] }
+      const yes = generateInterpretation([makeCard({ name: 'The Sun' })], '', preset)
+      const no = generateInterpretation([makeCard({ name: 'The Tower' })], '', preset)
+      const reversed = generateInterpretation([makeCard({ name: 'The Sun', isReversed: true })], '', preset)
+
+      expect(yes.singleCard.yesNo.value).toBe('Yes')
+      expect(no.singleCard.yesNo.value).toBe('No')
+      expect(reversed.singleCard.yesNo.value).toBe('No')
+    })
   })
 })

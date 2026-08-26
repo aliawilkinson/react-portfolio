@@ -76,7 +76,7 @@ const useConversation = ({ resetAndDraw }) => {
       memoryService._persistToStorage()
 
       // Generate fallback interpretation and add turn to history anyway
-      const fallback = generateInterpretation(cards, questionText)
+      const fallback = generateInterpretation(cards, questionText, spreadPreset)
       const turn = {
         id: crypto.randomUUID(),
         timestamp: new Date().toISOString(),

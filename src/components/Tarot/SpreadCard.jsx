@@ -2,13 +2,18 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import css from './Tarot.module.scss'
 
-const SpreadCard = ({ card, isReversed, label }) => {
+const SpreadCard = ({ card, isReversed, label, positionDescription, index, isActive, onActivate }) => {
   const [imageError, setImageError] = useState(false)
   const imageUrl = `https://sacred-texts.com/tarot/pkt/img/${card.name_short}.jpg`
 
   return (
-    <motion.div
-      className={css.spreadCard}
+    <motion.button
+      type="button"
+      className={`${css.spreadCard} ${isActive ? css.cardActive : ''}`}
+      style={{ '--card-index': index + 1 }}
+      onClick={onActivate}
+      aria-expanded={isActive}
+      aria-label={`${label ? `${label}: ` : ''}${card.name}, ${isReversed ? 'reversed' : 'upright'}. Show meaning`}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
@@ -26,7 +31,8 @@ const SpreadCard = ({ card, isReversed, label }) => {
           />
         )}
       </div>
-      <div className={css.spreadCardInfo}>
+      <div className={css.spreadCardInfo} role="tooltip">
+        {positionDescription && <p className={css.positionDescription}>{positionDescription}</p>}
         <span className={css.cardName}>
           {card.name}
           {isReversed && <span className={css.reversedBadge}>Reversed</span>}
@@ -36,7 +42,7 @@ const SpreadCard = ({ card, isReversed, label }) => {
           {isReversed ? card.meaning_rev : card.meaning_up}
         </p>
       </div>
-    </motion.div>
+    </motion.button>
   )
 }
 

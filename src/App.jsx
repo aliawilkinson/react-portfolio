@@ -15,7 +15,6 @@ import { MusicPlayerProvider } from './context/MusicPlayerContext'
 import SoundCloudPlayer from './components/MusicPlayer/SoundCloudPlayer'
 
 const Tarot = lazy(() => import('./components/Tarot/Tarot'))
-const ConversationMode = lazy(() => import('./components/Tarot/ConversationMode'))
 
 // Redirect wrapper for /projects/:slug -> /other-projects/:slug
 const ProjectSlugRedirect = () => {
@@ -25,14 +24,14 @@ const ProjectSlugRedirect = () => {
 
 const App = () => {
   const { pathname } = useLocation()
-  const hideFooter = pathname === '/tarot' || pathname === '/tarot/conversation'
+  const isTarot = pathname === '/tarot' || pathname.startsWith('/tarot/')
   const isOnMusicPage = pathname === '/other-projects/music'
 
   return (
     <MusicPlayerProvider>
       <div className={`bg-primary ${css.container}`}>
         <Analytics />
-        <Header />
+        {!isTarot && <Header />}
         <RouteScroller />
         <Routes>
         <Route path='/' element={<Home />} />
@@ -47,8 +46,8 @@ const App = () => {
         <Route path='/blog' element={<BlogList />} />
         <Route path='/blog/:slug' element={<BlogPost />} />
         <Route path='/tarot' element={<Suspense fallback={<div style={{ minHeight: '60vh' }} />}><Tarot /></Suspense>} />
-        <Route path='/tarot/conversation' element={<Suspense fallback={<div style={{ minHeight: '60vh' }} />}><ConversationMode /></Suspense>} />
-        <Route path='/conversation' element={<Navigate to="/tarot/conversation" replace />} />
+        <Route path='/tarot/conversation' element={<Navigate to="/tarot" replace />} />
+        <Route path='/conversation' element={<Navigate to="/tarot" replace />} />
         <Route path='/testimonials' element={<Home />} />
         <Route path='/experience' element={<Home />} />
         <Route path='/contact' element={<Home />} />
@@ -61,8 +60,8 @@ const App = () => {
         <Route path='/cognitoIdentityArchitecture' element={<InfoPost post='cognitoIdentityArchitecture' />} />
         <Route path='/almModernization' element={<InfoPost post='almModernization' />} />
       </Routes>
-      <SoundCloudPlayer isOnMusicPage={false} />
-      {!hideFooter && <Footer />}
+      {!isTarot && <SoundCloudPlayer isOnMusicPage={false} />}
+      {!isTarot && <Footer />}
     </div>
     </MusicPlayerProvider>
   );

@@ -73,6 +73,9 @@ const renderMarkdown = (text) => {
 
 const ConversationTurn = ({ turn }) => {
   const hasFallback = !turn.interpretation && turn.fallbackInterpretation
+  const celticFallback = turn.fallbackInterpretation?.celticCross
+  const threeCardFallback = turn.fallbackInterpretation?.threeCard
+  const singleCardFallback = turn.fallbackInterpretation?.singleCard
 
   return (
     <div className={css.convTurn}>
@@ -84,11 +87,93 @@ const ConversationTurn = ({ turn }) => {
         {hasFallback && (
           <>
             <p><em>The oracle is sleeping. Here is a manual interpretation instead:</em></p>
-            <p>{turn.fallbackInterpretation.summary}</p>
-            <h4>Reflections</h4>
-            <ul>{turn.fallbackInterpretation.reflections.map((r, i) => <li key={i}>{r}</li>)}</ul>
-            <h4>Connections</h4>
-            <p>{turn.fallbackInterpretation.connections}</p>
+            {celticFallback ? (
+              <div className={css.celticInterpretation}>
+                <section>
+                  <h4>The Ten Positions</h4>
+                  <div className={css.positionReadings}>
+                    {celticFallback.positions.map((position, index) => (
+                      <article className={css.positionReading} key={`${position.position}-${index}`}>
+                        <div className={css.positionReadingHeader}>
+                          <span>{index + 1}</span>
+                          <div>
+                            <h5>{position.position}</h5>
+                            <p>{position.name} <small>{position.orientation}</small></p>
+                          </div>
+                        </div>
+                        <p className={css.positionMeaning}>{position.meaning}</p>
+                        <p className={css.positionReflection}>{position.reflection}</p>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+                <section className={css.celticSynthesis}>
+                  <h4>How the Spread Connects</h4>
+                  {celticFallback.synthesis.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+                </section>
+              </div>
+            ) : threeCardFallback ? (
+              <div className={css.threeCardInterpretation}>
+                <section>
+                  <h4>Past · Present · Future</h4>
+                  <div className={css.threePositionReadings}>
+                    {threeCardFallback.positions.map((position, index) => (
+                      <article className={css.positionReading} key={`${position.position}-${index}`}>
+                        <div className={css.positionReadingHeader}>
+                          <span>{index + 1}</span>
+                          <div>
+                            <h5>{position.position}</h5>
+                            <p>{position.name} <small>{position.orientation}</small></p>
+                          </div>
+                        </div>
+                        <p className={css.positionMeaning}>{position.meaning}</p>
+                        <p className={css.positionReflection}>{position.reflection}</p>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+                <section className={css.celticSynthesis}>
+                  <h4>The Story Between the Cards</h4>
+                  <p>{threeCardFallback.synthesis}</p>
+                </section>
+              </div>
+            ) : singleCardFallback ? (
+              <div className={css.singleCardInterpretation}>
+                <section className={css.singleCardMessage}>
+                  <div className={css.positionReadingHeader}>
+                    <span>✦</span>
+                    <div>
+                      <h5>{singleCardFallback.position}</h5>
+                      <p>{singleCardFallback.name} <small>{singleCardFallback.orientation}</small></p>
+                    </div>
+                  </div>
+                  <div className={`${css.yesNoReading} ${css[`yesNo${singleCardFallback.yesNo.tone}`]}`}>
+                    <span>Current lean</span>
+                    <strong>{singleCardFallback.yesNo.value}</strong>
+                    <p>{singleCardFallback.yesNo.explanation}</p>
+                  </div>
+                  <p className={css.singleCardMeaning}>{singleCardFallback.meaning}</p>
+                </section>
+                <section className={css.singleCardGuidance}>
+                  <div>
+                    <h4>Reflection</h4>
+                    <p>{singleCardFallback.reflection}</p>
+                  </div>
+                  <div>
+                    <h4>Bring It With You</h4>
+                    <p>{singleCardFallback.integration}</p>
+                  </div>
+                </section>
+              </div>
+            ) : (
+              <>
+                <p>{turn.fallbackInterpretation.summary}</p>
+                <h4>Reflections</h4>
+                <ul>{turn.fallbackInterpretation.reflections.map((r, i) => <li key={i}>{r}</li>)}</ul>
+                <h4>Connections</h4>
+                <p>{turn.fallbackInterpretation.connections}</p>
+              </>
+            )}
           </>
         )}
         {turn.interpretation && (

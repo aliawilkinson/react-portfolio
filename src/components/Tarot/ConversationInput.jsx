@@ -1,16 +1,17 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import css from './Tarot.module.scss'
+import { SPREAD_PRESETS } from './data/spreadPresets'
 
 const MAX_ROWS = 6
 
 const ConversationInput = ({ onSubmit, disabled }) => {
   const [text, setText] = useState('')
+  const [preset, setPreset] = useState('three')
   const textareaRef = useRef(null)
-  const barRef = useRef(null)
 
   const handleSubmit = () => {
     if (text.trim() === '' || disabled) return
-    onSubmit(text.trim())
+    onSubmit(text.trim(), preset)
     setText('')
     // Reset height after submit
     if (textareaRef.current) {
@@ -35,30 +36,14 @@ const ConversationInput = ({ onSubmit, disabled }) => {
     el.style.height = Math.min(el.scrollHeight, maxHeight) + 'px'
   }, [])
 
-  // Use visualViewport to keep input above keyboard on iOS
-  useEffect(() => {
-    const vv = window.visualViewport
-    if (!vv || !barRef.current) return
-
-    const handleResize = () => {
-      const bar = barRef.current
-      if (!bar) return
-      // visualViewport.height is the visible area (shrinks when keyboard opens)
-      // offsetTop is how far down the viewport has been pushed
-      const offset = window.innerHeight - vv.height - vv.offsetTop
-      bar.style.transform = offset > 0 ? `translateY(-${offset}px)` : ''
-    }
-
-    vv.addEventListener('resize', handleResize)
-    vv.addEventListener('scroll', handleResize)
-    return () => {
-      vv.removeEventListener('resize', handleResize)
-      vv.removeEventListener('scroll', handleResize)
-    }
-  }, [])
-
   return (
-    <div className={css.convInputBar} ref={barRef}>
+    <div className={css.convInputBar}>
+      <div className={css.spreadPicker}>
+        <label htmlFor="tarot-spread">Spread</label>
+        <select id="tarot-spread" value={preset} onChange={e => setPreset(e.target.value)} disabled={disabled}>
+          {Object.entries(SPREAD_PRESETS).map(([key, spread]) => <option key={key} value={key}>{spread.name} · {spread.cardCount} card{spread.cardCount > 1 ? 's' : ''}</option>)}
+        </select>
+      </div>
       <div className={css.convInput}>
         <textarea
           ref={textareaRef}
@@ -66,7 +51,7 @@ const ConversationInput = ({ onSubmit, disabled }) => {
           value={text}
           onChange={handleInput}
           onKeyDown={handleKeyDown}
-          disabled={false}
+          disabled={disabled}
           aria-label="Tarot question input"
           data-clarity-mask="true"
           rows={1}
@@ -76,7 +61,7 @@ const ConversationInput = ({ onSubmit, disabled }) => {
           disabled={disabled || text.trim() === ''}
           aria-label="Submit question"
         >
-          Ask
+          <span>Ask the oracle</span><b aria-hidden="true">↑</b>
         </button>
       </div>
     </div>
