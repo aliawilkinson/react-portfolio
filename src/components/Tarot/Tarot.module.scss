@@ -1098,6 +1098,7 @@
     height: 100dvh;
     min-height: 34rem;
     overflow: hidden;
+    overscroll-behavior: none;
     color: var(--ink);
     background: #05020d;
     font-family: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -1163,6 +1164,7 @@
     gap: 2rem;
     scrollbar-width: thin;
     scrollbar-color: rgba(190, 155, 255, .35) transparent;
+    overscroll-behavior: contain;
 }
 
 .tarotApp .convEmpty { color: var(--ink); min-height: 100%; padding: 1rem 1rem 2rem; }
@@ -1282,6 +1284,11 @@
     .backToPortfolio { width: 2.35rem; min-height: 2.35rem; justify-content: center; padding: 0; }
     .backToPortfolio b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .tarotApp .convMessages { padding: .8rem .7rem 1rem; }
+    .tarotApp .convEmpty { padding: .5rem .75rem 1rem; }
+    .portal { width: min(7.25rem, 18vh); margin-bottom: 1rem; animation: none; }
+    .portal::before { inset: -.75rem; }
+    .welcomeTitle { font-size: 1.2rem; }
+    .tarotApp .convEmptySub { max-width: 19rem; margin-top: .4rem !important; font-size: .78rem !important; line-height: 1.45; }
     .tarotApp .convTurn { padding: 1rem .75rem; border-radius: 1rem; }
     .tarotApp .spread { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding: 1rem .35rem 1.5rem; scroll-snap-type: x proximity; }
     .tarotApp .spreadCard { width: 7rem; scroll-snap-align: center; }
