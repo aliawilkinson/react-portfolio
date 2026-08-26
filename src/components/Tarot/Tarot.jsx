@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import css from './Tarot.module.scss'
 import useTarotDeck from './hooks/useTarotDeck'
 import useConversation from './hooks/useConversation'
@@ -32,8 +33,13 @@ const Tarot = () => {
     <main className={css.tarotApp}>
       <div className={css.cosmos} aria-hidden="true"><i /><i /><i /></div>
       <header className={css.oracleHeader}>
-        <div className={css.brandMark} aria-hidden="true">✦</div>
-        <div><p className={css.eyebrow}>The Infinity Oracle</p><h1>Ask the mirror</h1></div>
+        <Link to="/" className={css.backToPortfolio} aria-label="Back to portfolio">
+          <span aria-hidden="true">←</span><b>Back to portfolio</b>
+        </Link>
+        <div className={css.oracleBrand}>
+          <div className={css.brandMark} aria-hidden="true">✦</div>
+          <div><p className={css.eyebrow}>The Infinity Oracle</p><h1>Ask the mirror</h1></div>
+        </div>
         <p className={css.headerHint}>A reflective tarot conversation</p>
       </header>
       <section className={css.convMessages} ref={messagesRef} aria-live="polite" aria-busy={isLoading}>
