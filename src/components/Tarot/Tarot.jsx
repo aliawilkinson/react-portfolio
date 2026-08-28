@@ -13,7 +13,7 @@ import { analytics, ANALYTICS_EVENTS } from '../../utils/analytics'
 
 const Tarot = () => {
   const { resetAndDraw } = useTarotDeck()
-  const { turns, currentCards, isLoading, pendingQuestion, submitQuestion } = useConversation({ resetAndDraw })
+  const { turns, currentCards, isLoading, pendingQuestion, submitQuestion, clearConversation } = useConversation({ resetAndDraw })
   const [pendingPreset, setPendingPreset] = useState(SPREAD_PRESETS.three)
   const messagesRef = useRef(null)
 
@@ -53,6 +53,12 @@ const Tarot = () => {
     submitQuestion(question, preset)
   }
 
+  const handleNewSession = () => {
+    if (turns.length === 0 || window.confirm('Start a new tarot session? Your current conversation will be cleared from this device.')) {
+      clearConversation()
+    }
+  }
+
   return (
     <main className={css.tarotApp}>
       <div className={css.cosmos} aria-hidden="true"><i /><i /><i /></div>
@@ -64,7 +70,12 @@ const Tarot = () => {
           <div className={css.brandMark} aria-hidden="true">✦</div>
           <div><p className={css.eyebrow}>The Infinity Oracle</p><h1>Ask the mirror</h1></div>
         </div>
-        <p className={css.headerHint}>A reflective tarot conversation</p>
+        <div className={css.headerActions}>
+          <p className={css.headerHint}>A reflective tarot conversation</p>
+          <button type="button" className={css.newSessionButton} onClick={handleNewSession} disabled={isLoading}>
+            <span aria-hidden="true">＋</span><b>New session</b>
+          </button>
+        </div>
       </header>
       <section className={css.convMessages} ref={messagesRef} aria-live="polite" aria-busy={isLoading}>
         {turns.length === 0 && !isLoading && (

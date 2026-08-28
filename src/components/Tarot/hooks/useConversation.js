@@ -1,16 +1,61 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { callGemini } from '../services/geminiClient'
 import { generateInterpretation } from '../services/interpretationService'
 import ReadingMemoryService from '../services/readingMemoryService'
 
+export const CONVERSATION_STORAGE_KEY = 'tarot_ui_conversation_v1'
+const MAX_PERSISTED_TURNS = 20
+
+const restoreConversation = () => {
+  try {
+    const stored = JSON.parse(localStorage.getItem(CONVERSATION_STORAGE_KEY) || '[]')
+    return Array.isArray(stored) ? stored.slice(-MAX_PERSISTED_TURNS) : []
+  } catch {
+    return []
+  }
+}
+
+const getTurnInterpretationText = turn => {
+  if (turn.interpretation) {
+    return [
+      turn.interpretation.summary,
+      turn.interpretation.detailed,
+      turn.interpretation.themes,
+      turn.interpretation.reflectionQuestions,
+      turn.interpretation.actionableInsights
+    ].filter(Boolean).join(' ')
+  }
+
+  const fallback = turn.fallbackInterpretation
+  return fallback ? [fallback.summary, fallback.connections].filter(Boolean).join(' ') : ''
+}
+
 const useConversation = ({ resetAndDraw }) => {
-  const [turns, setTurns] = useState([])
+  const [turns, setTurns] = useState(restoreConversation)
   const [currentCards, setCurrentCards] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
   const [pendingQuestion, setPendingQuestion] = useState(null)
   const [pendingPreset, setPendingPreset] = useState(null)
-  const [memoryService] = useState(() => new ReadingMemoryService())
+  const [memoryService] = useState(() => {
+    const service = new ReadingMemoryService()
+    if (service.turns.length === 0) {
+      for (const turn of restoreConversation()) {
+        service.addTurn('user', turn.question)
+        const interpretationText = getTurnInterpretationText(turn)
+        if (interpretationText) service.addTurn('model', interpretationText)
+      }
+    }
+    return service
+  })
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(CONVERSATION_STORAGE_KEY, JSON.stringify(turns.slice(-MAX_PERSISTED_TURNS)))
+    } catch {
+      // Storage may be unavailable or full; keep the in-memory conversation working.
+    }
+  }, [turns])
 
   const submitQuestion = useCallback(async (questionText, spreadPreset) => {
     if (!questionText || questionText.trim() === '') return
@@ -160,6 +205,16 @@ const useConversation = ({ resetAndDraw }) => {
     }
   }, [pendingQuestion, pendingPreset, currentCards, memoryService])
 
+  const clearConversation = useCallback(() => {
+    setTurns([])
+    setCurrentCards([])
+    setPendingQuestion(null)
+    setPendingPreset(null)
+    setError(null)
+    memoryService.clear()
+    try { localStorage.removeItem(CONVERSATION_STORAGE_KEY) } catch {}
+  }, [memoryService])
+
   return {
     turns,
     currentCards,
@@ -167,7 +222,8 @@ const useConversation = ({ resetAndDraw }) => {
     error,
     pendingQuestion,
     submitQuestion,
-    retryLastInterpretation
+    retryLastInterpretation,
+    clearConversation
   }
 }
 

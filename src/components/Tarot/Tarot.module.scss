@@ -1150,12 +1150,19 @@
     h1 { margin: 0; color: #fff; font: 500 clamp(1.15rem, 2vw, 1.55rem)/1.1 Georgia, serif; letter-spacing: .02em; }
 }
 .oracleBrand { display: flex; align-items: center; gap: .8rem; }
+.headerActions { display: flex; align-items: center; gap: .75rem; }
 .backToPortfolio { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.5rem; padding: .45rem .75rem; border: 1px solid rgba(211,187,255,.2); border-radius: 999px; color: #cbb9e7; background: rgba(255,255,255,.025); font-size: .72rem; text-decoration: none; transition: color .18s ease, border-color .18s ease, background .18s ease, transform .18s ease; }
 .backToPortfolio span { font-size: 1rem; transition: transform .18s ease; }
 .backToPortfolio b { font-weight: 600; white-space: nowrap; }
 .backToPortfolio:hover { color: white; border-color: rgba(211,187,255,.48); background: rgba(176,126,239,.1); }
 .backToPortfolio:hover span { transform: translateX(-2px); }
 .backToPortfolio:focus-visible { outline: 2px solid #d8baff; outline-offset: 3px; }
+.newSessionButton { display: inline-flex; align-items: center; gap: .3rem; min-height: 2.35rem; padding: .4rem .7rem; border: 1px solid rgba(211,187,255,.2); border-radius: 999px; color: #cbb9e7; background: rgba(255,255,255,.025); font: inherit; font-size: .7rem; cursor: pointer; transition: color .18s ease, border-color .18s ease, background .18s ease; }
+.newSessionButton span { font-size: 1rem; line-height: 1; }
+.newSessionButton b { font-weight: 600; white-space: nowrap; }
+.newSessionButton:hover:not(:disabled) { color: white; border-color: rgba(211,187,255,.48); background: rgba(176,126,239,.1); }
+.newSessionButton:focus-visible { outline: 2px solid #d8baff; outline-offset: 3px; }
+.newSessionButton:disabled { opacity: .45; cursor: not-allowed; }
 .brandMark { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; color: #f2d6ff; border: 1px solid rgba(220, 190, 255, .4); border-radius: 50%; box-shadow: 0 0 1.5rem rgba(174, 115, 255, .35), inset 0 0 1rem rgba(141, 207, 255, .12); }
 .eyebrow { margin: 0 0 .15rem; color: #b9a6dc; font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
 .headerHint { margin: 0; color: var(--muted); font-size: .75rem; letter-spacing: .08em; }
@@ -1280,12 +1287,15 @@
 
 @media (max-width: 640px) {
     .tarotApp { min-height: 100dvh; }
-    .oracleHeader { min-height: 4rem; grid-template-columns: auto 1fr; }
+    .oracleHeader { min-height: 4rem; grid-template-columns: auto 1fr auto; }
     .headerHint { display: none; }
     .brandMark { width: 2rem; height: 2rem; }
     .oracleBrand { gap: .55rem; }
     .backToPortfolio { width: 2.35rem; min-height: 2.35rem; justify-content: center; padding: 0; }
     .backToPortfolio b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .headerActions { gap: 0; }
+    .newSessionButton { width: 2.35rem; min-height: 2.35rem; justify-content: center; padding: 0; }
+    .newSessionButton b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .tarotApp .convMessages { padding: .8rem .7rem 1rem; }
     .tarotApp .convEmpty { padding: .5rem .75rem 1rem; }
     .portal { width: min(7.25rem, 18vh); margin-bottom: 1rem; animation: none; }
