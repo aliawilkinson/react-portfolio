@@ -303,6 +303,18 @@ export const comments = [
 
 export const projects = [
   {
+    slug: "house-of-solar-bloom",
+    title: "House of Solar Bloom",
+    subtitle: "Luxury beauty e-commerce platform",
+    description: "A richly branded storefront for Solar Bloom, pairing editorial storytelling with a modern beauty shopping experience.",
+    category: "Apps",
+    bg: "#2C2633",
+    imgSrc: "./house-of-solar-bloom.webp",
+    imageFit: "contain",
+    imageBackground: "#171117",
+    externalUrl: "https://houseofsolarbloom.com",
+  },
+  {
     slug: "tarot",
     title: "Tarot",
     subtitle: "Interactive tarot reading app",

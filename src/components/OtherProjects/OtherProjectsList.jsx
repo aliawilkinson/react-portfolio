@@ -25,6 +25,7 @@ const ProjectCard = ({ project }) => {
       className={css.cardImage}
       src={project.imgSrc}
       alt={project.title}
+      style={{ objectFit: project.imageFit || 'cover', background: project.imageBackground || 'white' }}
       onError={() => setImgFailed(true)}
     />
   )
