@@ -31,6 +31,13 @@ export const seoData = {
     url: `${BASE_URL}/agenticWorkflowApp`,
     image: DEFAULT_IMAGE,
   },
+  solarBloomCommerce: {
+    title: 'Solar Bloom Commerce Case Study | Alia Wilkinson',
+    description:
+      'Designing and building House of Solar Bloom: a production luxury beauty storefront combining editorial storytelling, modern commerce, secure checkout, and member experiences.',
+    url: `${BASE_URL}/solarBloomCommerce`,
+    image: `${BASE_URL}/house-of-solar-bloom.webp`,
+  },
   cognitoIdentityArchitecture: {
     title: 'Cognito Identity Architecture | Alia Wilkinson',
     description:

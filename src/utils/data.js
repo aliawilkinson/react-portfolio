@@ -40,6 +40,12 @@ export const projectExperience = [
 
 export const caseStudies = [
   {
+    slug: "solarBloomCommerce",
+    imgSrc: "./house-of-solar-bloom.webp",
+    alt: "House of Solar Bloom: luxury editorial commerce platform",
+    bg: "#2C2633",
+  },
+  {
     slug: "agenticWorkflowApp",
     imgSrc: "./infoposts/agentic-workflow.png",
     alt: "Agentic Workflow App: production intelligence through git and Jira analysis",

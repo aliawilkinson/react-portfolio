@@ -300,6 +300,59 @@ export const content = {
     `
     },
 
+    "solarBloomCommerce": {
+        "title": "House of Solar Bloom: Building Luxury Editorial Commerce End to End",
+        "imgSrc": "./house-of-solar-bloom.webp",
+        "post": `
+    <p><strong>Live site:</strong> <a href="https://houseofsolarbloom.com" target="_blank" rel="noopener noreferrer">houseofsolarbloom.com ↗</a></p>
+
+    <h2>Situation:</h2>
+    <p>Solar Bloom needed more than a conventional product grid. The brand lives at the intersection of high-performance botanical beauty, Art Deco restraint, travel, and editorial storytelling. A generic storefront would make the products purchasable, but it would flatten the world around them. The challenge was to create a site that could feel cinematic and distinctive while still behaving like a clear, trustworthy, production-ready commerce experience.</p>
+
+    <p>The platform also had to support the operational realities behind the brand: secure checkout, product and set discovery, customer accounts, order memory, loyalty experiences, policies, journal publishing, responsive navigation, and search-friendly public pages. Every atmospheric decision still had to earn its place inside a fast path to purchase.</p>
+
+    <h2>Task:</h2>
+    <p>I designed and built House of Solar Bloom as an end-to-end commerce platform and brand system. My responsibility crossed product strategy, information architecture, interaction design, front-end engineering, commerce integration, identity, content structure, responsive behavior, deployment, and launch readiness.</p>
+
+    <p>The core product question was: how do you make a luxury site feel like entering a house without making customers work to shop?</p>
+
+    <h2>Action:</h2>
+    <ul>
+      <li><strong>Brand-to-interface system:</strong> Translated Solar Bloom's visual language into a reusable digital system: editorial typography, warm field photography, restrained ornament, numbered collections, cinematic transitions, and a palette that moves between sun, dusk, rainforest, and polished gold.</li>
+      <li><strong>Editorial commerce architecture:</strong> Structured the homepage as a guided journey rather than a catalog dump. The experience moves from brand promise to ritual discovery, collection context, product wardrobe, membership, journal, and brand principles while keeping direct shopping paths visible.</li>
+      <li><strong>Product discovery:</strong> Built dedicated collection, curated-set, and product experiences around real customer intents—face, hair, body, and complete rituals. Product naming and supporting copy stay expressive while practical details remain scannable.</li>
+      <li><strong>Secure transaction flow:</strong> Integrated a basket and Stripe-hosted checkout so payment handling stays secure and familiar. Shopping safeguards, return expectations, and customer-care access are surfaced as part of the experience rather than hidden after purchase intent.</li>
+      <li><strong>Identity and membership:</strong> Implemented Clerk-backed authentication for Blossom Club, creating a foundation for remembered orders, points, private offers, and member-specific experiences without forcing account creation into the public browsing journey.</li>
+      <li><strong>Content platform:</strong> Added a journal with structured articles and RSS, allowing formula education, field notes, and ritual guidance to become durable acquisition and retention surfaces instead of disposable campaign copy.</li>
+      <li><strong>Responsive interaction design:</strong> Designed the navigation, product cards, imagery, typography, cart controls, loading states, and account entry for both touch and desktop use. Motion supports orientation and atmosphere while reduced, clear states preserve usability.</li>
+      <li><strong>Production foundations:</strong> Built the application with Next.js and production metadata, including social previews, descriptive page titles, a web manifest, semantic landmarks, meaningful image alternatives, and crawlable content.</li>
+    </ul>
+
+    <h2>Key Design Decisions:</h2>
+    <ul>
+      <li><strong>A house, not a funnel:</strong> The site invites exploration, but persistent collection and product paths keep discovery from becoming disorientation.</li>
+      <li><strong>Luxury through restraint:</strong> The interface relies on proportion, typography, photography, pacing, and detail instead of stacking decorative effects onto every surface.</li>
+      <li><strong>Trust inside the aesthetic:</strong> Checkout provider, returns, customer care, basket state, and product context remain explicit. Atmosphere never substitutes for information.</li>
+      <li><strong>Membership as a room:</strong> Blossom Club is integrated into the brand mythology, but implemented as a real authenticated product surface capable of growing beyond a marketing signup.</li>
+      <li><strong>Content as product infrastructure:</strong> The journal and formula storytelling are part of the platform architecture, supporting education, organic discovery, and long-term brand depth.</li>
+    </ul>
+
+    <h2>Result:</h2>
+    <ul>
+      <li><strong>Production launch:</strong> Shipped a complete customer-facing commerce site at <a href="https://houseofsolarbloom.com" target="_blank" rel="noopener noreferrer">houseofsolarbloom.com</a>.</li>
+      <li><strong>Unified experience:</strong> Brand storytelling, product education, shopping, checkout, membership, policies, and editorial content now live inside one coherent system.</li>
+      <li><strong>Secure commerce foundation:</strong> Stripe checkout and Clerk identity provide established transaction and authentication boundaries while the product retains a custom brand experience.</li>
+      <li><strong>Expandable platform:</strong> The architecture supports new products, sets, journal entries, member benefits, and campaign surfaces without rebuilding the storefront for each release.</li>
+      <li><strong>Distinct digital identity:</strong> Solar Bloom launched with an experience that looks and behaves like its own house—not a reskinned commerce template.</li>
+    </ul>
+
+    <h2>What This Project Demonstrates:</h2>
+    <p>This project shows how I work when product, design, architecture, and implementation cannot be separated. I can move from a brand thesis to a navigable information model, from interaction language to reusable components, and from a visual launch surface to the less-visible systems that make checkout, identity, content, SEO, and operations reliable.</p>
+
+    <p>The strongest outcome is not any single page. It is the coherence between them: the same product thinking governs the cinematic homepage, the practical basket, the private member room, the policy pages, and the journal. That coherence is what turns a collection of features into a product.</p>
+    `
+    },
+
     "about": {
         "title": "About Alia",
         "imgSrc": "./infoposts/alia-digital-nomad-portrait.jpeg",

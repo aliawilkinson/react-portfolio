@@ -16,6 +16,7 @@ const routes = [
   '/amplifyReactMigApp',
   '/cmdletCreationTemplate',
   '/agenticWorkflowApp',
+  '/solarBloomCommerce',
   '/cognitoIdentityArchitecture',
   '/almModernization',
 ];
