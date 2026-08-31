@@ -1160,6 +1160,8 @@
 .newSessionButton { display: inline-flex; align-items: center; gap: .3rem; min-height: 2.35rem; padding: .4rem .7rem; border: 1px solid rgba(211,187,255,.2); border-radius: 999px; color: #cbb9e7; background: rgba(255,255,255,.025); font: inherit; font-size: .7rem; cursor: pointer; transition: color .18s ease, border-color .18s ease, background .18s ease; }
 .newSessionButton span { font-size: 1rem; line-height: 1; }
 .newSessionButton b { font-weight: 600; white-space: nowrap; }
+.newSessionButton b span { font-size: inherit; }
+.mobileResetLabel { display: none; }
 .newSessionButton:hover:not(:disabled) { color: white; border-color: rgba(211,187,255,.48); background: rgba(176,126,239,.1); }
 .newSessionButton:focus-visible { outline: 2px solid #d8baff; outline-offset: 3px; }
 .newSessionButton:disabled { opacity: .45; cursor: not-allowed; }
@@ -1294,8 +1296,9 @@
     .backToPortfolio { width: 2.35rem; min-height: 2.35rem; justify-content: center; padding: 0; }
     .backToPortfolio b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .headerActions { gap: 0; }
-    .newSessionButton { width: 2.35rem; min-height: 2.35rem; justify-content: center; padding: 0; }
-    .newSessionButton b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .newSessionButton { min-height: 2.35rem; justify-content: center; padding: 0 .65rem; }
+    .desktopResetLabel { display: none; }
+    .mobileResetLabel { display: inline; }
     .tarotApp .convMessages { padding: .8rem .7rem 1rem; }
     .tarotApp .convEmpty { padding: .5rem .75rem 1rem; }
     .portal { width: min(7.25rem, 18vh); margin-bottom: 1rem; animation: none; }

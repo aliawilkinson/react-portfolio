@@ -54,7 +54,7 @@ const Tarot = () => {
   }
 
   const handleNewSession = () => {
-    if (turns.length === 0 || window.confirm('Start a new tarot session? Your current conversation will be cleared from this device.')) {
+    if (turns.length > 0 && window.confirm('Reset your tarot history? This will clear the current conversation and its saved context from this device.')) {
       clearConversation()
     }
   }
@@ -72,8 +72,15 @@ const Tarot = () => {
         </div>
         <div className={css.headerActions}>
           <p className={css.headerHint}>A reflective tarot conversation</p>
-          <button type="button" className={css.newSessionButton} onClick={handleNewSession} disabled={isLoading}>
-            <span aria-hidden="true">＋</span><b>New session</b>
+          <button
+            type="button"
+            className={css.newSessionButton}
+            onClick={handleNewSession}
+            disabled={isLoading || turns.length === 0}
+            aria-label="Reset tarot history"
+            title={turns.length === 0 ? 'No saved history to reset' : 'Reset tarot history'}
+          >
+            <span aria-hidden="true">↻</span><b><span className={css.desktopResetLabel}>Reset history</span><span className={css.mobileResetLabel}>Reset</span></b>
           </button>
         </div>
       </header>
