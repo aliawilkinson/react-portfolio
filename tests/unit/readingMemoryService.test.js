@@ -170,6 +170,29 @@ describe('ReadingMemoryService', () => {
       expect(history[0].parts[0].text).toBe('turn 4')
     })
 
+    it('drops an orphaned model response when the recent window cuts a pair', () => {
+      const service = new ReadingMemoryService()
+      service.addTurn('user', 'old question')
+      for (let i = 0; i < TURN_LIMIT; i++) {
+        service.addTurn(i % 2 === 0 ? 'model' : 'user', `turn ${i}`)
+      }
+
+      const history = service.buildGeminiHistory()
+      expect(history[0].role).toBe('user')
+      expect(history[0].parts[0].text).toBe('turn 1')
+    })
+
+    it('merges adjacent roles from interrupted persisted state', () => {
+      const service = new ReadingMemoryService()
+      service.addTurn('user', 'first')
+      service.addTurn('user', 'second')
+      service.addTurn('model', 'answer')
+
+      const history = service.buildGeminiHistory()
+      expect(history.map(entry => entry.role)).toEqual(['user', 'model'])
+      expect(history[0].parts[0].text).toContain('first\n\nsecond')
+    })
+
     it('all entries match Gemini SDK format', () => {
       const service = new ReadingMemoryService()
       service.saveReading({

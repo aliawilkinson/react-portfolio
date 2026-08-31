@@ -64,6 +64,25 @@ ${cards.map((c, i) => `${i + 1}. ${c.name}${c.reversed ? ' (Reversed)' : ' (Upri
 Please interpret these cards in relation to the question.`
 }
 
+export function sanitizeHistory(history) {
+  if (!Array.isArray(history)) return []
+
+  const sanitized = []
+  for (const content of history) {
+    if (!['user', 'model'].includes(content?.role) || !Array.isArray(content.parts)) continue
+    const text = content.parts
+      .map(part => typeof part?.text === 'string' ? part.text.trim() : '')
+      .filter(Boolean)
+      .join('\n\n')
+    if (!text || (sanitized.length === 0 && content.role === 'model')) continue
+
+    const previous = sanitized.at(-1)
+    if (previous?.role === content.role) previous.parts[0].text += `\n\n${text}`
+    else sanitized.push({ role: content.role, parts: [{ text }] })
+  }
+  return sanitized
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' })
@@ -100,7 +119,7 @@ export default async function handler(req, res) {
 
         console.log(`[Gemini] Trying model: ${tryModel}`)
 
-        const chat = genModel.startChat({ history: history || [] })
+        const chat = genModel.startChat({ history: sanitizeHistory(history) })
         result = await Promise.race([
           chat.sendMessage(currentMessage),
           new Promise((_, reject) =>

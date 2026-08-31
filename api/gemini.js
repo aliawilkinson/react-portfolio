@@ -50,6 +50,35 @@ function parseSections(text) {
   return sections
 }
 
+// Treat browser-provided history as untrusted persisted data. Older sessions
+// may begin with an orphaned model response after their history was truncated,
+// which the Gemini SDK rejects before making a request.
+export function sanitizeHistory(history) {
+  if (!Array.isArray(history)) return []
+
+  const sanitized = []
+  for (const content of history) {
+    if (!['user', 'model'].includes(content?.role) || !Array.isArray(content.parts)) continue
+
+    const text = content.parts
+      .map(part => typeof part?.text === 'string' ? part.text.trim() : '')
+      .filter(Boolean)
+      .join('\n\n')
+    if (!text) continue
+
+    if (sanitized.length === 0 && content.role === 'model') continue
+
+    const previous = sanitized.at(-1)
+    if (previous?.role === content.role) {
+      previous.parts[0].text += `\n\n${text}`
+    } else {
+      sanitized.push({ role: content.role, parts: [{ text }] })
+    }
+  }
+
+  return sanitized
+}
+
 /**
  * Update the GEMINI_MODEL env var when we successfully fallback to a different model.
  * This "caches" the working model so future requests try it first.
@@ -192,7 +221,7 @@ Please interpret these cards in relation to the question.`
 
         console.log(`[Gemini] Trying model: ${tryModel}`)
 
-        const chat = genModel.startChat({ history: history || [] })
+        const chat = genModel.startChat({ history: sanitizeHistory(history) })
         result = await Promise.race([
           chat.sendMessage(currentMessage),
           new Promise((_, reject) =>

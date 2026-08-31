@@ -69,11 +69,11 @@ const useConversation = ({ resetAndDraw }) => {
     const cards = resetAndDraw(spreadPreset.cardCount)
     setCurrentCards(cards)
 
-    // Add user turn to memory service
-    memoryService.addTurn('user', questionText)
-
-    // Build history for multi-turn conversation
+    // Build history before recording this question because sendMessage receives
+    // the current question separately. Including it here would duplicate the
+    // user turn and can produce two adjacent user messages for the SDK.
     const history = memoryService.buildGeminiHistory()
+    memoryService.addTurn('user', questionText)
 
     try {
       const interpretation = await callGemini({
@@ -149,11 +149,9 @@ const useConversation = ({ resetAndDraw }) => {
     setError(null)
     setIsLoading(true)
 
-    // Add user turn back for retry
-    memoryService.addTurn('user', pendingQuestion)
-
-    // Build history for multi-turn conversation
+    // The retried question is sent separately as the current message.
     const history = memoryService.buildGeminiHistory()
+    memoryService.addTurn('user', pendingQuestion)
 
     try {
       const interpretation = await callGemini({

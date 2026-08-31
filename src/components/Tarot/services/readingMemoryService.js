@@ -137,12 +137,26 @@ class ReadingMemoryService {
     }
 
     // Add recent conversation turns (last TURN_LIMIT)
+    // A fixed-size slice can land on the model half of a user/model pair.
+    // Gemini requires chat history to begin with a user message, so discard
+    // any orphaned model response left at the front of the window.
     const recentTurns = this.turns.slice(-TURN_LIMIT)
+    while (recentTurns[0]?.role === 'model') recentTurns.shift()
+
     for (const turn of recentTurns) {
-      history.push({
-        role: turn.role,
-        parts: [{ text: turn.content }]
-      })
+      if (!['user', 'model'].includes(turn.role) || !turn.content?.trim()) continue
+
+      const previous = history.at(-1)
+      if (previous?.role === turn.role) {
+        // Keep the SDK's expected user/model alternation even if persisted
+        // state contains duplicate adjacent roles from an interrupted request.
+        previous.parts[0].text += `\n\n${turn.content}`
+      } else {
+        history.push({
+          role: turn.role,
+          parts: [{ text: turn.content }]
+        })
+      }
     }
 
     return history
