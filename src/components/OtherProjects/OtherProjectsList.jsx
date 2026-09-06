@@ -2,21 +2,13 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import css from "./OtherProjects.module.scss"
 import { fadeIn, staggerChildren, textVariant } from "../../utils/motion"
-import { caseStudies, projects } from '../../utils/data'
-import { content } from '../../utils/posts'
+import { projects } from '../../utils/data'
 import ProjectPortal from '../ProjectPortal/ProjectPortal'
 
 // Category display order
-const CATEGORY_ORDER = ['Case Studies', 'Apps', 'Music', 'Art', 'Photography', 'Writing', 'Other']
+const CATEGORY_ORDER = ['Apps', 'Music', 'Art', 'Photography', 'Writing', 'Other']
 
 const portfolioEntries = [
-  ...caseStudies.map(study => ({
-    ...study,
-    title: content[study.slug]?.title || study.alt,
-    subtitle: 'Case study',
-    category: 'Case Studies',
-    route: `/${study.slug}`
-  })),
   ...projects.map(project => ({
     ...project,
     route: project.externalUrl || `/projects/${project.slug}`
@@ -71,7 +63,7 @@ const OtherProjectsList = () => {
       <div className={`innerWidth ${css.container}`}>
         <motion.h1 variants={textVariant(0.2)} className="primaryText">Projects</motion.h1>
         <motion.p variants={fadeIn("up", "tween", 0.3, 0.6)} className={css.intro}>
-          Each project is its own world. Step through a portal to explore the systems, apps, music, and stories inside.
+          Open, play, visit, and explore. Each project is a working world you can step inside.
         </motion.p>
 
         {orderedCategories.map((category, catIndex) => (

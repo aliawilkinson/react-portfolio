@@ -11,7 +11,7 @@ import { caseStudies } from '../../utils/data'
 
 const InfoPost = ({ post }) => {
   const metadata = seoData[post] || {}
-  const isProject = caseStudies.some(study => study.slug === post)
+  const isCaseStudy = caseStudies.some(study => study.slug === post)
 
   return (
     <motion.section
@@ -27,7 +27,7 @@ const InfoPost = ({ post }) => {
         image={metadata.image}
       />
       <div className={`innerWidth ${css.container}`}>
-        {isProject ? <Link to="/projects" className={css.backToProjects}>← Back to Projects</Link> : null}
+        {isCaseStudy ? <Link to="/case-studies" className={css.backToCaseStudies}>← Back to Case Studies</Link> : null}
         <span className="anchor" id="infoPost" />
         <h1 className="post-title">{content[post].title}</h1>
         <img src={content[post].imgSrc} alt={content[post].title} />

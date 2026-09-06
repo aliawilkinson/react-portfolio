@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import css from "./CaseStudies.module.scss"
 import { fadeIn, staggerChildren, textVariant } from "../../utils/motion"
 import { caseStudies } from '../../utils/data'
-import ProjectPortal from '../ProjectPortal/ProjectPortal'
+import { Link } from 'react-router-dom'
 
 const CaseStudyCard = ({ study }) => {
   const [imgFailed, setImgFailed] = useState(false)
@@ -46,19 +46,11 @@ const CaseStudies = () => {
 
         <div className={`flexCenter ${css.showCase}`}>
           {caseStudies.map((study, i) => (
-            <ProjectPortal
-              to={`/${study.slug}`}
-              image={study.imgSrc}
-              color={study.bg}
-              className={css.casePortal}
-              label={`Enter ${study.alt}`}
-              preview={
-                <motion.div variants={fadeIn("up", "tween", 0.5 + i * 0.15, 0.6)}>
-                  <CaseStudyCard study={study} />
-                </motion.div>
-              }
-              key={study.slug}
-            />
+            <Link to={`/${study.slug}`} className={css.caseStudyLink} key={study.slug}>
+              <motion.div variants={fadeIn("up", "tween", 0.5 + i * 0.15, 0.6)}>
+                <CaseStudyCard study={study} />
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

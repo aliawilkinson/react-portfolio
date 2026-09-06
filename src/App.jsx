@@ -13,7 +13,6 @@ import Footer from './components/Footer/Footer'
 import RouteScroller from './components/RouteScroller/RouteScroller'
 import { MusicPlayerProvider } from './context/MusicPlayerContext'
 import SoundCloudPlayer from './components/MusicPlayer/SoundCloudPlayer'
-import { caseStudies } from './utils/data'
 
 const Tarot = lazy(() => import('./components/Tarot/Tarot'))
 
@@ -26,7 +25,6 @@ const App = () => {
   const { pathname } = useLocation()
   const isTarot = pathname === '/tarot' || pathname.startsWith('/tarot/')
   const isProjectWorld = isTarot
-    || caseStudies.some(study => pathname === `/${study.slug}`)
     || /^\/projects\/[^/]+$/.test(pathname)
 
   return (
