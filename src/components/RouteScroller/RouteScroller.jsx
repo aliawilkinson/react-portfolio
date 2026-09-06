@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { caseStudies } from '../../utils/data'
 
 const routeTargets = {
   '/': 'hero',
@@ -17,7 +18,8 @@ const RouteScroller = () => {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    const targetId = routeTargets[pathname]
+    const isCaseStudy = caseStudies.some(study => pathname === `/${study.slug}`)
+    const targetId = routeTargets[pathname] || (isCaseStudy ? 'infoPost' : undefined)
 
     window.requestAnimationFrame(() => {
       if (!targetId || targetId === 'hero') {
