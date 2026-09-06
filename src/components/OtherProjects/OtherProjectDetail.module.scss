@@ -33,7 +33,7 @@
     .subtitle {
         font-size: 1.2rem;
         font-weight: 600;
-        color: rgba(13, 47, 63, 0.65);
+        color: rgba(18, 56, 46, 0.65);
     }
 
     .description {
@@ -72,7 +72,7 @@
         align-items: center;
         padding: 0.6rem 1.2rem;
         border-radius: 8px;
-        background: rgba(13, 47, 63, 0.08);
+        background: rgba(18, 56, 46, 0.08);
         color: $primary;
         font-weight: 600;
         font-size: 0.95rem;
@@ -80,7 +80,7 @@
         transition: background 180ms ease, transform 180ms ease;
 
         &:hover {
-            background: rgba(13, 47, 63, 0.15);
+            background: rgba(18, 56, 46, 0.15);
             transform: translateY(-2px);
         }
     }

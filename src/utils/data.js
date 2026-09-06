@@ -34,7 +34,7 @@ export const projectExperience = [
   {
     name: "AI-Augmented Tooling & Agentic Workflows",
     date_started: "January 1, 2024",
-    bg: "#4A90A4",
+    bg: "#3D725E",
   },
 ];
 
@@ -55,7 +55,7 @@ export const caseStudies = [
     slug: "cognitoIdentityArchitecture",
     imgSrc: "./infoposts/cognito-identity.png",
     alt: "Cognito Cloud Archiecture: auth for 250K agents",
-    bg: "#4A90A4",
+    bg: "#3D725E",
   },
   {
     slug: "almModernization",
@@ -85,7 +85,7 @@ export const caseStudies = [
     slug: "amplifyReactMigApp",
     imgSrc: "./infoposts/mig-app.png",
     alt: "Transforming app migrations with Amplify React",
-    bg: "#4A90A4",
+    bg: "#3D725E",
   },
 ];
 
@@ -326,7 +326,7 @@ export const projects = [
     subtitle: "Interactive tarot reading app",
     description: "A tarot card reading app for fun and reflection.",
     category: "Apps",
-    bg: "#4A90A4",
+    bg: "#3D725E",
     imgSrc: "./tarot-cover.png",
     externalUrl: "/tarot",
   },

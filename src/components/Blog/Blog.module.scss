@@ -12,7 +12,7 @@
     }
 
     .intro {
-        color: rgba(13, 47, 63, 0.65);
+        color: rgba(18, 56, 46, 0.65);
         font-size: 1.1rem;
         font-weight: 500;
     }
@@ -29,14 +29,14 @@
         align-items: stretch;
         border-radius: 12px;
         overflow: hidden;
-        border: 1px solid rgba(13, 47, 63, 0.12);
+        border: 1px solid rgba(18, 56, 46, 0.12);
         text-decoration: none;
         color: inherit;
         transition: transform 180ms ease, box-shadow 180ms ease;
 
         &:hover {
             transform: translateY(-3px);
-            box-shadow: 0 14px 32px rgba(13, 47, 63, 0.12);
+            box-shadow: 0 14px 32px rgba(18, 56, 46, 0.12);
         }
     }
 
@@ -59,14 +59,14 @@
 
         span {
             font-size: 0.85rem;
-            color: rgba(13, 47, 63, 0.5);
+            color: rgba(18, 56, 46, 0.5);
             font-weight: 600;
         }
 
         p {
             margin-top: 0.25rem;
             font-size: 1rem;
-            color: rgba(13, 47, 63, 0.75);
+            color: rgba(18, 56, 46, 0.75);
             line-height: 1.5;
         }
     }
@@ -99,7 +99,7 @@
 
         .date {
             font-size: 0.9rem;
-            color: rgba(13, 47, 63, 0.5);
+            color: rgba(18, 56, 46, 0.5);
             font-weight: 600;
         }
 
@@ -122,7 +122,7 @@
             }
 
             pre {
-                background: rgba(13, 47, 63, 0.06);
+                background: rgba(18, 56, 46, 0.06);
                 border-radius: 8px;
                 padding: 1rem 1.25rem;
                 overflow-x: auto;
@@ -137,7 +137,7 @@
 
             code {
                 font-family: 'Fira Code', 'Consolas', monospace;
-                background: rgba(13, 47, 63, 0.06);
+                background: rgba(18, 56, 46, 0.06);
                 padding: 0.15rem 0.4rem;
                 border-radius: 4px;
                 font-size: 0.9rem;
