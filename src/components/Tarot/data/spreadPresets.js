@@ -7,7 +7,12 @@ export const SPREAD_PRESETS = {
   three: {
     name: 'Three Card Spread',
     cardCount: 3,
-    labels: ['Past', 'Present', 'Future']
+    labels: ['Situation', 'Challenge', 'Guidance'],
+    descriptions: [
+      'The central energy or truth shaping your question.',
+      'The tension, obstacle, or lesson asking for attention.',
+      'A perspective or next step worth considering.'
+    ]
   },
   celtic: {
     name: 'Celtic Cross',

@@ -127,20 +127,20 @@ function buildCelticConnections(cards) {
 }
 
 const THREE_CARD_PROMPTS = [
-  card => `Past: ${card.name}. Reflect on the influence, pattern, or experience that set the present situation in motion.`,
-  card => `Present: ${card.name}. Notice what this card reveals about the energy, choice, or tension active right now.`,
-  card => `Future: ${card.name}. Consider the direction this pattern may take if it continues. Treat it as an invitation to respond, not fixed fate.`
+  card => `Situation: ${card.name}. Notice what this card reveals about the central energy, truth, or dynamic shaping the question.`,
+  card => `Challenge: ${card.name}. Consider the tension, obstacle, blind spot, or lesson that needs your attention.`,
+  card => `Guidance: ${card.name}. Explore the perspective, choice, or next step this card invites you to consider.`
 ]
 
 function buildThreeCardReflections(cards, question) {
   const prompts = cards.map((card, index) => (THREE_CARD_PROMPTS[index] || THREE_CARD_PROMPTS[1])(card))
-  if (question) prompts.push(`Whole spread: What changes when you view "${question}" as a movement from past influence, through present choice, toward emerging possibility?`)
+  if (question) prompts.push(`Whole spread: What changes when you view "${question}" through the situation, the challenge it contains, and the guidance now available?`)
   return prompts
 }
 
 function buildThreeCardConnections(cards) {
   if (cards.length < 3) return buildConnections(cards)
-  return `${cardPhrase(cards[0])} describes the influence carried into this moment. ${cardPhrase(cards[1])} shows how that energy is being met now. ${cardPhrase(cards[2])} suggests what may emerge from the current response. Read together, the spread asks what can be understood from the past, chosen in the present, and redirected before the next chapter takes shape.`
+  return `${cardPhrase(cards[0])} describes the heart of the situation. ${cardPhrase(cards[1])} reveals where friction, resistance, or growth may be concentrated. ${cardPhrase(cards[2])} offers a way to meet both with greater intention. Read together, the cards move from recognition, through honest engagement, toward a grounded response.`
 }
 
 function buildSingleCardPrompt(card) {

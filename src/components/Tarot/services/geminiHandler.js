@@ -59,7 +59,7 @@ export function buildCurrentMessage(question, cards, spreadType) {
 Spread Type: ${spreadType || 'General'}
 
 Cards drawn:
-${cards.map((c, i) => `${i + 1}. ${c.name}${c.reversed ? ' (Reversed)' : ' (Upright)'}`).join('\n')}
+${cards.map((c, i) => `${i + 1}. ${c.position ? `${c.position}: ` : ''}${c.name}${c.reversed ? ' (Reversed)' : ' (Upright)'}`).join('\n')}
 
 Please interpret these cards in relation to the question.`
 }

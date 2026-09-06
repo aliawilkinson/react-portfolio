@@ -40,7 +40,7 @@ const Controls = ({ onReset, onShuffle, onAutoMode, onPreset, isShuffling, hasDr
         <Tooltip text="1 card: your core message">
           <button onClick={() => onPreset('single')}>{SPREAD_PRESETS.single.name}</button>
         </Tooltip>
-        <Tooltip text="3 cards: Past, Present, Future">
+        <Tooltip text="3 cards: Situation, Challenge, Guidance">
           <button onClick={() => onPreset('three')}>{SPREAD_PRESETS.three.name}</button>
         </Tooltip>
         <Tooltip text="10 cards: full Celtic Cross reading">

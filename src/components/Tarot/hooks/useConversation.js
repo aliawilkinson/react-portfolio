@@ -78,7 +78,7 @@ const useConversation = ({ resetAndDraw }) => {
     try {
       const interpretation = await callGemini({
         question: questionText,
-        cards: cards.map(c => ({ name: c.card.name, reversed: c.isReversed })),
+        cards: cards.map((c, index) => ({ name: c.card.name, reversed: c.isReversed, position: spreadPreset.labels?.[index] })),
         spreadType: spreadPreset.name,
         history
       })
@@ -156,7 +156,7 @@ const useConversation = ({ resetAndDraw }) => {
     try {
       const interpretation = await callGemini({
         question: pendingQuestion,
-        cards: currentCards.map(c => ({ name: c.card.name, reversed: c.isReversed })),
+        cards: currentCards.map((c, index) => ({ name: c.card.name, reversed: c.isReversed, position: pendingPreset.labels?.[index] })),
         spreadType: pendingPreset.name,
         history
       })

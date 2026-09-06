@@ -207,7 +207,7 @@ describe('interpretationService', () => {
       expect(result.celticCross.synthesis).toHaveLength(5)
     })
 
-    it('interprets a three-card spread as a past-present-future progression', () => {
+    it('interprets a three-card spread as situation, challenge, and guidance', () => {
       const cards = [
         makeCard({ name: 'The Hermit' }),
         makeCard({ name: 'Strength', isReversed: true }),
@@ -216,13 +216,14 @@ describe('interpretationService', () => {
       const result = generateInterpretation(cards, 'What am I learning?', {
         name: 'Three Card Spread',
         cardCount: 3,
-        labels: ['Past', 'Present', 'Future']
+        labels: ['Situation', 'Challenge', 'Guidance']
       })
 
       expect(result.threeCard.positions).toHaveLength(3)
-      expect(result.threeCard.positions[0]).toMatchObject({ position: 'Past', name: 'The Hermit' })
-      expect(result.threeCard.positions[1]).toMatchObject({ position: 'Present', orientation: 'Reversed' })
-      expect(result.threeCard.positions[2].reflection).toContain('direction')
+      expect(result.threeCard.positions[0]).toMatchObject({ position: 'Situation', name: 'The Hermit' })
+      expect(result.threeCard.positions[1]).toMatchObject({ position: 'Challenge', orientation: 'Reversed' })
+      expect(result.threeCard.positions[2]).toMatchObject({ position: 'Guidance' })
+      expect(result.threeCard.positions[2].reflection).toContain('perspective')
       expect(result.threeCard.synthesis).toContain('The Hermit')
       expect(result.threeCard.synthesis).toContain('Strength')
       expect(result.threeCard.synthesis).toContain('The Star')

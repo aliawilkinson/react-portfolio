@@ -115,7 +115,7 @@ const ConversationTurn = ({ turn }) => {
             ) : threeCardFallback ? (
               <div className={css.threeCardInterpretation}>
                 <section>
-                  <h4>Past · Present · Future</h4>
+                  <h4>Situation · Challenge · Guidance</h4>
                   <div className={css.threePositionReadings}>
                     {threeCardFallback.positions.map((position, index) => (
                       <article className={css.positionReading} key={`${position.position}-${index}`}>
