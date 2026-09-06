@@ -85,8 +85,14 @@ const OtherProjectsList = () => {
               {groupedProjects[category].map((project, i) => {
                 return (
                   <motion.div key={project.slug} variants={fadeIn("up", "tween", 0.5 + i * 0.1, 0.6)}>
-                    <ProjectPortal to={project.route} image={project.imgSrc} color={project.bg} className={css.cardWrap} label={`Enter ${project.title}`}>
-                      <ProjectCard project={project} />
+                    <ProjectPortal
+                      to={project.route}
+                      image={project.imgSrc}
+                      color={project.bg}
+                      className={css.cardWrap}
+                      label={`Enter ${project.title}`}
+                      preview={<ProjectCard project={project} />}
+                    >
                       <div className={css.cardLabel}>
                         <span>{project.title}</span>
                         <span>{project.subtitle}</span>

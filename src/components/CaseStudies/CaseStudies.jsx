@@ -52,12 +52,13 @@ const CaseStudies = () => {
               color={study.bg}
               className={css.casePortal}
               label={`Enter ${study.alt}`}
+              preview={
+                <motion.div variants={fadeIn("up", "tween", 0.5 + i * 0.15, 0.6)}>
+                  <CaseStudyCard study={study} />
+                </motion.div>
+              }
               key={study.slug}
-            >
-              <motion.div variants={fadeIn("up", "tween", 0.5 + i * 0.15, 0.6)}>
-                <CaseStudyCard study={study} />
-              </motion.div>
-            </ProjectPortal>
+            />
           ))}
         </div>
       </div>

@@ -32,13 +32,12 @@
 
             .casePortal {
                 text-decoration: none;
-                border-radius: 48% 52% 47% 53% / 52% 46% 54% 48%;
             }
 
             img, .fallbackCard {
                 width: 20rem;
                 height: 20rem;
-                border-radius: inherit;
+                border-radius: 1.5rem;
                 box-shadow: 0 24px 54px rgba(18, 56, 46, .24);
                 cursor: default;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;

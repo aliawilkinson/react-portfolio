@@ -4,8 +4,8 @@ import css from './ProjectPortal.module.scss'
 
 const TRANSITION_MS = 680
 
-const ProjectPortal = ({ to, image, color = '#573b78', className = '', children, label }) => {
-  const portalRef = useRef(null)
+const ProjectPortal = ({ to, image, color = '#573b78', className = '', preview, children, label }) => {
+  const surfaceRef = useRef(null)
   const navigate = useNavigate()
   const [transition, setTransition] = useState(null)
 
@@ -28,7 +28,7 @@ const ProjectPortal = ({ to, image, color = '#573b78', className = '', children,
       return
     }
 
-    const rect = portalRef.current.getBoundingClientRect()
+    const rect = surfaceRef.current.getBoundingClientRect()
     setTransition({
       left: rect.left,
       top: rect.top,
@@ -40,13 +40,13 @@ const ProjectPortal = ({ to, image, color = '#573b78', className = '', children,
   return (
     <>
       <a
-        ref={portalRef}
         href={to}
         className={`${css.portalLink} ${className}`}
         onClick={handleClick}
         aria-label={label}
         style={{ '--portal-color': color }}
       >
+        <div ref={surfaceRef} className={css.portalSurface}>{preview}</div>
         {children}
       </a>
       {transition ? (
