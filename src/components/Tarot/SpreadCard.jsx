@@ -4,7 +4,7 @@ import css from './Tarot.module.scss'
 
 const SpreadCard = ({ card, isReversed, label, positionDescription, index, isActive, onActivate }) => {
   const [imageError, setImageError] = useState(false)
-  const imageUrl = `https://sacred-texts.com/tarot/pkt/img/${card.name_short}.jpg`
+  const imageUrl = `${import.meta.env.BASE_URL}tarot/cards/${card.name_short}.png`
 
   return (
     <motion.button
