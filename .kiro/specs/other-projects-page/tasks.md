@@ -2,7 +2,7 @@
 
 ## Overview
 
-Transform the existing Projects section into a dedicated "Projects" page following the Blog component pattern. Most infrastructure exists — main work is creating the list component, adding categories to data, and rewiring routes/navigation.
+Transform the existing Projects section into a dedicated "Projects" page following the Blog component pattern. Most infrastructure exists - main work is creating the list component, adding categories to data, and rewiring routes/navigation.
 
 ## Tasks
 
@@ -39,7 +39,7 @@ Transform the existing Projects section into a dedicated "Projects" page followi
 - [x] 5. Update navigation and clean up Home
   - [x] 5.1 Update Header navigation
     - Change "Projects" label to "Projects" in navLinks array
-    - Update `to` path to '/other-projects' (or keep as '/projects' — your call)
+    - Update `to` path to '/other-projects' (or keep as '/projects' - your call)
     - Remove targetId (no longer a scroll target on Home)
     - Update "already here" message
     - _Requirements: 1.1, 1.2, 1.3_
@@ -56,5 +56,5 @@ Transform the existing Projects section into a dedicated "Projects" page followi
 ## Notes
 
 - Existing ProjectDetail.jsx and Projects.jsx can be deleted after new components are verified
-- Route can stay as `/projects` or change to `/other-projects` — either works, just update nav accordingly
-- Most of the detail page logic already exists in ProjectDetail.jsx — just needs path updates
+- Route can stay as `/projects` or change to `/other-projects` - either works, just update nav accordingly
+- Most of the detail page logic already exists in ProjectDetail.jsx - just needs path updates

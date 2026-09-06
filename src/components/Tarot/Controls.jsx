@@ -37,13 +37,13 @@ const Controls = ({ onReset, onShuffle, onAutoMode, onPreset, isShuffling, hasDr
       </div>
       <div className={css.presets}>
         <span className={css.autoLabel}>Spreads:</span>
-        <Tooltip text="1 card — your core message">
+        <Tooltip text="1 card: your core message">
           <button onClick={() => onPreset('single')}>{SPREAD_PRESETS.single.name}</button>
         </Tooltip>
-        <Tooltip text="3 cards — Past, Present, Future">
+        <Tooltip text="3 cards: Past, Present, Future">
           <button onClick={() => onPreset('three')}>{SPREAD_PRESETS.three.name}</button>
         </Tooltip>
-        <Tooltip text="10 cards — full Celtic Cross reading">
+        <Tooltip text="10 cards: full Celtic Cross reading">
           <button onClick={() => onPreset('celtic')}>{SPREAD_PRESETS.celtic.name}</button>
         </Tooltip>
       </div>

@@ -320,7 +320,7 @@ export const content = {
     <ul>
       <li><strong>Brand-to-interface system:</strong> Translated Solar Bloom's visual language into a reusable digital system: editorial typography, warm field photography, restrained ornament, numbered collections, cinematic transitions, and a palette that moves between sun, dusk, rainforest, and polished gold.</li>
       <li><strong>Editorial commerce architecture:</strong> Structured the homepage as a guided journey rather than a catalog dump. The experience moves from brand promise to ritual discovery, collection context, product wardrobe, membership, journal, and brand principles while keeping direct shopping paths visible.</li>
-      <li><strong>Product discovery:</strong> Built dedicated collection, curated-set, and product experiences around real customer intents—face, hair, body, and complete rituals. Product naming and supporting copy stay expressive while practical details remain scannable.</li>
+      <li><strong>Product discovery:</strong> Built dedicated collection, curated-set, and product experiences around real customer intents: face, hair, body, and complete rituals. Product naming and supporting copy stay expressive while practical details remain scannable.</li>
       <li><strong>Secure transaction flow:</strong> Integrated a basket and Stripe-hosted checkout so payment handling stays secure and familiar. Shopping safeguards, return expectations, and customer-care access are surfaced as part of the experience rather than hidden after purchase intent.</li>
       <li><strong>Identity and membership:</strong> Implemented Clerk-backed authentication for Blossom Club, creating a foundation for remembered orders, points, private offers, and member-specific experiences without forcing account creation into the public browsing journey.</li>
       <li><strong>Content platform:</strong> Added a journal with structured articles and RSS, allowing formula education, field notes, and ritual guidance to become durable acquisition and retention surfaces instead of disposable campaign copy.</li>
@@ -343,7 +343,7 @@ export const content = {
       <li><strong>Unified experience:</strong> Brand storytelling, product education, shopping, checkout, membership, policies, and editorial content now live inside one coherent system.</li>
       <li><strong>Secure commerce foundation:</strong> Stripe checkout and Clerk identity provide established transaction and authentication boundaries while the product retains a custom brand experience.</li>
       <li><strong>Expandable platform:</strong> The architecture supports new products, sets, journal entries, member benefits, and campaign surfaces without rebuilding the storefront for each release.</li>
-      <li><strong>Distinct digital identity:</strong> Solar Bloom launched with an experience that looks and behaves like its own house—not a reskinned commerce template.</li>
+      <li><strong>Distinct digital identity:</strong> Solar Bloom launched with an experience that looks and behaves like its own house, not a reskinned commerce template.</li>
     </ul>
 
     <h2>What This Project Demonstrates:</h2>

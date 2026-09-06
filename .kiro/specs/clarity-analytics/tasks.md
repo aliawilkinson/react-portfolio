@@ -2,7 +2,7 @@
 
 ## Overview
 
-Extend the existing analytics provider architecture by adding a Clarity provider, a dynamic script loader, and conditional initialization. No existing files are structurally modified — only `index.js` gains Clarity registration logic.
+Extend the existing analytics provider architecture by adding a Clarity provider, a dynamic script loader, and conditional initialization. No existing files are structurally modified - only `index.js` gains Clarity registration logic.
 
 ## Tasks
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This design adds multi-turn conversation continuity to the existing Tarot Conversation Mode by leveraging Gemini's `startChat({ history })` API. The core change is moving from stateless `generateContent()` calls to stateful chat sessions where previous exchanges are included as history. A new `ReadingMemoryService` encapsulates all memory management — storing condensed reading summaries, managing conversation turns, constructing bounded Gemini history arrays, and persisting session data to sessionStorage.
+This design adds multi-turn conversation continuity to the existing Tarot Conversation Mode by leveraging Gemini's `startChat({ history })` API. The core change is moving from stateless `generateContent()` calls to stateful chat sessions where previous exchanges are included as history. A new `ReadingMemoryService` encapsulates all memory management - storing condensed reading summaries, managing conversation turns, constructing bounded Gemini history arrays, and persisting session data to sessionStorage.
 
 The design prioritizes token efficiency by never sending full interpretation texts in history, instead using short thematic summaries (≤100 words) and capping context at 6 recent turns + 3 reading summaries.
 
@@ -209,7 +209,7 @@ This keeps the history array small and well-structured for Gemini's multi-turn f
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Turn storage produces correctly structured turns
 
@@ -235,7 +235,7 @@ This keeps the history array small and well-structured for Gemini's multi-turn f
 
 **Validates: Requirements 4.2, 6.3**
 
-### Property 5: History ordering — summaries before turns
+### Property 5: History ordering - summaries before turns
 
 *For any* ReadingMemoryService instance with both reading summaries and conversation turns, the `buildGeminiHistory()` output SHALL place reading summary context entries before conversation turn entries in the array.
 
@@ -271,7 +271,7 @@ This keeps the history array small and well-structured for Gemini's multi-turn f
 
 - The existing error handling in `useConversation` (try/catch around `callGemini`) remains unchanged.
 - On failure, the user sees the existing error message and can retry.
-- The retry mechanism (`retryLastInterpretation`) continues to work — it will reconstruct the same history from `ReadingMemoryService` since no new turns were added on failure.
+- The retry mechanism (`retryLastInterpretation`) continues to work - it will reconstruct the same history from `ReadingMemoryService` since no new turns were added on failure.
 - Failed requests do NOT add turns to the memory service (turns are only added on success).
 
 ### sessionStorage Failures

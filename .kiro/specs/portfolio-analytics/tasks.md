@@ -75,6 +75,6 @@ Implement a provider-agnostic analytics layer using Vercel Analytics. The work p
 ## Notes
 
 - Tasks marked with `*` are optional and can be skipped for faster MVP
-- The `<Analytics />` component from Vercel handles page views automatically — no per-route code needed
+- The `<Analytics />` component from Vercel handles page views automatically - no per-route code needed
 - SoundCloud embeds are iframes, so play/pause/track-change tracking may require the SoundCloud Widget API or wrapper approach
 - Property tests use fast-check (already in devDependencies)

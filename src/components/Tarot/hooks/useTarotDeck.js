@@ -18,7 +18,7 @@ const shuffleArray = (array) => {
 /**
  * Hook for managing tarot deck state with draw model.
  * Maintains remaining/drawn card partition.
- * Uses local deck data — no API calls needed.
+ * Uses local deck data - no API calls needed.
  *
  * @returns {Object} Deck management state and functions
  */
@@ -71,7 +71,7 @@ const useTarotDeck = () => {
     }, 400)
   }, [])
 
-  // Reset and immediately draw N cards (no delay — for question submit flow)
+  // Reset and immediately draw N cards (no delay - for question submit flow)
   const resetAndDraw = useCallback((count) => {
     const freshDeck = shuffleArray(tarotDeck).map(card => ({ card, isReversed: Math.random() < 0.5 }))
     const toDraw = freshDeck.slice(0, count)

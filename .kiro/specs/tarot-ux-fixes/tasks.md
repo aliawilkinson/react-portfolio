@@ -127,6 +127,6 @@ Incremental implementation of 8 UX improvements to the Tarot app. Each task buil
 
 - Tasks marked with `*` are optional and can be skipped for faster MVP
 - Property tests use fast-check (already installed) with minimum 100 iterations
-- The sanitizer is built first since it's a pure utility with no dependencies — easy to test in isolation
+- The sanitizer is built first since it's a pure utility with no dependencies - easy to test in isolation
 - Layout reordering (task 7.2) is a simple JSX reorder in the parent component
-- Card sizing (task 8) is CSS-only — no logic changes needed
+- Card sizing (task 8) is CSS-only - no logic changes needed

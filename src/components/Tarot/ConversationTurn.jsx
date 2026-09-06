@@ -55,7 +55,7 @@ const renderMarkdown = (text) => {
       return
     }
 
-    // Not a list item — flush any pending list
+    // Not a list item - flush any pending list
     flushList()
 
     if (trimmed === '') {

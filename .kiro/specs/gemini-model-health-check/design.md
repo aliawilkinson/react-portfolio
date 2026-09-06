@@ -4,9 +4,9 @@
 
 A self-healing model management system for a tarot app's Gemini API integration. The system has three parts:
 
-1. **Unified Logger** — A logging utility that routes structured messages to console (local dev), Vercel function logs (production), and ntfy.sh (push alerts). Controlled by env vars. Every operation logs — success and failure alike.
-2. **Cron Health Check** — A scheduled serverless function that validates the current model, discovers replacements, updates the Vercel env var, and triggers a redeploy. Every step logs before and after execution.
-3. **Request Handler Observability** — Structured breadcrumb logging added to the existing `api/gemini.js` so that every invocation produces a complete trace in Vercel logs.
+1. **Unified Logger** - A logging utility that routes structured messages to console (local dev), Vercel function logs (production), and ntfy.sh (push alerts). Controlled by env vars. Every operation logs - success and failure alike.
+2. **Cron Health Check** - A scheduled serverless function that validates the current model, discovers replacements, updates the Vercel env var, and triggers a redeploy. Every step logs before and after execution.
+3. **Request Handler Observability** - Structured breadcrumb logging added to the existing `api/gemini.js` so that every invocation produces a complete trace in Vercel logs.
 
 Design priority: zero silent failures. If something happens, you see it.
 
@@ -80,7 +80,7 @@ sequenceDiagram
 
 ### 1. Logger Utility (`api/lib/logger.js`)
 
-A shared logging utility used by both the cron job and the request handler. Designed for 2am debugging — every log includes timestamp, context, and structured data so you can grep and filter.
+A shared logging utility used by both the cron job and the request handler. Designed for 2am debugging - every log includes timestamp, context, and structured data so you can grep and filter.
 
 ```javascript
 export class Logger {
@@ -93,9 +93,9 @@ export class Logger {
 ```
 
 **Constructor parameters:**
-- `context` — String label for the log source (e.g., "HealthCheck", "Gemini")
-- `options.topic` — ntfy topic (defaults to `process.env.NTFY_TOPIC`)
-- `options.destinations` — Override for `LOG_DESTINATIONS` env var
+- `context` - String label for the log source (e.g., "HealthCheck", "Gemini")
+- `options.topic` - ntfy topic (defaults to `process.env.NTFY_TOPIC`)
+- `options.destinations` - Override for `LOG_DESTINATIONS` env var
 
 **Destination routing logic:**
 ```javascript
@@ -107,7 +107,7 @@ if (envDests) {
 }
 ```
 
-**Log format (console output — structured for grep/filter):**
+**Log format (console output - structured for grep/filter):**
 ```
 [2024-01-15T10:30:00.123Z] [INFO] [HealthCheck] Model healthy | model=gemini-2.0-flash elapsed=1203ms
 [2024-01-15T10:30:00.456Z] [WARN] [HealthCheck] Model failed | status=404 model=gemini-2.0-flash elapsed=2100ms body="model not found..."
@@ -215,7 +215,7 @@ log.info('Handler invoked', {
   NTFY_TOPIC: process.env.NTFY_TOPIC ? 'present' : 'MISSING'
 })
 
-// Fatal: missing API key — log AND alert before returning
+// Fatal: missing API key - log AND alert before returning
 if (!apiKey) {
   log.error('FATAL: GEMINI_API_KEY is missing, cannot proceed')
   return res.status(500).json({ error: 'Gemini API key not configured' })
@@ -329,7 +329,7 @@ string[] // e.g. ["gemini-2.0-flash", "gemini-1.5-flash"]
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Logger destination routing correctness
 
@@ -418,9 +418,9 @@ string[] // e.g. ["gemini-2.0-flash", "gemini-1.5-flash"]
 | Error Scenario | Log Level | Ntfy Priority | Behavior |
 |---|---|---|---|
 | Missing required env vars at startup | error | 5 (max) | Log all missing vars, terminate with 500 |
-| Auth header invalid/missing | warn | — (no ntfy) | Log rejection, return 401 |
-| Current model test timeout (10s) | warn | — | Log timeout, proceed to discovery |
-| Current model HTTP error | warn | — | Log error details, proceed to discovery |
+| Auth header invalid/missing | warn | - (no ntfy) | Log rejection, return 401 |
+| Current model test timeout (10s) | warn | - | Log timeout, proceed to discovery |
+| Current model HTTP error | warn | - | Log error details, proceed to discovery |
 | Gemini Models API failure | error | 5 | Log + notify, terminate |
 | All flash models fail test | error | 5 | Log + notify, terminate |
 | Vercel env list API failure | error | 5 | Log + notify, terminate |
@@ -433,8 +433,8 @@ string[] // e.g. ["gemini-2.0-flash", "gemini-1.5-flash"]
 | Error Scenario | Log Level | Ntfy Priority | Behavior |
 |---|---|---|---|
 | GEMINI_API_KEY missing | error | 5 | Log + alert, return 500 |
-| GEMINI_MODEL missing | info | — | Log, use default fallback |
-| Primary model 404/503 | warn | — | Log, try fallback chain |
+| GEMINI_MODEL missing | info | - | Log, use default fallback |
+| Primary model 404/503 | warn | - | Log, try fallback chain |
 | Primary model other error | error | 4 | Log + notify, throw |
 | All fallback models fail | error | 5 | Log + notify, return error |
 | Successful response | info | 3 | Log model used + response length |

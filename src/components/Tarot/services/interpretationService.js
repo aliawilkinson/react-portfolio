@@ -84,7 +84,7 @@ function buildSummary(cardSummaries, question, showPositions = false) {
 
   cardSummaries.forEach(c => {
     const orientation = c.isReversed ? 'Reversed' : 'Upright'
-    const position = showPositions && c.position ? `${c.position} — ` : ''
+    const position = showPositions && c.position ? `${c.position}: ` : ''
     summary += `${position}${c.name} (${orientation})\n${c.meaning}\n\n`
   })
 
@@ -92,16 +92,16 @@ function buildSummary(cardSummaries, question, showPositions = false) {
 }
 
 const CELTIC_PROMPTS = [
-  card => `Present — ${card.name}: Consider how this energy describes the heart of the matter now.`,
-  card => `Challenge — ${card.name}: Notice how this energy crosses, complicates, or asks something of the present.`,
-  card => `Foundation — ${card.name}: Reflect on the underlying belief, need, or history supporting the situation.`,
-  card => `Past — ${card.name}: Consider what influence is receding but still shaping your response.`,
-  card => `Crown — ${card.name}: Notice the aim, possibility, or conscious thought occupying the top of the situation.`,
-  card => `Future — ${card.name}: Consider the next energy emerging if the current pattern continues—not as a fixed prediction, but as a direction to notice.`,
-  card => `Self — ${card.name}: Reflect on the stance, resources, or assumptions you bring to the reading.`,
-  card => `Environment — ${card.name}: Notice what the people or circumstances around you may be contributing.`,
-  card => `Hopes/Fears — ${card.name}: Consider where desire and anxiety may be two faces of the same concern.`,
-  card => `Outcome — ${card.name}: Reflect on the likely resolution or lesson suggested by the whole pattern, while remembering that your choices remain active.`
+  card => `Present: ${card.name}. Consider how this energy describes the heart of the matter now.`,
+  card => `Challenge: ${card.name}. Notice how this energy crosses, complicates, or asks something of the present.`,
+  card => `Foundation: ${card.name}. Reflect on the underlying belief, need, or history supporting the situation.`,
+  card => `Past: ${card.name}. Consider what influence is receding but still shaping your response.`,
+  card => `Crown: ${card.name}. Notice the aim, possibility, or conscious thought occupying the top of the situation.`,
+  card => `Future: ${card.name}. Consider the next energy emerging if the current pattern continues. This is a direction to notice, not a fixed prediction.`,
+  card => `Self: ${card.name}. Reflect on the stance, resources, or assumptions you bring to the reading.`,
+  card => `Environment: ${card.name}. Notice what the people or circumstances around you may be contributing.`,
+  card => `Hopes/Fears: ${card.name}. Consider where desire and anxiety may be two faces of the same concern.`,
+  card => `Outcome: ${card.name}. Reflect on the likely resolution or lesson suggested by the whole pattern, while remembering that your choices remain active.`
 ]
 
 function buildCelticReflections(cardSummaries, question) {
@@ -127,9 +127,9 @@ function buildCelticConnections(cards) {
 }
 
 const THREE_CARD_PROMPTS = [
-  card => `Past — ${card.name}: Reflect on the influence, pattern, or experience that set the present situation in motion.`,
-  card => `Present — ${card.name}: Notice what this card reveals about the energy, choice, or tension active right now.`,
-  card => `Future — ${card.name}: Consider the direction this pattern may take if it continues—not as fixed fate, but as an invitation to respond.`
+  card => `Past: ${card.name}. Reflect on the influence, pattern, or experience that set the present situation in motion.`,
+  card => `Present: ${card.name}. Notice what this card reveals about the energy, choice, or tension active right now.`,
+  card => `Future: ${card.name}. Consider the direction this pattern may take if it continues. Treat it as an invitation to respond, not fixed fate.`
 ]
 
 function buildThreeCardReflections(cards, question) {

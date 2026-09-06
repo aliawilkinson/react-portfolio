@@ -5,38 +5,38 @@
 This design describes a complete rewrite of the Tarot reading app within the existing React + Vite portfolio site. The new architecture centers around a deck-first interaction model: users click a face-down deck to draw cards one at a time, building a spread manually. An "Analyze" button triggers interpretation of drawn cards (or auto-draws 3 if none exist). Controls allow reset, shuffle, and auto-mode with preset card counts.
 
 Key changes from the prior design:
-- **No external API** — card data is loaded from local `src/data/tarotDeck.json`
-- **Deck-centric interaction** — a single face-down card is the primary draw mechanism
-- **Incremental spread building** — cards accumulate in a row, wrapping as needed
-- **Interpretation engine** — generates reflection-oriented readings from card data
-- **Auto Mode** — one-click draws of 1, 3, or 5 cards with automatic interpretation
-- **Spread presets** — Single Card, Three Card (Past/Present/Future), Celtic Cross (10 cards)
+- **No external API** - card data is loaded from local `src/data/tarotDeck.json`
+- **Deck-centric interaction** - a single face-down card is the primary draw mechanism
+- **Incremental spread building** - cards accumulate in a row, wrapping as needed
+- **Interpretation engine** - generates reflection-oriented readings from card data
+- **Auto Mode** - one-click draws of 1, 3, or 5 cards with automatic interpretation
+- **Spread presets** - Single Card, Three Card (Past/Present/Future), Celtic Cross (10 cards)
 
 ## Architecture
 
 ```mermaid
 graph TB
     subgraph "React Components"
-        Tarot[Tarot.jsx — Main Container]
-        QuestionInput[QuestionInput.jsx — Text input + Analyze button]
-        DeckView[DeckView.jsx — Clickable face-down deck card]
-        Spread[Spread.jsx — Row of drawn cards]
-        SpreadCard[SpreadCard.jsx — Individual revealed card]
-        Controls[Controls.jsx — Reset, Shuffle, Auto Mode]
-        Interpretation[Interpretation.jsx — AI reading display]
+        Tarot[Tarot.jsx - Main Container]
+        QuestionInput[QuestionInput.jsx - Text input + Analyze button]
+        DeckView[DeckView.jsx - Clickable face-down deck card]
+        Spread[Spread.jsx - Row of drawn cards]
+        SpreadCard[SpreadCard.jsx - Individual revealed card]
+        Controls[Controls.jsx - Reset, Shuffle, Auto Mode]
+        Interpretation[Interpretation.jsx - AI reading display]
     end
 
     subgraph "Hooks"
-        useTarotDeck[useTarotDeck.js — Deck state, shuffle, draw]
-        useReading[useReading.js — Spread state, analysis trigger]
+        useTarotDeck[useTarotDeck.js - Deck state, shuffle, draw]
+        useReading[useReading.js - Spread state, analysis trigger]
     end
 
     subgraph "Services"
-        interpretationService[interpretationService.js — Generate reading text]
+        interpretationService[interpretationService.js - Generate reading text]
     end
 
     subgraph "Data"
-        tarotDeck[tarotDeck.json — 78 card definitions]
+        tarotDeck[tarotDeck.json - 78 card definitions]
     end
 
     Tarot --> QuestionInput
@@ -501,7 +501,7 @@ export const generateInterpretation = (cards, question = '') => {
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system—essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Deck Partition Invariant
 
@@ -590,13 +590,13 @@ export const generateInterpretation = (cards, question = '') => {
 Cards use the pattern `https://sacred-texts.com/tarot/pkt/img/{name_short}.jpg`. Since external images may fail:
 - Each SpreadCard handles its own `onError` with local state
 - FallbackCard shows a gradient background with the card name
-- No retry for images — fallback is the permanent state once error occurs
+- No retry for images - fallback is the permanent state once error occurs
 
 ### Graceful Degradation
 
 - If all images fail (e.g., sacred-texts.com down), the app remains fully functional with FallbackCards
-- Interpretation service is synchronous and local — no network failures possible
-- Card data is bundled locally — no loading state needed after initial render
+- Interpretation service is synchronous and local - no network failures possible
+- Card data is bundled locally - no loading state needed after initial render
 
 ## Testing Strategy
 

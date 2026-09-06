@@ -151,7 +151,7 @@ The geminiClient module uses `fetch` internally. Tests will mock `globalThis.fet
 - AbortError (verify timeout + retry)
 - Exhausted retries (verify final throw)
 
-This avoids any external mocking libraries — just `vi.fn()` on `globalThis.fetch`.
+This avoids any external mocking libraries - just `vi.fn()` on `globalThis.fetch`.
 
 ### 6. Conversation Hook Test Strategy
 
@@ -214,7 +214,7 @@ describe('Feature property tests', () => {
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Interpretation output shape invariant
 
@@ -294,12 +294,12 @@ describe('Feature property tests', () => {
 
 ### Flaky Tests
 - Property tests use `{ seed: ... }` option in fast-check for reproducibility when a failure is found
-- No network calls in FAST tier tests — all async behavior is mocked
+- No network calls in FAST tier tests - all async behavior is mocked
 - Timer-dependent code (shuffle animation delay) is not tested in smoke tests
 
 ### Hook Installation
 - If `.git/hooks/pre-push` already exists, the installer backs it up before overwriting
-- The installer is idempotent — safe to run multiple times
+- The installer is idempotent - safe to run multiple times
 
 ## Testing Strategy
 
@@ -337,8 +337,8 @@ it('shuffle preserves all cards', () => {
 |----------|-----------|-----------|
 | Smoke (component renders) | ✓ | ✓ |
 | Critical logic (interpretation, retry) | ✓ | ✓ |
-| Property (deck, state) | — | ✓ |
-| Existing comprehensive tests | — | ✓ |
+| Property (deck, state) | - | ✓ |
+| Existing comprehensive tests | - | ✓ |
 
 ### Extracting Pure Functions for Testability
 

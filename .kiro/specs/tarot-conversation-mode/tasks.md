@@ -43,8 +43,8 @@ Implement a Conversation Mode feature that adds a new `/conversation` route to t
 - [x] 3. Create useConversation hook
   - [x] 3.1 Create `src/components/Tarot/hooks/useConversation.js`
     - Manage turns array, currentCards, isLoading, error state
-    - Implement `submitQuestion(questionText, spreadPreset)` — draws cards via resetAndDraw, calls Gemini, creates turn, appends to history
-    - Implement `retryLastInterpretation()` — retries Gemini with same cards on error
+    - Implement `submitQuestion(questionText, spreadPreset)` - draws cards via resetAndDraw, calls Gemini, creates turn, appends to history
+    - Implement `retryLastInterpretation()` - retries Gemini with same cards on error
     - Prevent empty/whitespace question submission
     - Auto-reset deck after successful interpretation (via resetAndDraw on next submission)
     - _Requirements: 3.1, 3.2, 3.3, 3.5, 6.1, 6.2, 7.1, 7.2, 7.3, 8.2, 8.3, 9.1, 9.3_

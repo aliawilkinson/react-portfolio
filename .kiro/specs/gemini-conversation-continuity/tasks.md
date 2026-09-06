@@ -34,7 +34,7 @@ Implement multi-turn conversation continuity by creating a ReadingMemoryService,
     - **Property 2: Summary generation is bounded and complete**
     - **Property 3: History respects the 6-turn cap using most recent turns**
     - **Property 4: History respects the 3-summary cap**
-    - **Property 5: History ordering — summaries before turns**
+    - **Property 5: History ordering - summaries before turns**
     - **Property 6: History entries match Gemini SDK format**
     - **Property 7: getSessionHistory returns all stored turns in order**
     - **Property 8: Session persistence round-trip**
@@ -85,4 +85,4 @@ Implement multi-turn conversation continuity by creating a ReadingMemoryService,
 - Tasks marked with `*` are optional and can be skipped for faster MVP
 - fast-check is the property-based testing library for JavaScript
 - The existing `parseSections` function and SYSTEM_PROMPT remain unchanged
-- sessionStorage persistence is best-effort — the feature works without it
+- sessionStorage persistence is best-effort - the feature works without it

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document defines the requirements for integrating Microsoft Clarity as a second analytics provider within the existing provider-agnostic analytics architecture. Clarity adds session recordings, heatmaps, click tracking, and user flow analysis. The integration extends the current AnalyticsService — no existing components or tracking calls are modified. The site is a React + Vite application deployed on Vercel.
+This document defines the requirements for integrating Microsoft Clarity as a second analytics provider within the existing provider-agnostic analytics architecture. Clarity adds session recordings, heatmaps, click tracking, and user flow analysis. The integration extends the current AnalyticsService - no existing components or tracking calls are modified. The site is a React + Vite application deployed on Vercel.
 
 ## Glossary
 

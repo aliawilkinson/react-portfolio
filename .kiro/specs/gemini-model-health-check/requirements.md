@@ -4,7 +4,7 @@
 
 An automated model health-check system for a tarot app that uses the Gemini API via Vercel serverless functions. Google frequently deprecates models without warning, causing silent failures. This feature introduces:
 
-1. A unified logging utility that routes structured log messages to console (debug), Vercel function logs, and ntfy.sh — controlled by environment variables, ensuring no operation is ever silent.
+1. A unified logging utility that routes structured log messages to console (debug), Vercel function logs, and ntfy.sh - controlled by environment variables, ensuring no operation is ever silent.
 2. A scheduled cron job that validates the current Gemini model, discovers replacements when it fails, and updates the Vercel environment variable automatically.
 3. Structured logging and startup validation in the request-time handler (`api/gemini.js`) to catch configuration issues before they cause cryptic failures.
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This design unifies the existing /tarot and /conversation pages into a single `UnifiedTarot` component at /tarot. The page provides two modes—Classic (client-side, free) and AI Reading (Gemini-powered)—selected via a toggle. Controls are reduced to a spread selector (3 options), optional question input, a Draw button, and a Reset button. The existing `useTarotDeck` hook remains the source of truth for all deck operations. The `useConversation` hook and `ReadingMemoryService` power the AI mode's multi-turn conversation. A new `interpretationService` rewrite provides spread-aware static readings for Classic mode, while an updated Gemini system prompt handles context-aware interpretations for AI mode.
+This design unifies the existing /tarot and /conversation pages into a single `UnifiedTarot` component at /tarot. The page provides two modes - Classic (client-side, free) and AI Reading (Gemini-powered) - selected via a toggle. Controls are reduced to a spread selector (3 options), optional question input, a Draw button, and a Reset button. The existing `useTarotDeck` hook remains the source of truth for all deck operations. The `useConversation` hook and `ReadingMemoryService` power the AI mode's multi-turn conversation. A new `interpretationService` rewrite provides spread-aware static readings for Classic mode, while an updated Gemini system prompt handles context-aware interpretations for AI mode.
 
 ## Architecture
 
@@ -117,21 +117,21 @@ Renders either the static Classic interpretation or the structured AI interpreta
 Displays the multi-turn AI conversation below the current reading. Only rendered in AI mode when turns exist.
 
 ### Removed Components
-- `Controls.jsx` — replaced by SpreadSelector + simplified buttons
-- `DeckView.jsx` — removed (no clickable deck, no deck count)
-- `ConversationMode.jsx` — merged into UnifiedTarot
+- `Controls.jsx` - replaced by SpreadSelector + simplified buttons
+- `DeckView.jsx` - removed (no clickable deck, no deck count)
+- `ConversationMode.jsx` - merged into UnifiedTarot
 
 ### Preserved Components (adapted)
-- `Spread.jsx` / `SpreadCard.jsx` — card layout (unchanged interface)
-- `QuestionInput.jsx` — reused, minor prop changes
-- `ConversationTurn.jsx` — reused within ConversationHistory
-- `LoadingIndicator.jsx` — reused
-- `Tooltip.jsx` — reused for text size toggle
-- `CollapsibleSection.jsx` — potentially useful for conversation history
+- `Spread.jsx` / `SpreadCard.jsx` - card layout (unchanged interface)
+- `QuestionInput.jsx` - reused, minor prop changes
+- `ConversationTurn.jsx` - reused within ConversationHistory
+- `LoadingIndicator.jsx` - reused
+- `Tooltip.jsx` - reused for text size toggle
+- `CollapsibleSection.jsx` - potentially useful for conversation history
 
 ## Data Models
 
-### Card Data (tarotDeck.js — updated structure)
+### Card Data (tarotDeck.js - updated structure)
 
 Each card in the deck array gains a `keywords` field:
 
@@ -204,9 +204,9 @@ Analyze the user's question to determine its primary focus:
 
 INTERPRETATION PERSPECTIVE:
 Adapt your reading style to the detected question type:
-- Love: "The cards suggest they feel..." / "In your connection..." — focus on emotional dynamics
-- Career: "Professionally, this points to..." / "The timing suggests..." — focus on practical direction
-- Self: "This invites you to reflect on..." / "Your inner landscape shows..." — focus on introspection
+- Love: "The cards suggest they feel..." / "In your connection..." - focus on emotional dynamics
+- Career: "Professionally, this points to..." / "The timing suggests..." - focus on practical direction
+- Self: "This invites you to reflect on..." / "Your inner landscape shows..." - focus on introspection
 - General: provide a balanced multi-angle interpretation
 
 RESPONSE STRUCTURE:
@@ -237,7 +237,7 @@ The redirect passes `?mode=ai` so UnifiedTarot can initialize in AI mode for bac
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system—essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Draw count matches spread selection
 

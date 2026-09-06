@@ -2,9 +2,9 @@
 
 ## Overview
 
-This design adds lightweight analytics to the portfolio site using Vercel Analytics as the initial provider. The architecture follows a provider-agnostic pattern where a centralized `Analytics_Service` mediates between application components and analytics backends. Components never call vendor APIs directly — they import event constants and call `analytics.trackEvent(...)`. This keeps the codebase clean and allows additional providers to be added later by implementing a simple interface and registering it with the service.
+This design adds lightweight analytics to the portfolio site using Vercel Analytics as the initial provider. The architecture follows a provider-agnostic pattern where a centralized `Analytics_Service` mediates between application components and analytics backends. Components never call vendor APIs directly - they import event constants and call `analytics.trackEvent(...)`. This keeps the codebase clean and allows additional providers to be added later by implementing a simple interface and registering it with the service.
 
-Vercel Analytics handles automatic page view tracking out of the box for Vercel-deployed apps. Custom events are forwarded through the `Analytics_Service` to all registered providers. The entire system is designed to fail silently — analytics errors never bubble up to the user or break site functionality.
+Vercel Analytics handles automatic page view tracking out of the box for Vercel-deployed apps. Custom events are forwarded through the `Analytics_Service` to all registered providers. The entire system is designed to fail silently - analytics errors never bubble up to the user or break site functionality.
 
 ## Architecture
 
@@ -38,9 +38,9 @@ graph TD
 
 The architecture has three layers:
 
-1. **Constants Layer** — Event name constants imported by components
-2. **Service Layer** — The `Analytics_Service` singleton with `trackEvent()` and `registerProvider()`
-3. **Provider Layer** — Individual provider adapters (starting with Vercel Analytics)
+1. **Constants Layer** - Event name constants imported by components
+2. **Service Layer** - The `Analytics_Service` singleton with `trackEvent()` and `registerProvider()`
+3. **Provider Layer** - Individual provider adapters (starting with Vercel Analytics)
 
 ## Components and Interfaces
 
@@ -89,7 +89,7 @@ class AnalyticsService {
       try {
         provider.trackEvent(eventName, properties)
       } catch (error) {
-        // Silently swallow — analytics must never break the site
+        // Silently swallow - analytics must never break the site
       }
     }
   }
@@ -170,17 +170,17 @@ Custom events can carry optional key-value properties:
  */
 ```
 
-Vercel Analytics limits property values to strings, numbers, and booleans. The service passes properties as-is to providers — each provider is responsible for handling type constraints.
+Vercel Analytics limits property values to strings, numbers, and booleans. The service passes properties as-is to providers - each provider is responsible for handling type constraints.
 
 ### Provider Registration
 
-Providers are registered at app startup. The registry is a simple array held by the `AnalyticsService` singleton. No persistence or serialization is needed — providers are registered fresh on each page load.
+Providers are registered at app startup. The registry is a simple array held by the `AnalyticsService` singleton. No persistence or serialization is needed - providers are registered fresh on each page load.
 
 ### File Structure
 
 ```
 src/utils/analytics/
-├── index.js              # Public API — exports analytics instance and ANALYTICS_EVENTS
+├── index.js              # Public API - exports analytics instance and ANALYTICS_EVENTS
 ├── analyticsService.js   # AnalyticsService class
 ├── events.js             # ANALYTICS_EVENTS constants
 └── providers/
@@ -190,7 +190,7 @@ src/utils/analytics/
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Event forwarding to all providers
 

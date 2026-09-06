@@ -41,10 +41,10 @@ This updates in near-realtime after deploy.
 ### Microsoft Clarity
 
 1. Go to [your Clarity dashboard](https://clarity.microsoft.com/projects/view/xzenxh0biq/gettingstarted) and log in
-2. **Dashboard** — overview of sessions, users, pages per session, scroll depth
-3. **Recordings** — watch actual user sessions (mouse movement, clicks, scrolling)
-4. **Heatmaps** — see where people click and how far they scroll on each page
-5. **Insights** — dead clicks, rage clicks, JavaScript errors
+2. **Dashboard** - overview of sessions, users, pages per session, scroll depth
+3. **Recordings** - watch actual user sessions (mouse movement, clicks, scrolling)
+4. **Heatmaps** - see where people click and how far they scroll on each page
+5. **Insights** - dead clicks, rage clicks, JavaScript errors
 
 Clarity takes ~30 minutes after deploy to start collecting data.
 
@@ -98,24 +98,24 @@ import { analytics, ANALYTICS_EVENTS } from '../utils/analytics'
 analytics.trackEvent(ANALYTICS_EVENTS.RESUME_DOWNLOADED)
 ```
 
-The service forwards to all registered providers (Vercel + Clarity). If a provider fails, it's caught silently — the site never breaks.
+The service forwards to all registered providers (Vercel + Clarity). If a provider fails, it's caught silently - the site never breaks.
 
 ```
 src/utils/analytics/
-├── index.js              — Registers providers, exports public API
-├── analyticsService.js   — AnalyticsService class (registerProvider, trackEvent)
-├── events.js             — ANALYTICS_EVENTS constants
+├── index.js - Registers providers, exports public API
+├── analyticsService.js - AnalyticsService class (registerProvider, trackEvent)
+├── events.js - ANALYTICS_EVENTS constants
 └── providers/
-    ├── vercelProvider.js   — Wraps @vercel/analytics track()
-    ├── clarityProvider.js  — Wraps window.clarity('event', ...)
-    └── clarityLoader.js    — Dynamic script injection
+    ├── vercelProvider.js - Wraps @vercel/analytics track()
+    ├── clarityProvider.js - Wraps window.clarity('event', ...)
+    └── clarityLoader.js - Dynamic script injection
 ```
 
 ### Adding a New Provider Later
 
 1. Create `src/utils/analytics/providers/newProvider.js` implementing `{ name, trackEvent }`
 2. Import and register it in `index.js`
-3. Done — all existing tracking calls automatically forward to it
+3. Done - all existing tracking calls automatically forward to it
 
 ---
 
@@ -125,7 +125,7 @@ src/utils/analytics/
 |----------|----------|--------------|---------|
 | `VITE_CLARITY_PROJECT_ID` | No | Vercel env vars | Microsoft Clarity project ID |
 
-Vercel Analytics requires no env vars — it works automatically on Vercel deployments.
+Vercel Analytics requires no env vars - it works automatically on Vercel deployments.
 
 For local dev, Clarity is skipped when the env var is absent (console warning is expected).
 
@@ -136,7 +136,7 @@ For local dev, Clarity is skipped when the env var is absent (console warning is
 - No cookies
 - No personal data collected
 - Clarity masks sensitive inputs (tarot questions) via `data-clarity-mask="true"`
-- Event names + anonymous metadata only — never user-entered text
+- Event names + anonymous metadata only - never user-entered text
 - Both tools are GDPR-friendly for anonymous analytics
 
 ---

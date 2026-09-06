@@ -8,7 +8,7 @@ inclusion: auto
 - [ ] All existing tests still pass (npx vitest --run)
 - [ ] No TypeScript/lint errors (getDiagnostics on modified files)
 - [ ] Responsive on mobile, tablet, desktop
-- [ ] No inline styles — everything in SCSS modules
+- [ ] No inline styles - everything in SCSS modules
 - [ ] External links open in new tab
 - [ ] No hardcoded API keys or secrets
 - [ ] Error states handled gracefully (no crashes, no ugly messages)
@@ -23,7 +23,7 @@ inclusion: auto
 - Run tests after every change, not just at the end
 
 ## Code Quality
-- Match existing patterns — don't introduce new patterns without good reason
+- Match existing patterns - don't introduce new patterns without good reason
 - Keep files small and focused
 - Extract reusable logic into hooks or services
 - Constants in dedicated files, never hardcoded strings in components
@@ -33,7 +33,7 @@ inclusion: auto
 - Uses project breakpoints ($sm, $md, $lg, $xl)
 - Mobile styles first, desktop overrides via @media (min-width)
 - Flexbox/grid for layout
-- No magic numbers — use rem/em, reference constants
+- No magic numbers - use rem/em, reference constants
 - Shadow, radius, colors match the theme
 
 ## Deployment

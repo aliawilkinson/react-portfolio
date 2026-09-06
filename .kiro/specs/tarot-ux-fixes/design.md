@@ -8,7 +8,7 @@ The implementation stays within the existing React + Vite + framer-motion + SCSS
 
 ## Architecture
 
-The changes are primarily component-level refactors with one new utility module (sanitizer). No architectural changes to the hook/service layer are needed — only behavioral modifications to existing hooks and the addition of the sanitizer in the rendering pipeline.
+The changes are primarily component-level refactors with one new utility module (sanitizer). No architectural changes to the hook/service layer are needed - only behavioral modifications to existing hooks and the addition of the sanitizer in the rendering pipeline.
 
 ```mermaid
 graph TD
@@ -40,7 +40,7 @@ graph TD
 Tarot.jsx
 ├── Header (title + subtitle)
 ├── QuestionInput (textarea + Analyze + Reset)
-├── Spread (drawn cards — flexbox wrap)
+├── Spread (drawn cards - flexbox wrap)
 ├── DeckView (remaining deck visual)
 ├── Controls (Bigger Letters, Shuffle, Auto Mode, Presets)
 └── Interpretation (collapsible sections)
@@ -123,7 +123,7 @@ Key changes:
 export function sanitizeText(text) {
   // 1. Remove malformed punctuation sequences: ".,", ",.", ".,."
   // 2. Collapse repeated punctuation: ".." → ".", ",," → ","
-  //    (preserve "..." ellipsis — only collapse 2 consecutive, not 3)
+  //    (preserve "..." ellipsis - only collapse 2 consecutive, not 3)
   // 3. Normalize spacing around punctuation: "word , word" → "word, word"
   // 4. Trim extra whitespace
   // Returns cleaned string
@@ -178,7 +178,7 @@ interface SectionState {
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Text size session persistence (round-trip)
 
@@ -292,10 +292,10 @@ Unit tests cover specific examples and edge cases:
 ### Test File Locations
 
 ```
-tests/unit/sanitizeText.test.js        — Properties 5, 6
-tests/unit/tooltip.test.js             — Properties 2, 3, 11
-tests/unit/collapsibleSection.test.js  — Properties 7, 8, 9
-tests/unit/tarotReset.test.js          — Property 4
-tests/unit/tarotAnalyze.test.js        — Property 10
-tests/unit/textSizeToggle.test.js      — Properties 1, 12
+tests/unit/sanitizeText.test.js - Properties 5, 6
+tests/unit/tooltip.test.js - Properties 2, 3, 11
+tests/unit/collapsibleSection.test.js - Properties 7, 8, 9
+tests/unit/tarotReset.test.js - Property 4
+tests/unit/tarotAnalyze.test.js - Property 10
+tests/unit/textSizeToggle.test.js - Properties 1, 12
 ```

@@ -67,7 +67,7 @@ This document defines the requirements for a Tarot reading app integrated into a
 3. WHEN generating an Interpretation, THE Tarot_App SHALL use the entered question if one is provided
 4. WHEN generating an Interpretation, THE Tarot_App SHALL use card names, card positions, and Card_Orientation
 
-### Requirement 5: Controls — Reset Deck
+### Requirement 5: Controls - Reset Deck
 
 **User Story:** As a user, I want to reset the deck, so that I can start a completely fresh reading session.
 
@@ -79,7 +79,7 @@ This document defines the requirements for a Tarot reading app integrated into a
 4. WHEN the user clicks Reset Deck, THE Tarot_App SHALL shuffle the full deck
 5. WHEN the user clicks Reset Deck, THE Tarot_App SHALL remove any displayed Interpretation
 
-### Requirement 6: Controls — Shuffle Deck
+### Requirement 6: Controls - Shuffle Deck
 
 **User Story:** As a user, I want to shuffle the remaining cards without losing my current spread, so that I can randomize what comes next.
 
@@ -90,7 +90,7 @@ This document defines the requirements for a Tarot reading app integrated into a
 3. WHEN the user clicks Shuffle Deck, THE Tarot_App SHALL keep currently drawn cards visible in the Spread
 4. WHEN the user clicks Shuffle Deck, THE Tarot_App SHALL assign a new random Card_Orientation to each remaining card
 
-### Requirement 7: Controls — Auto Mode
+### Requirement 7: Controls - Auto Mode
 
 **User Story:** As a user, I want an auto mode that draws a set number of cards and interprets them, so that I can get a quick complete reading.
 

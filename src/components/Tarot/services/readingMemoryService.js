@@ -76,7 +76,7 @@ class ReadingMemoryService {
         this.summaries = Array.isArray(data.summaries) ? data.summaries : []
       }
     } catch (e) {
-      // Corrupted JSON or sessionStorage unavailable — start fresh
+      // Corrupted JSON or sessionStorage unavailable - start fresh
       this.turns = []
       this.summaries = []
       try {
@@ -185,7 +185,7 @@ class ReadingMemoryService {
       if (wordCount > 100) {
         // If adding this sentence exceeds 100 words, truncate
         if (summary === '') {
-          // First sentence already exceeds 100 words — truncate it
+          // First sentence already exceeds 100 words - truncate it
           const words = sentences[i].trim().split(/\s+/)
           summary = words.slice(0, 100).join(' ')
         }

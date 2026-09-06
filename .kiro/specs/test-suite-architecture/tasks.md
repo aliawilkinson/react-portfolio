@@ -2,7 +2,7 @@
 
 ## Overview
 
-Implements a two-tier test architecture with file-suffix-based tier assignment, a pre-push git hook, component smoke tests, critical logic tests, and property-based tests for deck randomization. Each task builds incrementally — infrastructure first, then tests, then the hook.
+Implements a two-tier test architecture with file-suffix-based tier assignment, a pre-push git hook, component smoke tests, critical logic tests, and property-based tests for deck randomization. Each task builds incrementally - infrastructure first, then tests, then the hook.
 
 ## Tasks
 
@@ -25,37 +25,37 @@ Implements a two-tier test architecture with file-suffix-based tier assignment, 
     - _Requirements: 5.1_
 
 - [ ] 4. Implement smoke tests (FAST tier)
-  - [ ] 4.1 Create `tests/smoke/Tarot.fast.test.jsx` — verify Tarot component renders without crashing (mock geminiClient module, provide MemoryRouter)
+  - [ ] 4.1 Create `tests/smoke/Tarot.fast.test.jsx` - verify Tarot component renders without crashing (mock geminiClient module, provide MemoryRouter)
     - _Requirements: 3.2, 3.4, 3.5_
-  - [ ] 4.2 Create `tests/smoke/ConversationMode.fast.test.jsx` — verify ConversationMode renders without crashing (mock geminiClient, provide MemoryRouter)
+  - [ ] 4.2 Create `tests/smoke/ConversationMode.fast.test.jsx` - verify ConversationMode renders without crashing (mock geminiClient, provide MemoryRouter)
     - _Requirements: 3.1, 3.4, 3.5_
 
 - [ ] 5. Implement critical logic tests (FAST tier)
-  - [ ] 5.1 Create `tests/unit/interpretationService.fast.test.js` — test output shape, orientation-correct meaning selection, handles 1/2/3+ cards
+  - [ ] 5.1 Create `tests/unit/interpretationService.fast.test.js` - test output shape, orientation-correct meaning selection, handles 1/2/3+ cards
     - _Requirements: 4.1, 4.2, 4.3_
-  - [ ] 5.2 Create `tests/unit/geminiClient.fast.test.js` — test 5xx retry, 4xx no-retry, timeout retry, retry exhaustion throws (mock globalThis.fetch)
+  - [ ] 5.2 Create `tests/unit/geminiClient.fast.test.js` - test 5xx retry, 4xx no-retry, timeout retry, retry exhaustion throws (mock globalThis.fetch)
     - _Requirements: 4.4, 4.5, 4.6, 4.7_
-  - [ ] 5.3 Create `tests/unit/useConversation.fast.test.js` — test successful turn append, error fallback turn, whitespace rejection (mock callGemini module, use renderHook)
+  - [ ] 5.3 Create `tests/unit/useConversation.fast.test.js` - test successful turn append, error fallback turn, whitespace rejection (mock callGemini module, use renderHook)
     - _Requirements: 6.1, 6.2, 6.3, 6.4_
 
 - [ ] 6. Checkpoint
   - Ensure all FAST tier tests pass with `npm run test:fast`. Verify execution time is under 10 seconds. Ask the user if questions arise.
 
 - [ ] 7. Implement property-based tests (FULL tier)
-  - [ ]* 7.1 Create `tests/property/deckRandomization.property.test.js` — Property 6: shuffle preserves deck contents
+  - [ ]* 7.1 Create `tests/property/deckRandomization.property.test.js` - Property 6: shuffle preserves deck contents
     - **Property 6: Shuffle preserves deck contents**
     - **Validates: Requirements 5.1**
-  - [ ]* 7.2 Add to `tests/property/deckRandomization.property.test.js` — Property 7: draw partitions deck correctly
+  - [ ]* 7.2 Add to `tests/property/deckRandomization.property.test.js` - Property 7: draw partitions deck correctly
     - **Property 7: Draw partitions deck correctly**
     - **Validates: Requirements 5.2**
-  - [ ]* 7.3 Add to `tests/property/deckRandomization.property.test.js` — Property 8: reset restores full deck
+  - [ ]* 7.3 Add to `tests/property/deckRandomization.property.test.js` - Property 8: reset restores full deck
     - **Property 8: Reset restores full deck**
     - **Validates: Requirements 5.3**
-  - [ ]* 7.4 Create `tests/property/interpretationService.property.test.js` — Property 1: output shape invariant, Property 2: orientation-correct meaning
+  - [ ]* 7.4 Create `tests/property/interpretationService.property.test.js` - Property 1: output shape invariant, Property 2: orientation-correct meaning
     - **Property 1: Interpretation output shape invariant**
     - **Property 2: Orientation-correct meaning selection**
     - **Validates: Requirements 4.1, 4.2, 4.3**
-  - [ ]* 7.5 Create `tests/property/geminiClient.property.test.js` — Property 3: 5xx retry, Property 4: 4xx no-retry, Property 5: retry exhaustion
+  - [ ]* 7.5 Create `tests/property/geminiClient.property.test.js` - Property 3: 5xx retry, Property 4: 4xx no-retry, Property 5: retry exhaustion
     - **Property 3: 5xx triggers retry**
     - **Property 4: 4xx does not retry**
     - **Property 5: Retry exhaustion throws last error**

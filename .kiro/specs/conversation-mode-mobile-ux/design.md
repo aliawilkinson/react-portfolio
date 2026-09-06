@@ -6,7 +6,7 @@ This design transforms the Tarot Conversation Mode into a full-screen mobile cha
 
 1. **Layout shift on mobile**: The conversation page becomes a full-viewport experience (`100dvh`) with no site header/nav. The page itself scrolls (body-level scroll on mobile) with a fixed input bar at the bottom.
 2. **Input positioning**: The Input_Bar uses `position: fixed` on mobile (pinned to bottom of visual viewport) and `position: sticky` on desktop. VisualViewport API handles keyboard avoidance on iOS.
-3. **Persistence migration**: Conversation turns move from in-memory `useState` (lost on refresh) to localStorage-backed state. The existing `ReadingMemoryService` (sessionStorage-based) remains untouched for Gemini context history — a new `ConversationPersistence` module handles turn persistence separately.
+3. **Persistence migration**: Conversation turns move from in-memory `useState` (lost on refresh) to localStorage-backed state. The existing `ReadingMemoryService` (sessionStorage-based) remains untouched for Gemini context history - a new `ConversationPersistence` module handles turn persistence separately.
 4. **Export**: A simple text formatter produces shareable conversation summaries, using Web Share API where available or clipboard fallback.
 
 ## Architecture
@@ -42,7 +42,7 @@ graph TD
 
 On mobile (viewport < 640px):
 - The `ConversationMode` sets `document.body` styles to hide the header/nav (the page layout component will respect a class or route-based condition)
-- The page uses natural document flow — turns stack in the document and the whole page scrolls
+- The page uses natural document flow - turns stack in the document and the whole page scrolls
 - Input_Bar is `position: fixed; bottom: 0` so it stays visible regardless of scroll position
 - Bottom padding on the message area equals the Input_Bar height to prevent content from being hidden behind it
 

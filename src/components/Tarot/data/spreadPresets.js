@@ -34,7 +34,7 @@ export const SPREAD_PRESETS = {
       'Your stance, inner resources, and the role you are playing.',
       'The people, circumstances, and outside influences around you.',
       'The desire and anxiety coloring how you view the situation.',
-      'The likely resolution or lesson of the current path—not fixed fate.'
+      'The likely resolution or lesson of the current path, not fixed fate.'
     ]
   }
 }

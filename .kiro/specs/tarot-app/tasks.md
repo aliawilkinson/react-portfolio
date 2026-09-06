@@ -190,7 +190,7 @@ Complete rewrite of the Tarot app with deck-centric interaction, manual card dra
 ## Notes
 
 - Tasks marked with `*` are optional property-based tests (can be skipped for faster MVP)
-- Card data is local (`src/data/tarotDeck.js`) — no API calls needed
+- Card data is local (`src/data/tarotDeck.js`) - no API calls needed
 - The project already has vitest + fast-check configured
 - All components use framer-motion animations matching existing site patterns
 - The interpretation service is synchronous (string composition from card data)

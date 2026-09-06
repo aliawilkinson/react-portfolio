@@ -2,7 +2,7 @@
 
 ## Overview
 
-This design adds Microsoft Clarity as a second analytics provider to the existing provider-agnostic architecture. Clarity provides session recordings, heatmaps, dead click detection, and user flow analysis. The integration is purely additive — a new `clarityProvider` is created, registered with the existing `AnalyticsService`, and the Clarity tracking script is loaded dynamically based on environment configuration.
+This design adds Microsoft Clarity as a second analytics provider to the existing provider-agnostic architecture. Clarity provides session recordings, heatmaps, dead click detection, and user flow analysis. The integration is purely additive - a new `clarityProvider` is created, registered with the existing `AnalyticsService`, and the Clarity tracking script is loaded dynamically based on environment configuration.
 
 No existing components, event constants, or tracking calls are modified. The Clarity provider implements the same `{ name, trackEvent }` interface as the Vercel provider. Privacy is enforced by stripping sensitive properties before forwarding events and by enabling Clarity's built-in input masking for session recordings.
 
@@ -117,7 +117,7 @@ export const clarityProvider = {
 ```
 
 Key decisions:
-- The Clarity event API (`window.clarity('event', eventName)`) only accepts event names — it does not support arbitrary properties on custom events. Properties are sanitized but primarily used as a safeguard pattern for future API changes.
+- The Clarity event API (`window.clarity('event', eventName)`) only accepts event names - it does not support arbitrary properties on custom events. Properties are sanitized but primarily used as a safeguard pattern for future API changes.
 - If `window.clarity` is not available (script not loaded, ad blocker, etc.), the provider silently no-ops.
 - Sensitive key filtering provides defense-in-depth even though Clarity's event API doesn't transmit properties.
 
@@ -140,7 +140,7 @@ if (clarityProjectId) {
   loadClarityScript(clarityProjectId)
   analytics.registerProvider(clarityProvider)
 } else {
-  console.warn('[Analytics] Microsoft Clarity not configured — VITE_CLARITY_PROJECT_ID is missing.')
+  console.warn('[Analytics] Microsoft Clarity not configured - VITE_CLARITY_PROJECT_ID is missing.')
 }
 
 export { analytics }
@@ -188,19 +188,19 @@ A static list of property keys that may contain user-entered content. Used for s
 
 ```
 src/utils/analytics/
-├── index.js                # Updated — conditionally registers Clarity
+├── index.js                # Updated - conditionally registers Clarity
 ├── analyticsService.js     # Unchanged
 ├── events.js               # Unchanged
 └── providers/
     ├── vercelProvider.js   # Unchanged
-    ├── clarityProvider.js  # NEW — Clarity provider adapter
-    └── clarityLoader.js    # NEW — Dynamic script injection
+    ├── clarityProvider.js  # NEW - Clarity provider adapter
+    └── clarityLoader.js    # NEW - Dynamic script injection
 ```
 
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Script injection uses provided project ID
 

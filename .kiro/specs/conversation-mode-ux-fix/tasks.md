@@ -112,6 +112,6 @@ Transform the conversation mode from a fixed-viewport layout to a full-page chat
 ## Notes
 
 - Tasks marked with `*` are optional and can be skipped for faster MVP
-- The existing `ReadingMemoryService` (sessionStorage, Gemini history) is NOT modified — the new `conversationPersistence` module handles UI turn persistence separately
+- The existing `ReadingMemoryService` (sessionStorage, Gemini history) is NOT modified - the new `conversationPersistence` module handles UI turn persistence separately
 - Property tests use `fast-check` library for randomized input generation
 - Each property test references its design document property number

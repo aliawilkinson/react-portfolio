@@ -2,46 +2,46 @@
 
 ## Overview
 
-This design extends the existing Tarot application with a Conversation Mode — a dedicated page at `/conversation` where users can ask multiple questions in sequence and receive AI-powered interpretations via the Gemini API. The feature reuses the existing deck logic (`useTarotDeck`), card rendering (`SpreadCard`, `Spread`), and spread presets without duplicating tarot functionality.
+This design extends the existing Tarot application with a Conversation Mode - a dedicated page at `/conversation` where users can ask multiple questions in sequence and receive AI-powered interpretations via the Gemini API. The feature reuses the existing deck logic (`useTarotDeck`), card rendering (`SpreadCard`, `Spread`), and spread presets without duplicating tarot functionality.
 
 Key architectural decisions:
-- **Vercel Serverless Function** — A new `api/gemini.js` endpoint handles all Gemini API communication server-side, keeping the API key secure
-- **Dedicated Conversation Page** — A new route component (`ConversationMode.jsx`) lives alongside existing Tarot components
-- **Custom Hook** — `useConversation.js` manages conversation state, turn sequencing, and the async Gemini call/response cycle
-- **Reuse over Rebuild** — The page imports existing `useTarotDeck`, `Spread`, `SpreadCard`, and `SPREAD_PRESETS` directly
+- **Vercel Serverless Function** - A new `api/gemini.js` endpoint handles all Gemini API communication server-side, keeping the API key secure
+- **Dedicated Conversation Page** - A new route component (`ConversationMode.jsx`) lives alongside existing Tarot components
+- **Custom Hook** - `useConversation.js` manages conversation state, turn sequencing, and the async Gemini call/response cycle
+- **Reuse over Rebuild** - The page imports existing `useTarotDeck`, `Spread`, `SpreadCard`, and `SPREAD_PRESETS` directly
 
 ## Architecture
 
 ```mermaid
 graph TB
     subgraph "React Components"
-        App[App.jsx — Routes]
-        Tarot[Tarot.jsx — Existing Reading Page]
-        ConvPage[ConversationMode.jsx — Conversation Page]
-        ConvHistory[ConversationHistory.jsx — Chat display]
-        ConvTurnCard[ConversationTurn.jsx — Single turn display]
-        QuestionForm[ConversationInput.jsx — Input + Submit]
-        LoadingIndicator[LoadingIndicator.jsx — Gemini processing state]
+        App[App.jsx - Routes]
+        Tarot[Tarot.jsx - Existing Reading Page]
+        ConvPage[ConversationMode.jsx - Conversation Page]
+        ConvHistory[ConversationHistory.jsx - Chat display]
+        ConvTurnCard[ConversationTurn.jsx - Single turn display]
+        QuestionForm[ConversationInput.jsx - Input + Submit]
+        LoadingIndicator[LoadingIndicator.jsx - Gemini processing state]
     end
 
     subgraph "Reused Components"
-        Spread[Spread.jsx — Card layout]
-        SpreadCard[SpreadCard.jsx — Individual card]
+        Spread[Spread.jsx - Card layout]
+        SpreadCard[SpreadCard.jsx - Individual card]
     end
 
     subgraph "Hooks"
-        useTarotDeck[useTarotDeck.js — Existing deck logic]
-        useConversation[useConversation.js — Conversation state + Gemini calls]
+        useTarotDeck[useTarotDeck.js - Existing deck logic]
+        useConversation[useConversation.js - Conversation state + Gemini calls]
     end
 
     subgraph "API Layer"
-        geminiClient[geminiClient.js — Frontend HTTP client]
-        serverRoute[api/gemini.js — Vercel serverless function]
-        GeminiAPI[Gemini API — External]
+        geminiClient[geminiClient.js - Frontend HTTP client]
+        serverRoute[api/gemini.js - Vercel serverless function]
+        GeminiAPI[Gemini API - External]
     end
 
     subgraph "Data"
-        spreadPresets[spreadPresets.js — Existing presets]
+        spreadPresets[spreadPresets.js - Existing presets]
     end
 
     App --> Tarot
@@ -389,7 +389,7 @@ export const callGemini = async (payload) => {
 Vercel requires serverless functions in the root-level `api/` directory. The `api/gemini.js` file is a thin routing entry point that imports the handler logic from within the Tarot folder. This keeps all meaningful code in `src/components/Tarot/` for portability.
 
 ```javascript
-// api/gemini.js (Vercel entry point — thin wrapper)
+// api/gemini.js (Vercel entry point - thin wrapper)
 import handler from '../src/components/Tarot/services/geminiHandler.js'
 export default handler
 ```
@@ -541,15 +541,15 @@ interface CardPayload {
 
 ### Reused Data Models (from existing app)
 
-- **DrawnCard** — `{ card: Card, isReversed: boolean }`
-- **Card** — Full card object from `tarotDeck.js`
-- **SpreadPreset** — `{ name: string, cardCount: number, labels: string[] }`
+- **DrawnCard** - `{ card: Card, isReversed: boolean }`
+- **Card** - Full card object from `tarotDeck.js`
+- **SpreadPreset** - `{ name: string, cardCount: number, labels: string[] }`
 
 
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Card Count Matches Spread Preset
 
@@ -698,5 +698,5 @@ src/components/Tarot/
 └── ...existing files unchanged...
 
 api/
-└── gemini.js                           (Vercel entry point — thin import from Tarot/services)
+└── gemini.js                           (Vercel entry point - thin import from Tarot/services)
 ```

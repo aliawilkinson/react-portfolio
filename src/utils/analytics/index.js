@@ -13,7 +13,7 @@ if (clarityProjectId) {
   loadClarityScript(clarityProjectId)
   analytics.registerProvider(clarityProvider)
 } else {
-  console.warn('[Analytics] Microsoft Clarity not configured — VITE_CLARITY_PROJECT_ID is missing.')
+  console.warn('[Analytics] Microsoft Clarity not configured - VITE_CLARITY_PROJECT_ID is missing.')
 }
 
 export { analytics }

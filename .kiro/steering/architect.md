@@ -23,14 +23,14 @@ inclusion: auto
 - Data/constants live in component-local `data/` folders
 - API routes are self-contained in `api/` (no imports from src/ in serverless functions)
 - Provider-agnostic service layers (analytics, etc.) with pluggable backends
-- State management via React hooks — no external state libraries
+- State management via React hooks - no external state libraries
 - sessionStorage for ephemeral persistence, no localStorage for sensitive data
 
 ## Code Patterns
 - Named exports for utilities, default exports for components
 - SCSS modules with `@use '../../styles/constants.scss' as *` for breakpoints
 - Flexbox for layout, grid where appropriate
-- No inline styles — everything in SCSS modules
+- No inline styles - everything in SCSS modules
 - Error boundaries: services catch errors silently, never break UI
 - Environment variables: VITE_ prefix for client-side, plain for server-side (process.env)
 

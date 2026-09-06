@@ -12,7 +12,7 @@ class AnalyticsService {
       try {
         provider.trackEvent(eventName, properties)
       } catch (error) {
-        // Silently swallow — analytics must never break the site
+        // Silently swallow - analytics must never break the site
       }
     }
   }

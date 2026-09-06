@@ -29,7 +29,7 @@ export function sanitizeText(text) {
   })
 
   // 3. Remove remaining single-char malformed sequences that shouldn't exist:
-  //    ".,", ",.", ".,." — these are now only possible if they were exactly
+  //    ".,", ",.", ".,." - these are now only possible if they were exactly
   //    those sequences in the original. Handle them:
   result = result.replace(/\.,\./g, ',')
   result = result.replace(/\.,/g, ',')

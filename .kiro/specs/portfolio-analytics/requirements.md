@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document defines the requirements for adding lightweight, privacy-friendly analytics to the portfolio site using Vercel Analytics. The implementation tracks visitor activity and engagement across pages and interactive elements. The architecture is provider-agnostic — components interact only with a centralized analytics service, allowing additional providers (Clarity, GA, PostHog) to be added later without modifying application code. The site is a React + Vite application deployed on Vercel using react-router-dom for client-side routing.
+This document defines the requirements for adding lightweight, privacy-friendly analytics to the portfolio site using Vercel Analytics. The implementation tracks visitor activity and engagement across pages and interactive elements. The architecture is provider-agnostic - components interact only with a centralized analytics service, allowing additional providers (Clarity, GA, PostHog) to be added later without modifying application code. The site is a React + Vite application deployed on Vercel using react-router-dom for client-side routing.
 
 ## Glossary
 

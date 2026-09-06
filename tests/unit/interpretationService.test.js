@@ -193,8 +193,8 @@ describe('interpretationService', () => {
         labels
       })
 
-      expect(result.summary).toContain('Present — Card 1')
-      expect(result.summary).toContain('Outcome — Card 10')
+      expect(result.summary).toContain('Present: Card 1')
+      expect(result.summary).toContain('Outcome: Card 10')
       expect(result.reflections).toHaveLength(11)
       expect(result.reflections[1]).toContain('Challenge')
       expect(result.reflections[8]).toContain('Hopes/Fears')

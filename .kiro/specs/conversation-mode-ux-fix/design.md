@@ -4,7 +4,7 @@
 
 This design transforms the Conversation Mode from a fixed-viewport scrolling container into a full-page, chat-like interface. The key architectural shift is moving from an inner `overflow-y: auto` container to using the document body as the scroll container, with a `position: sticky` input bar at the bottom. Conversation state moves from in-memory (lost on refresh) to localStorage-persisted, and an export service is added.
 
-The design preserves existing Gemini integration, card drawing logic, and fallback interpretation — only the presentation layer, persistence layer, and a new export module are affected.
+The design preserves existing Gemini integration, card drawing logic, and fallback interpretation - only the presentation layer, persistence layer, and a new export module are affected.
 
 ## Architecture
 
@@ -36,7 +36,7 @@ graph TD
 
 1. **Document-level scroll instead of inner container**: The `.convMessages` div loses `overflow-y: auto` and `flex: 1`. Instead, the page body scrolls naturally. The input bar uses `position: sticky; bottom: 0` to stay anchored.
 
-2. **Header hiding via route-aware class**: The main layout adds a CSS class to hide the header when on `/tarot/conversation` at mobile widths, using a media query. No JS toggling needed — pure CSS based on a body/root class.
+2. **Header hiding via route-aware class**: The main layout adds a CSS class to hide the header when on `/tarot/conversation` at mobile widths, using a media query. No JS toggling needed - pure CSS based on a body/root class.
 
 3. **localStorage persistence separate from ReadingMemoryService**: The existing `ReadingMemoryService` manages Gemini conversation history in sessionStorage. A new `conversationPersistence` module handles full turn persistence (with cards, interpretations) in localStorage. These remain separate concerns.
 
@@ -116,7 +116,7 @@ export const conversationPersistence = {
         fallbackInterpretation: turn.fallbackInterpretation || null,
       }))
       localStorage.setItem(STORAGE_KEY, JSON.stringify(serializable))
-    } catch (e) { /* quota exceeded or unavailable — silent fail */ }
+    } catch (e) { /* quota exceeded or unavailable - silent fail */ }
   },
 
   load() {
@@ -304,7 +304,7 @@ Cards: ...
 
 ## Correctness Properties
 
-*A property is a characteristic or behavior that should hold true across all valid executions of a system — essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
+*A property is a characteristic or behavior that should hold true across all valid executions of a system - essentially, a formal statement about what the system should do. Properties serve as the bridge between human-readable specifications and machine-verifiable correctness guarantees.*
 
 ### Property 1: Textarea height is bounded by content lines
 

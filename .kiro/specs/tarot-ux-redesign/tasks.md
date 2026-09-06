@@ -125,6 +125,6 @@ Unify /tarot and /conversation into a single page with Classic and AI modes. Sim
 - Tasks marked with `*` are optional and can be skipped for faster MVP
 - The existing `useTarotDeck` hook is preserved as-is (no modifications needed)
 - The existing `useConversation` hook is reused in AI mode with minimal changes
-- `ReadingMemoryService` is preserved unchanged — it already handles multi-turn memory
+- `ReadingMemoryService` is preserved unchanged - it already handles multi-turn memory
 - Property tests use fast-check (already in the project) with minimum 100 iterations
-- Card data update (task 1) is the largest manual effort — 78 cards need keywords added
+- Card data update (task 1) is the largest manual effort - 78 cards need keywords added

@@ -20,10 +20,10 @@ export const blogPosts = [
     <p>You don't have to rebase. <code>git merge main</code> will surface the same conflicts. Resolve them once in the merge commit. With rebase, you resolve conflicts for <em>every single commit</em> being replayed. Merge = resolve once.</p>
 
     <h2>"My commit history is messy"</h2>
-    <p>You don't have to rebase. Use <code>git merge --squash</code> when merging your PR. Or use your platform's "Squash and merge" button. One clean commit lands on main. Your branch history doesn't matter — it's gone after merge.</p>
+    <p>You don't have to rebase. Use <code>git merge --squash</code> when merging your PR. Or use your platform's "Squash and merge" button. One clean commit lands on main. Your branch history disappears after the merge.</p>
 
     <h2>"Someone told me to always rebase before merging"</h2>
-    <p>They have a preference, not a requirement. Linear history is aesthetic. Merge commits are functional. Both work. The only time rebase is <em>necessary</em> is when your team has an explicit policy requiring linear history — and even then, the platform's squash-merge does the same thing with less risk.</p>
+    <p>They have a preference, not a requirement. Linear history is aesthetic. Merge commits are functional. Both work. Rebase is only <em>necessary</em> when your team explicitly requires linear history. Even then, the platform's squash-merge does the same thing with less risk.</p>
 
     <h2>"I accidentally committed to the wrong branch"</h2>
     <p>You don't have to rebase. Cherry-pick the commit to the right branch and reset the wrong one:</p>
