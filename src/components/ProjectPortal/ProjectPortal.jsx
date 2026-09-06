@@ -4,7 +4,7 @@ import css from './ProjectPortal.module.scss'
 
 const TRANSITION_MS = 680
 
-const ProjectPortal = ({ to, image, color = '#573b78', className = '', preview, children, label }) => {
+const ProjectPortal = ({ to, image, color = '#573b78', className = '', preview, children, label, newTab = false }) => {
   const surfaceRef = useRef(null)
   const navigate = useNavigate()
   const [transition, setTransition] = useState(null)
@@ -12,21 +12,27 @@ const ProjectPortal = ({ to, image, color = '#573b78', className = '', preview, 
   useEffect(() => {
     if (!transition) return undefined
     const timer = window.setTimeout(() => {
+      if (newTab) {
+        setTransition(null)
+        return
+      }
       if (/^https?:/.test(to)) window.location.assign(to)
       else navigate(to)
     }, TRANSITION_MS)
     return () => window.clearTimeout(timer)
-  }, [navigate, to, transition])
+  }, [navigate, newTab, to, transition])
 
   const handleClick = event => {
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
-    event.preventDefault()
-
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (newTab) return
+      event.preventDefault()
       if (/^https?:/.test(to)) window.location.assign(to)
       else navigate(to)
       return
     }
+
+    if (!newTab) event.preventDefault()
 
     const rect = surfaceRef.current.getBoundingClientRect()
     setTransition({
@@ -41,6 +47,8 @@ const ProjectPortal = ({ to, image, color = '#573b78', className = '', preview, 
     <>
       <a
         href={to}
+        target={newTab ? '_blank' : undefined}
+        rel={newTab ? 'noopener noreferrer' : undefined}
         className={`${css.portalLink} ${className}`}
         onClick={handleClick}
         aria-label={label}

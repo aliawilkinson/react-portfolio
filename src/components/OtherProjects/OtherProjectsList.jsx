@@ -79,6 +79,7 @@ const OtherProjectsList = () => {
                   <motion.div key={project.slug} variants={fadeIn("up", "tween", 0.5 + i * 0.1, 0.6)}>
                     <ProjectPortal
                       to={project.route}
+                      newTab
                       image={project.imgSrc}
                       color={project.bg}
                       className={css.cardWrap}
