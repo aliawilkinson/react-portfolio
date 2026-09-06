@@ -2,8 +2,8 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import css from "./CaseStudies.module.scss"
 import { fadeIn, staggerChildren, textVariant } from "../../utils/motion"
-import { Link } from 'react-router-dom'
 import { caseStudies } from '../../utils/data'
+import ProjectPortal from '../ProjectPortal/ProjectPortal'
 
 const CaseStudyCard = ({ study }) => {
   const [imgFailed, setImgFailed] = useState(false)
@@ -46,11 +46,18 @@ const CaseStudies = () => {
 
         <div className={`flexCenter ${css.showCase}`}>
           {caseStudies.map((study, i) => (
-            <Link to={`/${study.slug}`} key={study.slug}>
+            <ProjectPortal
+              to={`/${study.slug}`}
+              image={study.imgSrc}
+              color={study.bg}
+              className={css.casePortal}
+              label={`Enter ${study.alt}`}
+              key={study.slug}
+            >
               <motion.div variants={fadeIn("up", "tween", 0.5 + i * 0.15, 0.6)}>
                 <CaseStudyCard study={study} />
               </motion.div>
-            </Link>
+            </ProjectPortal>
           ))}
         </div>
       </div>

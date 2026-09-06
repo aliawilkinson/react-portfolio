@@ -6,9 +6,12 @@ import { content } from "../../utils/posts"
 import Parser from 'html-react-parser'
 import SEO from "../SEO/SEO"
 import { seoData } from "../../utils/seoData"
+import { Link } from 'react-router-dom'
+import { caseStudies } from '../../utils/data'
 
 const InfoPost = ({ post }) => {
   const metadata = seoData[post] || {}
+  const isProject = caseStudies.some(study => study.slug === post)
 
   return (
     <motion.section
@@ -24,6 +27,7 @@ const InfoPost = ({ post }) => {
         image={metadata.image}
       />
       <div className={`innerWidth ${css.container}`}>
+        {isProject ? <Link to="/projects" className={css.backToProjects}>← Back to Projects</Link> : null}
         <span className="anchor" id="infoPost" />
         <h1 className="post-title">{content[post].title}</h1>
         <img src={content[post].imgSrc} alt={content[post].title} />

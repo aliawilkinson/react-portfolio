@@ -63,8 +63,8 @@ const Tarot = () => {
     <main className={css.tarotApp}>
       <div className={css.cosmos} aria-hidden="true"><i /><i /><i /></div>
       <header className={css.oracleHeader}>
-        <Link to="/" className={css.backToPortfolio} aria-label="Back to portfolio">
-          <span aria-hidden="true">←</span><b>Back to portfolio</b>
+        <Link to="/projects" className={css.backToPortfolio} aria-label="Back to projects">
+          <span aria-hidden="true">←</span><b>Back to projects</b>
         </Link>
         <div className={css.oracleBrand}>
           <div className={css.brandMark} aria-hidden="true">✦</div>

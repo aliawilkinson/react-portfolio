@@ -22,7 +22,7 @@ const OtherProjectDetail = () => {
       <section className={`paddings ${css.wrapper}`}>
         <div className="innerWidth">
           <p>Project not found.</p>
-          <Link to="/other-projects" className={css.backLink}>← Back to Projects</Link>
+          <Link to="/projects" className={css.backLink}>← Back to Projects</Link>
         </div>
       </section>
     )
@@ -36,7 +36,7 @@ const OtherProjectDetail = () => {
       className={`paddings ${css.wrapper}`}
     >
       <div className={`innerWidth ${css.container}`}>
-        <Link to="/other-projects" className={css.backLink}>← Back to Projects</Link>
+        <Link to="/projects" className={css.backLink}>← Back to Projects</Link>
 
         <motion.h1 variants={fadeIn("up", "tween", 0.2, 0.6)} className={css.title}>
           {project.title}

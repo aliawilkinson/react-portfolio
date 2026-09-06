@@ -1,0 +1,74 @@
+.portalLink {
+  position: relative;
+  display: block;
+  border-radius: 48% 52% 47% 53% / 52% 46% 54% 48%;
+  isolation: isolate;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    border-radius: inherit;
+    transition: transform 320ms ease, opacity 320ms ease;
+  }
+
+  &::before {
+    z-index: -1;
+    inset: -0.7rem;
+    border: 1px solid color-mix(in srgb, var(--portal-color) 72%, white);
+    box-shadow: 0 0 1.2rem var(--portal-color), 0 0 3.5rem color-mix(in srgb, var(--portal-color) 55%, transparent);
+    opacity: 0.62;
+  }
+
+  &::after {
+    z-index: 2;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: inset 0 0 2rem rgba(255, 255, 255, 0.18), inset 0 0 4rem var(--portal-color);
+  }
+
+  &:hover::before,
+  &:focus-visible::before { transform: scale(1.055) rotate(2deg); opacity: 0.95; }
+  &:focus-visible { outline: 3px solid white; outline-offset: 0.9rem; }
+}
+
+.portalTransition {
+  position: fixed;
+  z-index: 10000;
+  left: var(--portal-left);
+  top: var(--portal-top);
+  width: var(--portal-width);
+  height: var(--portal-height);
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 48% 52% 47% 53% / 52% 46% 54% 48%;
+  background-color: var(--portal-color);
+  background-image: linear-gradient(rgba(10, 5, 20, 0.08), rgba(10, 5, 20, 0.25)), var(--portal-image);
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 5rem var(--portal-color);
+  animation: enterWorld 680ms cubic-bezier(.65, 0, .2, 1) forwards;
+
+  span {
+    position: absolute;
+    inset: -30%;
+    border: 2px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    box-shadow: inset 0 0 8rem white;
+    animation: portalSweep 680ms ease-out forwards;
+  }
+}
+
+@keyframes enterWorld {
+  45% { border-radius: 40%; }
+  100% { left: -10vw; top: -10vh; width: 120vw; height: 120vh; border-radius: 0; }
+}
+
+@keyframes portalSweep {
+  to { transform: scale(2.2) rotate(14deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portalLink::before, .portalLink::after { transition: none; }
+}

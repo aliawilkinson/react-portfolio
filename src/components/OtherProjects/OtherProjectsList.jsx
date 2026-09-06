@@ -2,11 +2,26 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import css from "./OtherProjects.module.scss"
 import { fadeIn, staggerChildren, textVariant } from "../../utils/motion"
-import { Link } from 'react-router-dom'
-import { projects } from '../../utils/data'
+import { caseStudies, projects } from '../../utils/data'
+import { content } from '../../utils/posts'
+import ProjectPortal from '../ProjectPortal/ProjectPortal'
 
 // Category display order
-const CATEGORY_ORDER = ['Apps', 'Music', 'Art', 'Photography', 'Writing', 'Other']
+const CATEGORY_ORDER = ['Case Studies', 'Apps', 'Music', 'Art', 'Photography', 'Writing', 'Other']
+
+const portfolioEntries = [
+  ...caseStudies.map(study => ({
+    ...study,
+    title: content[study.slug]?.title || study.alt,
+    subtitle: 'Case study',
+    category: 'Case Studies',
+    route: `/${study.slug}`
+  })),
+  ...projects.map(project => ({
+    ...project,
+    route: project.externalUrl || `/projects/${project.slug}`
+  }))
+]
 
 const ProjectCard = ({ project }) => {
   const [imgFailed, setImgFailed] = useState(false)
@@ -33,7 +48,7 @@ const ProjectCard = ({ project }) => {
 
 const OtherProjectsList = () => {
   // Group projects by category
-  const groupedProjects = projects.reduce((acc, project) => {
+  const groupedProjects = portfolioEntries.reduce((acc, project) => {
     const category = project.category || 'Other'
     if (!acc[category]) {
       acc[category] = []
@@ -45,11 +60,6 @@ const OtherProjectsList = () => {
   // Get categories in display order, filtering out empty ones
   const orderedCategories = CATEGORY_ORDER.filter(cat => groupedProjects[cat]?.length > 0)
 
-  // Get the link for a project - either externalUrl or the detail page
-  const getProjectLink = (project) => {
-    return project.externalUrl || `/other-projects/${project.slug}`
-  }
-
   return (
     <motion.section
       variants={staggerChildren}
@@ -57,10 +67,11 @@ const OtherProjectsList = () => {
       animate="show"
       className={`paddings ${css.wrapper}`}
     >
+      <span className="anchor" id="projects" />
       <div className={`innerWidth ${css.container}`}>
         <motion.h1 variants={textVariant(0.2)} className="primaryText">Projects</motion.h1>
         <motion.p variants={fadeIn("up", "tween", 0.3, 0.6)} className={css.intro}>
-          Things I build, create, and ship for fun — music, art, and more.
+          Each project is its own world. Step through a portal to explore the systems, apps, music, and stories inside.
         </motion.p>
 
         {orderedCategories.map((category, catIndex) => (
@@ -72,29 +83,15 @@ const OtherProjectsList = () => {
             <h2 className={css.categoryHeading}>{category}</h2>
             <div className={css.projectGrid}>
               {groupedProjects[category].map((project, i) => {
-                const projectLink = getProjectLink(project)
-                const isExternal = projectLink.startsWith('http')
-                const isInternalRoute = projectLink.startsWith('/')
-
                 return (
                   <motion.div key={project.slug} variants={fadeIn("up", "tween", 0.5 + i * 0.1, 0.6)}>
-                    {isExternal ? (
-                      <a href={projectLink} target="_blank" rel="noopener noreferrer" className={css.cardWrap}>
-                        <ProjectCard project={project} />
-                        <div className={css.cardLabel}>
-                          <span>{project.title}</span>
-                          <span>{project.subtitle}</span>
-                        </div>
-                      </a>
-                    ) : (
-                      <Link to={projectLink} className={css.cardWrap}>
-                        <ProjectCard project={project} />
-                        <div className={css.cardLabel}>
-                          <span>{project.title}</span>
-                          <span>{project.subtitle}</span>
-                        </div>
-                      </Link>
-                    )}
+                    <ProjectPortal to={project.route} image={project.imgSrc} color={project.bg} className={css.cardWrap} label={`Enter ${project.title}`}>
+                      <ProjectCard project={project} />
+                      <div className={css.cardLabel}>
+                        <span>{project.title}</span>
+                        <span>{project.subtitle}</span>
+                      </div>
+                    </ProjectPortal>
                   </motion.div>
                 )
               })}

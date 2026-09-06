@@ -13,36 +13,37 @@ import Footer from './components/Footer/Footer'
 import RouteScroller from './components/RouteScroller/RouteScroller'
 import { MusicPlayerProvider } from './context/MusicPlayerContext'
 import SoundCloudPlayer from './components/MusicPlayer/SoundCloudPlayer'
+import { caseStudies } from './utils/data'
 
 const Tarot = lazy(() => import('./components/Tarot/Tarot'))
 
-// Redirect wrapper for /projects/:slug -> /other-projects/:slug
-const ProjectSlugRedirect = () => {
+const LegacyProjectRedirect = () => {
   const { slug } = useParams()
-  return <Navigate to={`/other-projects/${slug}`} replace />
+  return <Navigate to={`/projects/${slug}`} replace />
 }
 
 const App = () => {
   const { pathname } = useLocation()
   const isTarot = pathname === '/tarot' || pathname.startsWith('/tarot/')
-  const isOnMusicPage = pathname === '/other-projects/music'
+  const isProjectWorld = isTarot
+    || caseStudies.some(study => pathname === `/${study.slug}`)
+    || /^\/projects\/[^/]+$/.test(pathname)
 
   return (
     <MusicPlayerProvider>
       <div className={`bg-primary ${css.container}`}>
         <Analytics />
-        {!isTarot && <Header />}
+        {!isProjectWorld && <Header />}
         <RouteScroller />
         <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/hero' element={<Home />} />
         <Route path='/expertise' element={<Home />} />
         <Route path='/case-studies' element={<Home />} />
-        <Route path='/other-projects' element={<OtherProjectsList />} />
-        <Route path='/other-projects/:slug' element={<OtherProjectDetail />} />
-        {/* Redirect old /projects routes for backward compatibility */}
-        <Route path='/projects' element={<Navigate to="/other-projects" replace />} />
-        <Route path='/projects/:slug' element={<ProjectSlugRedirect />} />
+        <Route path='/projects' element={<OtherProjectsList />} />
+        <Route path='/projects/:slug' element={<OtherProjectDetail />} />
+        <Route path='/other-projects' element={<Navigate to="/projects" replace />} />
+        <Route path='/other-projects/:slug' element={<LegacyProjectRedirect />} />
         <Route path='/blog' element={<BlogList />} />
         <Route path='/blog/:slug' element={<BlogPost />} />
         <Route path='/tarot' element={<Suspense fallback={<div style={{ minHeight: '60vh' }} />}><Tarot /></Suspense>} />
@@ -61,8 +62,8 @@ const App = () => {
         <Route path='/cognitoIdentityArchitecture' element={<InfoPost post='cognitoIdentityArchitecture' />} />
         <Route path='/almModernization' element={<InfoPost post='almModernization' />} />
       </Routes>
-      {!isTarot && <SoundCloudPlayer isOnMusicPage={false} />}
-      {!isTarot && <Footer />}
+      {!isProjectWorld && <SoundCloudPlayer isOnMusicPage={false} />}
+      {!isProjectWorld && <Footer />}
     </div>
     </MusicPlayerProvider>
   );
