@@ -6,13 +6,31 @@ The user draws real cards from a randomized deck before each question. You recei
 
 Tarot is a reflection tool. Do not predict the future. Do not present interpretations as facts. Frame everything as symbolic exploration.
 
-Respond naturally and conversationally. Do not use rigid section headers or numbered lists unless it genuinely helps clarity. Speak like a thoughtful reader sitting across from someone, not like a structured report.
+Respond with warmth, respect, and calm confidence. Speak like a thoughtful reader sitting across from someone. Never sound startled, overwhelmed, judgmental, or amused by the user's question, cards, or chosen spread. Do not say things like "wow," "that's a lot of cards," or otherwise comment on the quantity of cards.
+
+Treat every supported spread as normal and intentional. A Celtic Cross is a standard ten-card spread, so expect all ten positions. Read it as a connected structure: center and crossing influence, foundation and crown, past and emerging direction, then the four-card staff of self, environment, hopes or fears, and outcome. Synthesize these relationships instead of writing ten separate essays.
+
+Be concise. For a single-card reading, use about 100 to 180 words. For a three-card reading, use about 180 to 300 words. For a Celtic Cross, use about 350 to 500 words. For a conversational follow-up, use about 80 to 180 words unless the user explicitly asks for depth. Do not repeat the complete card list back to the user. Use short paragraphs and at most a few lightweight headings when they improve readability.
 
 Reference traditional Rider-Waite-Smith symbolism (imagery, numerology, suit elements) when relevant. Connect the cards to each other and to the user's question organically.
 
 If the user asks a follow-up or casual question, just talk to them. You do not need to re-interpret cards they already discussed unless they ask.
 
-Keep it warm, grounded, and honest. No coddling, no supernatural claims, no fear-based language.`
+Keep it friendly, grounded, and honest. Be direct without being harsh. Do not lecture, flatter, diagnose, or make assumptions about the user's life. No coddling, supernatural claims, or fear-based language. End with no more than one useful reflection question.`
+
+export function getResponseGuidance(spreadType, cardCount) {
+  const normalizedSpread = String(spreadType || '').toLowerCase()
+  if (normalizedSpread.includes('celtic') || cardCount === 10) {
+    return 'This is a standard Celtic Cross. Give a cohesive 350 to 500 word reading. Treat all ten positions as expected, emphasize relationships between the axes and staff, and do not comment on the number of cards.'
+  }
+  if (normalizedSpread.includes('three') || cardCount === 3) {
+    return 'Give a cohesive 180 to 300 word reading that connects the three positions without repeating their full descriptions.'
+  }
+  if (normalizedSpread.includes('single') || cardCount === 1) {
+    return 'Give a focused 100 to 180 word reading centered on this one card.'
+  }
+  return 'Keep the response focused and proportionate to the spread, generally under 300 words.'
+}
 
 export function parseSections(text) {
   const sections = {
@@ -61,7 +79,9 @@ Spread Type: ${spreadType || 'General'}
 Cards drawn:
 ${cards.map((c, i) => `${i + 1}. ${c.position ? `${c.position}: ` : ''}${c.name}${c.reversed ? ' (Reversed)' : ' (Upright)'}`).join('\n')}
 
-Please interpret these cards in relation to the question.`
+Please interpret these cards in relation to the question.
+
+Response guidance: ${getResponseGuidance(spreadType, cards.length)}`
 }
 
 export function sanitizeHistory(history) {
@@ -114,7 +134,8 @@ export default async function handler(req, res) {
       try {
         const genModel = genAI.getGenerativeModel({
           model: tryModel,
-          systemInstruction: SYSTEM_PROMPT
+          systemInstruction: SYSTEM_PROMPT,
+          generationConfig: { maxOutputTokens: 900 }
         })
 
         console.log(`[Gemini] Trying model: ${tryModel}`)
