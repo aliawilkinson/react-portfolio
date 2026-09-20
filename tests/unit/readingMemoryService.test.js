@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import ReadingMemoryService, { TURN_LIMIT, SUMMARY_LIMIT, STORAGE_KEY } from '../../src/components/Tarot/services/readingMemoryService'
+import ReadingMemoryService, { TURN_LIMIT, SUMMARY_LIMIT, STORAGE_KEY, MEMORY_TTL_MS } from '../../src/components/Tarot/services/readingMemoryService'
 
 describe('ReadingMemoryService', () => {
   beforeEach(() => {
@@ -15,13 +15,28 @@ describe('ReadingMemoryService', () => {
 
     it('restores from sessionStorage if data exists', () => {
       const data = {
-        turns: [{ role: 'user', content: 'hello', timestamp: '2024-01-01T00:00:00.000Z' }],
-        summaries: [{ question: 'q', cards: [], summary: 's' }]
+        turns: [{ role: 'user', content: 'hello', timestamp: new Date().toISOString() }],
+        summaries: [{ question: 'q', cards: [], summary: 's' }],
+        updatedAt: Date.now()
       }
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(data))
       const service = new ReadingMemoryService()
       expect(service.turns).toEqual(data.turns)
       expect(service.summaries).toEqual(data.summaries)
+    })
+
+    it('clears saved context after 24 hours', () => {
+      const expiredAt = Date.now() - MEMORY_TTL_MS - 1
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({
+        turns: [{ role: 'user', content: 'old question', timestamp: new Date(expiredAt).toISOString() }],
+        summaries: [],
+        updatedAt: expiredAt
+      }))
+
+      const service = new ReadingMemoryService()
+
+      expect(service.turns).toEqual([])
+      expect(sessionStorage.getItem(STORAGE_KEY)).toBeNull()
     })
   })
 

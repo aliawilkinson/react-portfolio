@@ -15,7 +15,10 @@ const Tarot = () => {
   const { resetAndDraw } = useTarotDeck()
   const { turns, currentCards, isLoading, pendingQuestion, submitQuestion, clearConversation } = useConversation({ resetAndDraw })
   const [pendingPreset, setPendingPreset] = useState(SPREAD_PRESETS.three)
+  const [resetDialogOpen, setResetDialogOpen] = useState(false)
   const messagesRef = useRef(null)
+  const resetButtonRef = useRef(null)
+  const cancelResetRef = useRef(null)
 
   useEffect(() => {
     const shell = document.body.querySelector(`.${css.tarotApp}`)?.parentElement
@@ -54,10 +57,26 @@ const Tarot = () => {
   }
 
   const handleNewSession = () => {
-    if (turns.length > 0 && window.confirm('Reset your tarot history? This will clear the current conversation and its saved context from this device.')) {
-      clearConversation()
-    }
+    if (turns.length > 0) setResetDialogOpen(true)
   }
+
+  const confirmNewSession = () => {
+    clearConversation()
+    setResetDialogOpen(false)
+  }
+
+  useEffect(() => {
+    if (!resetDialogOpen) return undefined
+    cancelResetRef.current?.focus()
+    const handleKeyDown = event => {
+      if (event.key === 'Escape') setResetDialogOpen(false)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      resetButtonRef.current?.focus()
+    }
+  }, [resetDialogOpen])
 
   return (
     <main className={css.tarotApp}>
@@ -73,6 +92,7 @@ const Tarot = () => {
         <div className={css.headerActions}>
           <p className={css.headerHint}>A reflective tarot conversation</p>
           <button
+            ref={resetButtonRef}
             type="button"
             className={css.newSessionButton}
             onClick={handleNewSession}
@@ -102,6 +122,32 @@ const Tarot = () => {
         )}
       </section>
       <ConversationInput onSubmit={handleSubmit} disabled={isLoading} />
+      {resetDialogOpen && (
+        <div
+          className={css.resetDialogBackdrop}
+          onMouseDown={event => {
+            if (event.target === event.currentTarget) setResetDialogOpen(false)
+          }}
+        >
+          <section
+            className={css.resetDialog}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reset-dialog-title"
+            aria-describedby="reset-dialog-description"
+          >
+            <div className={css.resetDialogMark} aria-hidden="true">✦</div>
+            <p className={css.resetDialogEyebrow}>Begin again</p>
+            <h2 id="reset-dialog-title">Clear this reading?</h2>
+            <p id="reset-dialog-description">This removes the conversation and its saved context from this device.</p>
+            <p className={css.resetDialogNote}>Saved readings also clear automatically after 24 hours.</p>
+            <div className={css.resetDialogActions}>
+              <button ref={cancelResetRef} type="button" onClick={() => setResetDialogOpen(false)}>Keep reading</button>
+              <button type="button" className={css.confirmResetButton} onClick={confirmNewSession}>Clear and begin again</button>
+            </div>
+          </section>
+        </div>
+      )}
     </main>
   )
 }

@@ -1165,6 +1165,21 @@
 .newSessionButton:hover:not(:disabled) { color: white; border-color: rgba(211,187,255,.48); background: rgba(176,126,239,.1); }
 .newSessionButton:focus-visible { outline: 2px solid #d8baff; outline-offset: 3px; }
 .newSessionButton:disabled { opacity: .45; cursor: not-allowed; }
+.resetDialogBackdrop { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 1rem; background: rgba(3,1,10,.74); backdrop-filter: blur(14px); animation: resetBackdropIn .2s ease-out; }
+.resetDialog { position: relative; width: min(100%, 28rem); padding: 2rem; overflow: hidden; text-align: center; border: 1px solid rgba(225,204,255,.3); border-radius: 1.5rem; color: #eee8f7; background: radial-gradient(circle at 50% 0, rgba(147,88,218,.22), transparent 48%), linear-gradient(145deg, rgba(25,13,48,.98), rgba(7,4,18,.98)); box-shadow: 0 2rem 8rem rgba(0,0,0,.68), 0 0 4rem rgba(135,82,207,.2), inset 0 1px rgba(255,255,255,.08); animation: resetDialogIn .24s cubic-bezier(.2,.8,.2,1); }
+.resetDialog::before { content: ''; position: absolute; width: 12rem; height: 12rem; left: calc(50% - 6rem); top: -8rem; border: 1px solid rgba(221,195,255,.24); border-radius: 50%; box-shadow: 0 0 3rem rgba(165,105,229,.22); }
+.resetDialogMark { position: relative; display: grid; place-items: center; width: 3rem; height: 3rem; margin: 0 auto .8rem; border: 1px solid rgba(225,202,255,.4); border-radius: 50%; color: #efd9ff; background: rgba(181,119,239,.1); box-shadow: 0 0 1.6rem rgba(181,119,239,.3); }
+.resetDialogEyebrow { margin: 0 0 .45rem; color: #bda7dc; font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.resetDialog h2 { margin: 0; color: white; font: 500 1.55rem/1.2 Georgia, serif; }
+.resetDialog > p:not(.resetDialogEyebrow) { max-width: 23rem; margin: .8rem auto 0; color: #c9bfd5; font-size: .9rem; line-height: 1.55; }
+.resetDialog .resetDialogNote { color: #9f91b2; font-size: .75rem; }
+.resetDialogActions { display: flex; justify-content: center; gap: .65rem; margin-top: 1.5rem; }
+.resetDialogActions button { min-height: 2.75rem; padding: .65rem 1rem; border: 1px solid rgba(216,190,255,.25); border-radius: 999px; color: #dcd1e8; background: rgba(255,255,255,.035); font: 600 .78rem/1 sans-serif; cursor: pointer; transition: transform .18s ease, border-color .18s ease, background .18s ease; }
+.resetDialogActions button:hover { transform: translateY(-1px); border-color: rgba(226,207,255,.55); background: rgba(255,255,255,.08); }
+.resetDialogActions button:focus-visible { outline: 2px solid #d8baff; outline-offset: 3px; }
+.resetDialogActions .confirmResetButton { color: white; border-color: rgba(207,164,255,.42); background: linear-gradient(135deg, rgba(157,102,223,.82), rgba(88,126,203,.82)); box-shadow: 0 .6rem 1.8rem rgba(90,57,145,.28); }
+@keyframes resetBackdropIn { from { opacity: 0; } }
+@keyframes resetDialogIn { from { opacity: 0; transform: translateY(.65rem) scale(.97); } }
 .brandMark { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; color: #f2d6ff; border: 1px solid rgba(220, 190, 255, .4); border-radius: 50%; box-shadow: 0 0 1.5rem rgba(174, 115, 255, .35), inset 0 0 1rem rgba(141, 207, 255, .12); }
 .eyebrow { margin: 0 0 .15rem; color: #b9a6dc; font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
 .headerHint { margin: 0; color: var(--muted); font-size: .75rem; letter-spacing: .08em; }
@@ -1297,6 +1312,9 @@
     .backToPortfolio b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .headerActions { gap: 0; }
     .newSessionButton { min-height: 2.35rem; justify-content: center; padding: 0 .65rem; }
+    .resetDialog { padding: 1.5rem 1rem; border-radius: 1.25rem; }
+    .resetDialogActions { flex-direction: column-reverse; }
+    .resetDialogActions button { width: 100%; }
     .desktopResetLabel { display: none; }
     .mobileResetLabel { display: inline; }
     .tarotApp .convMessages { padding: .8rem .7rem 1rem; }
@@ -1336,7 +1354,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .cosmos::before, .cosmos::after, .cosmos i, .portal { animation: none; }
+    .cosmos::before, .cosmos::after, .cosmos i, .portal, .resetDialogBackdrop, .resetDialog { animation: none; }
     .tarotApp * { scroll-behavior: auto !important; }
 }
 

@@ -1,6 +1,7 @@
 const TURN_LIMIT = 6
 const SUMMARY_LIMIT = 3
 const STORAGE_KEY = 'tarot_conversation_session'
+const MEMORY_TTL_MS = 24 * 60 * 60 * 1000
 
 /**
  * ReadingMemoryService - Manages condensed reading history and conversation turns.
@@ -56,7 +57,8 @@ class ReadingMemoryService {
     try {
       const data = JSON.stringify({
         turns: this.turns,
-        summaries: this.summaries
+        summaries: this.summaries,
+        updatedAt: Date.now()
       })
       sessionStorage.setItem(STORAGE_KEY, data)
     } catch (e) {
@@ -72,6 +74,17 @@ class ReadingMemoryService {
       const raw = sessionStorage.getItem(STORAGE_KEY)
       if (raw) {
         const data = JSON.parse(raw)
+        const latestTurnTime = Array.isArray(data.turns)
+          ? data.turns.reduce((latest, turn) => {
+              const timestamp = Date.parse(turn?.timestamp)
+              return Number.isFinite(timestamp) ? Math.max(latest, timestamp) : latest
+            }, 0)
+          : 0
+        const updatedAt = Number(data.updatedAt) || latestTurnTime
+        if (!updatedAt || Date.now() - updatedAt >= MEMORY_TTL_MS) {
+          sessionStorage.removeItem(STORAGE_KEY)
+          return
+        }
         this.turns = Array.isArray(data.turns) ? data.turns : []
         this.summaries = Array.isArray(data.summaries) ? data.summaries : []
       }
@@ -199,4 +212,4 @@ class ReadingMemoryService {
 }
 
 export default ReadingMemoryService
-export { TURN_LIMIT, SUMMARY_LIMIT, STORAGE_KEY }
+export { TURN_LIMIT, SUMMARY_LIMIT, STORAGE_KEY, MEMORY_TTL_MS }

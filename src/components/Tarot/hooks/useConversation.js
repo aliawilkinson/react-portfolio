@@ -4,12 +4,27 @@ import { generateInterpretation } from '../services/interpretationService'
 import ReadingMemoryService from '../services/readingMemoryService'
 
 export const CONVERSATION_STORAGE_KEY = 'tarot_ui_conversation_v1'
+export const CONVERSATION_TTL_MS = 24 * 60 * 60 * 1000
 const MAX_PERSISTED_TURNS = 20
 
-const restoreConversation = () => {
+const getLatestTurnTime = turns => turns.reduce((latest, turn) => {
+  const timestamp = Date.parse(turn?.timestamp)
+  return Number.isFinite(timestamp) ? Math.max(latest, timestamp) : latest
+}, 0)
+
+export const restoreConversation = (now = Date.now(), storage = window.localStorage) => {
   try {
-    const stored = JSON.parse(localStorage.getItem(CONVERSATION_STORAGE_KEY) || '[]')
-    return Array.isArray(stored) ? stored.slice(-MAX_PERSISTED_TURNS) : []
+    const stored = JSON.parse(storage.getItem(CONVERSATION_STORAGE_KEY) || 'null')
+    const turns = Array.isArray(stored) ? stored : stored?.turns
+    if (!Array.isArray(turns) || turns.length === 0) return []
+
+    const updatedAt = Number(stored?.updatedAt) || getLatestTurnTime(turns)
+    if (!updatedAt || now - updatedAt >= CONVERSATION_TTL_MS) {
+      storage.removeItem(CONVERSATION_STORAGE_KEY)
+      return []
+    }
+
+    return turns.slice(-MAX_PERSISTED_TURNS)
   } catch {
     return []
   }
@@ -51,7 +66,14 @@ const useConversation = ({ resetAndDraw }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem(CONVERSATION_STORAGE_KEY, JSON.stringify(turns.slice(-MAX_PERSISTED_TURNS)))
+      if (turns.length === 0) {
+        window.localStorage.removeItem(CONVERSATION_STORAGE_KEY)
+        return
+      }
+      window.localStorage.setItem(CONVERSATION_STORAGE_KEY, JSON.stringify({
+        turns: turns.slice(-MAX_PERSISTED_TURNS),
+        updatedAt: getLatestTurnTime(turns) || Date.now()
+      }))
     } catch {
       // Storage may be unavailable or full; keep the in-memory conversation working.
     }
@@ -210,8 +232,16 @@ const useConversation = ({ resetAndDraw }) => {
     setPendingPreset(null)
     setError(null)
     memoryService.clear()
-    try { localStorage.removeItem(CONVERSATION_STORAGE_KEY) } catch {}
+    try { window.localStorage.removeItem(CONVERSATION_STORAGE_KEY) } catch {}
   }, [memoryService])
+
+  useEffect(() => {
+    if (turns.length === 0) return undefined
+    const updatedAt = getLatestTurnTime(turns)
+    const remaining = Math.max(0, CONVERSATION_TTL_MS - (Date.now() - updatedAt))
+    const timer = window.setTimeout(clearConversation, remaining)
+    return () => window.clearTimeout(timer)
+  }, [turns, clearConversation])
 
   return {
     turns,
