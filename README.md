@@ -88,13 +88,13 @@ public/             # static assets (images, portrait, cert logo)
 
 ## Deployment (Vercel)
 
-The site deploys automatically to Vercel on every push to `main` via GitHub Actions (`.github/workflows/deploy.yml`). Pull requests get a preview deploy automatically.
+The checked-in `.github/workflows/deploy.yml` currently runs unit tests only. `vercel.json` declares the hosting build and routes, but the actual Vercel Git integration, production/preview triggers and rollback procedure still need an owner review. See [deployment context](docs/context.md) before relying on automatic delivery.
 
 Vercel is configured via `vercel.json` to use Vite as the framework and `dist` as the output directory. **Node version is set in the Vercel dashboard** under Project Settings → General → Node.js Version → select **24.x**.
 
-### First-time GitHub Actions setup
+### Historical deployment setup (verify before reuse)
 
-You need three secrets in your GitHub repo under **Settings → Secrets and variables → Actions**:
+Earlier deployment guidance listed these GitHub Actions settings. The current workflow does not consume them; establish the chosen Vercel integration before configuring automation:
 
 | Secret | Where to find it |
 |---|---|
@@ -177,13 +177,13 @@ npm run test:watch  # watch mode
 
 ### Post-deploy smoke tests
 
-After deploying, the GitHub Actions workflow runs smoke tests against the live site to verify:
+The repository includes a manual smoke-test script to check a chosen target:
 - Homepage loads and renders
 - All main routes are accessible (/, /tarot, /case-studies, etc.)
 - No console errors on page load
 - Tarot page loads the deck UI
 
-These run automatically on production deploys. To run manually against any URL:
+The checked-in GitHub Actions workflow does not run these automatically. After confirming the intended target, invoke the script explicitly:
 
 ```bash
 node scripts/smoke-test.js https://aliawilkinson.com
@@ -204,3 +204,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for the full list. Summary:
 - `@import` → `@use` across all SCSS files (Dart Sass 3.0 compatibility)
 - Dependencies updated to latest stable versions within current major versions
 - Node pinned to 24 LTS across local (`.nvmrc`), CI (GitHub Actions), and Vercel (`vercel.json`)
+
+## Durable project context
+
+Start with [who, what, when, where, why and how](docs/context.md), including setup, verification, release, operations and recovery. The dated record cites source evidence and marks unanswered questions explicitly.
