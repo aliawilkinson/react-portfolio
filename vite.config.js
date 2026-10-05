@@ -1,6 +1,25 @@
 import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// Match the static NomadTime routes configured in vercel.json during local previews.
+function nomadTimePagesPlugin() {
+  const servePages = server => {
+    server.middlewares.use((req, _res, next) => {
+      const [pathname, query] = (req.url || '').split('?')
+      const path = pathname.replace(/\/$/, '')
+      if (['/nomadtime', '/nomadtime/support', '/nomadtime/privacy'].includes(path)) {
+        req.url = `${path}/index.html${query ? `?${query}` : ''}`
+      }
+      next()
+    })
+  }
+  return {
+    name: 'nomadtime-static-pages',
+    configureServer: servePages,
+    configurePreviewServer: servePages,
+  }
+}
+
 // Local dev plugin: handles /api/gemini requests using the serverless handler
 function localApiPlugin() {
   return {
@@ -49,7 +68,7 @@ export default defineConfig(({ mode }) => {
   process.env.NTFY_TOPIC = env.NTFY_TOPIC || process.env.NTFY_TOPIC || ''
 
   return {
-    plugins: [react(), localApiPlugin()],
+    plugins: [react(), nomadTimePagesPlugin(), localApiPlugin()],
     optimizeDeps: {
       include: ['react-slick'],
     },

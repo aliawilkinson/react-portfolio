@@ -309,6 +309,18 @@ export const comments = [
 
 export const projects = [
   {
+    slug: "nomadtime",
+    title: "NomadTime",
+    subtitle: "A visual world clock & personal places",
+    description: "Compare time zones, save your daily rhythms, and keep a personal map of places and memories.",
+    category: "Apps",
+    bg: "#174f48",
+    imgSrc: "/nomadtime/icon.png",
+    imageFit: "contain",
+    imageBackground: "#102e3c",
+    externalUrl: "/nomadtime",
+  },
+  {
     slug: "house-of-solar-bloom",
     title: "House of Solar Bloom",
     subtitle: "Luxury beauty e-commerce platform",
