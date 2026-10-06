@@ -300,6 +300,105 @@ export const content = {
     `
     },
 
+    "metadataDb": {
+        "title": "MetadataDB: Building a Private Control Plane for a Growing Product Portfolio",
+        "imgSrc": "./infoposts/metadata-db.svg",
+        "post": `
+    <p><strong>Disclosure:</strong> MetadataDB is a private internal system. This case study describes its purpose, product thinking, and architectural boundaries without publishing source code, repository locations, account details, schemas, secret references, or operational procedures.</p>
+
+    <h2>Situation:</h2>
+    <p>As a product portfolio grows, the code is rarely the hardest thing to recover. The missing context is harder: which services belong to which product, who owns each provider account, what is deployed, which configuration a component expects, what another system depends on, and what evidence supports the current state.</p>
+
+    <p>That information tends to scatter across repositories, cloud consoles, billing portals, local notes, pipeline logs, and memory. The result is operational drag. A small change begins with archaeology, handoff depends on one person's recall, and a product that is technically backed up may still be difficult to rebuild or operate.</p>
+
+    <h2>What It Is:</h2>
+    <p>MetadataDB is a private, typed configuration and operations catalog for the products I maintain. It models products, independently managed components, environments, provider ownership, configuration interfaces, system relationships, deployment history, cost evidence, and operational provenance without copying secret values or product data into the catalog.</p>
+
+    <p>It acts as a control plane for understanding the portfolio. It answers what exists, how the pieces relate, where responsibility lives, what was intended, what was deployed, what was observed, and what still needs evidence.</p>
+
+    <h2>My Role:</h2>
+    <p>I designed the domain model, architecture, validation strategy, command-line workflows, security boundaries, and operating model. The work combined systems architecture, configuration management, developer experience, release engineering, governance, and product thinking.</p>
+
+    <h2>Key Design Decisions:</h2>
+    <ul>
+      <li><strong>Typed records over an informal inventory:</strong> Durable identities, versioned contracts, and validated relationships make the catalog queryable and maintainable. Names and providers can change without breaking the conceptual model.</li>
+      <li><strong>Products and components are different:</strong> A product describes a business capability. Components describe independently managed applications, services, data stores, infrastructure, pipelines, and integrations. Keeping those boundaries explicit prevents repositories and cloud resources from becoming the architecture by accident.</li>
+      <li><strong>Relationships are first-class:</strong> Connections such as invokes, authenticates with, deploys, observes, or publishes to are modeled as directional relationships. That makes dependency and ownership questions answerable without reverse-engineering code.</li>
+      <li><strong>Desired, deployed, and observed state stay separate:</strong> A requested configuration is not proof of deployment, and a successful deployment record is not proof that a system remains healthy. The model preserves those distinctions instead of reducing them to one mutable status field.</li>
+      <li><strong>Secrets stay in their proper boundary:</strong> MetadataDB records safe locators, ownership, consumers, and lifecycle expectations. Credentials remain in managed secret systems, product data remains in product databases, and infrastructure state remains in its backend.</li>
+      <li><strong>Evidence is append-only:</strong> Deployment results, observations, artifacts, costs, and decisions form an auditable history. Current views can be generated, but the evidence behind them is not silently overwritten.</li>
+      <li><strong>Automation is constrained:</strong> Structured records can select reviewed operations and provide validated inputs, but they cannot inject arbitrary commands. This keeps the catalog useful to people and agents without turning metadata into an execution vulnerability.</li>
+    </ul>
+
+    <h2>What It Does:</h2>
+    <ul>
+      <li>Builds a navigable view of products, components, environments, owners, and system relationships.</li>
+      <li>Validates records and references before incomplete context becomes accepted operational truth.</li>
+      <li>Produces deterministic, read-only deployment plans from recorded dependencies and environment policy.</li>
+      <li>Distinguishes intended state from deployment receipts and live observations.</li>
+      <li>Preserves the context required for maintenance, recovery, cost review, and eventual handoff.</li>
+      <li>Provides a shared contract that product-generation and deployment tooling can consume safely.</li>
+    </ul>
+
+    <h2>Result:</h2>
+    <p>MetadataDB turns a collection of projects into an operable portfolio. Instead of reconstructing context from scattered tools each time work resumes, there is one validated model for ownership, relationships, configuration boundaries, delivery history, and evidence.</p>
+
+    <p>The deeper result is continuity. Products can pause and resume without depending entirely on memory. Automation can operate against explicit contracts. Handoff becomes a designed capability rather than a future documentation emergency.</p>
+
+    <h2>What This Demonstrates:</h2>
+    <p>This work demonstrates how I approach systems that have to remain understandable over time. I am not only designing for the next deployment. I am designing for the future operator who needs to know what exists, why it exists, how it is connected, and what evidence is trustworthy.</p>
+    `
+    },
+
+    "productFactory": {
+        "title": "Product Factory: Turning Repeatable Architecture into a Product Delivery System",
+        "imgSrc": "./infoposts/product-factory.svg",
+        "post": `
+    <p><strong>Disclosure:</strong> Product Factory is a private internal platform. This case study shares the product strategy and engineering principles while intentionally withholding source code, repository access, reusable implementation packages, generation contracts, prompts, and detailed operating procedures.</p>
+
+    <h2>Situation:</h2>
+    <p>Building a second product should not mean rebuilding authentication boundaries, observability, deployment workflows, application structure, quality gates, documentation, and operational standards from memory. But reusable platforms often fail in the opposite direction: they become abstract, oversized frameworks designed before real products prove what should be shared.</p>
+
+    <p>I wanted a middle path. The goal was to make new products faster to start and safer to operate while allowing each one to retain its own business model, customer experience, architecture decisions, and release lifecycle.</p>
+
+    <h2>What It Is:</h2>
+    <p>Product Factory is a private product-generation and delivery system for AI-assisted software development. It turns a validated product idea into a structured starting point for web, mobile, backend, infrastructure, operations, and growth work. Shared capabilities live behind clear package and contract boundaries, while product-specific strategy and implementation remain with the product.</p>
+
+    <p>It is intentionally milestone-based. The factory earns reusable abstractions through real product needs instead of creating a large speculative platform upfront.</p>
+
+    <h2>My Role:</h2>
+    <p>I created the product model, repository architecture, generation workflows, reusable capability boundaries, agent collaboration model, infrastructure standards, security gates, observability baseline, and release discipline. I also designed how generated products register with MetadataDB so creation, ownership, delivery, and operational evidence remain connected.</p>
+
+    <h2>How It Works:</h2>
+    <ul>
+      <li><strong>Start with product intent:</strong> Each product begins with a brief, scope, user problem, architecture decisions, roadmap, and milestones. Technology follows a defined business function instead of becoming the product plan.</li>
+      <li><strong>Generate a bounded foundation:</strong> The system creates a consistent product structure with explicit web, mobile, service, data, infrastructure, and operational boundaries as needed.</li>
+      <li><strong>Reuse capabilities, not assumptions:</strong> Common concerns such as configuration, UI foundations, API contracts, identity, data, billing, analytics, AI, notifications, and observability have designated homes. A capability is adopted when the product requires it, not merely because the factory can provide it.</li>
+      <li><strong>Make operations part of the product:</strong> Ownership tags, structured telemetry, alarms, budgets, deployment evidence, recovery expectations, and handoff documentation are designed alongside application code.</li>
+      <li><strong>Coordinate specialized work:</strong> Clear role and signoff boundaries allow human and AI contributors to work across strategy, architecture, frontend, backend, quality, infrastructure, growth, and release without collapsing accountability.</li>
+      <li><strong>Gate releases with evidence:</strong> Type checks, tests, builds, dependency review, security checks, environment approval, and immutable release context keep speed from eroding trust.</li>
+      <li><strong>Feed the portfolio control plane:</strong> Generated products register their product and component boundaries with MetadataDB. Product Factory owns reusable implementation patterns; MetadataDB owns the record of what exists and what happened.</li>
+    </ul>
+
+    <h2>Key Design Decisions:</h2>
+    <ul>
+      <li><strong>One platform, separate products:</strong> Shared foundations reduce repeated work, but each product keeps its own source, environments, data boundaries, release decisions, and customer experience.</li>
+      <li><strong>Milestones before platform sprawl:</strong> Reuse is extracted after a real second use case appears. This prevents elegant abstractions from outrunning customer value.</li>
+      <li><strong>Human approval remains explicit:</strong> Agents can analyze, generate, test, and prepare evidence. They do not quietly replace ownership, production approval, or security judgment.</li>
+      <li><strong>Private internals, portable outcomes:</strong> The implementation stays private, but generated products are designed to be understandable, independently maintainable, and transferable.</li>
+      <li><strong>Standards should create leverage:</strong> A standard earns its place when it removes repeated decisions, improves safety, or makes the next contributor faster. Consistency alone is not the goal.</li>
+    </ul>
+
+    <h2>Result:</h2>
+    <p>Product Factory provides a repeatable path from idea to an operable product foundation without pretending every product is identical. New work begins with established quality, ownership, observability, and delivery expectations, while product teams still have room to make the decisions that differentiate the experience.</p>
+
+    <p>Together with MetadataDB, it creates a closed learning loop: the factory defines how products should begin and evolve, while the control plane records what actually exists, how it is connected, and what evidence supports its current state.</p>
+
+    <h2>What This Demonstrates:</h2>
+    <p>This case study demonstrates platform thinking at product scale. I can identify which decisions should become reusable infrastructure, which must remain product-specific, and how to create a system that accelerates delivery without hiding risk or ownership behind automation.</p>
+    `
+    },
+
     "solarBloomCommerce": {
         "title": "House of Solar Bloom: Building Luxury Editorial Commerce End to End",
         "imgSrc": "./house-of-solar-bloom.webp",

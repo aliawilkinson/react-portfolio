@@ -18,6 +18,8 @@ const routes = [
   '/amplifyReactMigApp',
   '/cmdletCreationTemplate',
   '/agenticWorkflowApp',
+  '/metadataDb',
+  '/productFactory',
   '/solarBloomCommerce',
   '/cognitoIdentityArchitecture',
   '/almModernization',
