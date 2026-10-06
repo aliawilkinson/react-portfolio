@@ -113,23 +113,24 @@ export const caseStudies = [
 ];
 
 export const whatIHelpWith = [
-  `I design and build the platforms engineering teams run on: cloud architecture, release pipelines, and internal tooling. Teams ship independently and reliably.`,
+  `I work between development teams and platform engineering. I determine the architecture, make the case for it, and partner with DevOps and platform teams to deliver it. Developers ship independently and reliably.`,
   `Delivered: identity for a portal serving ~250,000 agents. Release automation running 26 teams and 1,200+ components in a single run. Hedging systems migrated from on-prem to AWS. An AI tool that maps production from git history, Jira releases, and runbooks.`,
-  `Principal Engineer at Transamerica. I ship outside work too: NomadTime, a visual world clock in beta for iPhone and iPad. House of Solar Bloom, a production beauty storefront. Solar Bloom Era, my debut album.`,
+  `I ship outside work too: NomadTime, a visual world clock in beta for iPhone and iPad. House of Solar Bloom, a production beauty storefront. Solar Bloom Era, my debut album.`,
 ];
 
 export const workExp = [
   {
     place: "Transamerica / WFG Digital",
     tenure: "April 2026 - Present",
-    role: "Principal Engineer - Developer Experience & Platform",
+    role: "Principal Engineer - Architecture",
     detail:
       `<ul>
         <li>Recruited into WFG Digital to work across architecture, platform, and delivery - hands-on in both the design and the build.</li>
         <li>Designed and built sign-in for the WFG Digital Portal, which serves ~250K external agents: Cognito connected to enterprise identity, with the IAM, API Gateway, and auth flows all in Terraform.</li>
         <li>Built an agentic workflow app that identifies and analyzes production apps by reading git history alongside Jira release and runbook data, giving teams one clear view of what's running.</li>
         <li>Designing developer workflow tooling: test suites, versioning strategies, branch protections, CI/CD gates, and configuration management apps that make good engineering habits the default.</li>
-        <li>Lead across architecture, infrastructure, and delivery to drive decisions and keep work moving.</li>
+        <li>Determine architecture, make the case for it with stakeholders, and drive decisions across infrastructure and delivery.</li>
+        <li>Partner closely with DevOps and platform engineering to turn architecture decisions into delivered capabilities.</li>
         <li>Built internal apps, reusable web app patterns, and authentication tooling that other teams have adopted as their standard.</li>
         <li>Python, Terraform, AWS (Cognito, API Gateway, IAM), React, Jira automation, agentic AI tooling.</li>
       </ul>`,

@@ -70,7 +70,7 @@ const Expertise = () => {
                     </div>
 
                     <div className={css.signalPanel}>
-                        <span>Now: Principal Engineer, Transamerica</span>
+                        <span>Now: Architecture team, Transamerica</span>
                         <div>
                             <span></span>
                             <span></span>
