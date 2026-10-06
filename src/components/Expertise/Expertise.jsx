@@ -6,8 +6,8 @@ import { calculateWholeYears } from '../../utils/data'
 
 const metrics = [
     {
-        value: '1,200+',
-        label: 'components deployed in one automated release',
+        value: '66',
+        label: 'components across 12 products in MetadataDB',
     },
     {
         value: '26',
