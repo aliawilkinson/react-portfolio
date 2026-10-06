@@ -1,6 +1,6 @@
 import React from 'react'
 import css from './Hero.module.scss'
-import { calculateYearDifference } from '../../utils/data'
+import { calculateWholeYears } from '../../utils/data'
 import { motion } from 'framer-motion'
 import { staggerChildren, fadeIn } from "../../utils/motion"
 
@@ -21,8 +21,8 @@ const Hero = () => {
                     className={css.headline}>
                     <h1 className='primaryText'>
                         Hi, I'm Alia. <br />
-                        I design systems <br />
-                        that create leverage.
+                        I make shipping <br />
+                        software calmer.
                     </h1>
                 </motion.div>
 
@@ -38,10 +38,9 @@ const Hero = () => {
                     variants={fadeIn("left", "tween", 0.2, 1)}
                     className={css.tagline}>
                     <span className='secondaryText'>
-                        Systems Architect for Platform Developer Experience. 
-                        I build platforms, delivery systems, and automation 
-                        that increase resilience and compound engineering velocity. 
-                        Remote from SoCal.
+                        Principal Engineer at Transamerica. I build the platforms,
+                        pipelines, and internal tools that other engineers build on.
+                        Remote from Southern California.
                     </span>
                 </motion.div>
 
@@ -49,10 +48,10 @@ const Hero = () => {
                 <motion.div
                     variants={fadeIn("right", "tween", 0.4, 1)}
                     className={css.experience}>
-                    <div className="primaryText">{calculateYearDifference()}</div>
+                    <div className="primaryText">{calculateWholeYears()}</div>
                     <div className="secondaryText">
-                        <div>Years</div>
-                        <div>Experience</div>
+                        <div>Years in</div>
+                        <div>engineering</div>
                     </div>
                 </motion.div>
 

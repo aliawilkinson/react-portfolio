@@ -328,7 +328,7 @@ export const content = {
     <li><strong>Compliance Foundation:</strong> The architecture satisfies financial services security requirements by design, not by afterthought - audit trails, session controls, and access patterns are baked into the infrastructure layer.</li>
     </ul>
 
-    <p>Cloud Archiecture is one of those systems where getting it right early creates enormous leverage - every team building on the platform benefits from decisions made once at the foundation layer. Getting it wrong creates compounding technical debt and security risk. This project was about getting it right.</p>
+    <p>Identity is one of those systems where getting it right early pays off for a long time - every team building on the platform benefits from decisions made once at the foundation layer. Getting it wrong creates compounding technical debt and security risk. This project was about getting it right.</p>
     `
     },
 
@@ -522,17 +522,17 @@ export const content = {
         "post": `
     <p>Hi, I'm Alia.</p>
 
-    <p>I'm a Systems Architect for Developer Leverage - a Southern California-based Principal Engineer, AWS Certified Solutions Architect, and the person teams bring in to design systems that compound engineering velocity. I design the platforms, automation, and delivery systems that make engineering organizations fast, safe, and autonomous.</p>
+    <p>I'm a Principal Engineer and AWS Certified Solutions Architect based in Southern California. I build the platforms, pipelines, and internal tools that other engineers build on.</p>
 
-    <p>My work focuses on the infrastructure layer that most teams struggle to get right: release orchestration, self-service platforms, CI/CD architecture, IaC frameworks, developer environment tooling, and the systems that turn tribal knowledge into codified, repeatable patterns. I design systems that scale teams - architecture that makes the next person's job easier by default.</p>
+    <p>Most of my work is in the layer teams tend to struggle with: release orchestration, self-service platforms, CI/CD, infrastructure as code, and developer environments. A lot of it comes down to taking what only one or two people know and turning it into something written down, automated, and repeatable, so the next person's job is easier by default.</p>
 
     <p>At Transamerica, I set technical direction for WFG Digital as Principal Engineer - Developer Experience & Platform. I design AWS architecture patterns, Terraform standards, infrastructure testing approaches, and internal tooling that teams adopt because it makes their work easier, not because they're told to. Before that, I shaped ALM modernization, cloud data architecture, and engineering standards across hedging and analytics business units.</p>
 
     <p>At AWS Professional Services, I consulted on cloud migration architecture, cost optimization, and delivery system design for enterprise clients. At loanDepot, I led release engineering through pandemic-era hypergrowth - automating the orchestration of 1200+ components, cutting multi-hour release windows down to predictable, dependency-aware automated deployments, and building the custom CMDB that mapped ownership and deployable relationships across the org.</p>
 
-    <p>The through-line in my career is always the same question: what system can I build now that creates leverage for the next team? I'm drawn to the work that sits between code, infrastructure, process, and people - where a good answer has to be understandable, repeatable, secure, and practical enough for teams to trust after the architect leaves the room.</p>
+    <p>The question I keep coming back to is: what can I build now that makes things easier for the next team? I'm drawn to the work that sits between code, infrastructure, process, and people - where a good answer has to be understandable, repeatable, secure, and practical enough for teams to trust after the architect leaves the room.</p>
 
-    <p>Currently, I'm exploring the intersection of AI-augmented developer workflows, agentic tooling, and platform engineering - building toward systems that don't just automate tasks but actively increase resilience and surface the next right action.</p>
+    <p>Lately I've been working on AI-assisted developer workflows and agentic tooling: tools that don't just automate a task but help you see what to do next. On my own time I build products end to end, like NomadTime and House of Solar Bloom.</p>
 
     <p>I grew up near the border in Southern California and spent years teaching English in Colombia. Those experiences shaped how I lead: assume intelligence, explain clearly, make room for questions, and help people build confidence through useful structure rather than authority.</p>
 

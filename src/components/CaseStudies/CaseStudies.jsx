@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import css from "./CaseStudies.module.scss"
-import { fadeIn, staggerChildren, textVariant } from "../../utils/motion"
+import { fadeIn, textVariant } from "../../utils/motion"
 import { caseStudies } from '../../utils/data'
 import ProjectPortal from '../ProjectPortal/ProjectPortal'
 
@@ -28,7 +28,6 @@ const CaseStudyCard = ({ study }) => {
 const CaseStudies = () => {
   return (
     <motion.section
-      variants={staggerChildren}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.10 }}
@@ -37,10 +36,10 @@ const CaseStudies = () => {
       <span className="anchor" id="CaseStudies" />
 
       <div className={`innerWidth flexCenter ${css.container}`}>
-        <motion.div variants={textVariant(.4)} className={`flexCenter ${css.heading}`}>
+        <motion.div variants={textVariant(0.1)} className={`flexCenter ${css.heading}`}>
           <div>
             <h2 className="primaryText">Case Studies</h2>
-            <p className={css.subheading}>Systems I've designed to increase resilience and create leverage</p>
+            <p className={css.subheading}>The longer stories: what the problem was, what I built, and how it turned out.</p>
           </div>
         </motion.div>
 
@@ -53,7 +52,7 @@ const CaseStudies = () => {
               className={css.caseStudyLink}
               label={`Open case study: ${study.alt}`}
               preview={
-                <motion.div variants={fadeIn("up", "tween", 0.5 + i * 0.15, 0.6)}>
+                <motion.div variants={fadeIn("up", "tween", 0.15 + i * 0.06, 0.45, 32)}>
                   <CaseStudyCard study={study} />
                 </motion.div>
               }
