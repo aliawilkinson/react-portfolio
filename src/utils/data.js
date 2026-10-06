@@ -168,11 +168,11 @@ export const workExp = [
   {
     place: "Source 70 Consulting",
     tenure: "June 2023 - Sept 2023",
-    role: "DevSecOps Architect - AWS & Azure Government Cloud",
+    role: "DevSecOps Architect - AWS Streaming Data",
     detail:
       `<ul>
-        <li>Built DevSecOps pipelines focused on automation, security, and cost optimization across AWS and Azure Government Cloud for compliant, reliable deployments.</li>
-        <li>Developed ETL data pipelines on AWS GovCloud for secure utility data ingestion and processing.</li>
+        <li>Designed real-time storage for streaming synchrophasor data on AWS: Kinesis ingestion, data pipeline architecture, and ETL.</li>
+        <li>Built ETL data pipelines on AWS for utility data ingestion and processing.</li>
         <li>Implemented Infrastructure as Code (Terraform, Bicep, ARM, AWS CDK in Python) to create reproducible, maintainable environments.</li>
         <li>Applied cost optimization at the infrastructure and code level to reduce operational overhead for business-critical systems.</li>
         <li>Co-developed and presented a NASPI seminar on storing synchrophasor data in the cloud - explored architecture patterns for high-frequency, time-series data in distributed cloud environments.</li>
