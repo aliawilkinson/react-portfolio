@@ -30,7 +30,7 @@ const Hero = () => {
                 <motion.div
                     variants={fadeIn("up", "tween", 0.3, 1)}
                     className={css.person}>
-                    <img src="./rock-portrait.jpg" alt="Alia Wilkinson" />
+                    <img src="./rock-portrait.jpg" alt="Alia Wilkinson, green hair, posing under a giant boulder" />
                 </motion.div>
 
                 {/* top-right: tagline */}

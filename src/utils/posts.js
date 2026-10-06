@@ -532,7 +532,7 @@ export const content = {
 
     <p>The question behind my work: what can I build now that makes the next team faster? I'm drawn to the work that sits between code, infrastructure, process, and people - where a good answer has to be understandable, repeatable, secure, and practical enough for teams to trust after the architect leaves the room.</p>
 
-    <p>My current focus is AI-assisted developer workflows and agentic tooling. I also build my own products, including NomadTime and House of Solar Bloom.</p>
+    <p>My current focus is AI-assisted developer workflows and agentic tooling. I ship outside work too: NomadTime, House of Solar Bloom, and my debut album, Solar Bloom Era.</p>
 
     <p>I grew up near the border in Southern California and spent years teaching English in Colombia. Those experiences shaped how I lead: assume intelligence, explain clearly, make room for questions, and help people build confidence through useful structure rather than authority.</p>
 
