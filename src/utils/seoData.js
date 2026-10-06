@@ -4,7 +4,7 @@ const DEFAULT_IMAGE = `${BASE_URL}/og-default.png`
 export const seoDefaults = {
   title: 'Alia Wilkinson | Systems Architect & Principal Engineer',
   description:
-    'Portfolio of Alia Wilkinson :Principal Engineer specializing in systems architecture, developer leverage, platform engineering, and cloud infrastructure design.',
+    'Portfolio of Alia Wilkinson, a Principal Engineer working on systems architecture, platform engineering, developer experience, and cloud infrastructure.',
   url: BASE_URL,
   image: DEFAULT_IMAGE,
 }
@@ -19,21 +19,21 @@ export const seoData = {
   home: {
     title: 'Alia Wilkinson | Systems Architect & Principal Engineer',
     description:
-      'Principal Engineer building systems that create leverage :platform architecture, delivery automation, infrastructure patterns, and developer experience tooling.',
+      'Alia Wilkinson is a Principal Engineer who builds the platforms, release automation, cloud infrastructure, and internal tools that engineering teams build on.',
     url: BASE_URL,
     image: DEFAULT_IMAGE,
   },
   about: {
     title: 'About Alia Wilkinson | Principal Engineer & Architect',
     description:
-      'AWS Certified Solutions Architect designing platforms, automation, and delivery systems that make engineering organizations fast, safe, and autonomous.',
+      'Principal Engineer and AWS Certified Solutions Architect in Southern California. I build platforms, release automation, and internal tools for engineering teams.',
     url: `${BASE_URL}/about`,
     image: DEFAULT_IMAGE,
   },
   agenticWorkflowApp: {
     title: 'Agentic Workflow App | Alia Wilkinson',
     description:
-      'Turning scattered production signals into infrastructure intelligence using AI-driven analysis of git, Jira, and runbook data across production applications.',
+      'An AI-assisted app that reads git history, Jira releases, and runbooks to map and analyze the applications running in production.',
     url: `${BASE_URL}/agenticWorkflowApp`,
     image: DEFAULT_IMAGE,
   },
@@ -68,7 +68,7 @@ export const seoData = {
   almModernization: {
     title: 'ALM Modernization | Alia Wilkinson',
     description:
-      'Replacing legacy on-prem systems with event-driven AWS patterns :Lambda, S3, and self-service data platforms for ALM hedging and analytics teams.',
+      'Replacing legacy on-prem systems with event-driven AWS patterns: Lambda, S3, and self-service data platforms for ALM hedging and analytics teams.',
     url: `${BASE_URL}/almModernization`,
     image: DEFAULT_IMAGE,
   },
@@ -82,7 +82,7 @@ export const seoData = {
   iacPipelineValidation: {
     title: 'IaC Pipeline Validation | Alia Wilkinson',
     description:
-      'Building integration test pipelines for Bicep IaC modules :automated testing, semantic versioning, and ACR publishing to keep infrastructure code trustworthy.',
+      'Building integration test pipelines for Bicep IaC modules: automated testing, semantic versioning, and ACR publishing to keep infrastructure code trustworthy.',
     url: `${BASE_URL}/iacPipelineValidation`,
     image: DEFAULT_IMAGE,
   },
@@ -96,7 +96,7 @@ export const seoData = {
   amplifyReactMigApp: {
     title: 'Amplify React Migration App | Alia Wilkinson',
     description:
-      'Full-stack Amplify React application that cut AWS migration time in half :improving speed, security, and error reduction for healthcare deployments.',
+      'Full-stack Amplify React application that cut AWS migration time in half, improving speed, security, and error reduction for healthcare deployments.',
     url: `${BASE_URL}/amplifyReactMigApp`,
     image: DEFAULT_IMAGE,
   },

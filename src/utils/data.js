@@ -9,30 +9,35 @@ export function calculateYearDifference(startDateInput = 'October 1, 2015') {
   return differenceInYears.toFixed(1);
 }
 
+// Whole completed years, for display ("11", not "11.0")
+export function calculateWholeYears(startDateInput) {
+  return Math.floor(Number(calculateYearDifference(startDateInput)));
+}
+
 
 export const projectExperience = [
   {
-    name: "Systems Architecture & High Availability Design",
+    name: "Systems architecture",
     date_started: "November 1, 2018",
     bg: "#6D4B8A",
   },
   {
-    name: "Delivery Automation & Release Engineering",
+    name: "Release automation & CI/CD",
     date_started: "January 15, 2019",
     bg: "#8897B8",
   },
   {
-    name: "Developer Experience & Internal Platforms",
+    name: "Internal platforms & developer tools",
     date_started: "June 1, 2018",
     bg: "#C83C63",
   },
   {
-    name: "Infrastructure as Code & Cloud Design",
+    name: "Cloud & infrastructure as code",
     date_started: "March 1, 2016",
     bg: "#B8A295",
   },
   {
-    name: "AI-Augmented Tooling & Agentic Workflows",
+    name: "AI tooling & agents",
     date_started: "January 1, 2024",
     bg: "#3D725E",
   },
@@ -54,7 +59,7 @@ export const caseStudies = [
   {
     slug: "agenticWorkflowApp",
     imgSrc: "./infoposts/agentic-workflow.png",
-    alt: "Agentic Workflow App: production intelligence through git and Jira analysis",
+    alt: "Agentic Workflow App: mapping what runs in production from git and Jira",
     bg: "#6D4B8A",
   },
   {
@@ -72,7 +77,7 @@ export const caseStudies = [
   {
     slug: "cognitoIdentityArchitecture",
     imgSrc: "./infoposts/cognito-identity.png",
-    alt: "Cognito Cloud Archiecture: auth for 250K agents",
+    alt: "Cognito identity architecture: sign-in for 250K agents",
     bg: "#3D725E",
   },
   {
@@ -96,7 +101,7 @@ export const caseStudies = [
   {
     slug: "cmdletCreationTemplate",
     imgSrc: "./infoposts/cmdletautomation.png",
-    alt: "Empowering DevOps Excellence: PowerShell cmdlet automation",
+    alt: "PowerShell cmdlet templates and training for a DevOps team",
     bg: "#6D4B8A",
   },
   {
@@ -108,24 +113,24 @@ export const caseStudies = [
 ];
 
 export const whatIHelpWith = [
-  `I build systems that create leverage: platform architecture, delivery automation, infrastructure patterns, and internal tooling designed so engineering teams stay fast and autonomous as they scale.`,
-  `My work sits at the intersection of cloud architecture, app development, release engineering, developer experience, and AI-augmented workflows for small companies and large enterprises alike. I design, evaluate, build or buy, then execute. Auth systems for platforms serving hundreds of thousands of users, agentic tools that surface production intelligence, CI/CD gates that make engineering hygiene automatic, and the connective tissue that compounds velocity across an org.`,
-  `Currently happily designing these systems at Transamerica for Architecture.`,
+  `I work on the parts of engineering that most teams wish someone else owned: how code gets built, tested, released, and run in the cloud. When that part works, people ship without waiting on a ticket queue or sitting through a 4 a.m. release call.`,
+  `Some of it, concretely: sign-in for a portal used by about 250,000 agents. A release system that moved 26 teams off manual deploys and put 1,200+ components through one automated run. Hedging systems moved from on-prem servers to AWS. An AI tool that reads git history, Jira releases, and runbooks to map what is running in production.`,
+  `I'm a Principal Engineer at Transamerica, and happy there. On my own time I build products end to end, like NomadTime, a visual world clock for iPhone and iPad that's in beta now.`,
 ];
 
 export const workExp = [
   {
     place: "Transamerica / WFG Digital",
     tenure: "April 2026 - Present",
-    role: "Principal Engineer - Systems Architecture & Developer Leverage",
+    role: "Principal Engineer - Developer Experience & Platform",
     detail:
       `<ul>
-        <li>Recruited into WFG to raise the level of architecture, platform, and delivery on high-stakes work requiring real technical depth - operating as Principal Engineer across architecture and implementation.</li>
-        <li>Drove Cognito + enterprise identity integration for WFG Digital Portal: Terraform, IAM, API Gateway, and auth flow design for a platform serving ~250K external agents.</li>
-        <li>Built an agentic workflow app that identifies and analyzes production apps using git analysis combined with Jira release and runbook data - turning scattered signals into navigable infrastructure intelligence.</li>
-        <li>Designing developer workflow tooling: testing suites, versioning strategies, branch protections, CI/CD gates, and configuration management apps that make engineering hygiene automatic rather than heroic.</li>
-        <li>Step in across architecture, infrastructure, and delivery gaps to unblock teams, make decisions in motion, and keep work moving when ownership is fragmented or systems are stuck.</li>
-        <li>Built internal apps, repeatable web app patterns, and authentication tooling that teams adopt as standard - designing leverage that compounds across the org.</li>
+        <li>Recruited into WFG Digital to work across architecture, platform, and delivery - hands-on in both the design and the build.</li>
+        <li>Designed and built sign-in for the WFG Digital Portal, which serves ~250K external agents: Cognito connected to enterprise identity, with the IAM, API Gateway, and auth flows all in Terraform.</li>
+        <li>Built an agentic workflow app that identifies and analyzes production apps by reading git history alongside Jira release and runbook data - one place to look instead of asking around.</li>
+        <li>Designing developer workflow tooling: test suites, versioning strategies, branch protections, CI/CD gates, and configuration management apps, so the good habits happen by default.</li>
+        <li>Step in where ownership is unclear or work is stuck - across architecture, infrastructure, and delivery - to unblock teams and get decisions made.</li>
+        <li>Built internal apps, reusable web app patterns, and authentication tooling that other teams have adopted as their standard.</li>
         <li>Python, Terraform, AWS (Cognito, API Gateway, IAM), React, Jira automation, agentic AI tooling.</li>
       </ul>`,
     dotColor: '#B8A295'
@@ -141,7 +146,7 @@ export const workExp = [
         <li>Acted as architect for web applications and data infrastructure - built a web application POC to replace existing Windows Service systems and replaced manual email-based reporting with a centralized, self-service data platform.</li>
         <li>Created reusable Python API + React frameworks with Engineering Excellence to standardize internal application development across modeling teams.</li>
         <li>Unblocked teams on Terraform, CI/CD, and infrastructure issues; established repeatable deployment and development patterns that reduced dependency on tribal knowledge.</li>
-        <li>Taught and set up ALM developers with AI agentic workflows (Amazon Q, Kiro) - introduced AI-assisted development patterns that improved developer productivity across the org.</li>
+        <li>Set ALM developers up with AI coding tools (Amazon Q, Kiro) and taught them how to work with agentic workflows day to day.</li>
         <li>Contributed architecture direction for cloud migration, resiliency, and technical debt reduction across ALM and Finance systems.</li>
         <li>Python, AWS (Lambda, S3, EMR), Terraform, FastAPI, React, Jenkins, AI/agentic tooling.</li>
       </ul>`,
@@ -155,8 +160,7 @@ export const workExp = [
       `<ul>
         <li>Built APIs to integrate with third-party ETL systems, enabling data ingestion and downstream processing for financial planning and analytics (FP&A) systems.</li>
         <li>Developed backend and full-stack functionality for managing connections to external data sources.</li>
-        <li>Led regular architectural design conversations that shaped how the team approached building, structuring, and scaling systems.</li>
-        <li>Collaborated closely with a core group of engineers on systems design with a focus on how systems should be structured for long-term scalability.</li>
+        <li>Led regular architecture discussions and worked with a core group of engineers on how the platform should be structured as it grew.</li>
       </ul>`,
     dotColor: '#B8A295'
   },
@@ -181,7 +185,7 @@ export const workExp = [
     detail:
       `<ul>
         <li>Provided Professional Services consulting for AWS customers - designed solutions for business problems using AWS services, automation, and architecture patterns focused on scalability, security, and cost efficiency.</li>
-        <li>Built an Amplify + React application that helped operations engineers migrate services more reliably with fewer errors - eliminating manual toil from the migration process.</li>
+        <li>Built an Amplify + React application that operations engineers used to migrate services with fewer errors and far less manual work.</li>
         <li>Created a Cost Optimization Blueprint to help companies save money during a downturn - architecture-level decisions, not just resource trimming.</li>
         <li>Modernized internal training for AWS consultants: container SME training, cost optimization practices, and patterns for building secure, cost-effective web applications.</li>
         <li>Improved application reliability and uptime through better architecture patterns and operational practices.</li>
@@ -195,9 +199,9 @@ export const workExp = [
     detail:
       `<ul>
         <li>Built and maintained DevOps pipelines across a large Azure environment supporting hundreds of projects and thousands of deployable components.</li>
-        <li>Automated on-prem batch release processes across teams - standardized deployments and reduced manual error through orchestration design.</li>
+        <li>Automated the on-prem batch release for 26 teams and 1,200+ components. Release nights that used to run until 4 to 6:30 a.m. started finishing shortly after midnight.</li>
         <li>Automated and managed thousands of releases in Azure DevOps using YAML pipelines, significantly improving deployment speed and reliability.</li>
-        <li>Built a full enterprise-grade Terraform module suite for infrastructure provisioning, later re-implementing it in Bicep to support Azure-specific preview features and improve development velocity.</li>
+        <li>Built a full enterprise-grade Terraform module suite for infrastructure provisioning, later re-implementing it in Bicep to support Azure-specific preview features and speed up development.</li>
         <li>Owned and maintained a custom internal configuration database supporting deployment coordination and system state across the org.</li>
         <li>Designed and implemented the company's technical interview process end-to-end - evaluation standards, interview structure, and hiring criteria for the DevOps team.</li>
         <li>Created ~75% of internal training materials, improving onboarding and standardizing engineering practices across the team.</li>
@@ -218,7 +222,7 @@ export const workExp = [
         <li>Built Terraform templates for deployments to Azure, establishing early IaC patterns the team later standardized on.</li>
         <li>Monitored and troubleshot production systems using ELK and Dynatrace during outages.</li>
         <li>Created ~50% of interviewing material and documented difficult-to-track legacy processes for future use.</li>
-        <li>Promoted to Senior DevOps Engineer - Lead in Feb 2021 based on delivery impact and systems thinking.</li>
+        <li>Promoted to Senior DevOps Engineer - Lead in Feb 2021.</li>
       </ul>`,
     dotColor: '#8897B8'
   },
