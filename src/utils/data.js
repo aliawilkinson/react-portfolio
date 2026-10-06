@@ -115,7 +115,7 @@ export const caseStudies = [
 export const whatIHelpWith = [
   `I work between development teams and platform engineering. I determine the architecture, make the case for it, and partner with DevOps and platform teams to deliver it. Developers ship independently and reliably.`,
   `Delivered: identity for a portal serving ~250,000 agents. Release automation running 26 teams and 1,200+ components in a single run. Hedging systems migrated from on-prem to AWS. An AI tool that maps production from git history, Jira releases, and runbooks.`,
-  `I ship outside work too: NomadTime, a visual world clock in beta for iPhone and iPad. House of Solar Bloom, a production beauty storefront. Solar Bloom Era, my debut album.`,
+  `I ship outside work too: NomadTime, a visual world clock in beta for iPhone and iPad, and House of Solar Bloom, a production beauty storefront.`,
 ];
 
 export const workExp = [
