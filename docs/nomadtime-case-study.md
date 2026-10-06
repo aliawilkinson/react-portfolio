@@ -20,3 +20,21 @@ Source basis: NomadTime's product brief, experience standard, map architecture d
 Node 24 production build and SEO validation passed for 16 routes. All 122 existing tests passed. Browser review covered desktop 1440×1000, mobile 390×844, the article's screenshots, heading/canonical metadata, and navigation. Final hosted-preview checks accompany the PR. Source and preview readiness do not imply production publication.
 
 Decision: ship the case-study content through the portfolio's required PR review and deployment checks. This change does not publish an iOS app release.
+
+## Screenshot walkthrough follow-up
+
+Added a six-screen feature tour to `/nomadtime` and illustrated, collapsible instructions to `/nomadtime/support`. The tour demonstrates landscape day/night comparison, named Work and Sleep ranges, renaming Tokyo to the fictional example “Maya in Tokyo,” and a Los Angeles map pin with a saved note. Images link to their larger versions. The pages remain script-free, with local JPEGs, lazy loading, explicit image dimensions, descriptive alt text, and native keyboard-accessible disclosure controls.
+
+New asset provenance:
+
+| Website asset | Real iOS capture |
+| --- | --- |
+| `landscape.jpg` | 1.0.0 candidate, `testDStoreScreenshotsAndAbout`, `store-ranges-landscape` |
+| `rename-place.jpg` | 1.0.0 candidate, screenshot-only QA run, `tour-rename-place` |
+| `person-clock.jpg` | Same run, `tour-person-clock` |
+| `map-pin.jpg` | Same run, `tour-map-pin` |
+| `place-memories.jpg` | Same run, `tour-place-memories` |
+
+The new QA run used the isolated NomadTime iPhone simulator and actual app controls. One capture test passed, verifying the name saves and the personal pin exists before capturing. Example names and notes are fixture data, not a user's travel records. Original app/map attribution remains visible; images were only resized and JPEG-encoded. The temporary screenshot test harness was restored afterward. No app source changes or new app release are part of this website update.
+
+Verification: Node 24 production build and SEO validation passed for all 16 routes. Browser checks at 1440×1000 and 390×844 confirmed readable layouts, correct landscape orientation, no horizontal overflow, all screenshots decoding successfully, and both support disclosure controls opening. Existing portfolio tests and hosted PR preview checks are recorded on the PR. Signoff: ship through the existing required PR review; production is not updated until that PR is merged and deployed.
