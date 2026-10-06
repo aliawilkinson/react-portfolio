@@ -21,8 +21,8 @@ const Hero = () => {
                     className={css.headline}>
                     <h1 className='primaryText'>
                         Hi, I'm Alia. <br />
-                        I make shipping <br />
-                        software calmer.
+                        I build the platforms <br />
+                        engineers build on.
                     </h1>
                 </motion.div>
 
@@ -38,9 +38,9 @@ const Hero = () => {
                     variants={fadeIn("left", "tween", 0.2, 1)}
                     className={css.tagline}>
                     <span className='secondaryText'>
-                        Principal Engineer at Transamerica. I build the platforms,
-                        pipelines, and internal tools that other engineers build on.
-                        Remote from Southern California.
+                        Principal Engineer at Transamerica. Cloud architecture,
+                        release automation, internal tools, and lately a lot of
+                        AI tooling. Remote from Southern California.
                     </span>
                 </motion.div>
 

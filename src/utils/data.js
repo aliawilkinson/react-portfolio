@@ -113,9 +113,9 @@ export const caseStudies = [
 ];
 
 export const whatIHelpWith = [
-  `I work on the parts of engineering that most teams wish someone else owned: how code gets built, tested, released, and run in the cloud. When that part works, people ship without waiting on a ticket queue or sitting through a 4 a.m. release call.`,
-  `Some of it, concretely: sign-in for a portal used by about 250,000 agents. A release system that moved 26 teams off manual deploys and put 1,200+ components through one automated run. Hedging systems moved from on-prem servers to AWS. An AI tool that reads git history, Jira releases, and runbooks to map what is running in production.`,
-  `I'm a Principal Engineer at Transamerica, and happy there. On my own time I build products end to end, like NomadTime, a visual world clock for iPhone and iPad that's in beta now.`,
+  `I build the things other engineers build on: cloud platforms, release pipelines, and internal tools. My favorite part is when a team ships on their own because the path is already paved.`,
+  `Some of it, concretely: sign-in for a portal used by about 250,000 agents. A release system that brought 26 teams and 1,200+ components into one automated run. Hedging systems moved from on-prem servers to AWS. An AI tool that reads git history, Jira releases, and runbooks to map what is running in production.`,
+  `I'm a Principal Engineer at Transamerica and I love the work. On my own time I build products end to end, like NomadTime, a visual world clock for iPhone and iPad that's in beta now.`,
 ];
 
 export const workExp = [
@@ -127,9 +127,9 @@ export const workExp = [
       `<ul>
         <li>Recruited into WFG Digital to work across architecture, platform, and delivery - hands-on in both the design and the build.</li>
         <li>Designed and built sign-in for the WFG Digital Portal, which serves ~250K external agents: Cognito connected to enterprise identity, with the IAM, API Gateway, and auth flows all in Terraform.</li>
-        <li>Built an agentic workflow app that identifies and analyzes production apps by reading git history alongside Jira release and runbook data - one place to look instead of asking around.</li>
-        <li>Designing developer workflow tooling: test suites, versioning strategies, branch protections, CI/CD gates, and configuration management apps, so the good habits happen by default.</li>
-        <li>Step in where ownership is unclear or work is stuck - across architecture, infrastructure, and delivery - to unblock teams and get decisions made.</li>
+        <li>Built an agentic workflow app that identifies and analyzes production apps by reading git history alongside Jira release and runbook data, giving teams one clear view of what's running.</li>
+        <li>Designing developer workflow tooling: test suites, versioning strategies, branch protections, CI/CD gates, and configuration management apps that make good engineering habits the default.</li>
+        <li>Jump in across architecture, infrastructure, and delivery to help teams make decisions and keep work moving.</li>
         <li>Built internal apps, reusable web app patterns, and authentication tooling that other teams have adopted as their standard.</li>
         <li>Python, Terraform, AWS (Cognito, API Gateway, IAM), React, Jira automation, agentic AI tooling.</li>
       </ul>`,
@@ -185,7 +185,7 @@ export const workExp = [
     detail:
       `<ul>
         <li>Provided Professional Services consulting for AWS customers - designed solutions for business problems using AWS services, automation, and architecture patterns focused on scalability, security, and cost efficiency.</li>
-        <li>Built an Amplify + React application that operations engineers used to migrate services with fewer errors and far less manual work.</li>
+        <li>Built an Amplify + React application that operations engineers used to migrate services faster and more reliably.</li>
         <li>Created a Cost Optimization Blueprint to help companies save money during a downturn - architecture-level decisions, not just resource trimming.</li>
         <li>Modernized internal training for AWS consultants: container SME training, cost optimization practices, and patterns for building secure, cost-effective web applications.</li>
         <li>Improved application reliability and uptime through better architecture patterns and operational practices.</li>
@@ -199,7 +199,7 @@ export const workExp = [
     detail:
       `<ul>
         <li>Built and maintained DevOps pipelines across a large Azure environment supporting hundreds of projects and thousands of deployable components.</li>
-        <li>Automated the on-prem batch release for 26 teams and 1,200+ components. Release nights that used to run until 4 to 6:30 a.m. started finishing shortly after midnight.</li>
+        <li>Automated the on-prem batch release for 26 teams and 1,200+ components, making releases 3 to 4 hours faster on average.</li>
         <li>Automated and managed thousands of releases in Azure DevOps using YAML pipelines, significantly improving deployment speed and reliability.</li>
         <li>Built a full enterprise-grade Terraform module suite for infrastructure provisioning, later re-implementing it in Bicep to support Azure-specific preview features and speed up development.</li>
         <li>Owned and maintained a custom internal configuration database supporting deployment coordination and system state across the org.</li>

@@ -11,7 +11,7 @@ const metrics = [
     },
     {
         value: '26',
-        label: 'teams moved off manual deploys',
+        label: 'teams shipping through one automated release',
     },
 ]
 

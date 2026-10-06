@@ -524,7 +524,7 @@ export const content = {
 
     <p>I'm a Principal Engineer and AWS Certified Solutions Architect based in Southern California. I build the platforms, pipelines, and internal tools that other engineers build on.</p>
 
-    <p>Most of my work is in the layer teams tend to struggle with: release orchestration, self-service platforms, CI/CD, infrastructure as code, and developer environments. A lot of it comes down to taking what only one or two people know and turning it into something written down, automated, and repeatable, so the next person's job is easier by default.</p>
+    <p>My favorite work is the foundation layer: release orchestration, self-service platforms, CI/CD, infrastructure as code, and developer environments. A lot of it is turning a team's hard-won knowledge into something written down, automated, and repeatable, so the next person starts ahead.</p>
 
     <p>At Transamerica, I set technical direction for WFG Digital as Principal Engineer - Developer Experience & Platform. I design AWS architecture patterns, Terraform standards, infrastructure testing approaches, and internal tooling that teams adopt because it makes their work easier, not because they're told to. Before that, I shaped ALM modernization, cloud data architecture, and engineering standards across hedging and analytics business units.</p>
 

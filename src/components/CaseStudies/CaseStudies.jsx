@@ -39,7 +39,7 @@ const CaseStudies = () => {
         <motion.div variants={textVariant(0.1)} className={`flexCenter ${css.heading}`}>
           <div>
             <h2 className="primaryText">Case Studies</h2>
-            <p className={css.subheading}>The longer stories: what the problem was, what I built, and how it turned out.</p>
+            <p className={css.subheading}>The longer stories behind what I've built.</p>
           </div>
         </motion.div>
 
