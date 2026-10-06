@@ -13,10 +13,10 @@ Source basis: NomadTime's product brief, experience standard, map architecture d
 - Uses the existing Case Studies gallery, InfoPost renderer, routing, SEO metadata, prerender, and sitemap pipeline.
 - Teal and gold editorial styling is scoped to this case study; other articles keep their current presentation.
 - Links from the NomadTime project overview and back to the overview, support, and Case Studies.
-- No new package or service.
+- No new package or service. The concurrent MetadataDB and Product Factory case-study additions remain intact.
 
 ## Verification and signoff
 
-Node 24 production build and SEO validation passed for 13 routes. All 122 existing tests passed. Browser review covered desktop 1440×1000, mobile 390×844, the article's screenshots, heading/canonical metadata, and navigation. Final hosted-preview checks accompany the PR. Source and preview readiness do not imply production publication.
+Node 24 production build and SEO validation passed for 16 routes. All 122 existing tests passed. Browser review covered desktop 1440×1000, mobile 390×844, the article's screenshots, heading/canonical metadata, and navigation. Final hosted-preview checks accompany the PR. Source and preview readiness do not imply production publication.
 
 Decision: ship the case-study content through the portfolio's required PR review and deployment checks. This change does not publish an iOS app release.

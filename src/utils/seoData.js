@@ -37,6 +37,20 @@ export const seoData = {
     url: `${BASE_URL}/agenticWorkflowApp`,
     image: DEFAULT_IMAGE,
   },
+  metadataDb: {
+    title: 'MetadataDB Case Study | Alia Wilkinson',
+    description:
+      'Designing a private, typed control plane for product ownership, configuration boundaries, deployment evidence, operational context, and long-term handoff.',
+    url: `${BASE_URL}/metadataDb`,
+    image: `${BASE_URL}/infoposts/metadata-db.svg`,
+  },
+  productFactory: {
+    title: 'Product Factory Case Study | Alia Wilkinson',
+    description:
+      'Building a private product delivery system that turns validated ideas into maintainable web and mobile products through reusable architecture, standards, and quality gates.',
+    url: `${BASE_URL}/productFactory`,
+    image: `${BASE_URL}/infoposts/product-factory.svg`,
+  },
   solarBloomCommerce: {
     title: 'Solar Bloom Commerce Case Study | Alia Wilkinson',
     description:

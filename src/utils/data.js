@@ -58,6 +58,18 @@ export const caseStudies = [
     bg: "#6D4B8A",
   },
   {
+    slug: "metadataDb",
+    imgSrc: "./infoposts/metadata-db.svg",
+    alt: "MetadataDB: a private control plane for product ownership, operations, and delivery evidence",
+    bg: "#173D35",
+  },
+  {
+    slug: "productFactory",
+    imgSrc: "./infoposts/product-factory.svg",
+    alt: "Product Factory: reusable architecture for taking product ideas from strategy to delivery",
+    bg: "#4A315F",
+  },
+  {
     slug: "cognitoIdentityArchitecture",
     imgSrc: "./infoposts/cognito-identity.png",
     alt: "Cognito Cloud Archiecture: auth for 250K agents",

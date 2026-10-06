@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">MetadataDB system map</title>
+  <desc id="desc">Abstract connected records surrounding a central verified control plane.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%"><stop offset="0" stop-color="#315f54"/><stop offset=".55" stop-color="#173d35"/><stop offset="1" stop-color="#081c19"/></radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4e8ca" stop-opacity=".22"/><stop offset="1" stop-color="#9ed2c0" stop-opacity=".06"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="900" rx="64" fill="url(#bg)"/>
+  <g fill="none" stroke="#d9c998" stroke-opacity=".3" stroke-width="3">
+    <path d="M600 450L260 220M600 450L940 220M600 450L210 640M600 450L990 640M600 450V155M600 450V745"/>
+    <ellipse cx="600" cy="450" rx="420" ry="285" stroke-opacity=".12"/>
+    <ellipse cx="600" cy="450" rx="300" ry="390" stroke-opacity=".1" transform="rotate(30 600 450)"/>
+  </g>
+  <g fill="url(#card)" stroke="#eadcae" stroke-opacity=".48" stroke-width="2">
+    <rect x="145" y="145" width="230" height="145" rx="24"/><rect x="825" y="145" width="230" height="145" rx="24"/>
+    <rect x="95" y="570" width="230" height="145" rx="24"/><rect x="875" y="570" width="230" height="145" rx="24"/>
+    <rect x="485" y="70" width="230" height="125" rx="24"/><rect x="485" y="705" width="230" height="125" rx="24"/>
+  </g>
+  <g fill="#f5ecd5" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="260" y="212" font-size="24" font-weight="700">PRODUCTS</text><text x="260" y="248" font-size="16" opacity=".68">purpose · ownership</text>
+    <text x="940" y="212" font-size="24" font-weight="700">COMPONENTS</text><text x="940" y="248" font-size="16" opacity=".68">systems · boundaries</text>
+    <text x="210" y="637" font-size="24" font-weight="700">EVIDENCE</text><text x="210" y="673" font-size="16" opacity=".68">deployments · observations</text>
+    <text x="990" y="637" font-size="24" font-weight="700">CONTEXT</text><text x="990" y="673" font-size="16" opacity=".68">decisions · recovery</text>
+    <text x="600" y="126" font-size="22" font-weight="700">ENVIRONMENTS</text><text x="600" y="158" font-size="15" opacity=".68">policy · targets</text>
+    <text x="600" y="760" font-size="22" font-weight="700">RELATIONSHIPS</text><text x="600" y="792" font-size="15" opacity=".68">typed · directional</text>
+  </g>
+  <circle cx="600" cy="450" r="142" fill="#0b2722" stroke="#f0dea4" stroke-width="3" filter="url(#glow)"/>
+  <circle cx="600" cy="450" r="118" fill="none" stroke="#9fd4c0" stroke-opacity=".38"/>
+  <path d="M550 450l32 32 72-78" fill="none" stroke="#f0dea4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="525" fill="#f8efd8" font-family="Georgia, serif" font-size="28" text-anchor="middle">MetadataDB</text>
+</svg>

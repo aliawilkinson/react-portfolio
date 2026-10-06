@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Product Factory delivery system</title>
+  <desc id="desc">Abstract product seed moving through reusable architecture into distinct product surfaces.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a1026"/><stop offset=".55" stop-color="#4a315f"/><stop offset="1" stop-color="#152e39"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f0c98d"/><stop offset=".5" stop-color="#d8b5ff"/><stop offset="1" stop-color="#8fd4d4"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="900" rx="64" fill="url(#bg)"/>
+  <g fill="none" stroke="#ead8ff" stroke-opacity=".12"><circle cx="600" cy="450" r="330"/><circle cx="600" cy="450" r="260"/><path d="M100 450h1000M600 70v760"/></g>
+  <path d="M190 450h820" stroke="url(#beam)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <circle cx="205" cy="450" r="92" fill="#241630" stroke="#f0c98d" stroke-width="3"/>
+    <path d="M205 398c35 27 44 68 0 108-44-40-35-81 0-108z" fill="#f0c98d" fill-opacity=".88"/>
+    <text x="205" y="575" fill="#f7ead3" font-size="21" font-weight="700">PRODUCT INTENT</text>
+    <rect x="435" y="290" width="330" height="320" rx="48" fill="#171020" stroke="#d8b5ff" stroke-width="3" filter="url(#glow)"/>
+    <text x="600" y="365" fill="#f4e9ff" font-family="Georgia, serif" font-size="38">Product Factory</text>
+    <g fill="#eadcf5" font-size="18"><text x="600" y="420">ARCHITECTURE</text><text x="600" y="465">QUALITY GATES</text><text x="600" y="510">OPERATIONS</text><text x="600" y="555">DELIVERY EVIDENCE</text></g>
+    <g fill="#142329" stroke="#9ed8d4" stroke-width="3">
+      <rect x="890" y="205" width="210" height="145" rx="25"/><rect x="890" y="378" width="210" height="145" rx="25"/><rect x="890" y="551" width="210" height="145" rx="25"/>
+    </g>
+    <g fill="#e9ffff" font-size="21" font-weight="700"><text x="995" y="275">WEB</text><text x="995" y="448">MOBILE</text><text x="995" y="621">SERVICES</text></g>
+    <g fill="#b6d5d6" font-size="14"><text x="995" y="308">distinct experience</text><text x="995" y="481">shared foundation</text><text x="995" y="654">operable by design</text></g>
+  </g>
+</svg>
