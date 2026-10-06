@@ -125,13 +125,10 @@ export const workExp = [
     role: "Principal Engineer - Architecture",
     detail:
       `<ul>
-        <li>Recruited into WFG Digital to work across architecture, platform, and delivery - hands-on in both the design and the build.</li>
-        <li>Designed and built sign-in for the WFG Digital Portal, which serves ~250K external agents: Cognito connected to enterprise identity, with the IAM, API Gateway, and auth flows all in Terraform.</li>
-        <li>Built an agentic workflow app that identifies and analyzes production apps by reading git history alongside Jira release and runbook data, giving teams one clear view of what's running.</li>
-        <li>Designing developer workflow tooling: test suites, versioning strategies, branch protections, CI/CD gates, and configuration management apps that make good engineering habits the default.</li>
-        <li>Determine architecture, make the case for it with stakeholders, and drive decisions across infrastructure and delivery.</li>
-        <li>Partner closely with DevOps and platform engineering to turn architecture decisions into delivered capabilities.</li>
-        <li>Built internal apps, reusable web app patterns, and authentication tooling that other teams have adopted as their standard.</li>
+        <li>Set architecture for WFG Digital and partner with DevOps and platform engineering to deliver it.</li>
+        <li>Designed and built identity for the WFG Digital Portal (~250K external agents): Cognito with enterprise federation, IAM, and API Gateway, all in Terraform.</li>
+        <li>Built an agentic app that maps production applications from git history, Jira releases, and runbooks.</li>
+        <li>Built developer tooling adopted as team standards: CI/CD gates, branch protections, versioning, test suites, and authentication patterns.</li>
         <li>Python, Terraform, AWS (Cognito, API Gateway, IAM), React, Jira automation, agentic AI tooling.</li>
       </ul>`,
     dotColor: '#B8A295'
@@ -142,13 +139,11 @@ export const workExp = [
     role: "Principal Engineer - ALM Modernization & Architecture",
     detail:
       `<ul>
-        <li>Led modernization of ALM hedging systems, replacing legacy on-prem/EC2 workflows with AWS-native patterns (Lambda, S3, event-driven pipelines) - improving reliability and reducing operational overhead.</li>
-        <li>Designed and improved data ingestion and processing pipelines for high-volume financial, market, and policy data serving risk, finance, and executive stakeholders.</li>
-        <li>Acted as architect for web applications and data infrastructure - built a web application POC to replace existing Windows Service systems and replaced manual email-based reporting with a centralized, self-service data platform.</li>
-        <li>Created reusable Python API + React frameworks with Engineering Excellence to standardize internal application development across modeling teams.</li>
-        <li>Unblocked teams on Terraform, CI/CD, and infrastructure issues; established repeatable deployment and development patterns that reduced dependency on tribal knowledge.</li>
-        <li>Set ALM developers up with AI coding tools (Amazon Q, Kiro) and taught them how to work with agentic workflows day to day.</li>
-        <li>Contributed architecture direction for cloud migration, resiliency, and technical debt reduction across ALM and Finance systems.</li>
+        <li>Led modernization of ALM hedging systems from on-prem and EC2 to AWS Lambda, S3, and event-driven pipelines.</li>
+        <li>Designed data pipelines for high-volume financial, market, and policy data serving risk, finance, and executive stakeholders.</li>
+        <li>Replaced email-based reporting with a self-service data platform and built a web application POC to replace Windows Service systems.</li>
+        <li>Created reusable Python API + React frameworks, standardizing internal application development across modeling teams.</li>
+        <li>Introduced AI coding tools (Amazon Q, Kiro) and agentic workflows to ALM developers.</li>
         <li>Python, AWS (Lambda, S3, EMR), Terraform, FastAPI, React, Jenkins, AI/agentic tooling.</li>
       </ul>`,
     dotColor: '#8897B8'
@@ -159,9 +154,9 @@ export const workExp = [
     role: "Senior Software Engineer - FP&A Platform",
     detail:
       `<ul>
-        <li>Built APIs to integrate with third-party ETL systems, enabling data ingestion and downstream processing for financial planning and analytics (FP&A) systems.</li>
-        <li>Developed backend and full-stack functionality for managing connections to external data sources.</li>
-        <li>Led regular architecture discussions and worked with a core group of engineers on how the platform should be structured as it grew.</li>
+        <li>Built APIs integrating third-party ETL systems for financial planning and analytics (FP&A) data.</li>
+        <li>Developed backend and full-stack features for managing external data source connections.</li>
+        <li>Led architecture discussions on platform structure.</li>
       </ul>`,
     dotColor: '#B8A295'
   },
@@ -171,11 +166,10 @@ export const workExp = [
     role: "DevSecOps Architect - AWS & Azure Government Cloud",
     detail:
       `<ul>
-        <li>Built DevSecOps pipelines focused on automation, security, and cost optimization across AWS and Azure Government Cloud for compliant, reliable deployments.</li>
-        <li>Developed ETL data pipelines on AWS GovCloud for secure utility data ingestion and processing.</li>
-        <li>Implemented Infrastructure as Code (Terraform, Bicep, ARM, AWS CDK in Python) to create reproducible, maintainable environments.</li>
-        <li>Applied cost optimization at the infrastructure and code level to reduce operational overhead for business-critical systems.</li>
-        <li>Co-developed and presented a NASPI seminar on storing synchrophasor data in the cloud - explored architecture patterns for high-frequency, time-series data in distributed cloud environments.</li>
+        <li>Built DevSecOps pipelines across AWS and Azure Government Cloud.</li>
+        <li>Developed ETL pipelines on AWS GovCloud for utility data.</li>
+        <li>Delivered infrastructure as code in Terraform, Bicep, ARM, and AWS CDK (Python).</li>
+        <li>Co-presented a NASPI seminar on storing synchrophasor data in the cloud.</li>
       </ul>`,
     dotColor: '#C83C63'
   },
@@ -185,11 +179,10 @@ export const workExp = [
     role: "DevOps Architect - Professional Services",
     detail:
       `<ul>
-        <li>Provided Professional Services consulting for AWS customers - designed solutions for business problems using AWS services, automation, and architecture patterns focused on scalability, security, and cost efficiency.</li>
-        <li>Built an Amplify + React application that operations engineers used to migrate services faster and more reliably.</li>
-        <li>Created a Cost Optimization Blueprint to help companies save money during a downturn - architecture-level decisions, not just resource trimming.</li>
-        <li>Modernized internal training for AWS consultants: container SME training, cost optimization practices, and patterns for building secure, cost-effective web applications.</li>
-        <li>Improved application reliability and uptime through better architecture patterns and operational practices.</li>
+        <li>Consulted for AWS customers on architecture, automation, security, and cost efficiency.</li>
+        <li>Built an Amplify + React application that made service migrations faster and more reliable.</li>
+        <li>Created a Cost Optimization Blueprint for customers.</li>
+        <li>Modernized internal consultant training: containers, cost optimization, and secure web application patterns.</li>
       </ul>`,
     dotColor: '#6D4B8A'
   },
@@ -199,15 +192,12 @@ export const workExp = [
     role: "Senior DevOps Engineer - Lead",
     detail:
       `<ul>
-        <li>Built and maintained DevOps pipelines across a large Azure environment supporting hundreds of projects and thousands of deployable components.</li>
         <li>Automated the on-prem batch release for 26 teams and 1,200+ components, making releases 3 to 4 hours faster on average.</li>
-        <li>Automated and managed thousands of releases in Azure DevOps using YAML pipelines, significantly improving deployment speed and reliability.</li>
-        <li>Built a full enterprise-grade Terraform module suite for infrastructure provisioning, later re-implementing it in Bicep to support Azure-specific preview features and speed up development.</li>
-        <li>Owned and maintained a custom internal configuration database supporting deployment coordination and system state across the org.</li>
-        <li>Designed and implemented the company's technical interview process end-to-end - evaluation standards, interview structure, and hiring criteria for the DevOps team.</li>
-        <li>Created ~75% of internal training materials, improving onboarding and standardizing engineering practices across the team.</li>
-        <li>Identified gaps in tooling and workflows, built automation and systems around them, and turned those into repeatable practices adopted by other engineers.</li>
-        <li>Served as on-call escalation point - ran releases and debugged production issues in real time with development teams.</li>
+        <li>Ran thousands of releases through Azure DevOps YAML pipelines across hundreds of projects.</li>
+        <li>Built an enterprise Terraform module suite, then re-implemented it in Bicep.</li>
+        <li>Owned the configuration database coordinating deployments across the org.</li>
+        <li>Designed the DevOps technical interview process and created ~75% of internal training materials.</li>
+        <li>On-call escalation point for releases and production issues.</li>
       </ul>`,
     dotColor: '#8897B8'
   },
@@ -217,12 +207,9 @@ export const workExp = [
     role: "DevOps Engineer",
     detail:
       `<ul>
-        <li>Hired from COFEBE contract - ramped into release engineering and pipeline automation across a large .NET/Azure environment.</li>
-        <li>Automated the on-prem release process for batch releases, laying the groundwork for the orchestration system later scaled as Senior/Lead.</li>
-        <li>Created CI/CD pipelines for builds, releases, and environment promotion using Azure DevOps and PowerShell.</li>
-        <li>Built Terraform templates for deployments to Azure, establishing early IaC patterns the team later standardized on.</li>
-        <li>Monitored and troubleshot production systems using ELK and Dynatrace during outages.</li>
-        <li>Created ~50% of interviewing material and documented difficult-to-track legacy processes for future use.</li>
+        <li>Built CI/CD pipelines for builds, releases, and environment promotion in Azure DevOps and PowerShell.</li>
+        <li>Automated the on-prem batch release process.</li>
+        <li>Built Terraform templates for Azure deployments, later adopted as the team standard.</li>
         <li>Promoted to Senior DevOps Engineer - Lead in Feb 2021.</li>
       </ul>`,
     dotColor: '#8897B8'
@@ -233,10 +220,10 @@ export const workExp = [
     role: "Software Engineer → Team Lead - Data Platform",
     detail:
       `<ul>
-        <li>Promoted from engineer to team lead on data platform projects within the first year.</li>
-        <li>Designed data pipelines and a data lake architecture on AWS (Redshift, Athena, CodeDeploy, Luigi) with backward-compatible Python (2.7/3.x) supporting legacy and modern consumers.</li>
-        <li>Built QA test suites and ETL validation patterns that caught failures before production rather than after.</li>
-        <li>Directed internal talent and coordinated directly with clients on requirements, delivery, and technical tradeoffs.</li>
+        <li>Promoted from engineer to team lead within the first year.</li>
+        <li>Designed data pipelines and a data lake on AWS (Redshift, Athena, CodeDeploy, Luigi).</li>
+        <li>Built QA test suites and ETL validation.</li>
+        <li>Coordinated directly with clients on requirements and delivery.</li>
       </ul>`,
     dotColor: '#B8A295'
   },
@@ -246,8 +233,8 @@ export const workExp = [
     role: "Full Stack Developer",
     detail:
       `<ul>
-        <li>Built React front end with Webpack, designed database structure and REST endpoints on LAMP stack, deployed on AWS.</li>
-        <li>Ran SCRUM ceremonies and coordinated delivery across a distributed team.</li>
+        <li>Built a React front end, REST endpoints, and database on a LAMP stack, deployed on AWS.</li>
+        <li>Ran Scrum ceremonies for a distributed team.</li>
       </ul>`,
     dotColor: '#C83C63'
   },
@@ -257,7 +244,7 @@ export const workExp = [
     role: "Software Engineer - Web & Analytics",
     detail:
       `<ul>
-        <li>Built websites, SEO systems, and GIS analysis tooling for small business clients. First professional engineering role - learned to ship end to end.</li>
+        <li>Built websites, SEO systems, and GIS analysis tooling for small business clients.</li>
       </ul>`,
     dotColor: '#C83C63'
   },
