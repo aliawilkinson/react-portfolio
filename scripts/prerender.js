@@ -9,6 +9,7 @@ const __dirname = dirname(__filename);
 const distDir = resolve(__dirname, '..', 'dist');
 
 const routes = [
+  '/nomadtime-case-study',
   '/',
   '/about',
   '/releaseofreleases',

@@ -40,6 +40,12 @@ export const projectExperience = [
 
 export const caseStudies = [
   {
+    slug: "nomadtime-case-study",
+    imgSrc: "/nomadtime/icon.png",
+    alt: "NomadTime: making the world feel closer through visual time comparison",
+    bg: "#174f48",
+  },
+  {
     slug: "solarBloomCommerce",
     imgSrc: "./house-of-solar-bloom.webp",
     alt: "House of Solar Bloom: luxury editorial commerce platform",

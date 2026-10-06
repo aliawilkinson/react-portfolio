@@ -18,7 +18,7 @@ const InfoPost = ({ post }) => {
       variants={staggerChildren}
       initial="hidden"
       animate="show"
-      className={`${css.wrapper}`}
+      className={`${css.wrapper} ${post === 'nomadtime-case-study' ? css.nomadTime : ''}`}
     >
       <SEO
         title={metadata.title}

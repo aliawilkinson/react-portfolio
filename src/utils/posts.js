@@ -1,6 +1,70 @@
 // posts for case studies and about in html format
 
 export const content = {
+    "nomadtime-case-study": {
+        "title": "NomadTime: Making the World Feel Closer",
+        "imgSrc": "/nomadtime/icon.png",
+        "post": `
+    <p class="case-eyebrow">Independent product · Product design &amp; engineering · 2026</p>
+    <p class="case-lead">A visual world clock for understanding what your life could look like somewhere else—and keeping a little of the world with you.</p>
+    <ul class="case-facts">
+      <li><strong>My role</strong>Founder, product direction, UX, architecture &amp; release engineering</li>
+      <li><strong>Built with</strong>React Native, Expo, TypeScript &amp; native iOS maps; AI-assisted development</li>
+      <li><strong>Current stage</strong>TestFlight beta; first public iPhone &amp; iPad release in preparation</li>
+    </ul>
+    <p class="case-links"><a href="/nomadtime">Explore NomadTime ↗</a><a href="/nomadtime/support">Support &amp; how it works ↗</a></p>
+
+    <h2>A small window into a bigger world</h2>
+    <p>When I was younger, I used to wander through Google Maps and Street View just to see what life looked like somewhere else. They felt like little free trips. NomadTime grew out of that feeling: the world should be accessible even when you cannot get on a plane.</p>
+    <p>Travel also brought a practical question. If I kept my work commitments in one time zone and lived in another, when would I actually work, sleep, or talk to friends? A late-night call might mean finding a private room instead of staying in a hostel dorm. A time difference changes the shape of a day.</p>
+    <p>The first useful version needed to answer something simple: <strong>“What would my day feel like there?”</strong></p>
+
+    <figure class="case-screens">
+      <img src="/nomadtime/clock.jpg" alt="NomadTime's photographic Los Angeles clock and shared 24-hour timeline" width="660" height="1434" loading="lazy">
+      <img src="/nomadtime/ranges.jpg" alt="A saved Sleep range from 10:30 PM to 6:00 AM, showing the next day and a duration of 7 hours 30 minutes" width="660" height="1434" loading="lazy">
+      <figcaption>Actual iOS release-candidate screens: one moment, or the shape of a whole night.</figcaption>
+    </figure>
+
+    <h2>Start with the decisions people make</h2>
+    <p>I shaped the MVP around three situations: finding a meeting time across several cities, comparing work and sleep before choosing a destination, and saving the places and practical details I wanted to remember.</p>
+    <p>The interaction begins with a shared 24-hour timeline. Photographic place cards show the same moment in each city; daylight shading makes the comparison legible at a glance. Named ranges such as Work and Sleep let people compare routines instead of repeatedly converting individual times.</p>
+    <p>Portrait keeps the photographic layout. Landscape gives more space to the hour scales and local date changes. Optional controls collapse, while saved range toggles and navigation remain easy to find. Visible plus buttons complement the timeline gestures so someone does not have to discover the app by accident.</p>
+
+    <h2>Let sleep continue through midnight</h2>
+    <p>Early iterations exposed a deceptively important failure: an overnight range could look clipped at midnight. Sleep from 10:30 PM to 6:00 AM must remain one continuous interval, even though a 24-hour ruler draws it in two sections.</p>
+    <blockquote>10:30 PM → 6:00 AM the next day<br><strong>One sleep range. Seven hours and thirty minutes.</strong></blockquote>
+    <p>The range model and its visual representation needed to agree about the next day, duration, and source time zone. I kept those concepts explicit and made editing part of the core flow: drag endpoints, enter exact times, rename, lock, hide, or delete a range. Turning a range off preserves it for the next comparison.</p>
+    <p>Repeated use also changed the layout. Separate editable range rows belong in the main Time controls; overlapping translucent shading belongs inside the destination clocks. Repeating all the editing controls in every city made the comparison harder to read.</p>
+
+    <h2>One place, connected memories</h2>
+    <p>A clock and a map pin can represent the same place. Treating them as unrelated objects created a frustrating gap: notes saved on a pin were not necessarily available when opening its clock. The product now connects those experiences while keeping their actions independent. Removing a clock should not erase a place's memories.</p>
+    <p>Personal pins support names, notes, photos, and custom color labels. A clock is optional. The broader idea is a place-based memory system: keep a route, a story, or the instructions for reaching somewhere without having to organize everything into a formal trip first.</p>
+    <figure class="case-map">
+      <img src="/nomadtime/map.jpg" alt="NomadTime's native iOS map with a personal Places legend and persistent Clock and Map navigation" width="660" height="1434" loading="lazy">
+      <figcaption>The map keeps the place in view, with a personal legend layered over it.</figcaption>
+    </figure>
+
+    <h2>Choose the architecture that serves the interaction</h2>
+    <p>The original map ambition included an equal-area world view. In practice, a map that stalled or resisted panning undermined the entire experience. I prioritized a dependable native map on iOS, using Apple MapKit through React Native Maps, with platform-specific map renderers behind shared place actions.</p>
+    <p>React Native, Expo, and TypeScript provide the application foundation. Clocks, ranges, pins, notes, and imported photos stay on the device; the core experience does not require an account. Maps and weather remain separate external services with clear privacy disclosures, rather than a reason to introduce an unnecessary application backend.</p>
+    <p>I used AI-assisted development to iterate on the implementation, while keeping product decisions, architecture, and acceptance criteria explicit. Reusable mobile interaction and release patterns connect to my Product Factory tooling without making NomadTime depend on another app's data or runtime.</p>
+
+    <h2>Test the experience people actually have</h2>
+    <p>A successful build did not prove that long-press reordering, overnight dragging, or saving a note worked on a phone. TestFlight feedback exposed those gaps and helped define concrete acceptance journeys.</p>
+    <ul>
+      <li>Create an overnight range, drag an endpoint through midnight, and check its duration and destination dates.</li>
+      <li>Reorder clocks, switch orientation, and keep the controls reachable without losing the comparison.</li>
+      <li>Save a pin note, cancel an edit or photo selection, close the app, and verify the saved content on reopening.</li>
+    </ul>
+    <p>The release candidate has automated application checks and Release-mode iPhone and iPad simulator coverage for these journeys. Simulator coverage, physical-device feedback, and public App Store readiness are recorded as separate checks.</p>
+
+    <h2>What exists now—and what comes next</h2>
+    <p>NomadTime is a working TestFlight beta with photographic clocks, named and adjustable time ranges, personal map pins, and saved notes and photos. The first public iOS release is being prepared. The result so far is a usable foundation for comparing daily life across places, with real feedback shaping both the interface and its underlying model.</p>
+    <p>Flight information, shared travel knowledge, richer map exports, and optional community features belong to future milestones. The long-term goal is a world people can explore, learn from, and contribute to, whether they are traveling or imagining a possibility from home.</p>
+    <p>My main lesson was that beauty and reliability have to be developed together. The photographs invite someone to explore; predictable gestures, clear date boundaries, and trustworthy saved data give them a reason to stay.</p>
+    <p class="case-links"><a href="/nomadtime">Visit NomadTime ↗</a><a href="/case-studies">More case studies →</a></p>
+    `
+    },
     "releaseofreleases": {
         "title": "Release of Releases - Release Orchestration through Automation",
         "imgSrc": "./infoposts/ror.png",
