@@ -524,15 +524,15 @@ export const content = {
 
     <p>I'm a Principal Engineer and AWS Certified Solutions Architect based in Southern California. I build the platforms, pipelines, and internal tools that other engineers build on.</p>
 
-    <p>My favorite work is the foundation layer: release orchestration, self-service platforms, CI/CD, infrastructure as code, and developer environments. A lot of it is turning a team's hard-won knowledge into something written down, automated, and repeatable, so the next person starts ahead.</p>
+    <p>I focus on the foundation layer: release orchestration, self-service platforms, CI/CD, infrastructure as code, and developer environments. Much of it is turning team knowledge into documented, automated, repeatable systems.</p>
 
     <p>At Transamerica, I set technical direction for WFG Digital as Principal Engineer - Developer Experience & Platform. I design AWS architecture patterns, Terraform standards, infrastructure testing approaches, and internal tooling that teams adopt because it makes their work easier, not because they're told to. Before that, I shaped ALM modernization, cloud data architecture, and engineering standards across hedging and analytics business units.</p>
 
     <p>At AWS Professional Services, I consulted on cloud migration architecture, cost optimization, and delivery system design for enterprise clients. At loanDepot, I led release engineering through pandemic-era hypergrowth - automating the orchestration of 1200+ components, cutting multi-hour release windows down to predictable, dependency-aware automated deployments, and building the custom CMDB that mapped ownership and deployable relationships across the org.</p>
 
-    <p>The question I keep coming back to is: what can I build now that makes things easier for the next team? I'm drawn to the work that sits between code, infrastructure, process, and people - where a good answer has to be understandable, repeatable, secure, and practical enough for teams to trust after the architect leaves the room.</p>
+    <p>The question behind my work: what can I build now that makes the next team faster? I'm drawn to the work that sits between code, infrastructure, process, and people - where a good answer has to be understandable, repeatable, secure, and practical enough for teams to trust after the architect leaves the room.</p>
 
-    <p>Lately I've been working on AI-assisted developer workflows and agentic tooling: tools that don't just automate a task but help you see what to do next. On my own time I build products end to end, like NomadTime and House of Solar Bloom.</p>
+    <p>My current focus is AI-assisted developer workflows and agentic tooling. I also build my own products, including NomadTime and House of Solar Bloom.</p>
 
     <p>I grew up near the border in Southern California and spent years teaching English in Colombia. Those experiences shaped how I lead: assume intelligence, explain clearly, make room for questions, and help people build confidence through useful structure rather than authority.</p>
 

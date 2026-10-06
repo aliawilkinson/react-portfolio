@@ -39,8 +39,8 @@ const Hero = () => {
                     className={css.tagline}>
                     <span className='secondaryText'>
                         Principal Engineer at Transamerica. Cloud architecture,
-                        release automation, internal tools, and lately a lot of
-                        AI tooling. Remote from Southern California.
+                        release automation, developer tooling, and AI agents.
+                        Remote from Southern California.
                     </span>
                 </motion.div>
 

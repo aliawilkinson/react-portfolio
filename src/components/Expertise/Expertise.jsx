@@ -29,14 +29,14 @@ const Expertise = () => {
                 <motion.div
                     variants={textVariant(0.2)}
                     className={css.intro}>
-                    <span className={css.eyebrow}>The short version</span>
+                    <span className={css.eyebrow}>Overview</span>
                     <h2 className='primaryText'>What I Do</h2>
                     {whatIHelpWith.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                 </motion.div>
 
                 <div className={css.dashboard}>
                     <div className={css.dashboardBar}>
-                        <span>Where the years went</span>
+                        <span>Experience by area</span>
                         <div aria-hidden="true">
                             <span></span>
                             <span></span>

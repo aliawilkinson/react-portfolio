@@ -113,9 +113,9 @@ export const caseStudies = [
 ];
 
 export const whatIHelpWith = [
-  `I build the things other engineers build on: cloud platforms, release pipelines, and internal tools. My favorite part is when a team ships on their own because the path is already paved.`,
-  `Some of it, concretely: sign-in for a portal used by about 250,000 agents. A release system that brought 26 teams and 1,200+ components into one automated run. Hedging systems moved from on-prem servers to AWS. An AI tool that reads git history, Jira releases, and runbooks to map what is running in production.`,
-  `I'm a Principal Engineer at Transamerica and I love the work. On my own time I build products end to end, like NomadTime, a visual world clock for iPhone and iPad that's in beta now.`,
+  `I build what other engineers build on: cloud platforms, release pipelines, and internal tools. The goal is teams that ship independently.`,
+  `Examples: sign-in for a portal serving ~250,000 agents. A release system running 26 teams and 1,200+ components through one automated run. Hedging systems migrated from on-prem to AWS. An AI tool that maps production from git history, Jira releases, and runbooks.`,
+  `Currently Principal Engineer at Transamerica. I also build my own products, including NomadTime, a visual world clock for iPhone and iPad, now in beta.`,
 ];
 
 export const workExp = [
