@@ -56,6 +56,7 @@ const App = () => {
         <Route path='/amplifyReactMigApp' element={<InfoPost post='amplifyReactMigApp' />} />
         <Route path='/cmdletCreationTemplate' element={<InfoPost post='cmdletCreationTemplate' />} />
         <Route path='/agenticWorkflowApp' element={<InfoPost post='agenticWorkflowApp' />} />
+        <Route path='/nomadtime-case-study' element={<InfoPost post='nomadtime-case-study' />} />
         <Route path='/metadataDb' element={<InfoPost post='metadataDb' />} />
         <Route path='/productFactory' element={<InfoPost post='productFactory' />} />
         <Route path='/solarBloomCommerce' element={<InfoPost post='solarBloomCommerce' />} />

@@ -10,6 +10,12 @@ export const seoDefaults = {
 }
 
 export const seoData = {
+  'nomadtime-case-study': {
+    title: 'NomadTime Case Study | Alia Wilkinson',
+    description: 'Designing a visual world clock around real days: overnight time ranges, connected place memories, native maps, and a dependable mobile experience.',
+    url: `${BASE_URL}/nomadtime-case-study`,
+    image: `${BASE_URL}/nomadtime/icon.png`,
+  },
   home: {
     title: 'Alia Wilkinson | Systems Architect & Principal Engineer',
     description:
