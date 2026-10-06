@@ -55,7 +55,7 @@ const Testimonials = () => {
         <div className={`flexCenter ${css.heading}`}>
           <span className="primaryText">People Talk</span>
           <p className={css.subheading}>
-            From managers and teammates I've worked alongside
+            From managers and teammates
           </p>
         </div>
 

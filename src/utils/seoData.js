@@ -19,14 +19,14 @@ export const seoData = {
   home: {
     title: 'Alia Wilkinson | Systems Architect & Principal Engineer',
     description:
-      'Alia Wilkinson is a Principal Engineer who builds the platforms, release automation, cloud infrastructure, and internal tools that engineering teams build on.',
+      'Alia Wilkinson is a Principal Engineer in architecture: technical direction, cloud architecture, release automation, and developer tooling for engineering teams.',
     url: BASE_URL,
     image: DEFAULT_IMAGE,
   },
   about: {
     title: 'About Alia Wilkinson | Principal Engineer & Architect',
     description:
-      'Principal Engineer and AWS Certified Solutions Architect in Southern California. I build platforms, release automation, and internal tools for engineering teams.',
+      'Principal Engineer and AWS Certified Solutions Architect in Southern California. I set architecture and work with platform and DevOps teams to deliver it.',
     url: `${BASE_URL}/about`,
     image: DEFAULT_IMAGE,
   },

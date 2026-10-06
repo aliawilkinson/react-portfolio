@@ -21,8 +21,8 @@ const Hero = () => {
                     className={css.headline}>
                     <h1 className='primaryText'>
                         Hi, I'm Alia. <br />
-                        I make shipping <br />
-                        software calmer.
+                        I set the architecture <br />
+                        and get it shipped.
                     </h1>
                 </motion.div>
 
@@ -30,7 +30,7 @@ const Hero = () => {
                 <motion.div
                     variants={fadeIn("up", "tween", 0.3, 1)}
                     className={css.person}>
-                    <img src="./rock-portrait.jpg" alt="Alia Wilkinson" />
+                    <img src="./rock-portrait.jpg" alt="Alia Wilkinson, green hair, posing under a giant boulder" />
                 </motion.div>
 
                 {/* top-right: tagline */}
@@ -38,9 +38,9 @@ const Hero = () => {
                     variants={fadeIn("left", "tween", 0.2, 1)}
                     className={css.tagline}>
                     <span className='secondaryText'>
-                        Principal Engineer at Transamerica. I build the platforms,
-                        pipelines, and internal tools that other engineers build on.
-                        Remote from Southern California.
+                        Principal Engineer on the Architecture team at Transamerica.
+                        I set technical direction, make the case for it, and work
+                        with platform and DevOps to deliver it. Remote from Southern California.
                     </span>
                 </motion.div>
 
