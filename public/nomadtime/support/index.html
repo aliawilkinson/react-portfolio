@@ -13,6 +13,7 @@
   <meta property="og:image" content="https://aliawilkinson.com/nomadtime/icon.png">
   <link rel="icon" href="/nomadtime/icon.png">
   <link rel="stylesheet" href="/nomadtime/style.css">
+  <script src="/nomadtime/contact.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
@@ -26,7 +27,17 @@
 <p class="eyebrow">NomadTime / Support</p>
 
 <h1>How can we help?</h1>
-<p class="intro">Contact NomadTime at <a href="mailto:solarbloomskincare@gmail.com">solarbloomskincare@gmail.com</a> for help, feedback, or privacy requests.</p>
+<p class="intro">Get in touch for help, feedback, or privacy requests.</p>
+<div class="contact-card" id="contact">
+  <button class="button" id="contact-toggle" type="button" aria-expanded="false" aria-controls="contact-options" hidden>Contact support <span aria-hidden="true">↗</span></button>
+  <div id="contact-options" class="contact-options" hidden>
+    <p>Choose how you’d like to email us.</p>
+    <div class="contact-actions"><a id="contact-email" class="button">Open email app <span aria-hidden="true">↗</span></a><button id="contact-copy" class="contact-copy" type="button">Copy email address</button></div>
+    <p id="contact-feedback" class="small-note" role="status" aria-live="polite"></p>
+    <p class="small-note">Your email app handles sending. Nothing is sent from this page.</p>
+  </div>
+  <p id="contact-fallback" class="small-note">If the contact button isn’t available, you can <a href="https://www.linkedin.com/in/aliawilkinson/" rel="noopener noreferrer" target="_blank">contact Alia on LinkedIn</a>.</p>
+</div>
 <p>If something went wrong, include your device model, iOS version, the app version from About, and what you were doing. Only include photos or notes you are comfortable sharing by email.</p>
 <p><a href="/nomadtime#app-tour">Take the screenshot tour ↗</a></p>
 <h2 id="time-ranges">Compare times and ranges</h2>
@@ -53,7 +64,7 @@
     </main>
     <footer>
       <div><a class="portfolio-link" href="/projects">← All projects by Alia Wilkinson</a><p>© 2026 Alia Wilkinson · NomadTime</p></div>
-      <div class="footer-links"><a href="/nomadtime/support">Support</a><a href="/nomadtime/privacy">Privacy</a><a href="mailto:solarbloomskincare@gmail.com">Email us</a></div>
+      <div class="footer-links"><a href="/nomadtime/support">Support</a><a href="/nomadtime/privacy">Privacy</a><a href="/nomadtime/support#contact">Contact</a></div>
     </footer>
   </div>
 </body>
