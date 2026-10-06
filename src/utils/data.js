@@ -45,6 +45,18 @@ export const projectExperience = [
 
 export const caseStudies = [
   {
+    slug: "productFactory",
+    imgSrc: "./infoposts/product-factory.svg",
+    alt: "Product Factory: reusable architecture for taking product ideas from strategy to delivery",
+    bg: "#4A315F",
+  },
+  {
+    slug: "metadataDb",
+    imgSrc: "./infoposts/metadata-db.svg",
+    alt: "MetadataDB: a private control plane for product ownership, operations, and delivery evidence",
+    bg: "#173D35",
+  },
+  {
     slug: "nomadtime-case-study",
     imgSrc: "/nomadtime/icon.png",
     alt: "NomadTime: making the world feel closer through visual time comparison",
@@ -61,18 +73,6 @@ export const caseStudies = [
     imgSrc: "./infoposts/agentic-workflow.png",
     alt: "Agentic Workflow App: mapping what runs in production from git and Jira",
     bg: "#6D4B8A",
-  },
-  {
-    slug: "metadataDb",
-    imgSrc: "./infoposts/metadata-db.svg",
-    alt: "MetadataDB: a private control plane for product ownership, operations, and delivery evidence",
-    bg: "#173D35",
-  },
-  {
-    slug: "productFactory",
-    imgSrc: "./infoposts/product-factory.svg",
-    alt: "Product Factory: reusable architecture for taking product ideas from strategy to delivery",
-    bg: "#4A315F",
   },
   {
     slug: "cognitoIdentityArchitecture",
@@ -114,8 +114,8 @@ export const caseStudies = [
 
 export const whatIHelpWith = [
   `I work between development teams and platform engineering. I determine the architecture, make the case for it, and partner with DevOps and platform teams to deliver it. Developers ship independently and reliably.`,
+  `I also built my own delivery platform. Product Factory generates each product with infrastructure as code, pipelines, release orchestration, and observability built in. MetadataDB is the control plane for ownership, deployments, and cost optimization. Built with it: NomadTime, a visual world clock in beta for iPhone and iPad, and House of Solar Bloom, a production beauty storefront.`,
   `Delivered: identity for a portal serving ~250,000 agents. Release automation running 26 teams and 1,200+ components in a single run. Hedging systems migrated from on-prem to AWS. An AI tool that maps production from git history, Jira releases, and runbooks.`,
-  `I ship outside work too, on my own platform. Product Factory generates each product with infrastructure as code, pipelines, release orchestration, and observability built in. MetadataDB is the control plane for ownership, deployments, and cost optimization. Shipped so far: NomadTime, a visual world clock in beta for iPhone and iPad, and House of Solar Bloom, a production beauty storefront.`,
 ];
 
 export const workExp = [
