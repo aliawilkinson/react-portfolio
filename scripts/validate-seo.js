@@ -8,6 +8,9 @@ const __dirname = dirname(__filename);
 const BASE_URL = 'https://aliawilkinson.com';
 
 const routes = [
+  '/nomadtime',
+  '/nomadtime/support',
+  '/nomadtime/privacy',
   '/',
   '/about',
   '/releaseofreleases',

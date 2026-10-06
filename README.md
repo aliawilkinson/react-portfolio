@@ -86,6 +86,16 @@ public/             # static assets (images, portrait, cert logo)
 
 ---
 
+## NomadTime project and App Store support
+
+NomadTime appears in **Projects → Apps**. Its public pages are maintained in `public/nomadtime/`:
+
+- `https://aliawilkinson.com/nomadtime` — project overview
+- `https://aliawilkinson.com/nomadtime/support` — help and support contact
+- `https://aliawilkinson.com/nomadtime/privacy` — iPhone/iPad privacy policy
+
+These are standalone HTML pages, with local images and CSS and no JavaScript, analytics, or portfolio embeds. Keep the clean routes in `vercel.json` and `vite.config.js` aligned. The build copies these pages without prerendering; sitemap and SEO validation include all three. App behavior and privacy facts come from the NomadTime repository, while this repository owns the published pages. Update both the app's About links and its App Store metadata if these URLs ever change. Do not display a download badge until the public App Store release is available.
+
 ## Deployment (Vercel)
 
 The checked-in `.github/workflows/deploy.yml` currently runs unit tests only. `vercel.json` declares the hosting build and routes, but the actual Vercel Git integration, production/preview triggers and rollback procedure still need an owner review. See [deployment context](docs/context.md) before relying on automatic delivery.
