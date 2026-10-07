@@ -70,3 +70,5 @@ Every due date below is **unassigned**; the named role must obtain an agreed dat
 At creation use C0; before architecture implementation use C1; every implementation milestone use C2; before release use C3; after deployment plus observation use C4; after changes, incidents, drills, handoff, retirement or revival use C5. Copy [report template](reports/TEMPLATE.md) for each occurrence and retain prior evidence.
 
 Maintenance evidence: [Dependabot coverage milestone](reports/2026-10-07-dependabot-coverage.md) records actual manifest roots and preserved upgrade gates.
+
+Dependency compatibility evidence: [React 19 C2/C5 report](reports/2026-10-07-react-19-compatibility-C2-C5.md) records the coupled Framer Motion fix, scoped checks and retained audit findings.

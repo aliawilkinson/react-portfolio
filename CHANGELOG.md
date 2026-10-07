@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased — React 19 compatibility
+
+- Keep the React 19 runtime/type update installable by updating Framer Motion to 11.18.2 with React 19 peer support; retain the existing animation APIs and record compatibility verification.
+
 ## Unreleased — operating record documentation
 
 - Backfill source-scoped architecture, Component/deployment diagrams, operating and recovery runbooks, C0–C5 checkpoints and a dated evidence report. Preserve existing provider/runbook history and make unverified readiness gaps explicit.
