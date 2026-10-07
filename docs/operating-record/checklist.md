@@ -70,3 +70,5 @@ Every due date below is **unassigned**; the named role must obtain an agreed dat
 At creation use C0; before architecture implementation use C1; every implementation milestone use C2; before release use C3; after deployment plus observation use C4; after changes, incidents, drills, handoff, retirement or revival use C5. Copy [report template](reports/TEMPLATE.md) for each occurrence and retain prior evidence.
 
 Maintenance evidence: [Dependabot coverage milestone](reports/2026-10-07-dependabot-coverage.md) records actual manifest roots and preserved upgrade gates.
+
+Dependency upgrade evidence: [React Router 7 compatibility checkpoint](reports/2026-10-07-react-router7-compatibility.md) records the inspected candidate, migration applicability, Node 24 tests, production prerender/SEO and browser route checks. Final combined dependency verification remains a separate checkpoint.
