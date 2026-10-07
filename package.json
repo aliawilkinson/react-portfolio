@@ -29,7 +29,7 @@
     "react-router-dom": "7.18.4",
     "react-slick": "0.31.0",
     "sass": "1.99.0",
-    "vercel": "^59.1.4"
+    "vercel": "^62.2.0"
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.2",
