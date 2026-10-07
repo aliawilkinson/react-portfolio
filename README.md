@@ -28,7 +28,7 @@ Opens the app at **http://localhost:5173** automatically. Checks your Node versi
 | Icons | react-icons | 4.12.0 |
 | Slider | react-slick | 0.31.0 |
 | HTML parsing | html-react-parser | 6.1.0 |
-| HTTP | axios | 1.16.0 |
+| HTTP | axios | 1.20.0 |
 | Node (local) | Node.js | 24.15.0 (LTS) |
 | Node (Vercel) | Node.js | 24.x |
 
