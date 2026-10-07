@@ -1,8 +1,9 @@
 # Changelog
 
-## Unreleased — React 19 compatibility
+## Unreleased — dependency maintenance batch
 
 - Keep the React 19 runtime/type update installable by updating Framer Motion to 11.18.2 with React 19 peer support; retain the existing animation APIs and record compatibility verification.
+- Verify the combined Axios, Actions, React/Router, Vite/Vitest, fast-check, JSDOM and brace-expansion updates; refresh the documented stack versions and preserve the remaining audit findings in a dated C2/C5 report.
 
 ## Unreleased — operating record documentation
 

@@ -1,0 +1,1070 @@
+{
+  "recordedAt": "2026-10-07T06:42:36.327993+00:00",
+  "scope": "Dated source-verification projection for dependency batch PRs52-59; not canonical deployment or security-acceptance evidence.",
+  "testedSourceRevision": "31e4bd02ec8f14f292361a9ce75fa72be93102d6",
+  "integrationParents": [
+    "2f1aabbf47f1ce1b3aa68e1d4da6e4015d171365",
+    "5aadf007d1d962ed1eaeba2954c9a48b493ebf24"
+  ],
+  "mergedMain": "c3e9842746a507c15d5453eb62d0b90589bb0235",
+  "dependencyFileSha256": {
+    "package.json": "bb7d9fe9bd1515df0d1c18d3a37f0501d5eca5f35e88a6786f01ea71dad1788b",
+    "package-lock.json": "2b3b1c697c58b26b7d46997d381815edae4f90b53a4d7eca34546defb3f5be53",
+    "yarn.lock": "f763941ef23f003bdd4a44dc12069b29dfd62e9f8ce811c63f88f380946540d8"
+  },
+  "runtime": {
+    "node": "24.19.0",
+    "npm": "11.19.1",
+    "browser": "Chrome/150.0.7871.24"
+  },
+  "checks": {
+    "cleanInstall": "passed without force or legacy-peer-deps",
+    "unitTests": {
+      "files": 13,
+      "passed": 125,
+      "sourceAssertionsUnchanged": true
+    },
+    "installedPeerGraph": "passed React19.3.0/Framer11.18.2/router7.18.4/Vite8.3.2/Vitest5.0.3",
+    "locks": {
+      "status": "passed",
+      "parser": "@yarnpkg/lockfile 1.1.0",
+      "npmManifestMatchesLock": true,
+      "yarnSelectors": 604,
+      "requiredDependencyEdges": 655,
+      "expectedVersions": {
+        "axios": "1.20.0",
+        "fast-check": "4.10.2",
+        "jsdom": "30.1.1",
+        "source-map-js": "1.2.2",
+        "vite": "8.3.2",
+        "vitest": "5.0.3",
+        "@vitejs/plugin-react": "6.1.1",
+        "brace-expansion": "1.1.21",
+        "glob/node_modules/brace-expansion": "5.0.12"
+      },
+      "scope": "Required Yarn selectors and semantic ranges; optional native package cross-platform installs excluded"
+    },
+    "productionBuild": {
+      "status": "passed",
+      "prerenderedRoutes": 13,
+      "seoRoutes": 16,
+      "sitemap": "passed"
+    },
+    "browser": {
+      "sourceRevision": "31e4bd02ec8f14f292361a9ce75fa72be93102d6",
+      "node": "v24.19.0",
+      "router": "7.18.4",
+      "react": "19.3.0",
+      "browser": "Chrome/150.0.7871.24",
+      "directRoutes": 28,
+      "checks": [
+        {
+          "check": "direct declared route",
+          "requested": "/",
+          "actual": "/",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Hi, I'm Alia. I set the architecture and get it shipped."
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/hero",
+          "actual": "/hero",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Hi, I'm Alia. I set the architecture and get it shipped."
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/expertise",
+          "actual": "/expertise",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Hi, I'm Alia. I set the architecture and get it shipped."
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/case-studies",
+          "actual": "/case-studies",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Hi, I'm Alia. I set the architecture and get it shipped."
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/projects",
+          "actual": "/projects",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Projects"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/projects/music",
+          "actual": "/projects/music",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Music"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/other-projects",
+          "actual": "/projects",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Projects"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/other-projects/music",
+          "actual": "/projects/music",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Music"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/blog",
+          "actual": "/blog",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Blog"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/blog/you-dont-have-to-rebase",
+          "actual": "/blog/you-dont-have-to-rebase",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "You Don't Have to Rebase"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/tarot",
+          "actual": "/tarot",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Ask the mirror"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/tarot/conversation",
+          "actual": "/tarot",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Ask the mirror"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/conversation",
+          "actual": "/tarot",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Ask the mirror"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/testimonials",
+          "actual": "/testimonials",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Hi, I'm Alia. I set the architecture and get it shipped."
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/experience",
+          "actual": "/experience",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Hi, I'm Alia. I set the architecture and get it shipped."
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/contact",
+          "actual": "/contact",
+          "title": "Alia Wilkinson | Systems Architect & Principal Engineer",
+          "headings": [
+            "Hi, I'm Alia. I set the architecture and get it shipped."
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/about",
+          "actual": "/about",
+          "title": "About Alia Wilkinson | Principal Engineer & Architect",
+          "headings": [
+            "About Alia"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/releaseofreleases",
+          "actual": "/releaseofreleases",
+          "title": "Release of Releases | Alia Wilkinson",
+          "headings": [
+            "Release of Releases - Release Orchestration through Automation"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/iacPipelineValidation",
+          "actual": "/iacPipelineValidation",
+          "title": "IaC Pipeline Validation | Alia Wilkinson",
+          "headings": [
+            "Who Tests the Testers - IaC Pipeline Validation"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/amplifyReactMigApp",
+          "actual": "/amplifyReactMigApp",
+          "title": "Amplify React Migration App | Alia Wilkinson",
+          "headings": [
+            "Transforming App Migrations with Amplify React"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/cmdletCreationTemplate",
+          "actual": "/cmdletCreationTemplate",
+          "title": "PowerShell DevOps Excellence | Alia Wilkinson",
+          "headings": [
+            "Empowering DevOps Excellence: Training and Guardrails for Those New to Powershell"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/agenticWorkflowApp",
+          "actual": "/agenticWorkflowApp",
+          "title": "Agentic Workflow App | Alia Wilkinson",
+          "headings": [
+            "Agentic Workflow App: Turning Scattered Production Signals into Infrastructure Intelligence"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/nomadtime-case-study",
+          "actual": "/nomadtime-case-study",
+          "title": "NomadTime Case Study | Alia Wilkinson",
+          "headings": [
+            "NomadTime: Making the World Feel Closer"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/metadataDb",
+          "actual": "/metadataDb",
+          "title": "MetadataDB Case Study | Alia Wilkinson",
+          "headings": [
+            "MetadataDB: Building a Private Control Plane for a Growing Product Portfolio"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/productFactory",
+          "actual": "/productFactory",
+          "title": "Product Factory Case Study | Alia Wilkinson",
+          "headings": [
+            "Product Factory: Turning Repeatable Architecture into a Product Delivery System"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/solarBloomCommerce",
+          "actual": "/solarBloomCommerce",
+          "title": "Solar Bloom Commerce Case Study | Alia Wilkinson",
+          "headings": [
+            "House of Solar Bloom: Building Luxury Editorial Commerce End to End"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/cognitoIdentityArchitecture",
+          "actual": "/cognitoIdentityArchitecture",
+          "title": "Cognito Identity Architecture | Alia Wilkinson",
+          "headings": [
+            "Cognito + Enterprise Identity: Auth Architecture for 250K External Agents"
+          ]
+        },
+        {
+          "check": "direct declared route",
+          "requested": "/almModernization",
+          "actual": "/almModernization",
+          "title": "ALM Modernization | Alia Wilkinson",
+          "headings": [
+            "ALM Modernization: Replacing Legacy Systems with Event-Driven AWS Patterns"
+          ]
+        },
+        {
+          "check": "unknown dynamic slug",
+          "requested": "/projects/missing-router-review-project",
+          "result": "Project not found."
+        },
+        {
+          "check": "unknown dynamic slug",
+          "requested": "/blog/missing-router-review-post",
+          "result": "Post not found."
+        },
+        {
+          "check": "SPA Link + parameter rendering + browser back/forward + return link",
+          "result": "passed; same document preserved"
+        },
+        {
+          "check": "Navigate replace legacy redirect",
+          "result": "back returns to prior blog page, not redirect URL"
+        },
+        {
+          "check": "useLocation project shell + return navigation",
+          "result": "detail omits header; returning to list restores it"
+        },
+        {
+          "check": "home section Link and route target",
+          "result": "passed; same document and target retained"
+        },
+        {
+          "check": "React 19 theme state and light/dark control",
+          "result": "passed both directions"
+        },
+        {
+          "check": "lazy Tarot bundle",
+          "result": "loaded and rendered the client route with external requests blocked"
+        }
+      ],
+      "browserExceptions": [],
+      "externalRequests": "blocked; no API submission or live provider action",
+      "result": "passed"
+    }
+  },
+  "audit": {
+    "baseline": {
+      "sourceRevision": "97f3c6e9ac33333236d9d9d6b5519cb41b74de56",
+      "observedAt": "2026-10-07T06:36:05.882389+00:00",
+      "exitCode": 1,
+      "counts": {
+        "info": 0,
+        "low": 1,
+        "moderate": 12,
+        "high": 34,
+        "critical": 1,
+        "total": 48
+      }
+    },
+    "current": {
+      "sourceRevision": "31e4bd02ec8f14f292361a9ce75fa72be93102d6",
+      "observedAt": "2026-10-07T06:40:43.026148+00:00",
+      "exitCode": 1,
+      "counts": {
+        "info": 0,
+        "low": 1,
+        "moderate": 7,
+        "high": 28,
+        "critical": 1,
+        "total": 37
+      }
+    },
+    "newAffectedPackages": [],
+    "removedAffectedPackages": [
+      "@remix-run/router",
+      "@vitest/mocker",
+      "axios",
+      "brace-expansion",
+      "form-data",
+      "nanoid",
+      "postcss",
+      "react-router",
+      "react-router-dom",
+      "vite",
+      "vitest"
+    ],
+    "remaining": [
+      {
+        "package": "@fastify/busboy",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          {
+            "package": "@fastify/busboy",
+            "advisory": "https://github.com/advisories/GHSA-x8mw-p69m-v3mx",
+            "severity": "high"
+          },
+          {
+            "package": "@fastify/busboy",
+            "advisory": "https://github.com/advisories/GHSA-gxm5-99cw-xjw9",
+            "severity": "moderate"
+          }
+        ]
+      },
+      {
+        "package": "@tootallnate/once",
+        "severity": "low",
+        "direct": false,
+        "via": [
+          {
+            "package": "@tootallnate/once",
+            "advisory": "https://github.com/advisories/GHSA-vpq2-c234-7xj6",
+            "severity": "low"
+          }
+        ]
+      },
+      {
+        "package": "@ts-morph/common",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "fast-glob"
+        ]
+      },
+      {
+        "package": "@vercel/backends",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/build-utils",
+          "@vercel/static-config",
+          "path-to-regexp",
+          "ts-morph"
+        ]
+      },
+      {
+        "package": "@vercel/build-utils",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/python-analysis"
+        ]
+      },
+      {
+        "package": "@vercel/cervel",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/backends"
+        ]
+      },
+      {
+        "package": "@vercel/elysia",
+        "severity": "moderate",
+        "direct": false,
+        "via": [
+          "@vercel/node",
+          "@vercel/static-config"
+        ]
+      },
+      {
+        "package": "@vercel/express",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/cervel",
+          "@vercel/node",
+          "@vercel/static-config",
+          "path-to-regexp",
+          "ts-morph"
+        ]
+      },
+      {
+        "package": "@vercel/fastify",
+        "severity": "moderate",
+        "direct": false,
+        "via": [
+          "@vercel/node",
+          "@vercel/static-config"
+        ]
+      },
+      {
+        "package": "@vercel/fun",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@tootallnate/once",
+          "path-to-regexp",
+          "tar"
+        ]
+      },
+      {
+        "package": "@vercel/gatsby-plugin-vercel-builder",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/build-utils"
+        ]
+      },
+      {
+        "package": "@vercel/h3",
+        "severity": "moderate",
+        "direct": false,
+        "via": [
+          "@vercel/node",
+          "@vercel/static-config"
+        ]
+      },
+      {
+        "package": "@vercel/hono",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/node",
+          "@vercel/static-config",
+          "path-to-regexp",
+          "ts-morph"
+        ]
+      },
+      {
+        "package": "@vercel/hydrogen",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/static-config",
+          "ts-morph"
+        ]
+      },
+      {
+        "package": "@vercel/koa",
+        "severity": "moderate",
+        "direct": false,
+        "via": [
+          "@vercel/node",
+          "@vercel/static-config"
+        ]
+      },
+      {
+        "package": "@vercel/nestjs",
+        "severity": "moderate",
+        "direct": false,
+        "via": [
+          "@vercel/node",
+          "@vercel/static-config"
+        ]
+      },
+      {
+        "package": "@vercel/node",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/build-utils",
+          "@vercel/static-config",
+          "path-to-regexp",
+          "ts-morph",
+          "undici"
+        ]
+      },
+      {
+        "package": "@vercel/python",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/python-analysis"
+        ]
+      },
+      {
+        "package": "@vercel/python-analysis",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "js-yaml",
+          "minimatch",
+          "smol-toml"
+        ]
+      },
+      {
+        "package": "@vercel/redwood",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/static-config",
+          "ts-morph"
+        ]
+      },
+      {
+        "package": "@vercel/remix-builder",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/static-config",
+          "path-to-regexp",
+          "ts-morph"
+        ]
+      },
+      {
+        "package": "@vercel/rust",
+        "severity": "moderate",
+        "direct": false,
+        "via": [
+          "smol-toml"
+        ]
+      },
+      {
+        "package": "@vercel/static-build",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@vercel/gatsby-plugin-vercel-builder",
+          "@vercel/static-config",
+          "ts-morph"
+        ]
+      },
+      {
+        "package": "@vercel/static-config",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "ajv",
+          "ts-morph"
+        ]
+      },
+      {
+        "package": "ajv",
+        "severity": "moderate",
+        "direct": false,
+        "via": [
+          {
+            "package": "ajv",
+            "advisory": "https://github.com/advisories/GHSA-2g4f-4pwh-qvx6",
+            "severity": "moderate"
+          }
+        ]
+      },
+      {
+        "package": "braces",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          {
+            "package": "braces",
+            "advisory": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+            "severity": "high"
+          }
+        ]
+      },
+      {
+        "package": "fast-glob",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "micromatch"
+        ]
+      },
+      {
+        "package": "immutable",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          {
+            "package": "immutable",
+            "advisory": "https://github.com/advisories/GHSA-xvcm-6775-5m9r",
+            "severity": "high"
+          },
+          {
+            "package": "immutable",
+            "advisory": "https://github.com/advisories/GHSA-v56q-mh7h-f735",
+            "severity": "high"
+          }
+        ]
+      },
+      {
+        "package": "js-yaml",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          {
+            "package": "js-yaml",
+            "advisory": "https://github.com/advisories/GHSA-h67p-54hq-rp68",
+            "severity": "moderate"
+          },
+          {
+            "package": "js-yaml",
+            "advisory": "https://github.com/advisories/GHSA-52cp-r559-cp3m",
+            "severity": "high"
+          },
+          {
+            "package": "js-yaml",
+            "advisory": "https://github.com/advisories/GHSA-5p4m-2wfm-xmqj",
+            "severity": "high"
+          },
+          {
+            "package": "js-yaml",
+            "advisory": "https://github.com/advisories/GHSA-2883-xcg3-v3hh",
+            "severity": "high"
+          }
+        ]
+      },
+      {
+        "package": "micromatch",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "braces"
+        ]
+      },
+      {
+        "package": "minimatch",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          {
+            "package": "minimatch",
+            "advisory": "https://github.com/advisories/GHSA-3ppc-4f35-3m26",
+            "severity": "high"
+          },
+          {
+            "package": "minimatch",
+            "advisory": "https://github.com/advisories/GHSA-7r86-cg39-jmmj",
+            "severity": "high"
+          },
+          {
+            "package": "minimatch",
+            "advisory": "https://github.com/advisories/GHSA-23c5-xmqv-rm74",
+            "severity": "high"
+          }
+        ]
+      },
+      {
+        "package": "path-to-regexp",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          {
+            "package": "path-to-regexp",
+            "advisory": "https://github.com/advisories/GHSA-9wv6-86v2-598j",
+            "severity": "high"
+          },
+          {
+            "package": "path-to-regexp",
+            "advisory": "https://github.com/advisories/GHSA-j3q9-mxjg-w52f",
+            "severity": "high"
+          },
+          {
+            "package": "path-to-regexp",
+            "advisory": "https://github.com/advisories/GHSA-27v5-c462-wpq7",
+            "severity": "moderate"
+          }
+        ]
+      },
+      {
+        "package": "smol-toml",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          {
+            "package": "smol-toml",
+            "advisory": "https://github.com/advisories/GHSA-v3rj-xjv7-4jmq",
+            "severity": "moderate"
+          },
+          {
+            "package": "smol-toml",
+            "advisory": "https://github.com/advisories/GHSA-7w5x-hrqm-74c2",
+            "severity": "high"
+          },
+          {
+            "package": "smol-toml",
+            "advisory": "https://github.com/advisories/GHSA-r4xh-jqrq-34v2",
+            "severity": "moderate"
+          }
+        ]
+      },
+      {
+        "package": "tar",
+        "severity": "critical",
+        "direct": false,
+        "via": [
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-83g3-92jg-28cx",
+            "severity": "high"
+          },
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-qffp-2rhf-9h96",
+            "severity": "high"
+          },
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-9ppj-qmqm-q256",
+            "severity": "high"
+          },
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-vmf3-w455-68vh",
+            "severity": "moderate"
+          },
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-w8wr-v893-vjvp",
+            "severity": "moderate"
+          },
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-23hp-3jrh-7fpw",
+            "severity": "critical"
+          },
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-8x88-c5mf-7j5w",
+            "severity": "high"
+          },
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-gvwx-54wh-qm9j",
+            "severity": "moderate"
+          },
+          {
+            "package": "tar",
+            "advisory": "https://github.com/advisories/GHSA-r292-9mhp-454m",
+            "severity": "high"
+          }
+        ]
+      },
+      {
+        "package": "ts-morph",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@ts-morph/common"
+        ]
+      },
+      {
+        "package": "undici",
+        "severity": "high",
+        "direct": false,
+        "via": [
+          "@fastify/busboy",
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-c76h-2ccp-4975",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-g9mf-h72j-4rw9",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-cxrh-j4jr-qwg3",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-2mjp-6q6p-2qxm",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-vrm6-8vpv-qv8q",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-v9p9-hfj2-hcw8",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-4992-7rv2-5pvq",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-vmh5-mc38-953g",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-p88m-4jfj-68fv",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-p88m-4jfj-68fv",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-vxpw-j846-p89q",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-vxpw-j846-p89q",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-hm92-r4w5-c3mj",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-g8m3-5g58-fq7m",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-g8m3-5g58-fq7m",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-pr7r-676h-xcf6",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-8xcm-r25x-g524",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-8xcm-r25x-g524",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-4cwx-7wf7-3272",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-m8rv-5g2x-5cg5",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-m8rv-5g2x-5cg5",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-jr45-8vmc-qm54",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-v3r7-h72x-cjcm",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-v3r7-h72x-cjcm",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-35p6-xmwp-9g52",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-35p6-xmwp-9g52",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-3wwx-pv8p-q78v",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-pmjh-fq2x-6v4x",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-r53p-7pc4-xj5r",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-r53p-7pc4-xj5r",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-rfgv-xxqx-mfg5",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-rfgv-xxqx-mfg5",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-3xpg-4rpp-hhhm",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-2jfj-6hjv-fm6j",
+            "severity": "moderate"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-2gqq-gqf2-x968",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-w293-vg96-wgc3",
+            "severity": "high"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-8436-99hf-9mmv",
+            "severity": "low"
+          },
+          {
+            "package": "undici",
+            "advisory": "https://github.com/advisories/GHSA-rx4f-c7p8-82vq",
+            "severity": "moderate"
+          }
+        ]
+      },
+      {
+        "package": "vercel",
+        "severity": "high",
+        "direct": true,
+        "via": [
+          "@vercel/backends",
+          "@vercel/build-utils",
+          "@vercel/elysia",
+          "@vercel/express",
+          "@vercel/fastify",
+          "@vercel/fun",
+          "@vercel/h3",
+          "@vercel/hono",
+          "@vercel/hydrogen",
+          "@vercel/koa",
+          "@vercel/nestjs",
+          "@vercel/node",
+          "@vercel/python",
+          "@vercel/python-analysis",
+          "@vercel/redwood",
+          "@vercel/remix-builder",
+          "@vercel/rust",
+          "@vercel/static-build",
+          "smol-toml",
+          "undici"
+        ]
+      }
+    ],
+    "criticalDependencyPath": "vercel@59.1.4 -> @vercel/fun@1.3.0 -> tar@7.5.7; also @vercel/backends -> @vercel/nft -> @mapbox/node-pre-gyp -> tar@7.5.7",
+    "limitation": "Audit counts affected dependency entries, including metapackages; not deduplicated advisories, exploitability conclusions or GitHub alert counts. No clean audit or security exception asserted."
+  },
+  "hostedVerification": "Pending exact final pushed head; coordinator reviews GitHub Test and Vercel before merge."
+}
