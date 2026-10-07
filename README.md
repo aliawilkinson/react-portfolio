@@ -28,7 +28,7 @@ Opens the app at **http://localhost:5173** automatically. Checks your Node versi
 | Icons | react-icons | 4.12.0 |
 | Slider | react-slick | 0.31.0 |
 | HTML parsing | html-react-parser | 6.1.0 |
-| HTTP | axios | 1.16.0 |
+| HTTP | axios | 1.20.0 |
 | Node (local) | Node.js | 24.15.0 (LTS) |
 | Node (Vercel) | Node.js | 24.x |
 
@@ -218,3 +218,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for the full list. Summary:
 ## Durable project context
 
 Start with [who, what, when, where, why and how](docs/context.md), including setup, verification, release, operations and recovery. The dated record cites source evidence and marks unanswered questions explicitly.
+
+## Architecture and operations record
+
+Start at the [operating checklist](docs/operating-record/checklist.md) for architecture diagrams, deployable Components, operating/recovery procedures and evidence gaps. Update the record at creation, design, implementation, pre-release, post-release and maintenance/handoff checkpoints. [Backfill report](docs/operating-record/reports/2026-10-07-operating-record-backfill.md) distinguishes source, unmerged work, historical receipts and fresh verification.

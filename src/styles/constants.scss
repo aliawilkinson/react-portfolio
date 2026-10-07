@@ -21,3 +21,17 @@ $tertiary: #F1F6F0;
 // 192837
 // 4C3E3F
 // 7A8F9D
+
+// Themed colors: resolve to the tokens in index.css, so they follow light/dark.
+// Use these for anything that should flip; $primary stays a literal for Sass math.
+$ink: rgb(var(--ink));
+$accent: rgb(var(--accent));
+$paper: rgb(var(--paper));
+$surface: rgb(var(--surface));
+$brand: rgb(var(--brand));
+
+@function ink($alpha) { @return rgb(var(--ink) / #{$alpha}); }
+@function paper($alpha) { @return rgb(var(--paper) / #{$alpha}); }
+@function surface($alpha) { @return rgb(var(--surface) / #{$alpha}); }
+@function brand($alpha) { @return rgb(var(--brand) / #{$alpha}); }
+@function shade($alpha) { @return rgb(var(--shade) / #{$alpha}); }

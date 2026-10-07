@@ -148,3 +148,7 @@ This workflow works best when each overnight run has a concrete milestone, such 
 - Review and polish one product flow
 
 It works poorly when the prompt is only "build the whole app" with no product definition, platform choice, or acceptance criteria.
+
+## Architecture and operations handoff
+
+Every role uses the [Product operating checklist](docs/operating-record/checklist.md). Include affected C0–C5 checkpoints, source/diagram updates, evidence gaps and a dated operating-record report in each milestone handoff.

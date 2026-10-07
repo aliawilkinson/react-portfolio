@@ -526,7 +526,7 @@ export const content = {
 
     <p>I focus on the foundation layer: release orchestration, self-service platforms, CI/CD, infrastructure as code, and developer environments. Much of it is turning team knowledge into documented, automated, repeatable systems.</p>
 
-    <p>At Transamerica, I'm a Principal Engineer on the Architecture team, setting technical direction for WFG Digital. I design AWS architecture patterns, Terraform standards, infrastructure testing approaches, and internal tooling that teams adopt because it makes their work easier, not because they're told to. Before that, I shaped ALM modernization, cloud data architecture, and engineering standards across hedging and analytics business units.</p>
+    <p>At Transamerica, I'm a Principal Engineer on the Architecture team, helping set technical direction for WFG Digital. I design AWS architecture patterns, Terraform standards, infrastructure testing approaches, and internal tooling that teams adopt because it makes their work easier, not because they're told to. Before that, I shaped ALM modernization, cloud data architecture, and engineering standards across hedging and analytics business units.</p>
 
     <p>At AWS Professional Services, I consulted on cloud migration architecture, cost optimization, and delivery system design for enterprise clients. At loanDepot, I led release engineering through pandemic-era hypergrowth - automating the orchestration of 1200+ components, cutting multi-hour release windows down to predictable, dependency-aware automated deployments, and building the custom CMDB that mapped ownership and deployable relationships across the org.</p>
 
