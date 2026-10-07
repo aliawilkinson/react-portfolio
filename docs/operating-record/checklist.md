@@ -68,3 +68,5 @@ Every due date below is **unassigned**; the named role must obtain an agreed dat
 | 2026-10-07 operating-record backfill | [Dated report](reports/2026-10-07-operating-record-backfill.md) | ship documentation for review; hold applicable release/handoff gates | Owned gaps above; C0–C5 not collectively complete |
 
 At creation use C0; before architecture implementation use C1; every implementation milestone use C2; before release use C3; after deployment plus observation use C4; after changes, incidents, drills, handoff, retirement or revival use C5. Copy [report template](reports/TEMPLATE.md) for each occurrence and retain prior evidence.
+
+Maintenance evidence: [Dependabot coverage milestone](reports/2026-10-07-dependabot-coverage.md) records actual manifest roots and preserved upgrade gates.
