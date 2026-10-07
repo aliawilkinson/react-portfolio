@@ -71,4 +71,7 @@ At creation use C0; before architecture implementation use C1; every implementat
 
 Maintenance evidence: [Dependabot coverage milestone](reports/2026-10-07-dependabot-coverage.md) records actual manifest roots and preserved upgrade gates.
 
+Dependency upgrade evidence: [React Router 7 compatibility checkpoint](reports/2026-10-07-react-router7-compatibility.md) records the inspected candidate, migration applicability, Node 24 tests, production prerender/SEO and browser route checks. Final combined dependency verification remains a separate checkpoint.
+[Axios update C2/C5 report](reports/2026-10-07-axios-update-C2-C5.md) records PR #52 conflict resolution, dependency verification and remaining advisory scope.
+
 Dependency compatibility evidence: [React 19 C2/C5 report](reports/2026-10-07-react-19-compatibility-C2-C5.md) records the coupled Framer Motion fix, scoped checks and retained audit findings.
