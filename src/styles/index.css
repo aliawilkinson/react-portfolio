@@ -1,3 +1,28 @@
+/* Theme tokens: RGB channels so they compose with alpha, e.g. rgb(var(--ink) / 0.6) */
+:root {
+    color-scheme: light;
+    --ink: 18 56 46;        /* text, borders */
+    --accent: 50 107 77;    /* links, emphasis */
+    --paper: 248 247 241;   /* page background */
+    --surface: 255 255 255; /* cards */
+    --brand: 18 56 46;      /* header, filled tiles: dark in both themes */
+    --shade: 18 56 46;      /* shadow tint */
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --ink: 232 238 228;
+    --accent: 159 211 180;
+    --paper: 11 24 20;
+    --surface: 20 40 33;
+    --brand: 24 66 54;
+    --shade: 0 0 0;
+}
+
+html, body {
+    background: rgb(var(--paper));
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,3 +41,10 @@
     cursor: pointer;
   }
   
+
+  /* Testimonial carousel dots and arrows come from slick's stylesheet in black */
+  :root[data-theme="dark"] .slick-dots li button:before,
+  :root[data-theme="dark"] .slick-prev:before,
+  :root[data-theme="dark"] .slick-next:before {
+    color: rgb(var(--ink));
+  }

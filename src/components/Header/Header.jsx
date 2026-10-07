@@ -10,6 +10,8 @@ import linkedin from '../../assets/linkedin-svg.svg'
 import github from '../../assets/github-mark.svg'
 import { analytics, ANALYTICS_EVENTS } from '../../utils/analytics'
 import { useMusicPlayer } from '../../context/MusicPlayerContext'
+import useTheme from '../../hooks/useTheme'
+import LampToggle from './LampToggle'
 
 const navLinks = [
   { label: 'Home', to: '/', targetId: 'hero', message: "you're already home :)" },
@@ -33,6 +35,7 @@ const Header = () => {
   const noteTimerRef = useRef(null);
   const containerRef = useRef(null);
   const { isPlaying, hasStarted, toggle } = useMusicPlayer();
+  const { theme, toggleTheme } = useTheme();
 
   useOutsideAlerter({ menuRef, setMenuOpened });
 
@@ -104,7 +107,10 @@ const Header = () => {
       style={{ boxShadow: headerShadow }}
     >
       <div ref={containerRef} className={`flexCenter innerWidth ${css.container}`}>
-        <div className={css.name}>Alia</div>
+        <div className={css.brand}>
+          <div className={css.name}>Alia</div>
+          <LampToggle isOn={theme !== 'dark'} onToggle={toggleTheme} />
+        </div>
 
         <ul
           ref={menuRef}

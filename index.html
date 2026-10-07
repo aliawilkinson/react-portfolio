@@ -18,6 +18,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
     />
     <title>Alia Wilkinson</title>
+    <!-- Apply the saved theme before first paint so dark mode does not flash light -->
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'
+      } catch (e) {}
+    </script>
     <script src="https://w.soundcloud.com/player/api.js" async></script>
   </head>
   <body>

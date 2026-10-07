@@ -36,7 +36,7 @@
 .line {
     width: 2px;
     height: 100%;
-    background-image: linear-gradient(black 33%, rgba(255, 255, 255, 0) 0%);
+    background-image: linear-gradient($ink 33%, surface(0) 0%);
     background-size: 2px 12px;
     background-repeat: repeat-y;
     border-radius: 5px;
@@ -58,8 +58,8 @@
         row-gap: 0.65rem;
         line-height: 1.45;
         padding: 1.05rem 1rem 1.1rem;
-        background: white;
-        border: 1px solid rgba($primary, 0.08);
+        background: $surface;
+        border: 1px solid ink(0.08);
         border-radius: 8px;
         box-shadow: rgb(0 0 0 / 5%) -3px 11px 13px 0px;
         overflow: hidden;
@@ -95,7 +95,7 @@
 
     p {
         font-size: 0.9rem;
-        color: #666;
+        color: ink(0.65);
         margin: 0;
     }
 
@@ -114,7 +114,7 @@
             margin-top: 0.2rem;
             font-size: 0.78rem;
             line-height: 1.35;
-            color: rgba($primary, 0.58);
+            color: ink(0.58);
         }
     }
 }
@@ -170,7 +170,7 @@
         padding-left: 0.85rem;
 
         h1 {
-            color: $secondary;
+            color: $accent;
             font-size: 0.95rem;
             line-height: 1.25;
             margin-bottom: 0.65rem;
@@ -179,7 +179,7 @@
         ul {
             display: grid;
             gap: 0.45rem;
-            color: rgba($primary, 0.82);
+            color: ink(0.82);
             font-size: 0.86rem;
             line-height: 1.45;
         }

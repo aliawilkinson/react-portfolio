@@ -2,7 +2,7 @@
 
 .wrapper {
     background:
-        linear-gradient(180deg, #ffffff 0%, #F8F7F1 100%);
+        linear-gradient(180deg, $surface 0%, $paper 100%);
     overflow: hidden;
 
     .container {
@@ -35,7 +35,7 @@
                 a {
                     white-space: nowrap;
                     color: inherit;
-                    color: $secondary;
+                    color: $accent;
                     text-decoration-color: #C83C63;
                     text-decoration-thickness: 0.16rem;
                     text-underline-offset: 0.3rem;
@@ -67,11 +67,11 @@
             .postcard {
                 position: relative;
                 min-height: clamp(14rem, 28vw, 22rem);
-                border: 1px solid rgba(18, 56, 46, 0.16);
+                border: 1px solid ink(0.16);
                 border-radius: 8px;
                 overflow: hidden;
-                background: $primary;
-                box-shadow: 0 24px 60px rgba(18, 56, 46, 0.16);
+                background: $brand;
+                box-shadow: 0 24px 60px shade(0.16);
 
                 &::before {
                     content: "";
@@ -92,7 +92,7 @@
                     z-index: 2;
                     height: 1.1rem;
                     background:
-                        radial-gradient(circle at 18px 0, #F8F7F1 18px, transparent 19px)
+                        radial-gradient(circle at 18px 0, $paper 18px, transparent 19px)
                         0 0 / 36px 18px repeat-x;
                     opacity: 0.95;
                 }
@@ -150,18 +150,18 @@
 
                 li {
                     cursor: pointer;
-                    border: 1px solid rgba(18, 56, 46, 0.14);
+                    border: 1px solid ink(0.14);
                     border-radius: 999px;
                     padding: 0.45rem 0.75rem;
-                    background: rgba(255, 255, 255, 0.58);
-                    color: $primary;
+                    background: surface(0.58);
+                    color: $ink;
                     font-size: 0.86rem;
                     font-weight: 800;
                     transition: border-color 180ms ease, color 180ms ease, transform 180ms ease;
 
                     &:hover {
                         border-color: rgba(40, 111, 108, 0.42);
-                        color: $secondary;
+                        color: $accent;
                         transform: translateY(-1px);
                     }
                 }
