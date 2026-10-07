@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased — operating record documentation
+
+- Backfill source-scoped architecture, Component/deployment diagrams, operating and recovery runbooks, C0–C5 checkpoints and a dated evidence report. Preserve existing provider/runbook history and make unverified readiness gaps explicit.
+
+
 All notable changes to this project are documented here.
 
 ---
