@@ -20,11 +20,11 @@ Opens the app at **http://localhost:5173** automatically. Checks your Node versi
 
 | Layer | Package | Version |
 |---|---|---|
-| UI | React | 18.3.1 |
-| Routing | react-router-dom | 6.30.3 |
-| Animation | framer-motion | 8.5.5 |
+| UI | React | 19.3.0 |
+| Routing | react-router-dom | 7.18.4 |
+| Animation | framer-motion | 11.18.2 |
 | Styling | SCSS Modules + sass | 1.99.0 |
-| Build | Vite | 8.0.12 |
+| Build | Vite | 8.3.2 |
 | Icons | react-icons | 4.12.0 |
 | Slider | react-slick | 0.31.0 |
 | HTML parsing | html-react-parser | 6.1.0 |
