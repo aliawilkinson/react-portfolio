@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    # React and Vite/test tooling move through their compatibility checks together.
+    groups:
+      react-runtime:
+        patterns: [react, react-dom, '@types/react', '@types/react-dom']
+      vite-test-toolchain:
+        patterns: [vite, '@vitejs/*', vitest, '@vitest/*']
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    groups:
+      actions:
+        patterns: ['*']
