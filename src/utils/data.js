@@ -63,6 +63,18 @@ export const caseStudies = [
     bg: "#174f48",
   },
   {
+    slug: "atlasTask",
+    imgSrc: "./infoposts/atlas-task.svg",
+    alt: "AtlasTask: a calm visual second brain for daily actions and the larger plan",
+    bg: "#173D35",
+  },
+  {
+    slug: "supplementAi",
+    imgSrc: "./infoposts/supplement-ai.svg",
+    alt: "Supplement AI: trustworthy label capture and supplement stack understanding",
+    bg: "#743F4B",
+  },
+  {
     slug: "solarBloomCommerce",
     imgSrc: "./house-of-solar-bloom.webp",
     alt: "House of Solar Bloom: luxury editorial commerce platform",

@@ -30,6 +30,20 @@ export const seoData = {
     url: `${BASE_URL}/about`,
     image: DEFAULT_IMAGE,
   },
+  atlasTask: {
+    title: 'AtlasTask Case Study | Alia Wilkinson',
+    description:
+      'Designing a private, local-first visual second brain that connects daily actions, recurring responsibilities, longer-term context, and calm mobile interaction.',
+    url: `${BASE_URL}/atlasTask`,
+    image: `${BASE_URL}/infoposts/atlas-task.svg`,
+  },
+  supplementAi: {
+    title: 'Supplement AI Case Study | Alia Wilkinson',
+    description:
+      'Building a private supplement tracker that combines reviewable AI label extraction with deterministic nutrient totals, explicit uncertainty, and safety-conscious product boundaries.',
+    url: `${BASE_URL}/supplementAi`,
+    image: `${BASE_URL}/infoposts/supplement-ai.svg`,
+  },
   agenticWorkflowApp: {
     title: 'Agentic Workflow App | Alia Wilkinson',
     description:

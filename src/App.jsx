@@ -51,6 +51,8 @@ const App = () => {
         <Route path='/experience' element={<Home />} />
         <Route path='/contact' element={<Home />} />
         <Route path='/about' element={<InfoPost post='about' />} />
+        <Route path='/atlasTask' element={<InfoPost post='atlasTask' />} />
+        <Route path='/supplementAi' element={<InfoPost post='supplementAi' />} />
         <Route path='/releaseofreleases' element={<InfoPost post='releaseofreleases' />} />
         <Route path='/iacPipelineValidation' element={<InfoPost post='iacPipelineValidation' />} />
         <Route path='/amplifyReactMigApp' element={<InfoPost post='amplifyReactMigApp' />} />

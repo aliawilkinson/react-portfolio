@@ -65,6 +65,117 @@ export const content = {
     <p class="case-links"><a href="/nomadtime">Visit NomadTime ↗</a><a href="/case-studies">More case studies →</a></p>
     `
     },
+
+    "atlasTask": {
+        "title": "AtlasTask: Designing a Calm Visual Second Brain",
+        "imgSrc": "./infoposts/atlas-task.svg",
+        "post": `
+    <p><strong>Product status:</strong> Private alpha.</p>
+    <p><strong>Disclosure:</strong> AtlasTask is a private product. This case study explains the customer problem, experience, architectural principles, and product decisions without publishing source code, repository access, personal data models, provider identifiers, release credentials, or implementation-level operating instructions.</p>
+
+    <h2>Situation:</h2>
+    <p>Most task apps are good at holding lists. They are less good at holding a life. One-off intentions, daily essentials, recurring care, long-running responsibilities, notes, costs, images, and the reason something matters often end up separated across reminders, calendars, documents, and memory.</p>
+
+    <p>That fragmentation creates a specific kind of cognitive load: the user must repeatedly reconstruct the larger plan before deciding what to do today. AtlasTask began with a different premise. The system should remember the structure so the person can begin with one visible, manageable action.</p>
+
+    <h2>What It Is:</h2>
+    <p>AtlasTask is a local-first visual second brain for intentions, daily actions, recurring rhythms, responsibilities, notes, and personal context. It combines a calm Focus view for the current day with a spatial Life Map that keeps longer-term areas and projects visible without forcing everything into one flat priority list.</p>
+
+    <p>The product is designed for people who benefit from external structure but do not want to be punished by it. Flexible timing, fresh daily completion state, small next actions, optional guides, and explicit release or archive states help the system adapt when a plan changes.</p>
+
+    <h2>My Role:</h2>
+    <p>I defined the product direction and built the experience across interaction design, information architecture, mobile and web engineering, local persistence, identity boundaries, accessibility, testing, release automation, and operational documentation.</p>
+
+    <h2>Core Experience:</h2>
+    <ul>
+      <li><strong>Focus without losing context:</strong> A daily surface separates one-time actions from the small set of essentials that recur automatically. Previous and future days remain editable without erasing history.</li>
+      <li><strong>Rhythms rather than rigid habits:</strong> Recurring care can follow fixed dates or completion-anchored intervals, including flexible ranges. Completion, skips, deferrals, estimated costs, and actual costs remain visible as part of the responsibility.</li>
+      <li><strong>A spatial Life Map:</strong> Responsibilities and projects live in independently expandable areas with visual state, importance, notes, images, next actions, win conditions, and instructions. The map helps users see where attention is concentrated without turning life into a scoreboard.</li>
+      <li><strong>Low-friction capture:</strong> Quests and quick capture provide a place for one-offs, ideas, and things to explore before the user knows exactly where they belong.</li>
+      <li><strong>Recovery over punishment:</strong> Tasks can be completed, reopened, released, archived, restored, skipped, or moved. The product treats changed circumstances as information rather than failure.</li>
+    </ul>
+
+    <h2>Key Design Decisions:</h2>
+    <ul>
+      <li><strong>Local-first by default:</strong> AtlasTask opens without requiring an account or network connection. Personal records begin on the device, which supports immediate use and creates a clear privacy boundary.</li>
+      <li><strong>Identity is optional and explicit:</strong> Signing in does not silently claim or merge a local workspace. Users choose whether to associate a local snapshot with an account, and account-owned records remain separated from guest records.</li>
+      <li><strong>Time and importance are different:</strong> Something can be essential without being urgent, or urgent without defining a person's values. AtlasTask models those dimensions separately.</li>
+      <li><strong>Visual calm is functional:</strong> Spacious layouts, expandable regions, shape and color cues, restrained motion, and direct language reduce the amount of interface a user must process at once.</li>
+      <li><strong>Continuity matters:</strong> Product renaming and architectural evolution preserve stable saved-data and release identities. A better name or interface should not cost the user their history.</li>
+      <li><strong>Release evidence is part of engineering:</strong> Browser interaction tests, native-device checks, accessibility review, versioned releases, and rollback context are treated as part of the product rather than cleanup after implementation.</li>
+    </ul>
+
+    <h2>Architecture:</h2>
+    <p>The product uses a shared TypeScript foundation across an Expo mobile application and a web review surface. On-device persistence supports offline-first behavior. Product-specific experience remains separated from reusable UI, configuration, data, identity, analytics, and notification boundaries so useful patterns can be adopted elsewhere without coupling user data or product identity.</p>
+
+    <p>Cloud synchronization, remote notifications, and production identity move through separate release gates. The interface does not imply that signing in is equivalent to backup or cross-device sync before those capabilities are implemented and verified.</p>
+
+    <h2>Result:</h2>
+    <p>AtlasTask has grown from a task-list concept into a coherent personal operating system with a working mobile alpha, a navigable daily flow, recurring responsibility tracking, a spatial planning model, local persistence, optional identity, and a disciplined release process.</p>
+
+    <p>The most important outcome is not the feature count. It is the product's point of view: make the next action obvious, preserve the larger plan, and let the system carry organizational weight without becoming another source of pressure.</p>
+
+    <h2>What This Demonstrates:</h2>
+    <p>This work demonstrates end-to-end product engineering: identifying a human problem, creating an interaction model that does not simply imitate existing tools, and building the technical and operational boundaries required for the experience to remain trustworthy as it grows.</p>
+    `
+    },
+
+    "supplementAi": {
+        "title": "Supplement AI: Making Supplement Stacks Understandable Without Inventing Certainty",
+        "imgSrc": "./infoposts/supplement-ai.svg",
+        "post": `
+    <p><strong>Product status:</strong> Private validation build.</p>
+    <p><strong>Disclosure:</strong> Supplement AI is a private pre-release product, not a medical device. This case study describes the product and safety architecture without exposing source code, repository access, prompts, extraction schemas, private health data, provider configuration, security controls, or deployment instructions.</p>
+
+    <h2>Situation:</h2>
+    <p>Supplement labels are difficult to compare across products. Serving sizes differ, nutrient units do not always align, proprietary blends obscure detail, and a person taking several bottles may have no reliable view of their combined daily intake.</p>
+
+    <p>AI can make label capture easier, but it also introduces risk. A model that misreads a quantity, fills in a missing fact, or turns general nutrition context into personal medical advice can create false confidence. The product challenge was not simply to analyze supplements. It was to make the useful parts of AI reviewable while keeping arithmetic, uncertainty, ownership, and safety boundaries explicit.</p>
+
+    <h2>What It Is:</h2>
+    <p>Supplement AI is a private supplement tracker that helps a user photograph label panels, review the extracted facts, confirm how much they take, and understand totals across their full stack. It is designed to surface overlap, unknowns, source context, and useful questions without diagnosing conditions or prescribing treatment.</p>
+
+    <p>The experience also supports optional personal context and food-intake notes for more relevant comparisons. Missing information remains missing, and users can choose a general reference view without disclosing personal details.</p>
+
+    <h2>My Role:</h2>
+    <p>I shaped the product strategy and built the adopted application foundation, tracker workflow, AI boundary, deterministic calculation model, private account model, safety language, responsive experience, testing strategy, and release criteria.</p>
+
+    <h2>Core Experience:</h2>
+    <ul>
+      <li><strong>Photograph the evidence:</strong> A user can capture multiple panels from one bottle so serving information, ingredient rows, forms, units, and supporting label context can be considered together.</li>
+      <li><strong>Review before trusting:</strong> Extracted label facts are presented for human review. The original transcription remains separate from the user's confirmed daily amount and later corrections.</li>
+      <li><strong>See the whole stack:</strong> Confirmed entries roll into a daily stack with contributing products visible for each total. Pausing a bottle changes current totals without deleting its record.</li>
+      <li><strong>Preserve uncertainty:</strong> Unreadable amounts remain unknown. Incompatible units remain separate. The product does not invent conversions or silently collapse blend totals into their child ingredients.</li>
+      <li><strong>Add context by choice:</strong> Optional typed or spoken intake can help prepare an editable profile. The user reviews it before saving, and unanswered questions do not block the experience.</li>
+      <li><strong>Ask better questions:</strong> The product is designed to help users notice overlap and prepare conversations with a clinician or pharmacist, not to replace those professionals.</li>
+    </ul>
+
+    <h2>Key Design Decisions:</h2>
+    <ul>
+      <li><strong>AI transcribes; code calculates:</strong> The model returns structured label facts. Deterministic application logic performs unit-aware totals and comparisons. A language model never performs the final arithmetic.</li>
+      <li><strong>Exactness before presentation:</strong> Decimal quantities are summed before display rounding. Compatible mass units can be normalized, while unrelated measurement systems remain visibly distinct.</li>
+      <li><strong>Unknown is a valid result:</strong> Missing quantities, unreadable serving information, and unsupported conversions are shown as limitations instead of being filled with plausible guesses.</li>
+      <li><strong>Personal context is optional:</strong> Users can receive general starting references without completing a profile. When details are supplied, each comparison explains which information it used.</li>
+      <li><strong>Facts, guidance, and medical care stay separate:</strong> Label extraction, reference comparisons, and educational context have different trust levels. The interface avoids deficiency diagnoses, treatment instructions, and automatic supplement prescriptions.</li>
+      <li><strong>Private records are owner-scoped:</strong> Identity is verified by the server boundary, records cannot select their own owner, and account mutations use revision-aware behavior to prevent silent conflicts.</li>
+      <li><strong>Release is evidence-gated:</strong> A polished local flow is not treated as proof of live extraction accuracy, hosted privacy, recovery, native sign-in, or production readiness. Those claims remain held until their own tests pass.</li>
+    </ul>
+
+    <h2>Architecture:</h2>
+    <p>Supplement AI uses a shared web and mobile TypeScript foundation with product-owned tracker and analysis domains. Submitted images and model output are treated as untrusted input, validated against strict contracts, and connected to reviewed facts through traceable versions. Deterministic services own totals and reference comparisons. Identity, private storage, observability, and deployment are separate capabilities with independent activation and verification.</p>
+
+    <p>This separation is deliberate. It allows the product to improve extraction models or user experience without changing the meaning of previously reviewed records, and it prevents a convenient AI response from bypassing application validation.</p>
+
+    <h2>Result:</h2>
+    <p>The product now has a working private tracker foundation that moves from label photos to reviewable facts, confirmed daily amounts, durable stack records, and traceable totals. It also has an inclusive optional intake model, editable profile review, general-reference fallback, and explicit safety and release boundaries.</p>
+
+    <p>The larger result is a more honest model for AI-assisted health software. The product uses AI where ambiguity and transcription benefit from it, deterministic systems where precision matters, and visible human review where neither should be trusted silently.</p>
+
+    <h2>What This Demonstrates:</h2>
+    <p>This work demonstrates my ability to design AI products where usefulness and restraint are equally important. I can build the interaction, data, identity, calculation, and release systems around a model so the resulting product is more trustworthy than a prompt wrapped in a user interface.</p>
+    `
+    },
+
     "releaseofreleases": {
         "title": "Release of Releases - Release Orchestration through Automation",
         "imgSrc": "./infoposts/ror.png",

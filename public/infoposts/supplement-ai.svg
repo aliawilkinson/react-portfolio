@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Supplement AI review flow</title>
+  <desc id="desc">A supplement bottle label moving through human review into clear daily totals.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2b1720"/><stop offset=".52" stop-color="#743f4b"/><stop offset="1" stop-color="#24493f"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f7b6a4"/><stop offset=".5" stop-color="#f4dfad"/><stop offset="1" stop-color="#98d7ba"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="13" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="900" rx="64" fill="url(#bg)"/>
+  <g fill="none" stroke="#ffe4cd" stroke-opacity=".12"><circle cx="600" cy="450" r="350"/><circle cx="600" cy="450" r="270"/><path d="M110 450h980"/></g>
+  <path d="M275 450h650" stroke="url(#beam)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+  <g transform="translate(115 245)">
+    <rect x="45" y="38" width="180" height="300" rx="52" fill="#f4e7d3" stroke="#f9c6b3" stroke-width="4"/>
+    <rect x="70" y="0" width="130" height="74" rx="18" fill="#263d36" stroke="#9ed5bd" stroke-width="4"/>
+    <rect x="62" y="118" width="146" height="130" rx="12" fill="#fffaf0"/>
+    <g stroke="#744754" stroke-width="5"><path d="M84 145h102M84 168h82M84 191h95M84 214h66"/></g>
+  </g>
+  <g transform="translate(470 285)" filter="url(#glow)">
+    <rect width="260" height="330" rx="42" fill="#21141c" stroke="#f4dfad" stroke-width="4"/>
+    <path d="M70 95h120M70 145h120M70 195h120" stroke="#f4dfad" stroke-opacity=".5" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="130" cy="265" r="34" fill="#315e50" stroke="#a5dfc2" stroke-width="4"/>
+    <path d="M114 265l11 12 22-27" fill="none" stroke="#eafff5" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(820 260)">
+    <rect width="255" height="380" rx="42" fill="#16342d" stroke="#9ed5bd" stroke-width="4"/>
+    <text x="128" y="72" fill="#eafff5" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">DAILY TOTALS</text>
+    <g fill="#9ed5bd"><rect x="48" y="120" width="160" height="18" rx="9"/><rect x="48" y="170" width="118" height="18" rx="9"/><rect x="48" y="220" width="142" height="18" rx="9"/></g>
+    <g fill="#f4dfad" font-family="Georgia, serif" font-size="24" text-anchor="middle"><text x="128" y="300">Known</text><text x="128" y="334">Unknown</text></g>
+  </g>
+  <g fill="#fff2dc" font-family="Arial, sans-serif" text-anchor="middle" font-weight="700"><text x="250" y="700" font-size="20">CAPTURE</text><text x="600" y="700" font-size="20">REVIEW</text><text x="948" y="700" font-size="20">UNDERSTAND</text></g>
+</svg>

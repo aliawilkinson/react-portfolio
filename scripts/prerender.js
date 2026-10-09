@@ -12,6 +12,8 @@ const routes = [
   '/nomadtime-case-study',
   '/',
   '/about',
+  '/atlasTask',
+  '/supplementAi',
   '/releaseofreleases',
   '/iacPipelineValidation',
   '/amplifyReactMigApp',

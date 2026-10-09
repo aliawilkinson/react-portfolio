@@ -14,6 +14,8 @@ const routes = [
   '/nomadtime/privacy',
   '/',
   '/about',
+  '/atlasTask',
+  '/supplementAi',
   '/releaseofreleases',
   '/iacPipelineValidation',
   '/amplifyReactMigApp',
