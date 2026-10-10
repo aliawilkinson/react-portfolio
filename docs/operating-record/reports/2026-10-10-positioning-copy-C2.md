@@ -17,7 +17,7 @@ Current [context](../../context.md), [architecture](../architecture.md), [operat
 | Requirement / claim | Scope and method | Status | Evidence path / immutable locator | Verified at / by |
 | --- | --- | --- | --- | --- |
 | Current role does not claim sole architecture ownership | Reviewed hero, About copy, and SEO descriptions for consistent collaborative language | verified | `src/components/Hero/Hero.jsx`, `src/utils/posts.js`, `src/utils/seoData.js` | 2026-10-10 / Codex source review |
-| Delivery contribution remains clear | Copy names POCs, implementation, governance, adoption, and release follow-through | verified | Same source paths | 2026-10-10 / Codex source review |
+| Architecture and delivery contribution remain clear | Copy names Architecture Review Board participation, POCs, platform-team leadership, implementation, governance, adoption, and release follow-through without claiming sole architecture authority | verified | Same source paths | 2026-10-10 / Codex source review |
 | Existing application behavior remains unchanged | Vitest suite: 13 files and 125 tests passed; Vite production build and 18-route prerender completed | verified | Local command evidence: `npm test -- --run`, `npm run build` | 2026-10-10 / Codex |
 | Architecture diagrams, inventory, operations, and recovery remain accurate | Scope comparison against current operating record; no runtime or topology change | not-applicable | `docs/operating-record/` | 2026-10-10 / Codex source review; no update required |
 

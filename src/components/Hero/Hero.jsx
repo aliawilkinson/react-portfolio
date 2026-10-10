@@ -39,8 +39,8 @@ const Hero = () => {
                     className={css.tagline}>
                     <span className='secondaryText'>
                         Principal Engineer on the Architecture team at Transamerica.
-                        I collaborate on technical direction, build POCs, and carry
-                        the work through delivery, governance, and adoption. Remote from Southern California.
+                        I take designs through architecture review, build POCs, and lead
+                        platform work from approval through adoption. Remote from Southern California.
                     </span>
                 </motion.div>
 
