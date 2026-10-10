@@ -77,3 +77,5 @@ Dependency upgrade evidence: [React Router 7 compatibility checkpoint](reports/2
 Dependency compatibility evidence: [React 19 C2/C5 report](reports/2026-10-07-react-19-compatibility-C2-C5.md) records the coupled Framer Motion fix, scoped checks and retained audit findings.
 
 Final combined maintenance evidence: [Dependabot PRs #52–59 C2/C5 report](reports/2026-10-07-dependency-batch-C2-C5.md) records all eight upgrades together, unchanged tests, build/browser checks and the dated 48-to-37 audit comparison. Remaining security/release/recovery gaps are explicit.
+
+Positioning copy evidence: [Architecture-role positioning C2 report](reports/2026-10-10-positioning-copy-C2.md) records the public-copy correction from sole architecture ownership to architecture review participation, POCs, platform leadership and delivery follow-through. It does not claim deployment or provider verification.

@@ -633,11 +633,11 @@ export const content = {
         "post": `
     <p>Hi, I'm Alia.</p>
 
-    <p>I'm a Principal Engineer and AWS Certified Solutions Architect based in Southern California. I set architecture for engineering teams and work with platform and DevOps to deliver it.</p>
+    <p>I'm a Principal Engineer and AWS Certified Solutions Architect based in Southern California. I contribute to technical direction, take designs through architecture review, build the proof, and lead the platform work required to make it real.</p>
 
     <p>I focus on the foundation layer: release orchestration, self-service platforms, CI/CD, infrastructure as code, and developer environments. Much of it is turning team knowledge into documented, automated, repeatable systems.</p>
 
-    <p>At Transamerica, I'm a Principal Engineer on the Architecture team, helping set technical direction for WFG Digital. I design AWS architecture patterns, Terraform standards, infrastructure testing approaches, and internal tooling that teams adopt because it makes their work easier, not because they're told to. Before that, I shaped ALM modernization, cloud data architecture, and engineering standards across hedging and analytics business units.</p>
+    <p>At Transamerica, I'm a Principal Engineer on the Architecture team. I partner with architecture leadership and delivery teams to reinforce technical direction for WFG Digital, bring designs through the Architecture Review Board, test ideas through POCs, and carry the strongest ones through governance, implementation, adoption, and release. I contribute to AWS patterns, Terraform standards, infrastructure testing approaches, and internal tooling that teams adopt because it makes their work easier. I have also hired engineers and led platform teams, so I understand the work as both a technical system and a team that has to operate it. Before that, I helped shape ALM modernization, cloud data architecture, and engineering standards across hedging and analytics business units.</p>
 
     <p>At AWS Professional Services, I consulted on cloud migration architecture, cost optimization, and delivery system design for enterprise clients. At loanDepot, I led release engineering through pandemic-era hypergrowth - automating the orchestration of 1200+ components, cutting multi-hour release windows down to predictable, dependency-aware automated deployments, and building the custom CMDB that mapped ownership and deployable relationships across the org.</p>
 

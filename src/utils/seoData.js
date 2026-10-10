@@ -2,9 +2,9 @@ const BASE_URL = 'https://aliawilkinson.com'
 const DEFAULT_IMAGE = `${BASE_URL}/og-default.png`
 
 export const seoDefaults = {
-  title: 'Alia Wilkinson | Systems Architect & Principal Engineer',
+  title: 'Alia Wilkinson | Principal Engineer & Technical Delivery',
   description:
-    'Portfolio of Alia Wilkinson, a Principal Engineer working on systems architecture, platform engineering, developer experience, and cloud infrastructure.',
+    'Portfolio of Alia Wilkinson, a Principal Engineer who contributes to systems architecture, builds proofs of concept, and leads complex platform work through review, delivery, and adoption.',
   url: BASE_URL,
   image: DEFAULT_IMAGE,
 }
@@ -17,16 +17,16 @@ export const seoData = {
     image: `${BASE_URL}/nomadtime/icon.png`,
   },
   home: {
-    title: 'Alia Wilkinson | Systems Architect & Principal Engineer',
+    title: 'Alia Wilkinson | Principal Engineer & Technical Delivery',
     description:
-      'Alia Wilkinson is a Principal Engineer in architecture: technical direction, cloud architecture, release automation, and developer tooling for engineering teams.',
+      'Alia Wilkinson is a Principal Engineer on an architecture team, taking designs through architecture review, building proofs of concept, and leading platform work through adoption and release.',
     url: BASE_URL,
     image: DEFAULT_IMAGE,
   },
   about: {
-    title: 'About Alia Wilkinson | Principal Engineer & Architect',
+    title: 'About Alia Wilkinson | Principal Engineer',
     description:
-      'Principal Engineer and AWS Certified Solutions Architect in Southern California. I set architecture and work with platform and DevOps teams to deliver it.',
+      'Principal Engineer and AWS Certified Solutions Architect in Southern California. I contribute to technical direction, take designs through architecture review, build POCs, and lead platform delivery.',
     url: `${BASE_URL}/about`,
     image: DEFAULT_IMAGE,
   },
