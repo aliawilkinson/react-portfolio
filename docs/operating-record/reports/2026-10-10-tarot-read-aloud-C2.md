@@ -19,9 +19,10 @@ Current [context](../../context.md), [architecture](../architecture.md), [operat
 | Read AI and offline interpretations aloud | Structured speech-text generation covers AI sections, Celtic Cross, three-card, and single-card readings | verified | `src/components/Tarot/utils/getReadingSpeechText.js`, `tests/unit/getReadingSpeechText.test.js` | 2026-10-10 / Codex tests |
 | Playback remains user-controlled | Browser speech begins from a button and exposes pause, resume, and stop | verified | `src/components/Tarot/ConversationTurn.jsx`, `src/components/Tarot/hooks/useReadAloud.js`, `tests/unit/useReadAloud.test.js` | 2026-10-10 / Codex tests |
 | Narration does not overlap a new reading or survive navigation | Active speech is canceled by another reader, new-question submission, reset, text replacement, and component cleanup | verified | Hook and Tarot source plus unit tests | 2026-10-10 / Codex tests |
-| No additional reading data leaves the browser | Implementation uses the browser-provided `speechSynthesis` interface and adds no fetch, provider, key, or persistence | verified | Scoped source inspection | 2026-10-10 / Codex |
-| Existing application behavior remains unchanged | Vitest suite: 15 files and 132 tests passed; Vite production build and 18-route prerender completed; SEO and sitemap validation passed for all 18 routes | verified | Local command evidence: `npm test -- --run`, `npm run build`, `npm run validate` | 2026-10-10 / Codex |
-| Rendered controls expose usable states | Local in-app browser reading verified Read aloud, Pause, Resume, Stop, idle return, accessible labels, and live status text | verified | Local UI observation against `http://127.0.0.1:5173/tarot` | 2026-10-10 / Codex |
+| No additional reading data leaves the browser | Playback requires an English voice whose browser metadata explicitly reports `localService`; remote voices are not selected. The implementation adds no fetch, provider, key, or persistence | verified | `src/components/Tarot/hooks/useReadAloud.js`, remote-only voice test, scoped source inspection | 2026-10-11 / Codex |
+| Superseded speech events cannot overwrite current playback state | Every utterance callback checks current identity; delayed cancellation from an earlier utterance is covered by regression test | verified | `src/components/Tarot/hooks/useReadAloud.js`, `tests/unit/useReadAloud.test.js` | 2026-10-11 / Codex |
+| Existing application behavior remains unchanged | Vitest suite: 15 files and 134 tests passed; Vite production build and 18-route prerender completed; SEO and sitemap validation passed for all 18 routes | verified | Local command evidence: `npm test -- --run`, `npm run build`, `npm run validate` | 2026-10-11 / Codex |
+| Rendered controls expose usable states | Clean local in-app browser reading verified local-voice availability, Read aloud, Pause, Resume, Stop, idle return, accessible labels, and live status text | verified | Local UI observation against `http://127.0.0.1:5173/tarot` | 2026-10-11 / Codex |
 | Operating diagrams, inventory, and recovery procedures remain accurate | No new runtime Component, storage, provider, or data flow | not-applicable | `docs/operating-record/` | 2026-10-10 / Codex source review |
 
 ## Release and catalog evidence, when applicable
@@ -38,6 +39,7 @@ Current [context](../../context.md), [architecture](../architecture.md), [operat
 | --- | --- | --- | --- | --- |
 | Available voice and pronunciation vary by browser and operating system | User experience differs across devices; does not block core tarot use | Product owner | Pull request review | Browser review notes |
 | Physical iPhone playback has not been observed in this milestone | Mobile production behavior remains unverified for C3/C4 | QA / Product owner | Before claiming iPhone verification | Physical-device evidence |
+| Devices without a locally reported English voice do not show the control | Privacy is preserved at the cost of feature availability on those devices | Product owner | Product review | Browser/device review notes |
 | Production deployment and observation are outside this milestone | C3 and C4 remain open if released | Release owner | Unassigned | Future release and observation evidence |
 
 ## Signoff

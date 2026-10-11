@@ -20,6 +20,8 @@ describe('useReadAloud', () => {
       pause: vi.fn(),
       resume: vi.fn(),
       getVoices: vi.fn(() => [{ lang: 'en-US', localService: true }]),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
       speak: vi.fn(utterance => utterance.onstart?.()),
     }
     Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: speech })
@@ -78,5 +80,27 @@ describe('useReadAloud', () => {
 
     expect(speech.cancel).toHaveBeenCalled()
     expect(result.current.status).toBe('idle')
+  })
+
+  it('does not offer playback when only a remote voice is available', () => {
+    speech.getVoices.mockReturnValue([{ lang: 'en-US', localService: false }])
+    const { result } = renderHook(() => useReadAloud('Keep this private.'))
+
+    expect(result.current.supported).toBe(false)
+    act(() => result.current.play())
+    expect(speech.speak).not.toHaveBeenCalled()
+  })
+
+  it('ignores a delayed cancellation from a superseded utterance', () => {
+    const { result } = renderHook(() => useReadAloud('A reading.'))
+
+    act(() => result.current.play())
+    const oldUtterance = speech.speak.mock.calls[0][0]
+    act(() => result.current.stop())
+    act(() => result.current.play())
+    expect(result.current.status).toBe('playing')
+
+    act(() => oldUtterance.onerror?.({ error: 'canceled' }))
+    expect(result.current.status).toBe('playing')
   })
 })

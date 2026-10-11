@@ -5,7 +5,7 @@ let activeReader = null
 export const stopActiveReadAloud = () => {
   if (!activeReader) return
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) window.speechSynthesis.cancel()
-  activeReader.setIdle()
+  activeReader.finish()
   activeReader = null
 }
 
@@ -15,10 +15,9 @@ const getSpeechApi = () => {
   return window.speechSynthesis
 }
 
-const chooseVoice = speech => {
+const chooseLocalVoice = speech => {
   const voices = speech.getVoices?.() || []
   return voices.find(voice => voice.lang?.toLowerCase().startsWith('en') && voice.localService)
-    || voices.find(voice => voice.lang?.toLowerCase().startsWith('en'))
     || null
 }
 
@@ -39,10 +38,15 @@ const useReadAloud = text => {
   }, [])
 
   useEffect(() => {
-    setSupported(Boolean(getSpeechApi()))
+    const speech = getSpeechApi()
+    if (!speech) return undefined
+    const updateSupport = () => setSupported(Boolean(chooseLocalVoice(speech)))
+    updateSupport()
+    speech.addEventListener?.('voiceschanged', updateSupport)
     return () => {
+      speech.removeEventListener?.('voiceschanged', updateSupport)
       if (activeReader?.utterance === utteranceRef.current) {
-        getSpeechApi()?.cancel()
+        speech.cancel()
         activeReader = null
       }
     }
@@ -58,6 +62,11 @@ const useReadAloud = text => {
   const play = useCallback(() => {
     const speech = getSpeechApi()
     if (!speech || !text) return
+    const voice = chooseLocalVoice(speech)
+    if (!voice) {
+      setSupported(false)
+      return
+    }
 
     if (activeReader && activeReader.utterance !== utteranceRef.current) stopActiveReadAloud()
     if (status === 'paused' && activeReader?.utterance === utteranceRef.current) {
@@ -71,26 +80,40 @@ const useReadAloud = text => {
     utterance.lang = 'en-US'
     utterance.rate = 0.94
     utterance.pitch = 1
-    const voice = chooseVoice(speech)
-    if (voice) utterance.voice = voice
+    utterance.voice = voice
 
-    utterance.onstart = () => setStatus('playing')
-    utterance.onpause = () => setStatus('paused')
-    utterance.onresume = () => setStatus('playing')
+    const isCurrent = () => utteranceRef.current === utterance
+    utterance.onstart = () => {
+      if (isCurrent()) setStatus('playing')
+    }
+    utterance.onpause = () => {
+      if (isCurrent()) setStatus('paused')
+    }
+    utterance.onresume = () => {
+      if (isCurrent()) setStatus('playing')
+    }
     utterance.onend = () => {
+      if (!isCurrent()) return
       if (activeReader?.utterance === utterance) activeReader = null
-      if (utteranceRef.current === utterance) utteranceRef.current = null
+      utteranceRef.current = null
       setStatus('idle')
     }
     utterance.onerror = event => {
+      if (!isCurrent()) return
       if (event.error !== 'canceled' && event.error !== 'interrupted') setStatus('error')
       else setStatus('idle')
       if (activeReader?.utterance === utterance) activeReader = null
-      if (utteranceRef.current === utterance) utteranceRef.current = null
+      utteranceRef.current = null
     }
 
     utteranceRef.current = utterance
-    activeReader = { utterance, setIdle: () => setStatus('idle') }
+    activeReader = {
+      utterance,
+      finish: () => {
+        if (utteranceRef.current === utterance) utteranceRef.current = null
+        setStatus('idle')
+      },
+    }
     setStatus('playing')
     speech.speak(utterance)
   }, [status, text])
