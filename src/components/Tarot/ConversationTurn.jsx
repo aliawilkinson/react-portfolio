@@ -1,5 +1,7 @@
 import css from './Tarot.module.scss'
 import Spread from './Spread'
+import useReadAloud from './hooks/useReadAloud'
+import getReadingSpeechText from './utils/getReadingSpeechText'
 
 /**
  * Simple markdown-to-JSX renderer for Gemini responses.
@@ -76,6 +78,10 @@ const ConversationTurn = ({ turn }) => {
   const celticFallback = turn.fallbackInterpretation?.celticCross
   const threeCardFallback = turn.fallbackInterpretation?.threeCard
   const singleCardFallback = turn.fallbackInterpretation?.singleCard
+  const speechText = getReadingSpeechText(turn)
+  const { supported: speechSupported, status: speechStatus, play, pause, stop } = useReadAloud(speechText)
+  const isSpeaking = speechStatus === 'playing'
+  const isPaused = speechStatus === 'paused'
 
   return (
     <div className={css.convTurn}>
@@ -84,6 +90,29 @@ const ConversationTurn = ({ turn }) => {
       </div>
       <Spread drawnCards={turn.cards} spreadPreset={turn.spreadPreset} />
       <div className={css.convTurnInterpretation}>
+        {speechSupported && speechText && (
+          <div className={css.readingAudioControls}>
+            <button
+              type="button"
+              className={css.readingAudioPrimary}
+              onClick={isSpeaking ? pause : play}
+              aria-label={isSpeaking ? 'Pause reading aloud' : isPaused ? 'Resume reading aloud' : 'Read this reading aloud'}
+            >
+              <span aria-hidden="true">{isSpeaking ? 'Ⅱ' : '▶'}</span>
+              {isSpeaking ? 'Pause' : isPaused ? 'Resume' : 'Read aloud'}
+            </button>
+            {(isSpeaking || isPaused) && (
+              <button type="button" onClick={stop} aria-label="Stop reading aloud">
+                <span aria-hidden="true">■</span> Stop
+              </button>
+            )}
+            <span className={css.readingAudioStatus} role="status" aria-live="polite">
+              {speechStatus === 'playing' && 'Reading aloud'}
+              {speechStatus === 'paused' && 'Reading paused'}
+              {speechStatus === 'error' && 'Voice playback is unavailable. Try again.'}
+            </span>
+          </div>
+        )}
         {hasFallback && (
           <>
             <p><em>The oracle is sleeping. Here is a manual interpretation instead:</em></p>
