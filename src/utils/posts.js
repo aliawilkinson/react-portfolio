@@ -6,13 +6,14 @@ export const content = {
         "imgSrc": "/nomadtime/icon.png",
         "post": `
     <p class="case-eyebrow">Independent product · Product design &amp; engineering · 2026</p>
-    <p class="case-lead">A visual world clock for understanding what your life could look like somewhere else—and keeping a little of the world with you.</p>
+    <p class="case-lead">A visual world clock for understanding what life could feel like somewhere else, shipped as a public web app and an active iOS beta.</p>
     <ul class="case-facts">
       <li><strong>My role</strong>Founder, product direction, UX, architecture &amp; release engineering</li>
       <li><strong>Built with</strong>React Native, Expo, TypeScript &amp; native iOS maps; AI-assisted development</li>
-      <li><strong>Current stage</strong>TestFlight beta; first public iPhone &amp; iPad release in preparation</li>
+      <li><strong>Shipped</strong>Public web app at nomadtime.org; iOS 1.2.3 available to internal TestFlight testers</li>
+      <li><strong>Release boundary</strong>Public App Store review and external beta approval remain separate Apple gates</li>
     </ul>
-    <p class="case-links"><a href="/nomadtime">Explore NomadTime ↗</a><a href="/nomadtime/support">Support &amp; how it works ↗</a></p>
+    <p class="case-links"><a href="https://nomadtime.org" target="_blank" rel="noopener noreferrer">Open NomadTime ↗</a><a href="/nomadtime/support">Support &amp; how it works ↗</a></p>
 
     <h2>A small window into a bigger world</h2>
     <p>When I was younger, I used to wander through Google Maps and Street View just to see what life looked like somewhere else. They felt like little free trips. NomadTime grew out of that feeling: the world should be accessible even when you cannot get on a plane.</p>
@@ -49,20 +50,20 @@ export const content = {
     <p>React Native, Expo, and TypeScript provide the application foundation. Clocks, ranges, pins, notes, and imported photos stay on the device; the core experience does not require an account. Maps and weather remain separate external services with clear privacy disclosures, rather than a reason to introduce an unnecessary application backend.</p>
     <p>I used AI-assisted development to iterate on the implementation, while keeping product decisions, architecture, and acceptance criteria explicit. Reusable mobile interaction and release patterns connect to my Product Factory tooling without making NomadTime depend on another app's data or runtime.</p>
 
-    <h2>Test the experience people actually have</h2>
-    <p>A successful build did not prove that long-press reordering, overnight dragging, or saving a note worked on a phone. TestFlight feedback exposed those gaps and helped define concrete acceptance journeys.</p>
+    <h2>The hard parts were not the headline features</h2>
+    <p>A successful build did not prove that long-press reordering, overnight dragging, orientation changes, or saving a note worked on a phone. The work repeatedly crossed boundaries where an app can look correct and still fail in use: daylight-saving transitions, ranges that continue through midnight, mobile safe areas, native map behavior, photo persistence, and the difference between an uploaded binary and a build a tester can actually install.</p>
     <ul>
       <li>Create an overnight range, drag an endpoint through midnight, and check its duration and destination dates.</li>
       <li>Reorder clocks, switch orientation, and keep the controls reachable without losing the comparison.</li>
       <li>Save a pin note, cancel an edit or photo selection, close the app, and verify the saved content on reopening.</li>
     </ul>
-    <p>The release candidate has automated application checks and Release-mode iPhone and iPad simulator coverage for these journeys. Simulator coverage, physical-device feedback, and public App Store readiness are recorded as separate checks.</p>
+    <p>I turned those failures into explicit acceptance journeys and release evidence. Version 1.2.3 was built locally from a pinned source revision, verified against the signed artifact, promoted to the public web app, and confirmed available to internal TestFlight testers. Web delivery, Apple processing, external beta review, and public App Store review stay separate so one green check cannot quietly stand in for the others.</p>
 
-    <h2>What exists now—and what comes next</h2>
-    <p>NomadTime is a working TestFlight beta with photographic clocks, named and adjustable time ranges, personal map pins, and saved notes and photos. The first public iOS release is being prepared. The result so far is a usable foundation for comparing daily life across places, with real feedback shaping both the interface and its underlying model.</p>
+    <h2>What exists now and what comes next</h2>
+    <p>NomadTime is live on the web with photographic clocks, named and adjustable time ranges, planning views, personal map pins, and saved notes and photos. The same product is distributed through TestFlight for iOS testing. The result is a usable foundation for comparing daily life across places, with real feedback shaping both the interface and its underlying model.</p>
     <p>Flight information, shared travel knowledge, richer map exports, and optional community features belong to future milestones. The long-term goal is a world people can explore, learn from, and contribute to, whether they are traveling or imagining a possibility from home.</p>
     <p>My main lesson was that beauty and reliability have to be developed together. The photographs invite someone to explore; predictable gestures, clear date boundaries, and trustworthy saved data give them a reason to stay.</p>
-    <p class="case-links"><a href="/nomadtime">Visit NomadTime ↗</a><a href="/case-studies">More case studies →</a></p>
+    <p class="case-links"><a href="https://nomadtime.org" target="_blank" rel="noopener noreferrer">Visit NomadTime ↗</a><a href="/case-studies">More case studies →</a></p>
     `
     },
 
@@ -70,7 +71,13 @@ export const content = {
         "title": "AtlasTask: Designing a Calm Visual Second Brain",
         "imgSrc": "./infoposts/atlas-task.svg",
         "post": `
-    <p><strong>Product status:</strong> Private alpha.</p>
+    <p class="case-eyebrow">Independent product · Product design, engineering &amp; delivery · 2026</p>
+    <p class="case-lead">A calm visual second brain that keeps today's next action connected to the larger life it belongs to.</p>
+    <ul class="case-facts">
+      <li><strong>My role</strong>Founder, product direction, UX, architecture &amp; release engineering</li>
+      <li><strong>Built with</strong>React Native, Expo, TypeScript, local-first storage &amp; optional identity</li>
+      <li><strong>Shipped</strong>Private iOS alpha 0.1.0 (56), available to configured internal and external TestFlight groups</li>
+    </ul>
     <p><strong>Disclosure:</strong> AtlasTask is a private product. This case study explains the customer problem, experience, architectural principles, and product decisions without publishing source code, repository access, personal data models, provider identifiers, release credentials, or implementation-level operating instructions.</p>
 
     <h2>Situation:</h2>
@@ -110,8 +117,12 @@ export const content = {
 
     <p>Cloud synchronization, remote notifications, and production identity move through separate release gates. The interface does not imply that signing in is equivalent to backup or cross-device sync before those capabilities are implemented and verified.</p>
 
+    <h2>What fought back:</h2>
+    <p>The hardest work was maintaining continuity while the product changed underneath it. Daily state, recurring schedules, local records, optional accounts, and a growing visual system all had to evolve without treating a rename or a new interaction model as permission to lose a person's history.</p>
+    <p>Distribution created a second class of problems. Hosted automation was unavailable during a release window, upstream build dependencies carried known advisories, and Apple internal access, external group assignment, beta review, and installation were all different states. I built a guarded local release path, verified the exact signed artifact and source identity, kept scoped risk acceptance explicit, and read availability back from Apple instead of treating upload success as delivery.</p>
+
     <h2>Result:</h2>
-    <p>AtlasTask has grown from a task-list concept into a coherent personal operating system with a working mobile alpha, a navigable daily flow, recurring responsibility tracking, a spatial planning model, local persistence, optional identity, and a disciplined release process.</p>
+    <p>AtlasTask has grown from a task-list concept into a coherent personal operating system with a distributed mobile alpha, a navigable daily flow, recurring responsibility tracking, a spatial planning model, local persistence, optional identity, and a disciplined release process.</p>
 
     <p>The most important outcome is not the feature count. It is the product's point of view: make the next action obvious, preserve the larger plan, and let the system carry organizational weight without becoming another source of pressure.</p>
 
@@ -121,11 +132,19 @@ export const content = {
     },
 
     "supplementAi": {
-        "title": "Supplement AI: Making Supplement Stacks Understandable Without Inventing Certainty",
+        "title": "SupplementFriend: Making Supplement Stacks Understandable Without Inventing Certainty",
         "imgSrc": "./infoposts/supplement-ai.svg",
         "post": `
-    <p><strong>Product status:</strong> Private validation build.</p>
-    <p><strong>Disclosure:</strong> Supplement AI is a private pre-release product, not a medical device. This case study describes the product and safety architecture without exposing source code, repository access, prompts, extraction schemas, private health data, provider configuration, security controls, or deployment instructions.</p>
+    <p class="case-eyebrow">Independent product · AI product architecture &amp; full-stack delivery · 2026</p>
+    <p class="case-lead">A private supplement tracker that makes labels and daily totals easier to understand without pretending uncertain information is certain.</p>
+    <ul class="case-facts">
+      <li><strong>My role</strong>Founder, product strategy, UX, architecture, full-stack engineering &amp; release engineering</li>
+      <li><strong>Built with</strong>React Native, Expo, TypeScript, AWS, Clerk &amp; a reviewable AI extraction boundary</li>
+      <li><strong>Shipped</strong>Production web app; SupplementFriend 0.3.0 (3) available to the internal TestFlight group</li>
+      <li><strong>Held deliberately</strong>Public launch and live extraction-accuracy claims until funding, review, and validation gates pass</li>
+    </ul>
+    <p class="case-links"><a href="https://supplementfriend.com" target="_blank" rel="noopener noreferrer">Open SupplementFriend ↗</a></p>
+    <p><strong>Disclosure:</strong> SupplementFriend is an independent product, not a medical device. This case study describes the product and safety architecture without exposing source code, repository access, prompts, extraction schemas, private health data, provider configuration, security controls, or deployment instructions.</p>
 
     <h2>Situation:</h2>
     <p>Supplement labels are difficult to compare across products. Serving sizes differ, nutrient units do not always align, proprietary blends obscure detail, and a person taking several bottles may have no reliable view of their combined daily intake.</p>
@@ -133,7 +152,7 @@ export const content = {
     <p>AI can make label capture easier, but it also introduces risk. A model that misreads a quantity, fills in a missing fact, or turns general nutrition context into personal medical advice can create false confidence. The product challenge was not simply to analyze supplements. It was to make the useful parts of AI reviewable while keeping arithmetic, uncertainty, ownership, and safety boundaries explicit.</p>
 
     <h2>What It Is:</h2>
-    <p>Supplement AI is a private supplement tracker that helps a user photograph label panels, review the extracted facts, confirm how much they take, and understand totals across their full stack. It is designed to surface overlap, unknowns, source context, and useful questions without diagnosing conditions or prescribing treatment.</p>
+    <p>SupplementFriend is a private supplement tracker that helps a user photograph label panels, review the extracted facts, confirm how much they take, and understand totals across their full stack. It is designed to surface overlap, unknowns, source context, and useful questions without diagnosing conditions or prescribing treatment.</p>
 
     <p>The experience also supports optional personal context and food-intake notes for more relevant comparisons. Missing information remains missing, and users can choose a general reference view without disclosing personal details.</p>
 
@@ -162,12 +181,16 @@ export const content = {
     </ul>
 
     <h2>Architecture:</h2>
-    <p>Supplement AI uses a shared web and mobile TypeScript foundation with product-owned tracker and analysis domains. Submitted images and model output are treated as untrusted input, validated against strict contracts, and connected to reviewed facts through traceable versions. Deterministic services own totals and reference comparisons. Identity, private storage, observability, and deployment are separate capabilities with independent activation and verification.</p>
+    <p>SupplementFriend uses a shared web and mobile TypeScript foundation with product-owned tracker and analysis domains. Submitted images and model output are treated as untrusted input, validated against strict contracts, and connected to reviewed facts through traceable versions. Deterministic services own totals and reference comparisons. Identity, private storage, observability, and deployment are separate capabilities with independent activation and verification.</p>
 
     <p>This separation is deliberate. It allows the product to improve extraction models or user experience without changing the meaning of previously reviewed records, and it prevents a convenient AI response from bypassing application validation.</p>
 
+    <h2>What fought back:</h2>
+    <p>The production path exposed problems that local demos do not. A stale web export dropped public authentication and API configuration. Managed and application CORS headers collided after sign-in. Native tokens did not have the same authorized-party shape as browser tokens. The extraction provider exhausted its credit balance, which meant the honest product response was to keep manual tracking useful and hold claims about live photo accuracy.</p>
+    <p>I fixed each boundary without weakening the one beside it: clean exports now fail when required configuration is absent, the managed endpoint owns CORS, native sessions receive a narrowly scoped server rule while browser origin checks remain intact, and synthetic production accounts verify isolation before erasing their records. Deployment used reviewed infrastructure plans, immutable web assets, exact-source checks, production smoke tests, and a signed iOS artifact whose Apple availability was independently read back.</p>
+
     <h2>Result:</h2>
-    <p>The product now has a working private tracker foundation that moves from label photos to reviewable facts, confirmed daily amounts, durable stack records, and traceable totals. It also has an inclusive optional intake model, editable profile review, general-reference fallback, and explicit safety and release boundaries.</p>
+    <p>The product now has a live account-based web experience that moves from guided intake to editable targets, durable stack records, deterministic totals, exports, and account erasure. The matching iOS build is available for internal TestFlight use. Reviewable label extraction remains deliberately gated while its provider funding and held-out accuracy work are unresolved.</p>
 
     <p>The larger result is a more honest model for AI-assisted health software. The product uses AI where ambiguity and transcription benefit from it, deterministic systems where precision matters, and visible human review where neither should be trusted silently.</p>
 

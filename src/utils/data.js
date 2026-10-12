@@ -71,7 +71,7 @@ export const caseStudies = [
   {
     slug: "supplementAi",
     imgSrc: "./infoposts/supplement-ai.svg",
-    alt: "Supplement AI: trustworthy label capture and supplement stack understanding",
+    alt: "SupplementFriend: trustworthy label capture and supplement stack understanding",
     bg: "#743F4B",
   },
   {
@@ -126,7 +126,7 @@ export const caseStudies = [
 
 export const whatIHelpWith = [
   `I work between development teams and platform engineering. I determine the architecture, make the case for it, and partner with DevOps and platform teams to deliver it. Developers ship independently and reliably.`,
-  `I also built my own delivery platform. Product Factory generates each product with infrastructure as code, pipelines, release orchestration, and observability built in. MetadataDB is the control plane for ownership, deployments, and cost optimization, tracking 66 components across 12 products. Built with it: NomadTime, a visual world clock in beta for iPhone and iPad, and House of Solar Bloom, a production beauty storefront.`,
+  `I also built my own delivery platform. Product Factory generates each product with infrastructure as code, pipelines, release orchestration, and observability built in. MetadataDB is the control plane for ownership, deployments, and cost optimization, tracking 66 components across 12 products. Built with it: NomadTime and SupplementFriend, both live on the web with active iOS betas; AtlasTask, a distributed private mobile alpha; and House of Solar Bloom, a production beauty storefront.`,
   `Delivered: identity for a portal serving ~250,000 agents. Release automation running 26 teams and 1,200+ components in a single run. Hedging systems migrated from on-prem to AWS. An AI tool that maps production from git history, Jira releases, and runbooks.`,
 ];
 
@@ -346,14 +346,26 @@ export const projects = [
   {
     slug: "nomadtime",
     title: "NomadTime",
-    subtitle: "A visual world clock & personal places",
-    description: "Compare time zones, save your daily rhythms, and keep a personal map of places and memories.",
+    subtitle: "A visual world clock & personal atlas",
+    description: "Compare real days across places, map the routines that matter, and keep personal notes, photos, and memories close.",
     category: "Apps",
     bg: "#174f48",
     imgSrc: "/nomadtime/icon.png",
     imageFit: "contain",
     imageBackground: "#102e3c",
-    externalUrl: "/nomadtime",
+    externalUrl: "https://nomadtime.org",
+  },
+  {
+    slug: "supplementfriend",
+    title: "SupplementFriend",
+    subtitle: "A clearer view of your supplement stack",
+    description: "Review labels, track what you take, and understand daily totals with uncertainty and safety boundaries kept visible.",
+    category: "Apps",
+    bg: "#743F4B",
+    imgSrc: "./infoposts/supplement-ai.svg",
+    imageFit: "contain",
+    imageBackground: "#21151A",
+    externalUrl: "https://supplementfriend.com",
   },
   {
     slug: "house-of-solar-bloom",

@@ -12,7 +12,7 @@ export const seoDefaults = {
 export const seoData = {
   'nomadtime-case-study': {
     title: 'NomadTime Case Study | Alia Wilkinson',
-    description: 'Designing a visual world clock around real days: overnight time ranges, connected place memories, native maps, and a dependable mobile experience.',
+    description: 'Shipping a visual world clock across the web and iOS beta: real-day comparisons, local-first places, native maps, and evidence-based releases.',
     url: `${BASE_URL}/nomadtime-case-study`,
     image: `${BASE_URL}/nomadtime/icon.png`,
   },
@@ -33,14 +33,14 @@ export const seoData = {
   atlasTask: {
     title: 'AtlasTask Case Study | Alia Wilkinson',
     description:
-      'Designing a private, local-first visual second brain that connects daily actions, recurring responsibilities, longer-term context, and calm mobile interaction.',
+      'Building and distributing a private, local-first visual second brain with calm daily planning, recurring responsibilities, and a spatial life map.',
     url: `${BASE_URL}/atlasTask`,
     image: `${BASE_URL}/infoposts/atlas-task.svg`,
   },
   supplementAi: {
-    title: 'Supplement AI Case Study | Alia Wilkinson',
+    title: 'SupplementFriend Case Study | Alia Wilkinson',
     description:
-      'Building a private supplement tracker that combines reviewable AI label extraction with deterministic nutrient totals, explicit uncertainty, and safety-conscious product boundaries.',
+      'Shipping a private supplement tracker on the web and iOS beta with reviewable label capture, deterministic totals, account isolation, and visible safety boundaries.',
     url: `${BASE_URL}/supplementAi`,
     image: `${BASE_URL}/infoposts/supplement-ai.svg`,
   },

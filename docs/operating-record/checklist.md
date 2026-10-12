@@ -77,3 +77,5 @@ Dependency upgrade evidence: [React Router 7 compatibility checkpoint](reports/2
 Dependency compatibility evidence: [React 19 C2/C5 report](reports/2026-10-07-react-19-compatibility-C2-C5.md) records the coupled Framer Motion fix, scoped checks and retained audit findings.
 
 Final combined maintenance evidence: [Dependabot PRs #52–59 C2/C5 report](reports/2026-10-07-dependency-batch-C2-C5.md) records all eight upgrades together, unchanged tests, build/browser checks and the dated 48-to-37 audit comparison. Remaining security/release/recovery gaps are explicit.
+
+Product catalog evidence: [Deployed-product portfolio reconciliation](reports/2026-10-11-product-deployment-portfolio-C0-C2-C5.md) records the source receipts and public reachability used to refresh the NomadTime, AtlasTask and SupplementFriend project and case-study claims. It holds portfolio production deployment, App Store availability and unverified AI-accuracy claims for their own gates.
