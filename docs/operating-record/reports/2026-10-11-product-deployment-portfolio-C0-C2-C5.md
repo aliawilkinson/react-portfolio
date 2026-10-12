@@ -26,6 +26,7 @@ This report reconciles portfolio claims to saved delivery evidence and a narrow 
 | AtlasTask is a distributed private alpha | Reviewed exact-source build, signed artifact and Apple group readback | verified historical receipt | `/Users/alia/Projects/todotaskapp/docs/operating-record/reports/2026-10-09-testflight-alpha102.md`, version 0.1.0 build 56 | 2026-10-10 UTC receipt / release process |
 | AtlasTask has a public project destination | The recorded production domain remained an unactivated plan; no public origin was claimed | not-applicable | `/Users/alia/Projects/todotaskapp/docs/test-reports/production-domain-2026-10-06.md` | No public destination verified |
 | Portfolio distinguishes projects from case studies | Publicly openable products are linked from Projects; private AtlasTask remains a case study | documented | `src/utils/data.js`, `src/utils/posts.js` | This change |
+| Public Projects explain product and destination | Each public card identifies what the product does, its deployment surface, and the live destination opened in a new tab | documented | `src/utils/data.js`, `src/components/OtherProjects/OtherProjectsList.jsx` | This change |
 | Copy acknowledges delivery failures and constraints | Case studies now describe product-specific failures, fixes and intentionally held claims | documented | `src/utils/posts.js` | This change |
 
 ## Release and catalog evidence

@@ -87,8 +87,13 @@ const OtherProjectsList = () => {
                       preview={<ProjectCard project={project} />}
                     >
                       <div className={css.cardLabel}>
-                        <span>{project.title}</span>
-                        <span>{project.subtitle}</span>
+                        <span className={css.cardTitle}>{project.title}</span>
+                        <span className={css.cardSubtitle}>{project.subtitle}</span>
+                        <span className={css.cardDescription}>{project.description}</span>
+                        {project.deployment && (
+                          <span className={css.cardDeployment}>{project.deployment}</span>
+                        )}
+                        <span className={css.cardAction}>{project.actionLabel || `Explore ${project.title} ↗`}</span>
                       </div>
                     </ProjectPortal>
                   </motion.div>
