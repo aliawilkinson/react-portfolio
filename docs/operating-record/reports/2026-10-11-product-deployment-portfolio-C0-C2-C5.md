@@ -27,7 +27,9 @@ This report reconciles portfolio claims to saved delivery evidence and a narrow 
 | AtlasTask has a public project destination | The recorded production domain remained an unactivated plan; no public origin was claimed | not-applicable | `/Users/alia/Projects/todotaskapp/docs/test-reports/production-domain-2026-10-06.md` | No public destination verified |
 | Portfolio distinguishes projects from case studies | Publicly openable products are linked from Projects; private AtlasTask remains a case study | documented | `src/utils/data.js`, `src/utils/posts.js` | This change |
 | Public Projects explain product and destination | Each public card identifies what the product does, its deployment surface, and the live destination opened in a new tab | documented | `src/utils/data.js`, `src/components/OtherProjects/OtherProjectsList.jsx` | This change |
-| Copy acknowledges delivery failures and constraints | Case studies now describe product-specific failures, fixes and intentionally held claims | documented | `src/utils/posts.js` | This change |
+| Copy explains delivered product work | Case studies describe the product, interaction model, implementation, and current availability in direct language | documented | `src/utils/posts.js` | This change |
+| Product stories are visually grounded | AtlasTask uses inspected synthetic QA screens; SupplementFriend uses its public homepage and a generic beta profile screen | documented | `public/atlastask/`, `public/supplementfriend/`, `src/utils/posts.js` | This change |
+| Portfolio voice matches owner direction | Product copy is concise, affirmative, free of em dashes, and leads with what each app does | documented | `src/utils/posts.js`, `src/utils/data.js`, `src/utils/seoData.js` | This change |
 
 ## Release and catalog evidence
 

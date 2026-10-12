@@ -40,7 +40,7 @@ export const seoData = {
   supplementAi: {
     title: 'SupplementFriend Case Study | Alia Wilkinson',
     description:
-      'Shipping a private supplement tracker on the web and iOS beta with reviewable label capture, deterministic totals, account isolation, and visible safety boundaries.',
+      'SupplementFriend reads supplement labels, organizes a daily stack, and compares vitamins, minerals, food, and personal nutrition targets.',
     url: `${BASE_URL}/supplementAi`,
     image: `${BASE_URL}/infoposts/supplement-ai.svg`,
   },

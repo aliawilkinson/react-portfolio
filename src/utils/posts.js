@@ -10,8 +10,7 @@ export const content = {
     <ul class="case-facts">
       <li><strong>My role</strong>Founder, product direction, UX, architecture &amp; release engineering</li>
       <li><strong>Built with</strong>React Native, Expo, TypeScript &amp; native iOS maps; AI-assisted development</li>
-      <li><strong>Shipped</strong>Public web app at nomadtime.org; iOS 1.2.3 available to internal TestFlight testers</li>
-      <li><strong>Release boundary</strong>Public App Store review and external beta approval remain separate Apple gates</li>
+      <li><strong>Available</strong>Live at nomadtime.org &amp; in iOS TestFlight</li>
     </ul>
     <p class="case-links"><a href="https://nomadtime.org" target="_blank" rel="noopener noreferrer">Open NomadTime ↗</a><a href="/nomadtime/support">Support &amp; how it works ↗</a></p>
 
@@ -50,14 +49,14 @@ export const content = {
     <p>React Native, Expo, and TypeScript provide the application foundation. Clocks, ranges, pins, notes, and imported photos stay on the device; the core experience does not require an account. Maps and weather remain separate external services with clear privacy disclosures, rather than a reason to introduce an unnecessary application backend.</p>
     <p>I used AI-assisted development to iterate on the implementation, while keeping product decisions, architecture, and acceptance criteria explicit. Reusable mobile interaction and release patterns connect to my Product Factory tooling without making NomadTime depend on another app's data or runtime.</p>
 
-    <h2>The hard parts were not the headline features</h2>
-    <p>A successful build did not prove that long-press reordering, overnight dragging, orientation changes, or saving a note worked on a phone. The work repeatedly crossed boundaries where an app can look correct and still fail in use: daylight-saving transitions, ranges that continue through midnight, mobile safe areas, native map behavior, photo persistence, and the difference between an uploaded binary and a build a tester can actually install.</p>
+    <h2>Engineering the details</h2>
+    <p>The experience depends on the details: daylight-saving transitions, ranges that continue through midnight, mobile safe areas, native map gestures, photo persistence, and smooth portrait and landscape layouts.</p>
     <ul>
       <li>Create an overnight range, drag an endpoint through midnight, and check its duration and destination dates.</li>
-      <li>Reorder clocks, switch orientation, and keep the controls reachable without losing the comparison.</li>
+      <li>Reorder clocks, switch orientation, and keep the comparison in view.</li>
       <li>Save a pin note, cancel an edit or photo selection, close the app, and verify the saved content on reopening.</li>
     </ul>
-    <p>I turned those failures into explicit acceptance journeys and release evidence. Version 1.2.3 was built locally from a pinned source revision, verified against the signed artifact, promoted to the public web app, and confirmed available to internal TestFlight testers. Web delivery, Apple processing, external beta review, and public App Store review stay separate so one green check cannot quietly stand in for the others.</p>
+    <p>I turned each journey into automated browser and native release coverage. Version 1.2.3 was verified against its signed artifact, published to the web, and delivered through TestFlight.</p>
 
     <h2>What exists now and what comes next</h2>
     <p>NomadTime is live on the web with photographic clocks, named and adjustable time ranges, planning views, personal map pins, and saved notes and photos. The same product is distributed through TestFlight for iOS testing. The result is a usable foundation for comparing daily life across places, with real feedback shaping both the interface and its underlying model.</p>
@@ -68,134 +67,78 @@ export const content = {
     },
 
     "atlasTask": {
-        "title": "AtlasTask: Designing a Calm Visual Second Brain",
+        "title": "AtlasTask: A Visual Second Brain for Real Life",
         "imgSrc": "./infoposts/atlas-task.svg",
         "post": `
-    <p class="case-eyebrow">Independent product · Product design, engineering &amp; delivery · 2026</p>
-    <p class="case-lead">A calm visual second brain that keeps today's next action connected to the larger life it belongs to.</p>
+    <p class="case-eyebrow">Independent product · Product design &amp; engineering · 2026</p>
+    <p class="case-lead">AtlasTask turns tasks, projects, routines, notes, and life goals into one visual workspace that helps people see what matters today.</p>
     <ul class="case-facts">
-      <li><strong>My role</strong>Founder, product direction, UX, architecture &amp; release engineering</li>
-      <li><strong>Built with</strong>React Native, Expo, TypeScript, local-first storage &amp; optional identity</li>
-      <li><strong>Shipped</strong>Private iOS alpha 0.1.0 (56), available to configured internal and external TestFlight groups</li>
+      <li><strong>My role</strong>Founder, product designer &amp; full-stack engineer</li>
+      <li><strong>Platform</strong>React Native, Expo, TypeScript &amp; local-first storage</li>
+      <li><strong>Available</strong>iOS alpha through TestFlight</li>
     </ul>
-    <p><strong>Disclosure:</strong> AtlasTask is a private product. This case study explains the customer problem, experience, architectural principles, and product decisions without publishing source code, repository access, personal data models, provider identifiers, release credentials, or implementation-level operating instructions.</p>
+    <figure class="case-screens case-screens-three">
+      <img src="/atlastask/project.png" alt="AtlasTask project view with notes and visual steps" loading="lazy">
+      <img src="/atlastask/editor.png" alt="AtlasTask bubble editor with timing and context controls" loading="lazy">
+      <img src="/atlastask/search.png" alt="AtlasTask activity search connecting a completed action to its workspace" loading="lazy">
+      <figcaption>Real AtlasTask QA screens showing projects, visual task editing, and activity history.</figcaption>
+    </figure>
 
-    <h2>Situation:</h2>
-    <p>Most task apps are good at holding lists. They are less good at holding a life. One-off intentions, daily essentials, recurring care, long-running responsibilities, notes, costs, images, and the reason something matters often end up separated across reminders, calendars, documents, and memory.</p>
+    <h2>What it does</h2>
+    <p>AtlasTask brings daily actions and long-term context together. A person can open Today, choose a visual task bubble, record what happened, and move through the day while their projects, routines, notes, costs, and history stay connected.</p>
 
-    <p>That fragmentation creates a specific kind of cognitive load: the user must repeatedly reconstruct the larger plan before deciding what to do today. AtlasTask began with a different premise. The system should remember the structure so the person can begin with one visible, manageable action.</p>
+    <p>The Life Map organizes the bigger picture into areas and projects. Each project can hold its purpose, next steps, notes, images, completion rules, and activity history. Today stays focused while the larger plan remains easy to reach.</p>
 
-    <h2>What It Is:</h2>
-    <p>AtlasTask is a local-first visual second brain for intentions, daily actions, recurring rhythms, responsibilities, notes, and personal context. It combines a calm Focus view for the current day with a spatial Life Map that keeps longer-term areas and projects visible without forcing everything into one flat priority list.</p>
-
-    <p>The product is designed for people who benefit from external structure but do not want to be punished by it. Flexible timing, fresh daily completion state, small next actions, optional guides, and explicit release or archive states help the system adapt when a plan changes.</p>
-
-    <h2>My Role:</h2>
-    <p>I defined the product direction and built the experience across interaction design, information architecture, mobile and web engineering, local persistence, identity boundaries, accessibility, testing, release automation, and operational documentation.</p>
-
-    <h2>Core Experience:</h2>
+    <h2>How the experience works</h2>
     <ul>
-      <li><strong>Focus without losing context:</strong> A daily surface separates one-time actions from the small set of essentials that recur automatically. Previous and future days remain editable without erasing history.</li>
-      <li><strong>Rhythms rather than rigid habits:</strong> Recurring care can follow fixed dates or completion-anchored intervals, including flexible ranges. Completion, skips, deferrals, estimated costs, and actual costs remain visible as part of the responsibility.</li>
-      <li><strong>A spatial Life Map:</strong> Responsibilities and projects live in independently expandable areas with visual state, importance, notes, images, next actions, win conditions, and instructions. The map helps users see where attention is concentrated without turning life into a scoreboard.</li>
-      <li><strong>Low-friction capture:</strong> Quests and quick capture provide a place for one-offs, ideas, and things to explore before the user knows exactly where they belong.</li>
-      <li><strong>Recovery over punishment:</strong> Tasks can be completed, reopened, released, archived, restored, skipped, or moved. The product treats changed circumstances as information rather than failure.</li>
+      <li><strong>Visual task bubbles:</strong> Tasks feel tangible and easy to scan. Color, size, position, and state help communicate meaning before someone reads every label.</li>
+      <li><strong>Flexible routines:</strong> Recurring care can follow dates, intervals, or completion history. The schedule adapts to how the responsibility actually works.</li>
+      <li><strong>Connected history:</strong> Quick activity logging records time, notes, quantities, and the related project in one flow.</li>
+      <li><strong>Local-first continuity:</strong> The workspace opens quickly and keeps personal planning available on the device.</li>
+      <li><strong>Calm daily focus:</strong> Today shows the next useful actions while Projects, Life Map, and Calendar preserve the rest of the system.</li>
     </ul>
 
-    <h2>Key Design Decisions:</h2>
-    <ul>
-      <li><strong>Local-first by default:</strong> AtlasTask opens without requiring an account or network connection. Personal records begin on the device, which supports immediate use and creates a clear privacy boundary.</li>
-      <li><strong>Identity is optional and explicit:</strong> Signing in does not silently claim or merge a local workspace. Users choose whether to associate a local snapshot with an account, and account-owned records remain separated from guest records.</li>
-      <li><strong>Time and importance are different:</strong> Something can be essential without being urgent, or urgent without defining a person's values. AtlasTask models those dimensions separately.</li>
-      <li><strong>Visual calm is functional:</strong> Spacious layouts, expandable regions, shape and color cues, restrained motion, and direct language reduce the amount of interface a user must process at once.</li>
-      <li><strong>Continuity matters:</strong> Product renaming and architectural evolution preserve stable saved-data and release identities. A better name or interface should not cost the user their history.</li>
-      <li><strong>Release evidence is part of engineering:</strong> Browser interaction tests, native-device checks, accessibility review, versioned releases, and rollback context are treated as part of the product rather than cleanup after implementation.</li>
-    </ul>
-
-    <h2>Architecture:</h2>
-    <p>The product uses a shared TypeScript foundation across an Expo mobile application and a web review surface. On-device persistence supports offline-first behavior. Product-specific experience remains separated from reusable UI, configuration, data, identity, analytics, and notification boundaries so useful patterns can be adopted elsewhere without coupling user data or product identity.</p>
-
-    <p>Cloud synchronization, remote notifications, and production identity move through separate release gates. The interface does not imply that signing in is equivalent to backup or cross-device sync before those capabilities are implemented and verified.</p>
-
-    <h2>What fought back:</h2>
-    <p>The hardest work was maintaining continuity while the product changed underneath it. Daily state, recurring schedules, local records, optional accounts, and a growing visual system all had to evolve without treating a rename or a new interaction model as permission to lose a person's history.</p>
-    <p>Distribution created a second class of problems. Hosted automation was unavailable during a release window, upstream build dependencies carried known advisories, and Apple internal access, external group assignment, beta review, and installation were all different states. I built a guarded local release path, verified the exact signed artifact and source identity, kept scoped risk acceptance explicit, and read availability back from Apple instead of treating upload success as delivery.</p>
-
-    <h2>Result:</h2>
-    <p>AtlasTask has grown from a task-list concept into a coherent personal operating system with a distributed mobile alpha, a navigable daily flow, recurring responsibility tracking, a spatial planning model, local persistence, optional identity, and a disciplined release process.</p>
-
-    <p>The most important outcome is not the feature count. It is the product's point of view: make the next action obvious, preserve the larger plan, and let the system carry organizational weight without becoming another source of pressure.</p>
-
-    <h2>What This Demonstrates:</h2>
-    <p>This work demonstrates end-to-end product engineering: identifying a human problem, creating an interaction model that does not simply imitate existing tools, and building the technical and operational boundaries required for the experience to remain trustworthy as it grows.</p>
+    <h2>What I built</h2>
+    <p>I created the product direction, information model, interaction system, mobile and web application, local persistence, optional account flow, accessibility coverage, automated testing, and iOS release process. AtlasTask is now a working mobile product with a distinct visual language and a clear point of view: show the next action while preserving the life around it.</p>
     `
     },
 
     "supplementAi": {
-        "title": "SupplementFriend: Making Supplement Stacks Understandable Without Inventing Certainty",
+        "title": "SupplementFriend: See Your Whole Supplement Stack",
         "imgSrc": "./infoposts/supplement-ai.svg",
         "post": `
-    <p class="case-eyebrow">Independent product · AI product architecture &amp; full-stack delivery · 2026</p>
-    <p class="case-lead">A private supplement tracker that makes labels and daily totals easier to understand without pretending uncertain information is certain.</p>
+    <p class="case-eyebrow">Independent product · AI product design &amp; engineering · 2026</p>
+    <p class="case-lead">SupplementFriend reads supplement labels, organizes a daily stack, and shows how vitamins, minerals, food, and personal targets add up.</p>
     <ul class="case-facts">
-      <li><strong>My role</strong>Founder, product strategy, UX, architecture, full-stack engineering &amp; release engineering</li>
-      <li><strong>Built with</strong>React Native, Expo, TypeScript, AWS, Clerk &amp; a reviewable AI extraction boundary</li>
-      <li><strong>Shipped</strong>Production web app; SupplementFriend 0.3.0 (3) available to the internal TestFlight group</li>
-      <li><strong>Held deliberately</strong>Public launch and live extraction-accuracy claims until funding, review, and validation gates pass</li>
+      <li><strong>My role</strong>Founder, product designer &amp; full-stack engineer</li>
+      <li><strong>Platform</strong>React Native, Expo, TypeScript, AWS, Clerk &amp; AI label capture</li>
+      <li><strong>Available</strong>Live web app &amp; iOS beta through TestFlight</li>
     </ul>
     <p class="case-links"><a href="https://supplementfriend.com" target="_blank" rel="noopener noreferrer">Open SupplementFriend ↗</a></p>
-    <p><strong>Disclosure:</strong> SupplementFriend is an independent product, not a medical device. This case study describes the product and safety architecture without exposing source code, repository access, prompts, extraction schemas, private health data, provider configuration, security controls, or deployment instructions.</p>
+    <figure class="case-screens">
+      <img src="/supplementfriend/home.png" alt="SupplementFriend home screen explaining label capture and daily stack comparisons" loading="lazy">
+      <img src="/supplementfriend/profile.png" alt="SupplementFriend nutrition profile with personal target options and live dictation" loading="lazy">
+      <figcaption>Real SupplementFriend web and beta screens.</figcaption>
+    </figure>
 
-    <h2>Situation:</h2>
-    <p>Supplement labels are difficult to compare across products. Serving sizes differ, nutrient units do not always align, proprietary blends obscure detail, and a person taking several bottles may have no reliable view of their combined daily intake.</p>
+    <h2>What it does</h2>
+    <p>A user photographs the front and Facts panel of a bottle, reviews the label details, confirms the serving they take, and adds it to their stack. SupplementFriend combines the confirmed entries into daily totals and shows which products contribute to each nutrient.</p>
 
-    <p>AI can make label capture easier, but it also introduces risk. A model that misreads a quantity, fills in a missing fact, or turns general nutrition context into personal medical advice can create false confidence. The product challenge was not simply to analyze supplements. It was to make the useful parts of AI reviewable while keeping arithmetic, uncertainty, ownership, and safety boundaries explicit.</p>
+    <p>The Daily Needs flow builds a personal comparison from profile details and editable targets. Food entries can join the same view, giving the user one place to compare supplements, nutrition, and their chosen goals.</p>
 
-    <h2>What It Is:</h2>
-    <p>SupplementFriend is a private supplement tracker that helps a user photograph label panels, review the extracted facts, confirm how much they take, and understand totals across their full stack. It is designed to surface overlap, unknowns, source context, and useful questions without diagnosing conditions or prescribing treatment.</p>
-
-    <p>The experience also supports optional personal context and food-intake notes for more relevant comparisons. Missing information remains missing, and users can choose a general reference view without disclosing personal details.</p>
-
-    <h2>My Role:</h2>
-    <p>I shaped the product strategy and built the adopted application foundation, tracker workflow, AI boundary, deterministic calculation model, private account model, safety language, responsive experience, testing strategy, and release criteria.</p>
-
-    <h2>Core Experience:</h2>
+    <h2>How the experience works</h2>
     <ul>
-      <li><strong>Photograph the evidence:</strong> A user can capture multiple panels from one bottle so serving information, ingredient rows, forms, units, and supporting label context can be considered together.</li>
-      <li><strong>Review before trusting:</strong> Extracted label facts are presented for human review. The original transcription remains separate from the user's confirmed daily amount and later corrections.</li>
-      <li><strong>See the whole stack:</strong> Confirmed entries roll into a daily stack with contributing products visible for each total. Pausing a bottle changes current totals without deleting its record.</li>
-      <li><strong>Preserve uncertainty:</strong> Unreadable amounts remain unknown. Incompatible units remain separate. The product does not invent conversions or silently collapse blend totals into their child ingredients.</li>
-      <li><strong>Add context by choice:</strong> Optional typed or spoken intake can help prepare an editable profile. The user reviews it before saving, and unanswered questions do not block the experience.</li>
-      <li><strong>Ask better questions:</strong> The product is designed to help users notice overlap and prepare conversations with a clinician or pharmacist, not to replace those professionals.</li>
+      <li><strong>Capture:</strong> Add bottle photos or search by product name.</li>
+      <li><strong>Review:</strong> Confirm ingredients, units, serving sizes, and daily use.</li>
+      <li><strong>Compare:</strong> See totals across the full stack, ingredient overlap, and upper-limit flags.</li>
+      <li><strong>Personalize:</strong> Set daily targets through a guided profile, typing, or live dictation.</li>
+      <li><strong>Track:</strong> Save the stack to an account and keep it available across devices.</li>
     </ul>
 
-    <h2>Key Design Decisions:</h2>
-    <ul>
-      <li><strong>AI transcribes; code calculates:</strong> The model returns structured label facts. Deterministic application logic performs unit-aware totals and comparisons. A language model never performs the final arithmetic.</li>
-      <li><strong>Exactness before presentation:</strong> Decimal quantities are summed before display rounding. Compatible mass units can be normalized, while unrelated measurement systems remain visibly distinct.</li>
-      <li><strong>Unknown is a valid result:</strong> Missing quantities, unreadable serving information, and unsupported conversions are shown as limitations instead of being filled with plausible guesses.</li>
-      <li><strong>Personal context is optional:</strong> Users can receive general starting references without completing a profile. When details are supplied, each comparison explains which information it used.</li>
-      <li><strong>Facts, guidance, and medical care stay separate:</strong> Label extraction, reference comparisons, and educational context have different trust levels. The interface avoids deficiency diagnoses, treatment instructions, and automatic supplement prescriptions.</li>
-      <li><strong>Private records are owner-scoped:</strong> Identity is verified by the server boundary, records cannot select their own owner, and account mutations use revision-aware behavior to prevent silent conflicts.</li>
-      <li><strong>Release is evidence-gated:</strong> A polished local flow is not treated as proof of live extraction accuracy, hosted privacy, recovery, native sign-in, or production readiness. Those claims remain held until their own tests pass.</li>
-    </ul>
+    <h2>How I built it</h2>
+    <p>AI handles label transcription. Typed calculation services handle units, serving sizes, nutrient totals, and comparisons. The review screen keeps the original label facts beside the user's confirmed daily amount, so every total has a visible source.</p>
 
-    <h2>Architecture:</h2>
-    <p>SupplementFriend uses a shared web and mobile TypeScript foundation with product-owned tracker and analysis domains. Submitted images and model output are treated as untrusted input, validated against strict contracts, and connected to reviewed facts through traceable versions. Deterministic services own totals and reference comparisons. Identity, private storage, observability, and deployment are separate capabilities with independent activation and verification.</p>
-
-    <p>This separation is deliberate. It allows the product to improve extraction models or user experience without changing the meaning of previously reviewed records, and it prevents a convenient AI response from bypassing application validation.</p>
-
-    <h2>What fought back:</h2>
-    <p>The production path exposed problems that local demos do not. A stale web export dropped public authentication and API configuration. Managed and application CORS headers collided after sign-in. Native tokens did not have the same authorized-party shape as browser tokens. The extraction provider exhausted its credit balance, which meant the honest product response was to keep manual tracking useful and hold claims about live photo accuracy.</p>
-    <p>I fixed each boundary without weakening the one beside it: clean exports now fail when required configuration is absent, the managed endpoint owns CORS, native sessions receive a narrowly scoped server rule while browser origin checks remain intact, and synthetic production accounts verify isolation before erasing their records. Deployment used reviewed infrastructure plans, immutable web assets, exact-source checks, production smoke tests, and a signed iOS artifact whose Apple availability was independently read back.</p>
-
-    <h2>Result:</h2>
-    <p>The product now has a live account-based web experience that moves from guided intake to editable targets, durable stack records, deterministic totals, exports, and account erasure. The matching iOS build is available for internal TestFlight use. Reviewable label extraction remains deliberately gated while its provider funding and held-out accuracy work are unresolved.</p>
-
-    <p>The larger result is a more honest model for AI-assisted health software. The product uses AI where ambiguity and transcription benefit from it, deterministic systems where precision matters, and visible human review where neither should be trusted silently.</p>
-
-    <h2>What This Demonstrates:</h2>
-    <p>This work demonstrates my ability to design AI products where usefulness and restraint are equally important. I can build the interaction, data, identity, calculation, and release systems around a model so the resulting product is more trustworthy than a prompt wrapped in a user interface.</p>
+    <p>I designed and built the responsive web and mobile experience, account system, private data model, calculation engine, AWS infrastructure, production deployment, automated testing, and iOS release process. The result is a working product that turns a shelf of bottles into one useful daily view.</p>
     `
     },
 
