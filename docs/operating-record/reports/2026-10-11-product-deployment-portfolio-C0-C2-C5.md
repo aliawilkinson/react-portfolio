@@ -30,6 +30,7 @@ This report reconciles portfolio claims to saved delivery evidence and a narrow 
 | Copy explains delivered product work | Case studies describe the product, interaction model, implementation, and current availability in direct language | documented | `src/utils/posts.js` | This change |
 | Product stories are visually grounded | AtlasTask uses inspected synthetic QA screens; SupplementFriend uses its public homepage and a generic beta profile screen | documented | `public/atlastask/`, `public/supplementfriend/`, `src/utils/posts.js` | This change |
 | Portfolio voice matches owner direction | Product copy is concise, affirmative, free of em dashes, and leads with what each app does | documented | `src/utils/posts.js`, `src/utils/data.js`, `src/utils/seoData.js` | This change |
+| Projects responds to the portfolio theme | Light mode uses a daylit green portal palette; dark mode retains the deep green portal palette with readable copy and controls in both | verified | `src/components/OtherProjects/OtherProjects.module.scss`; local browser check at `/projects` | 2026-10-13 America/Los_Angeles / Codex |
 
 ## Release and catalog evidence
 

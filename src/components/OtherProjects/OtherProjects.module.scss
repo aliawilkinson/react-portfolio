@@ -1,9 +1,33 @@
 @use '../../styles/constants.scss' as *;
 
 .wrapper {
+    --projects-text: #17372d;
+    --projects-muted: rgba(23, 55, 45, 0.68);
+    --projects-copy: rgba(23, 55, 45, 0.82);
+    --projects-accent: #28634d;
+    --projects-rule: rgba(23, 55, 45, 0.16);
+    --projects-shadow: rgba(42, 76, 60, 0.22);
+    --projects-underline: rgba(40, 99, 77, 0.5);
+
     min-height: 100vh;
-    background: radial-gradient(circle at 50% 10%, #29473a 0, #12382e 34%, #071d17 100%);
-    color: #f8f7f1;
+    background:
+        radial-gradient(circle at 18% 4%, rgba(255, 231, 163, 0.82) 0, transparent 31%),
+        radial-gradient(circle at 82% 18%, rgba(164, 211, 181, 0.64) 0, transparent 36%),
+        linear-gradient(155deg, #faf4df 0%, #e1ece1 48%, #bed5c5 100%);
+    color: var(--projects-text);
+    transition: background 0.45s ease, color 0.3s ease;
+
+    :global(html[data-theme='dark']) & {
+        --projects-text: #f8f7f1;
+        --projects-muted: rgba(248, 247, 241, 0.62);
+        --projects-copy: rgba(248, 247, 241, 0.8);
+        --projects-accent: #b8dfca;
+        --projects-rule: rgba(255, 255, 255, 0.14);
+        --projects-shadow: rgba(0, 0, 0, 0.4);
+        --projects-underline: rgba(184, 223, 202, 0.62);
+
+        background: radial-gradient(circle at 50% 10%, #29473a 0, #12382e 34%, #071d17 100%);
+    }
 
     .container {
         display: flex;
@@ -15,7 +39,7 @@
 
     .intro {
         max-width: 44rem;
-        color: rgba(248, 247, 241, 0.7);
+        color: var(--projects-muted);
         font-size: 1.1rem;
         font-weight: 500;
     }
@@ -28,8 +52,8 @@
         .categoryHeading {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #f8f7f1;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            color: var(--projects-text);
+            border-bottom: 1px solid var(--projects-rule);
             padding-bottom: 0.5rem;
         }
     }
@@ -57,7 +81,7 @@
         width: 18rem;
         height: 18rem;
         border-radius: 1.5rem;
-        box-shadow: 0 24px 60px rgba(0, 0, 0, .4);
+        box-shadow: 0 24px 60px var(--projects-shadow);
         cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -111,18 +135,18 @@
         }
 
         .cardSubtitle {
-            color: rgba(248, 247, 241, 0.62);
+            color: var(--projects-muted);
             font-size: 0.9rem;
         }
 
         .cardDescription {
-            color: rgba(248, 247, 241, 0.8);
+            color: var(--projects-copy);
             font-size: 0.84rem;
             line-height: 1.45;
         }
 
         .cardDeployment {
-            color: #b8dfca;
+            color: var(--projects-accent);
             font-size: 0.76rem;
             font-weight: 700;
             line-height: 1.4;
@@ -130,11 +154,11 @@
 
         .cardAction {
             margin-top: 0.2rem;
-            color: #f8f7f1;
+            color: var(--projects-text);
             font-size: 0.8rem;
             font-weight: 700;
             text-decoration: underline;
-            text-decoration-color: rgba(184, 223, 202, 0.62);
+            text-decoration-color: var(--projects-underline);
             text-underline-offset: 0.22rem;
         }
     }
