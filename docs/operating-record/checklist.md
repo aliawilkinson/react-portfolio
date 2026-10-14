@@ -89,3 +89,5 @@ NomadTime privacy evidence: [First-launch location privacy C2/C3 report](reports
 Open PR reconciliation evidence: [C2/C3 report](reports/2026-10-13-open-pr-reconciliation-C2-C3.md) records the retained product candidate, dependency decisions, consolidated tests, release authorization, and remaining final-check and C4 requirements.
 
 SupplementFriend tile evidence: [Project-logo C2 report](reports/2026-10-13-supplementfriend-project-logo-C2.md) records the brand-asset provenance, focused Projects data change, visual check, and release boundary.
+
+AtlasTask Projects evidence: [Projects tile C0–C2 report](reports/2026-10-13-atlastask-project-tile-C0-C2.md) records the product-source provenance, DNS observation, private-alpha wording, case-study route, and release boundary.
