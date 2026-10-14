@@ -98,3 +98,5 @@ SupplementFriend tile evidence: [Project-logo C2 report](reports/2026-10-13-supp
 AtlasTask Projects evidence: [Projects tile C0–C2 report](reports/2026-10-13-atlastask-project-tile-C0-C2.md) records the product-source provenance, DNS observation, private-alpha wording, case-study route, and release boundary.
 
 Portfolio copy evidence: [Positioning copy C0–C2 report](reports/2026-10-13-portfolio-copy-edit-C0-C2.md) records the homepage hierarchy, architecture-collaboration language, project summaries, local verification, and review boundary.
+
+Portfolio navigation evidence: [Brand home link C2 report](reports/2026-10-14-brand-home-link-C2.md) records the accessible global home link, same-page scroll behavior, route verification, and release boundary.
