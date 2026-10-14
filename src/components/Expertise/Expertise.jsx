@@ -30,7 +30,7 @@ const Expertise = () => {
                     variants={textVariant(0.2)}
                     className={css.intro}>
                     <span className={css.eyebrow}>Overview</span>
-                    <h2 className='primaryText'>What I Do</h2>
+                    <h2 className='primaryText'>How I Work</h2>
                     {whatIHelpWith.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
                 </motion.div>
 
