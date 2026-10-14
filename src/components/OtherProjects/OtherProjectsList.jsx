@@ -63,7 +63,7 @@ const OtherProjectsList = () => {
       <div className={`innerWidth ${css.container}`}>
         <motion.h1 variants={textVariant(0.2)} className="primaryText">Projects</motion.h1>
         <motion.p variants={fadeIn("up", "tween", 0.3, 0.6)} className={css.intro}>
-          Open, play, visit, and explore. Each project is a working world you can step inside.
+          Live apps and creative work. Open a portal to use the product or explore the full story.
         </motion.p>
 
         {orderedCategories.map((category, catIndex) => (

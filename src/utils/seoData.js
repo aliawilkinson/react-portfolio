@@ -4,7 +4,7 @@ const DEFAULT_IMAGE = `${BASE_URL}/og-default.png`
 export const seoDefaults = {
   title: 'Alia Wilkinson | Principal Engineer & Technical Delivery',
   description:
-    'Portfolio of Alia Wilkinson, a Principal Engineer who contributes to systems architecture, builds proofs of concept, and leads complex platform work through review, delivery, and adoption.',
+    'Portfolio of Alia Wilkinson, a Principal Engineer who partners on technical direction, builds proofs of concept, and carries complex platform work through delivery and adoption.',
   url: BASE_URL,
   image: DEFAULT_IMAGE,
 }
@@ -19,14 +19,14 @@ export const seoData = {
   home: {
     title: 'Alia Wilkinson | Principal Engineer & Technical Delivery',
     description:
-      'Alia Wilkinson is a Principal Engineer on an architecture team, taking designs through architecture review, building proofs of concept, and leading platform work through adoption and release.',
+      'Alia Wilkinson is a Principal Engineer who brings designs through architecture review, builds proofs of concept, and carries platform work through implementation, adoption, and release.',
     url: BASE_URL,
     image: DEFAULT_IMAGE,
   },
   about: {
     title: 'About Alia Wilkinson | Principal Engineer',
     description:
-      'Principal Engineer and AWS Certified Solutions Architect in Southern California. I contribute to technical direction, take designs through architecture review, build POCs, and lead platform delivery.',
+      'Principal Engineer and AWS Certified Solutions Architect in Southern California. I partner on technical direction, build POCs, and carry platform work from review through release.',
     url: `${BASE_URL}/about`,
     image: DEFAULT_IMAGE,
   },

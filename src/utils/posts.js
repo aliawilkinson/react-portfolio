@@ -599,15 +599,17 @@ export const content = {
         "post": `
     <p>Hi, I'm Alia.</p>
 
-    <p>I'm a Principal Engineer and AWS Certified Solutions Architect based in Southern California. I contribute to technical direction, take designs through architecture review, build the proof, and lead the platform work required to make it real.</p>
+    <p>I'm a Principal Engineer and AWS Certified Solutions Architect based in Southern California. I work where architecture, platform engineering, and delivery meet: bringing designs through review, building the proof, and carrying approved work through implementation, adoption, and release.</p>
 
     <p>I focus on the foundation layer: release orchestration, self-service platforms, CI/CD, infrastructure as code, and developer environments. Much of it is turning team knowledge into documented, automated, repeatable systems.</p>
 
-    <p>At Transamerica, I'm a Principal Engineer on the Architecture team. I partner with architecture leadership and delivery teams to reinforce technical direction for WFG Digital, bring designs through the Architecture Review Board, test ideas through POCs, and carry the strongest ones through governance, implementation, adoption, and release. I contribute to AWS patterns, Terraform standards, infrastructure testing approaches, and internal tooling that teams adopt because it makes their work easier. I have also hired engineers and led platform teams, so I understand the work as both a technical system and a team that has to operate it. Before that, I helped shape ALM modernization, cloud data architecture, and engineering standards across hedging and analytics business units.</p>
+    <p>At Transamerica, I partner with architecture leadership and delivery teams to reinforce technical direction for WFG Digital. I bring designs through the Architecture Review Board, test ideas through POCs, and carry the strongest ones through governance, implementation, adoption, and release. I contribute to AWS patterns, Terraform standards, infrastructure testing, and internal tooling that teams use in daily delivery.</p>
+
+    <p>I have also hired engineers and led platform teams. That experience keeps my work grounded in the people who have to understand, operate, and improve a system after it ships.</p>
 
     <p>At AWS Professional Services, I consulted on cloud migration architecture, cost optimization, and delivery system design for enterprise clients. At loanDepot, I led release engineering through pandemic-era hypergrowth - automating the orchestration of 1200+ components, cutting multi-hour release windows down to predictable, dependency-aware automated deployments, and building the custom CMDB that mapped ownership and deployable relationships across the org.</p>
 
-    <p>The question behind my work: what can I build now that makes the next team faster? I'm drawn to the work that sits between code, infrastructure, process, and people - where a good answer has to be understandable, repeatable, secure, and practical enough for teams to trust after the architect leaves the room.</p>
+    <p>The question behind my work is simple: what can I build now that makes the next team faster? I focus on the space between code, infrastructure, process, and people, where a good system has to be understandable, repeatable, secure, and practical.</p>
 
     <p>My current focus is AI-assisted developer workflows and agentic tooling. I ship outside work too, on my own platform: Product Factory generates each product with infrastructure as code, pipelines, and release gates, and MetadataDB is the control plane for ownership, deployments, and cost. NomadTime and House of Solar Bloom ship through it.</p>
 
@@ -615,7 +617,7 @@ export const content = {
 
     <p>Outside of engineering, I'm drawn to travel, anthropology, architecture, art, and the emotional atmosphere of places. I feel most alive exploring unfamiliar cities, wandering museums, or discovering the details that make cultures feel real. That curiosity shows up in my engineering too - I want to understand why systems were built the way they were before I redesign them.</p>
 
-    <p>If you're building a team or platform where strong systems design matters upfront - not after the first outage - I'd like to talk.</p>
+    <p>If you're building a platform that needs strong systems thinking and real delivery follow-through, I'd like to talk.</p>
     `
     }
 }

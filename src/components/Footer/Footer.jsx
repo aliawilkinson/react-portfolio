@@ -56,8 +56,8 @@ const Footer = () => {
       >
         <div className={css.left}>
           <span className="primaryText">
-            Let's make <br />
-            a little magic.
+            Have a hard problem? <br />
+            Let's make it work.
           </span>
           <span className="primaryText">
             Start by <a href="https://www.linkedin.com/in/aliawilkinson/" target="_blank" rel="noopener noreferrer" onClick={() => analytics.trackEvent(ANALYTICS_EVENTS.CONTACT_FORM_SUBMITTED)}>reaching out</a>
@@ -69,7 +69,7 @@ const Footer = () => {
             <img src={lagunaBeach} alt="Sunny Laguna Beach coastline with palm trees" />
             <div className={css.postcardOverlay}>
               <span>SoCal based / Remote first</span>
-              <p>Cloud architecture, release automation, and internal tools, built from Southern California.</p>
+              <p>Platform engineering, release automation, and internal tools, built from Southern California.</p>
             </div>
           </div>
 

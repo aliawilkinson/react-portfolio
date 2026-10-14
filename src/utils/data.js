@@ -125,9 +125,9 @@ export const caseStudies = [
 ];
 
 export const whatIHelpWith = [
-  `I work between development teams and platform engineering. I determine the architecture, make the case for it, and partner with DevOps and platform teams to deliver it. Developers ship independently and reliably.`,
-  `I also built my own delivery platform. Product Factory generates each product with infrastructure as code, pipelines, release orchestration, and observability built in. MetadataDB is the control plane for ownership, deployments, and cost optimization, tracking 66 components across 12 products. Built with it: NomadTime and SupplementFriend, both live on the web with active iOS betas; AtlasTask, a distributed private mobile alpha; and House of Solar Bloom, a production beauty storefront.`,
-  `Delivered: identity for a portal serving ~250,000 agents. Release automation running 26 teams and 1,200+ components in a single run. Hedging systems migrated from on-prem to AWS. An AI tool that maps production from git history, Jira releases, and runbooks.`,
+  `I work with architecture leadership, development teams, and platform engineering to turn technical direction into something teams can build and operate. I bring designs through review, build the proof, and carry approved work through implementation and adoption.`,
+  `I build the systems around delivery too: infrastructure patterns, release automation, internal platforms, tests, and governance. That work includes identity foundations for ~250,000 agents and release automation for 26 teams and 1,200+ components.`,
+  `My independent product lab puts those patterns to work. Product Factory and MetadataDB support NomadTime, SupplementFriend, AtlasTask, and House of Solar Bloom across web, mobile, infrastructure, and release operations.`,
 ];
 
 export const workExp = [
@@ -141,7 +141,7 @@ export const workExp = [
         <li>Designed and built sign-in for the WFG Digital Portal, which serves ~250K external agents: Cognito connected to enterprise identity, with the IAM, API Gateway, and auth flows all in Terraform.</li>
         <li>Built an agentic workflow app that identifies and analyzes production apps by reading git history alongside Jira release and runbook data, giving teams one clear view of what's running.</li>
         <li>Designing developer workflow tooling: test suites, versioning strategies, branch protections, CI/CD gates, and configuration management apps that make good engineering habits the default.</li>
-        <li>Determine architecture, make the case for it with stakeholders, and drive decisions across infrastructure and delivery.</li>
+        <li>Partner with architecture leadership and stakeholders to shape technical direction and drive decisions across infrastructure and delivery.</li>
         <li>Partner closely with DevOps and platform engineering to turn architecture decisions into delivered capabilities.</li>
         <li>Built internal apps, reusable web app patterns, and authentication tooling that other teams have adopted as their standard.</li>
         <li>Python, Terraform, AWS (Cognito, API Gateway, IAM), React, Jira automation, agentic AI tooling.</li>
@@ -346,8 +346,8 @@ export const projects = [
   {
     slug: "nomadtime",
     title: "NomadTime",
-    subtitle: "A visual world clock & personal atlas",
-    description: "Compare real days across places, map the routines that matter, and keep personal notes, photos, and memories close.",
+    subtitle: "See how the day overlaps across the world",
+    description: "Compare daylight and local time across places, then save the routines, notes, photos, and memories that make each place personal.",
     deployment: "Live web app on AWS CloudFront · iOS beta in TestFlight",
     actionLabel: "Open nomadtime.org ↗",
     category: "Apps",
@@ -360,8 +360,8 @@ export const projects = [
   {
     slug: "supplementfriend",
     title: "SupplementFriend",
-    subtitle: "A clearer view of your supplement stack",
-    description: "Photograph labels, build your daily stack, and compare vitamins, minerals, food, and personal targets in one clear view.",
+    subtitle: "Understand your complete supplement stack",
+    description: "Photograph a label, build your daily stack, and compare vitamins, minerals, food, and personal targets in one view.",
     deployment: "Live web app on AWS CloudFront · Internal iOS beta",
     actionLabel: "Open supplementfriend.com ↗",
     category: "Apps",
@@ -374,8 +374,8 @@ export const projects = [
   {
     slug: "atlastask",
     title: "AtlasTask",
-    subtitle: "A visual second brain for the life behind the list",
-    description: "Connect projects, routines, notes, appointments, and daily actions in one calm visual workspace.",
+    subtitle: "See the life behind the list",
+    description: "Connect projects, routines, notes, appointments, and daily actions in a calm visual workspace built for real life.",
     deployment: "Private iOS alpha · Available to configured TestFlight testers",
     actionLabel: "View the AtlasTask case study ↗",
     category: "Apps",
@@ -388,8 +388,8 @@ export const projects = [
   {
     slug: "house-of-solar-bloom",
     title: "House of Solar Bloom",
-    subtitle: "Luxury beauty e-commerce platform",
-    description: "A richly branded storefront for Solar Bloom, pairing editorial storytelling with a modern beauty shopping experience.",
+    subtitle: "Editorial beauty commerce for Solar Bloom",
+    description: "Shop Solar Bloom through a richly branded storefront that brings product discovery, editorial storytelling, and checkout together.",
     deployment: "Live production storefront on AWS CloudFront",
     actionLabel: "Visit houseofsolarbloom.com ↗",
     category: "Apps",
@@ -402,8 +402,8 @@ export const projects = [
   {
     slug: "tarot",
     title: "Tarot",
-    subtitle: "Interactive tarot reading app",
-    description: "A conversation-first tarot experience with classic spreads, saved sessions, offline readings, and optional AI interpretation.",
+    subtitle: "A conversation-first tarot reader",
+    description: "Ask a question, choose a classic spread, save the reading, and explore each card with offline or AI interpretation.",
     deployment: "Live web app on aliawilkinson.com",
     actionLabel: "Open the tarot app ↗",
     category: "Apps",
