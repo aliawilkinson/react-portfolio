@@ -12,13 +12,14 @@ import { caseStudies } from '../../utils/data'
 const InfoPost = ({ post }) => {
   const metadata = seoData[post] || {}
   const isCaseStudy = caseStudies.some(study => study.slug === post)
+  const isEditorialProductCase = ['nomadtime-case-study', 'atlasTask', 'supplementAi'].includes(post)
 
   return (
     <motion.section
       variants={staggerChildren}
       initial="hidden"
       animate="show"
-      className={`${css.wrapper} ${post === 'nomadtime-case-study' ? css.nomadTime : ''}`}
+      className={`${css.wrapper} ${isEditorialProductCase ? css.editorialCase : ''}`}
     >
       <SEO
         title={metadata.title}

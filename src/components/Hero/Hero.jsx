@@ -21,8 +21,8 @@ const Hero = () => {
                     className={css.headline}>
                     <h1 className='primaryText'>
                         Hi, I'm Alia. <br />
-                        I set the architecture <br />
-                        and get it shipped.
+                        I turn architecture <br />
+                        into working systems.
                     </h1>
                 </motion.div>
 
@@ -39,8 +39,8 @@ const Hero = () => {
                     className={css.tagline}>
                     <span className='secondaryText'>
                         Principal Engineer on the Architecture team at Transamerica.
-                        I help set technical direction, make the case for it, and
-                        work with platform and DevOps to deliver it. Remote from Southern California.
+                        I take designs through architecture review, build POCs, and lead
+                        platform work from approval through adoption. Remote from Southern California.
                     </span>
                 </motion.div>
 

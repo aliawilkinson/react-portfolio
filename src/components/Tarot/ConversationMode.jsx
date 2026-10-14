@@ -10,6 +10,7 @@ import ConversationInput from './ConversationInput'
 import LoadingIndicator from './LoadingIndicator'
 import tarotCover from './assets/tarot-cover.png'
 import { analytics, ANALYTICS_EVENTS } from '../../utils/analytics'
+import { stopActiveReadAloud } from './hooks/useReadAloud'
 
 const ConversationMode = () => {
   const { resetAndDraw } = useTarotDeck()
@@ -32,6 +33,7 @@ const ConversationMode = () => {
   }, [turns.length, isLoading])
 
   const handleSubmit = (questionText) => {
+    stopActiveReadAloud()
     analytics.trackEvent(ANALYTICS_EVENTS.FOLLOW_UP_QUESTION_ASKED)
     submitQuestion(questionText, activePreset)
   }

@@ -162,8 +162,8 @@
     }
 }
 
-// A scoped editorial treatment for the NomadTime case study.
-.wrapper.nomadTime {
+// A scoped editorial treatment for independent product case studies.
+.wrapper.editorialCase {
     color: #edf2e8;
     background: radial-gradient(ellipse at 85% 0%, #285f5380, transparent 45%), #102f2c;
     padding: 2rem 0 4rem;
@@ -200,6 +200,7 @@
     :global(.case-facts) strong { display: block; margin-bottom: .45rem; color: #edcf92; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
     :global(.case-links) { display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: .9rem; margin: 1.7rem 0 2.5rem; }
     :global(.case-screens) { display: grid; grid-template-columns: repeat(2, minmax(0, 240px)); justify-content: center; gap: 1.3rem 2rem; margin: 2.8rem 0; }
+    :global(.case-screens-three) { grid-template-columns: repeat(3, minmax(0, 210px)); }
     :global(.case-screens) img, :global(.case-map) img { display: block; width: 100%; height: auto; max-width: 100%; max-height: none; border: 4px solid #74948b38; border-radius: 25px; box-shadow: 0 20px 40px #00171360; }
     figcaption { font-size: .82rem; line-height: 1.6; color: #b4cbc1; text-align: center; margin-top: .4rem; }
     :global(.case-screens) figcaption { grid-column: 1 / -1; }
