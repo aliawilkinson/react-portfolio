@@ -5,7 +5,8 @@
 - Product: `product:alia-wilkinson-website`
 - Project / milestone / checkpoint: portfolio positioning and hierarchy copy edit, C0–C2
 - Components / deployment groups / environment: homepage hero, expertise, case-study introduction, Projects introduction and summaries, About copy, footer, and SEO metadata; local candidate only
-- Implementation revision: `b8f3381fb1ebe157f2e131419dab096c847f104f`
+- Initial implementation revision: `b8f3381fb1ebe157f2e131419dab096c847f104f`
+- Product-owner headline revision: `40a58c0fbb4bfa2d61866ae5a3a377739cbf1dc6`
 - Source basis: portfolio content and user-provided role clarification present on `origin/main` revision `68d0143`
 - Author / accountable owner / reviewer: Codex / Product owner / Product owner review pending
 - Recorded at: 2026-10-13 America/Los_Angeles
@@ -16,10 +17,11 @@
 | Requirement / claim | Scope and method | Status | Evidence path / immutable locator | Verified at / by |
 | --- | --- | --- | --- | --- |
 | Role positioning | Reframed the hero and overview around architecture collaboration, POCs, ARB participation, implementation, adoption, and release | documented | `src/components/Hero/Hero.jsx`; `src/utils/data.js`; revision `b8f3381fb1ebe157f2e131419dab096c847f104f` | 2026-10-13 / Codex |
+| Preferred hero headline | Restored the product owner's preferred “I turn architecture into working systems” headline | verified | `src/components/Hero/Hero.jsx`; revision `40a58c0fbb4bfa2d61866ae5a3a377739cbf1dc6` | 2026-10-13 / Codex |
 | Project and case-study distinction | Clarified Projects as usable public work and case studies as architecture, POC, and delivery stories | documented | `src/components/OtherProjects/OtherProjectsList.jsx`; `src/components/CaseStudies/CaseStudies.jsx` | 2026-10-13 / Codex |
 | Product comprehension | Rewrote five app summaries to state the visitor task and product value earlier | documented | `src/utils/data.js` | 2026-10-13 / Codex |
 | About and search presentation | Aligned About copy and SEO descriptions with the revised role language | documented | `src/utils/posts.js`; `src/utils/seoData.js` | 2026-10-13 / Codex |
-| Unit tests | Ran the complete Vitest suite | verified | 15 files and 134 tests passed | 2026-10-13 / Codex |
+| Unit tests | Ran the complete Vitest suite before and after the headline revision | verified | 15 files and 134 tests passed | 2026-10-13 / Codex |
 | Production build and SEO | Ran `npm run build:validate`; build, prerender, sitemap, and SEO checks passed for all 18 validated routes | verified | Local command output for revision `b8f3381fb1ebe157f2e131419dab096c847f104f` | 2026-10-13 / Codex |
 | Browser review | Reviewed the rendered homepage hierarchy, hero wrapping, overview, case-study introduction, and footer in the local in-app browser | verified | Local observation at `http://127.0.0.1:4188/` | 2026-10-13 / Codex |
 
@@ -43,5 +45,5 @@
 ## Signoff
 
 - Decision: **ship** the named copy candidate to PR review; **hold** merge and production release for product-owner approval.
-- Decision owner/date and evidence: Codex, 2026-10-13; revision `b8f3381fb1ebe157f2e131419dab096c847f104f`, passing tests, production validation, and local browser review.
+- Decision owner/date and evidence: Codex, 2026-10-13; implementation revisions `b8f3381fb1ebe157f2e131419dab096c847f104f` and `40a58c0fbb4bfa2d61866ae5a3a377739cbf1dc6`, passing tests, production validation, and local browser review.
 - Rationale: The copy is shorter, states the work more directly, preserves architecture leadership boundaries, and makes public projects easier to understand. Product-owner voice review remains the controlling decision for merge.
