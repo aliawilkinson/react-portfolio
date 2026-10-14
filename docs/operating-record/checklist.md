@@ -1,5 +1,10 @@
 # Alia Wilkinson portfolio operating checklist
 
+Security maintenance: [October 13 C2/C5 remediation](reports/2026-10-13-security-dependencies-C2-C5.md)
+removes unused CLI dependencies, standardizes npm and records 134 tests,
+production/SEO validation and a 37-to-zero audit comparison. Source review,
+merge and deployment remain distinct gates.
+
 Product: `product:alia-wilkinson-website`. Inspected source: `f3da1a3ff3c77d4a91989acfa87b66f95510af45`. Recorded 2026-10-07 UTC (2026-10-06 US Pacific). Author: Codex source-inspection backfill; human review pending.
 
 Authority: **source-defined/intended**, except explicitly linked **historical-receipt** or **verified** results. No live provider observation was made. Source revision applies to every unqualified view below; explicitly unmerged views use their own named revision. Record owner: Product owner; technical updates: Architect/DevOps. Next review date: **unassigned — Product owner must set before the next affected gate**.
