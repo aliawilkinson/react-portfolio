@@ -11,7 +11,7 @@ const CATEGORY_ORDER = ['Apps', 'Music', 'Art', 'Photography', 'Writing', 'Other
 const portfolioEntries = [
   ...projects.map(project => ({
     ...project,
-    route: project.externalUrl || `/projects/${project.slug}`
+    route: project.route || project.externalUrl || `/projects/${project.slug}`
   }))
 ]
 
