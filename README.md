@@ -129,6 +129,28 @@ Add `.vercel/` to `.gitignore` - don't commit those IDs.
 
 The site uses a Gemini API key for the Tarot conversation feature. Environment variables are managed via a sync script.
 
+The existing REST sync script reads a machine-local `.vercel/repo.json`. To
+bootstrap a fresh checkout without downloading a CLI, confirm the existing
+project and owning team in Vercel's project/team settings, then create this
+ignored file with those IDs and the project name:
+
+```json
+{
+  "projects": [
+    {
+      "id": "prj_REPLACE_WITH_EXISTING_PROJECT_ID",
+      "orgId": "team_REPLACE_WITH_EXISTING_TEAM_ID",
+      "name": "REPLACE_WITH_EXISTING_PROJECT_NAME"
+    }
+  ]
+}
+```
+
+Keep exactly the intended project in this array: the existing script uses its
+first entry. Keep the binding, `.env.local` and `.env.deploy` out of Git. Creating
+the binding is local setup only; the following sync command writes the selected
+project's environment variables and should run only as an approved operation.
+
 ```powershell
 # Sync .env.local to Vercel
 .\scripts\setup-vercel-env.ps1

@@ -106,7 +106,7 @@ if (-not (Test-Path $envFile)) {
     Write-Error-And-Exit ".env.local not found"
 }
 if (-not (Test-Path $projectFile)) {
-    Write-Error-And-Exit ".vercel/repo.json not found" "Run 'npx vercel link' first"
+    Write-Error-And-Exit ".vercel/repo.json not found" "Create the explicit project binding described in README.md (Syncing environment variables); no CLI download is required."
 }
 
 # Load project config

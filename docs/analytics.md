@@ -149,6 +149,6 @@ Already wired up. Just deploy to Vercel and it works.
 ### Microsoft Clarity
 1. Go to [clarity.microsoft.com](https://clarity.microsoft.com), sign in, create project
 2. Copy the Project ID from Settings → Overview
-3. Add to Vercel: `vercel env add VITE_CLARITY_PROJECT_ID` → paste the ID
-4. Redeploy: `vercel --prod`
+3. Add `VITE_CLARITY_PROJECT_ID` in the existing Vercel project's environment settings for the intended environment.
+4. Verify the complete release locally, then use the approved deployment/promotion procedure in the operating runbook.
 5. Wait ~30 min, then check the Clarity dashboard

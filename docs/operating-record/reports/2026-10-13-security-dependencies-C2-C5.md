@@ -2,6 +2,7 @@
 
 - Product: `product:alia-wilkinson-website`; owner: Alia; implementation/verification: Codex.
 - Base: `6e6e857462ed29b45a884aee029e7dd257a1e07f`.
+- Tested dependency/application candidate: commit `ec0ca78ba36e374bf1617fe69525c47806824f51`, tree `e81a72d7b6f25d74b2b16ef0185969cdde5148f2`; later review corrections only document explicit binding bootstrap and change the missing-binding diagnostic, with no application/dependency changes.
 - Verified: October 13 PDT / October 14 UTC, 2026, isolated checkout, Node 24.21.0 / npm 11.19.1.
 - Scope: application dependency graph and deterministic local verification. No deployment or provider/settings change.
 
@@ -14,6 +15,15 @@ handlers and hosting configuration remain unchanged. Historical optional CLI
 setup instructions do not make a CLI necessary for every application install.
 If a future local release needs the CLI, explicitly choose and verify its
 version as deployment tooling in that release procedure.
+
+Codex review identified that the environment-sync helper's old missing-binding
+message still prescribed an unpinned CLI download. The README now documents
+creating the ignored single-project binding directly from the existing project
+and team settings, matching the helper's current `projects[0].id/orgId/name`
+contract. Its diagnostic points to that procedure; analytics setup also uses
+the existing dashboard/release procedure. No API mutation logic changed.
+PowerShell is unavailable here, so this bootstrap/diagnostic change received
+source/schema inspection, not a claim of executing a provider sync.
 
 npm is now the declared package manager, matching the existing CI and hosting
 commands. Removed the duplicate Yarn lockfile; it is no longer a supported
