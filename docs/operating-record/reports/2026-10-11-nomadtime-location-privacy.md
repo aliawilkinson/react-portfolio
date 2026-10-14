@@ -1,7 +1,40 @@
-# NomadTime first-launch location privacy — October 11, 2026
+# NomadTime first-launch location privacy
 
-C2/C3 scope: align the existing static NomadTime privacy page with the authorized 1.2.2 release. First launch starts with device timezone and requests optional foreground location; denial/manual selection and retained saved homes are explicit. No background tracking, new data collection, dependency or application change.
+## Scope and provenance
 
-Source baseline e208237 on the isolated codex/nomadtime-location-privacy branch. The existing build:validate script passed prerender and SEO checks for all 18 routes. Initial sandbox server binding failed; rerunning the same script with local server access passed. Incidental install-generated yarn.lock changes were discarded. Validation log: /private/tmp/nomad-122-portfolio-build.log.
+- Product: `product:alia-wilkinson-website`
+- Project / milestone / checkpoint: NomadTime first-launch privacy copy / C2 and C3
+- Components / environment: static privacy page at `/nomadtime/privacy`; portfolio source only
+- Source revision: immutable candidate commit `41ebfde82e6e2210075a6fff5013859a37c1c355` from PR #67, consolidated into PR #68
+- Author / owner / reviewer: Codex implementation; Alia Wilkinson owns the release decision
+- Recorded: 2026-10-11 America/Los_Angeles; reconciled 2026-10-13 America/Los_Angeles
+- Next checkpoint: C4 text observation after the merged portfolio deploy is identified
 
-Existing production target verified: Vercel react-portfolio, prj_5lrG8wBbkPx8EsX5XVrH2zZspuhM, www.aliawilkinson.com. Ship this scoped static copy change through its PR; preserve the previous deployment for rollback. C4 requires public URL text verification after deployment. This report is not itself a deployment receipt. Existing portfolio-wide operational gaps are unchanged.
+The copy explains the app's optional foreground location request, manual city selection, retained saved home, and absence of background location tracking. It changes no application behavior, dependency, or data flow.
+
+## Deliverables and checks
+
+| Requirement / claim | Scope and method | Status | Evidence | Verified at / by |
+| --- | --- | --- | --- | --- |
+| Privacy page matches first-launch behavior | Reviewed the static copy against the authorized description of the app flow | verified | `public/nomadtime/privacy/index.html` at candidate commit `41ebfde82e6e2210075a6fff5013859a37c1c355` | 2026-10-11 / Codex source review |
+| Portfolio build and route validation | Run as part of the consolidated PR verification | verified | `npm test -- --run` and `npm run build:validate`; results recorded in `2026-10-13-open-pr-reconciliation-C2-C3.md` | 2026-10-13 / Codex |
+| Production text is updated | Requires observation after merge and deploy | planned | Future C4 receipt and public URL check | Not verified |
+
+## Release and catalog evidence
+
+- Intended target: the portfolio's configured production deployment after merge to `main`.
+- Actual Vercel project, deployment version, and production domain binding: unknown in this report. The earlier local note was not retained as provider evidence.
+- Rollback: use the previous successful source revision and the hosting provider's retained deployment only after confirming both are available.
+- MetadataDB ingestion: not-applicable; this static wording change does not alter product inventory.
+
+## Gaps and follow-up
+
+| Gap / risk | Impact | Owner | Due | Resolution evidence |
+| --- | --- | --- | --- | --- |
+| Production deployment and public text remain unobserved | C4 remains open | Release owner | After merge and deploy | Deployment receipt and `/nomadtime/privacy` text check |
+
+## Signoff
+
+- Decision: **ship** the static privacy correction through consolidated PR #68.
+- Decision owner/date and evidence: Alia Wilkinson / 2026-10-13 / request to reconcile and merge open PRs.
+- Remaining condition: record C4 deployment and public-page evidence separately.

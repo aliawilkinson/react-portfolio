@@ -83,3 +83,7 @@ Product catalog evidence: [Deployed-product portfolio reconciliation](reports/20
 Positioning copy evidence: [Architecture-role positioning C2 report](reports/2026-10-10-positioning-copy-C2.md) records the public-copy correction from sole architecture ownership to architecture review participation, POCs, platform leadership and delivery follow-through. It does not claim deployment or provider verification.
 
 Tarot accessibility evidence: [Tarot read-aloud C2 report](reports/2026-10-10-tarot-read-aloud-C2.md) records browser-native speech controls, structured reading narration, lifecycle cancellation, privacy boundaries and remaining physical-iPhone verification. It does not claim deployment or provider verification.
+
+NomadTime privacy evidence: [First-launch location privacy C2/C3 report](reports/2026-10-11-nomadtime-location-privacy.md) records the static disclosure, immutable candidate revision, consolidated verification, and remaining C4 production-text observation.
+
+Open PR reconciliation evidence: [C2/C3 report](reports/2026-10-13-open-pr-reconciliation-C2-C3.md) records the retained product candidate, dependency decisions, consolidated tests, release authorization, and remaining final-check and C4 requirements.
