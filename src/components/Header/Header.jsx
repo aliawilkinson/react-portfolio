@@ -42,6 +42,15 @@ const Header = () => {
   const toggleMenu = () => setMenuOpened((prev) => !prev);
   const closeMenu = () => setMenuOpened(false);
 
+  const handleBrandClick = (event) => {
+    closeMenu();
+
+    if (location.pathname === '/') {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     return () => clearTimeout(noteTimerRef.current);
   }, []);
@@ -108,7 +117,9 @@ const Header = () => {
     >
       <div ref={containerRef} className={`flexCenter innerWidth ${css.container}`}>
         <div className={css.brand}>
-          <div className={css.name}>Alia</div>
+          <Link className={css.name} to="/" onClick={handleBrandClick} aria-label="Alia Wilkinson, home">
+            Alia
+          </Link>
           <LampToggle isOn={theme !== 'dark'} onToggle={toggleTheme} />
         </div>
 
