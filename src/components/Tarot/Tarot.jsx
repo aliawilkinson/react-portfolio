@@ -10,6 +10,7 @@ import ConversationInput from './ConversationInput'
 import LoadingIndicator from './LoadingIndicator'
 import tarotCover from './assets/tarot-cover.png'
 import { analytics, ANALYTICS_EVENTS } from '../../utils/analytics'
+import { stopActiveReadAloud } from './hooks/useReadAloud'
 
 const Tarot = () => {
   const { resetAndDraw } = useTarotDeck()
@@ -50,6 +51,7 @@ const Tarot = () => {
   }, [turns.length, currentCards.length, isLoading])
 
   const handleSubmit = (question, presetKey) => {
+    stopActiveReadAloud()
     const preset = SPREAD_PRESETS[presetKey] || SPREAD_PRESETS.three
     setPendingPreset(preset)
     analytics.trackEvent(turns.length ? ANALYTICS_EVENTS.FOLLOW_UP_QUESTION_ASKED : ANALYTICS_EVENTS.TAROT_READING_STARTED)
@@ -61,6 +63,7 @@ const Tarot = () => {
   }
 
   const confirmNewSession = () => {
+    stopActiveReadAloud()
     clearConversation()
     setResetDialogOpen(false)
   }
