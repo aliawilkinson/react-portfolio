@@ -6,6 +6,13 @@ Authority: **source-defined/intended**, except explicitly linked **historical-re
 
 ## Local setup and verification
 
+October 13 security maintenance: npm 11.19.1 and `package-lock.json` are the
+canonical install inputs. After `npm ci`, `npm run verify` performs tests,
+the security audit and production/SEO validation. The unused Vercel CLI and
+duplicate Yarn lockfile are removed; application analytics, API routes and
+Vercel's configured npm build remain. See the
+[C2/C5 security report](reports/2026-10-13-security-dependencies-C2-C5.md).
+
 The manifest requires Node `24.x` and `.nvmrc` pins the local version. Run `npm ci`, `npm test`, then `npm run build:validate` to build/prerender/generate the sitemap and validate SEO. `npm run dev` serves the Vite UI; do not assume it emulates Vercel serverless functions. Verify Gemini only through an explicitly configured test boundary. `npm run preview` reviews `dist` locally. This backfill checks documentation; it does not call Gemini, publish environment values or visit authenticated consoles.
 
 For meaningful release verification test homepage/projects/blog/about routes, mobile navigation, keyboard use, NomadTime's three clean routes and plain static privacy/support pages, tarot deck/interpretation/session reset, and the intended API failure states. Use `node scripts/smoke-test.js <approved-target>` only after target approval; record timestamp, SHA and results. The manual script is not currently a workflow gate.

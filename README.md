@@ -53,7 +53,7 @@ nvm use       # switches to it
 ```bash
 git clone https://github.com/aliawilkinson/react-portfolio.git
 cd react-portfolio
-npm install
+npm ci
 npm run dev
 ```
 
@@ -98,6 +98,17 @@ These are standalone HTML pages, with local images and CSS and no JavaScript, an
 
 ## Deployment (Vercel)
 
+Use Node 24 and npm 11.19.1 with the committed `package-lock.json`. npm is the
+single package manager for local, CI and Vercel installs; do not regenerate a
+Yarn lockfile. Run `npm ci` followed by `npm run verify` before a release. This
+runs the full tests, dependency audit, production prerender and SEO validation.
+
+The Vercel CLI is not an application dependency. The application uses
+`@vercel/analytics` and HTTPS API calls; its build uses Vite. Those integrations
+remain intact. The hosting service supplies its own deployment tooling. If a
+future delivery procedure needs a local CLI, select and verify its version in
+that procedure rather than adding an unused CLI to the site's dependency graph.
+
 The checked-in `.github/workflows/deploy.yml` currently runs unit tests only. `vercel.json` declares the hosting build and routes, but the actual Vercel Git integration, production/preview triggers and rollback procedure still need an owner review. See [deployment context](docs/context.md) before relying on automatic delivery.
 
 Vercel is configured via `vercel.json` to use Vite as the framework and `dist` as the output directory. **Node version is set in the Vercel dashboard** under Project Settings → General → Node.js Version → select **24.x**.
@@ -109,20 +120,36 @@ Earlier deployment guidance listed these GitHub Actions settings. The current wo
 | Secret | Where to find it |
 |---|---|
 | `VERCEL_TOKEN` | vercel.com → Settings → Tokens → Create |
-| `VERCEL_ORG_ID` | Run `npx vercel link` in the project root → check `.vercel/project.json` |
-| `VERCEL_PROJECT_ID` | Same `.vercel/project.json` after linking |
-
-```bash
-# one-time local setup to get org/project IDs
-npx vercel link
-cat .vercel/project.json
-```
+| `VERCEL_ORG_ID` | Confirm the existing Vercel team/project binding with the deployment owner |
+| `VERCEL_PROJECT_ID` | Confirm the existing Vercel project binding with the deployment owner |
 
 Add `.vercel/` to `.gitignore` - don't commit those IDs.
 
 ### Syncing environment variables
 
 The site uses a Gemini API key for the Tarot conversation feature. Environment variables are managed via a sync script.
+
+The existing REST sync script reads a machine-local `.vercel/repo.json`. To
+bootstrap a fresh checkout without downloading a CLI, confirm the existing
+project and owning team in Vercel's project/team settings, then create this
+ignored file with those IDs and the project name:
+
+```json
+{
+  "projects": [
+    {
+      "id": "prj_REPLACE_WITH_EXISTING_PROJECT_ID",
+      "orgId": "team_REPLACE_WITH_EXISTING_TEAM_ID",
+      "name": "REPLACE_WITH_EXISTING_PROJECT_NAME"
+    }
+  ]
+}
+```
+
+Keep exactly the intended project in this array: the existing script uses its
+first entry. Keep the binding, `.env.local` and `.env.deploy` out of Git. Creating
+the binding is local setup only; the following sync command writes the selected
+project's environment variables and should run only as an approved operation.
 
 ```powershell
 # Sync .env.local to Vercel
