@@ -366,9 +366,9 @@ export const projects = [
     actionLabel: "Open supplementfriend.com ↗",
     category: "Apps",
     bg: "#743F4B",
-    imgSrc: "/supplementfriend/home.png",
-    imageFit: "cover",
-    imageBackground: "#21151A",
+    imgSrc: "/supplementfriend/logo.jpg",
+    imageFit: "contain",
+    imageBackground: "#edf0df",
     externalUrl: "https://supplementfriend.com",
   },
   {
