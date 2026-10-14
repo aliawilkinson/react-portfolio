@@ -87,3 +87,5 @@ Tarot accessibility evidence: [Tarot read-aloud C2 report](reports/2026-10-10-ta
 NomadTime privacy evidence: [First-launch location privacy C2/C3 report](reports/2026-10-11-nomadtime-location-privacy.md) records the static disclosure, immutable candidate revision, consolidated verification, and remaining C4 production-text observation.
 
 Open PR reconciliation evidence: [C2/C3 report](reports/2026-10-13-open-pr-reconciliation-C2-C3.md) records the retained product candidate, dependency decisions, consolidated tests, release authorization, and remaining final-check and C4 requirements.
+
+SupplementFriend tile evidence: [Project-logo C2 report](reports/2026-10-13-supplementfriend-project-logo-C2.md) records the brand-asset provenance, focused Projects data change, visual check, and release boundary.
