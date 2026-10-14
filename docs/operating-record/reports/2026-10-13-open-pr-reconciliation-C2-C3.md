@@ -20,7 +20,7 @@
 | Automated tests pass | Ran the full Vitest suite on the consolidated candidate | verified | `npm test -- --run`: 15 files and 134 tests passed | 2026-10-13 / Codex |
 | Production validation passes | Ran Vite build, prerender, sitemap generation, and SEO validation | verified | `npm run build:validate`: all 18 routes and sitemap passed; existing bundle-size warning retained | 2026-10-13 / Codex |
 | PR #68 hosted checks pass before reconciliation commit | Read GitHub check state for the prior PR head | verified | GitHub Actions run `38498657771`, Vercel preview deployment `6NVcxY5YfNXF1utmS22szJ1GpGag`, and Vercel Preview Comments | 2026-10-13 / Codex |
-| Reconciled PR #68 hosted checks pass | Requires the final reconciliation commit and hosted checks | planned | PR #68 checks | Pending push |
+| Reconciled PR #68 hosted checks pass | Read GitHub check state for reconciliation commit `53f262e` | verified | GitHub Actions run `38499061162`, Vercel preview deployment `AFFhe5U2EKCnWD3oyERZNFd3WYhF`, and Vercel Preview Comments | 2026-10-13 / Codex |
 
 ## Pull request decisions
 
@@ -46,7 +46,7 @@
 
 | Gap / risk | Impact | Owner | Due | Resolution evidence |
 | --- | --- | --- | --- | --- |
-| Final hosted checks must rerun after the reconciliation commit | PR #68 merge waits for current evidence | Release owner | Before merge | Green PR #68 checks |
+| Protected branch requires a separate approving review or an explicit administrative bypass | PRs #62 and #68 remain blocked despite green checks | Repository owner | Before merge | Approving review or separately authorized admin merge |
 | Production deployment and critical journeys remain unobserved | C4 remains open | Release owner | After merge | Deployment receipt and public route checks |
 | Closed major dependency updates remain available for future targeted work | Security, compatibility, or maintenance benefits are deferred | Maintainer | When prioritized or re-proposed | Dedicated compatibility report and tests |
 
