@@ -21,8 +21,8 @@ const Hero = () => {
                     className={css.headline}>
                     <h1 className='primaryText'>
                         Hi, I'm Alia. <br />
-                        I build the proof <br />
-                        and get systems shipped.
+                        I turn architecture <br />
+                        into working systems.
                     </h1>
                 </motion.div>
 
