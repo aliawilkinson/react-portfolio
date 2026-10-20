@@ -1,5 +1,10 @@
 # Alia Wilkinson portfolio operating checklist
 
+NomadTime seasonal-weather privacy: [October 19 C2/C3 report](reports/2026-10-19-nomadtime-climate-privacy-C2-C3.md)
+records the pinned NASA disclosure, 134 tests, production/SEO validation and
+exact protected-preview artifact. Ship the static correction for review;
+hold production publication for the review gate and retain C4 live-text verification.
+
 Security maintenance: [October 13 C2/C5 remediation](reports/2026-10-13-security-dependencies-C2-C5.md)
 removes unused CLI dependencies, standardizes npm and records 134 tests,
 production/SEO validation and a 37-to-zero audit comparison. Source review,
