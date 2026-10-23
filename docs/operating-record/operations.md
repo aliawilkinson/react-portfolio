@@ -17,6 +17,18 @@ The manifest requires Node `24.x` and `.nvmrc` pins the local version. Run `npm 
 
 For meaningful release verification test homepage/projects/blog/about routes, mobile navigation, keyboard use, NomadTime's three clean routes and plain static privacy/support pages, tarot deck/interpretation/session reset, and the intended API failure states. Use `node scripts/smoke-test.js <approved-target>` only after target approval; record timestamp, SHA and results. The manual script is not currently a workflow gate.
 
+## Manual hosted verification
+
+October 22 source update: `.github/workflows/deploy.yml` at `28f7fa8f3f15d1c2989571fd28645861a09131ce` runs only through `workflow_dispatch`. To request hosted tests, select the reviewed branch in Actions and enter its full 40-character commit SHA as `expected_sha`. The workflow checks that this value, the run's `GITHUB_SHA`, and the checked-out revision all match before installing dependencies. A moved branch requires a fresh review and a new request.
+
+CLI equivalent, after substituting the reviewed branch and SHA:
+
+```sh
+gh workflow run deploy.yml --ref REVIEWED_BRANCH -f expected_sha=REVIEWED_40_CHARACTER_SHA
+```
+
+This runs `npm ci` and `npm test` on Node 24. Run the complete `npm run verify` locally before release, since the hosted test job omits the audit and production build. Vercel Git deployments remain separate from this workflow. October 22 settings inspection found one required PR approval, no required status checks and no rulesets. Recheck protection when changing this policy; a future required PR status context needs an eligible trigger. See the [integration review](reports/2026-10-22-pr-integration-C2-C3-C5.md) for the scoped evidence.
+
 ## Configuration, secrets and data lifecycle
 
 Hosting input is `vercel.json`; public settings use the committed examples. `GEMINI_API_KEY` is server-only; optional `GEMINI_MODEL`, `GEMINI_FLASH_MODELS` and discovery timestamp choose models. `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, `CRON_SECRET` and `NTFY_TOPIC` support privileged discovery/notifications. Secret values stay in the approved provider or local secret store, never in client `VITE_*` values or this record. `scripts/setup-vercel-env.ps1` performs external writes and needs review of scope before use.

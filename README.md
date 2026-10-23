@@ -20,14 +20,14 @@ Opens the app at **http://localhost:5173** automatically. Checks your Node versi
 
 | Layer | Package | Version |
 |---|---|---|
-| UI | React | 19.3.0 |
+| UI | React | 19.3.1 |
 | Routing | react-router-dom | 7.18.4 |
-| Animation | framer-motion | 14.1.0 |
-| Styling | SCSS Modules + sass | 1.99.0 |
+| Animation | framer-motion | 14.3.0 |
+| Styling | SCSS Modules + sass | 1.105.2 |
 | Build | Vite | 8.3.4 |
 | Icons | react-icons | 4.12.0 |
 | Slider | react-slick | 0.31.0 |
-| HTML parsing | html-react-parser | 6.1.0 |
+| HTML parsing | html-react-parser | 6.1.8 |
 | HTTP | axios | 1.20.0 |
 | Node (local) | Node.js | 24.15.0 (LTS) |
 | Node (Vercel) | Node.js | 24.x |
@@ -109,7 +109,7 @@ remain intact. The hosting service supplies its own deployment tooling. If a
 future delivery procedure needs a local CLI, select and verify its version in
 that procedure rather than adding an unused CLI to the site's dependency graph.
 
-The checked-in `.github/workflows/deploy.yml` currently runs unit tests only. `vercel.json` declares the hosting build and routes, but the actual Vercel Git integration, production/preview triggers and rollback procedure still need an owner review. See [deployment context](docs/context.md) before relying on automatic delivery.
+The checked-in `.github/workflows/deploy.yml` runs `npm ci` and unit tests on explicit manual requests. Supply the reviewed commit as `expected_sha`; pushes and pull request updates do not start this workflow. See the [manual verification procedure](docs/operating-record/operations.md#manual-hosted-verification). Vercel's Git integration handles hosting separately; `vercel.json` declares the build and routes.
 
 Vercel is configured via `vercel.json` to use Vite as the framework and `dist` as the output directory. **Node version is set in the Vercel dashboard** under Project Settings → General → Node.js Version → select **24.x**.
 

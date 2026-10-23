@@ -114,3 +114,5 @@ Portfolio navigation evidence: [Brand home link C2 report](reports/2026-10-14-br
 Dependency maintenance evidence: [October dependency updates C2/C3/C5 report](reports/2026-10-16-dependency-bumps-C2-C3-C5.md) consolidates Dependabot PRs #74 through #78, records local test, audit, build and browser evidence, and holds merge and production release for Node 24 CI and repository review.
 
 CI execution checkpoint: [2026-10-22 explicit candidate verification](reports/2026-10-22-explicit-ci.md).
+
+PR integration checkpoint: [October 22 C2/C3/C5 review](reports/2026-10-22-pr-integration-C2-C3-C5.md) records the seven combined PR heads, Node 24 verification, desktop/mobile checks and manual CI procedure.
