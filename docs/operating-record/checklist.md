@@ -1,5 +1,10 @@
 # Alia Wilkinson portfolio operating checklist
 
+NomadTime privacy publication: [October 19 C4 observation](reports/2026-10-19-nomadtime-climate-privacy-C4.md)
+verifies the merged production source and an exact public-page digest match.
+The production-text gap below is closed for this disclosure; unrelated release
+and recovery gates remain separate.
+
 NomadTime seasonal-weather privacy: [October 19 C2/C3 report](reports/2026-10-19-nomadtime-climate-privacy-C2-C3.md)
 records the pinned NASA disclosure, 134 tests, production/SEO validation and
 exact protected-preview artifact. Ship the static correction for review;
@@ -107,3 +112,7 @@ Portfolio copy evidence: [Positioning copy C0–C2 report](reports/2026-10-13-po
 Portfolio navigation evidence: [Brand home link C2 report](reports/2026-10-14-brand-home-link-C2.md) records the accessible global home link, same-page scroll behavior, route verification, and release boundary.
 
 Dependency maintenance evidence: [October dependency updates C2/C3/C5 report](reports/2026-10-16-dependency-bumps-C2-C3-C5.md) consolidates Dependabot PRs #74 through #78, records local test, audit, build and browser evidence, and holds merge and production release for Node 24 CI and repository review.
+
+CI execution checkpoint: [2026-10-22 explicit candidate verification](reports/2026-10-22-explicit-ci.md).
+
+PR integration checkpoint: [October 22 C2/C3/C5 review](reports/2026-10-22-pr-integration-C2-C3-C5.md) records the seven combined PR heads, Node 24 verification, desktop/mobile checks and manual CI procedure.
