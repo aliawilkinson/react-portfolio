@@ -19,6 +19,10 @@ Verification remains npm ci plus npm test when requested. This public repository
 
 ## Evidence and signoff
 
-**ship** for this tested source-routing change through normal PR review/merge gates; **hold** for any release lacking its complete existing gate. No deployment, package publication, store upload, billing adjustment or historical artifact deletion occurred. A merged source policy, a running executor and observed savings are separate claims. MetadataDB canonical evidence synchronization is pending; this report is source-owned evidence, not a Deployment or canonical Observation.
+**ship** for this tested source-routing change through normal PR review/merge gates; **hold** for any release lacking its complete existing gate. No manual deployment, package publication, store upload, billing adjustment or historical artifact deletion occurred. A merged source policy, a running executor and observed savings are separate claims. MetadataDB canonical evidence synchronization is pending; this report is source-owned evidence, not a Deployment or canonical Observation.
 
 Next action: confirm PR inclusion, then inspect the next existing maintenance/billing review for unexpected source triggers and operational consumption. Preserve older reports; October 22 supersedes earlier automatic-main/opt-in routing descriptions. Operator: Codex acting on Alia's request; no separate human review or approval is inferred.
+
+## Review follow-through
+
+Settings inspection found one required independent approval and no required status checks; no rulesets exist. The review concern assuming a required Test context does not apply to the current settings. Manual workflow jobs cannot satisfy required PR ruleset contexts if one is added later; that would need a separately reviewed integration. Existing Vercel Git integration automatically created a successful preview; no manual deployment or hosting setting change was performed. Source adoption awaits independent approval.
